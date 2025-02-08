@@ -1,0 +1,506 @@
+@import "colors";
+@import "mixins";
+
+:root {
+  --radius-max: 9999px;
+  --radius-l: 20px;
+  --radius-m: 16px;
+  --radius-s: 8px;
+  --radius-xs: 4px;
+  --radius-none: 0;
+
+  --blur-m: 8px;
+
+  --font-family: "Montserrat";
+
+  --font-weight-bold: 700;
+  --font-weight-regular: 400;
+
+  --font-size-title-xl: 60px;
+  --font-size-title-l: 47px;
+  --font-size-title-m: 37px;
+  --font-size-title-s: 29px;
+  --font-size-title-xs: 23px;
+  --font-size-label-l: 18px;
+  --font-size-label-m: 16px;
+  --font-size-label-s: 14px;
+  --font-size-description-l: 18px;
+  --font-size-description-m: 16px;
+  --font-size-description-s: 14px;
+  --font-size-note-m: 12px;
+
+  --line-height-title: 1.35;
+  --line-height-label: 1.45;
+  --line-height-description: 1.6;
+  --line-height-note: 1.6;
+
+  --spacing-xxl: 80px;
+  --spacing-xl: 60px;
+  --spacing-l: 40px;
+  --spacing-m: 32px;
+  --spacing-s: 24px;
+  --spacing-xs: 16px;
+  --spacing-xxs: 8px;
+}
+
+$themes: (
+  shadow-m: (
+    light: 0 4px 20px var(--black-opacity-10),
+    dark: 0 4px 20px var(--white-opacity-10),
+  ),
+  "transparent": (
+    light: var(--contrast-opacity-0),
+    dark: var(--black-opacity-0),
+  ),
+  text-main-primary: (
+    light: var(--main),
+    dark: var(--contrast),
+  ),
+  text-main-foreground: (
+    light: var(--contrast),
+    dark: var(--main),
+  ),
+  text-main-default: (
+    light: var(--main),
+    dark: var(--contrast),
+  ),
+  text-main-hover: (
+    light: var(--main-lighten-40),
+    dark: var(--main-lighten-70),
+  ),
+  text-main-active: (
+    light: var(--accent),
+    dark: var(--accent),
+  ),
+  text-utility-primary: (
+    light: var(--utility),
+    dark: var(--contrast),
+  ),
+  text-utility-default: (
+    light: var(--utility),
+    dark: var(--contrast),
+  ),
+  text-utility-hover: (
+    light: var(--utility-lighten-10),
+    dark: var(--utility-lighten-80),
+  ),
+  text-utility-active: (
+    light: var(--accent),
+    dark: var(--accent),
+  ),
+  text-utility-foreground: (
+    light: var(--contrast),
+    dark: var(--contrast),
+  ),
+  text-neutral-primary: (
+    light: var(--neutral),
+    dark: var(--contrast),
+  ),
+  text-neutral-default: (
+    light: var(--neutral),
+    dark: var(--contrast),
+  ),
+  text-neutral-hover: (
+    light: var(--neutral-lighten-10),
+    dark: var(--neutral-lighten-80),
+  ),
+  text-neutral-active: (
+    light: var(--accent),
+    dark: var(--accent),
+  ),
+  text-neutral-foreground: (
+    light: var(--main),
+    dark: var(--contrast),
+  ),
+  text-accent-primary: (
+    light: var(--accent),
+    dark: var(--contrast),
+  ),
+  text-accent-default: (
+    light: var(--accent),
+    dark: var(--contrast),
+  ),
+  text-accent-hover: (
+    light: var(--accent-lighten-10),
+    dark: var(--accent-lighten-80),
+  ),
+  text-accent-active: (
+    light: var(--accent),
+    dark: var(--accent),
+  ),
+  text-accent-foreground: (
+    light: var(--contrast),
+    dark: var(--contrast),
+  ),
+  text-contrast-primary: (
+    light: var(--contrast),
+    dark: var(--contrast),
+  ),
+  text-contrast-default: (
+    light: var(--contrast),
+    dark: var(--contrast),
+  ),
+  text-contrast-hover: (
+    light: var(--contrast-lighten-10),
+    dark: var(--contrast-lighten-80),
+  ),
+  text-contrast-active: (
+    light: var(--accent),
+    dark: var(--accent),
+  ),
+  text-contrast-foreground: (
+    light: var(--main),
+    dark: var(--contrast),
+  ),
+  text-phantom-primary: (
+    light: var(--contrast-opacity-60),
+    dark: var(--contrast-opacity-60),
+  ),
+  text-phantom-default: (
+    light: var(--contrast-opacity-60),
+    dark: var(--contrast-opacity-60),
+  ),
+  text-phantom-hover: (
+    light: var(--contrast),
+    dark: var(--contrast),
+  ),
+  text-phantom-active: (
+    light: var(--accent),
+    dark: var(--accent),
+  ),
+  text-phantom-foreground: (
+    light: var(--main),
+    dark: var(--main),
+  ),
+  text-info-primary: (
+    light: var(--info),
+    dark: var(--info),
+  ),
+  text-info-default: (
+    light: var(--info),
+    dark: var(--info),
+  ),
+  text-info-hover: (
+    light: var(--info-darken-30),
+    dark: var(--info-lighten-30),
+  ),
+  text-info-active: (
+    light: var(--info),
+    dark: var(--info),
+  ),
+  text-info-foreground: (
+    light: var(--contrast),
+    dark: var(--contrast),
+  ),
+  text-success-primary: (
+    light: var(--success),
+    dark: var(--success),
+  ),
+  text-success-default: (
+    light: var(--success),
+    dark: var(--success),
+  ),
+  text-success-hover: (
+    light: var(--success-darken-30),
+    dark: var(--success-lighten-30),
+  ),
+  text-success-active: (
+    light: var(--success),
+    dark: var(--success),
+  ),
+  text-success-foreground: (
+    light: var(--contrast),
+    dark: var(--contrast),
+  ),
+  text-warning-primary: (
+    light: var(--warning),
+    dark: var(--warning),
+  ),
+  text-warning-default: (
+    light: var(--warning),
+    dark: var(--warning),
+  ),
+  text-warning-hover: (
+    light: var(--warning-darken-30),
+    dark: var(--warning-lighten-30),
+  ),
+  text-warning-active: (
+    light: var(--warning),
+    dark: var(--warning),
+  ),
+  text-warning-foreground: (
+    light: var(--contrast),
+    dark: var(--contrast),
+  ),
+  text-danger-primary: (
+    light: var(--danger),
+    dark: var(--danger),
+  ),
+  text-danger-default: (
+    light: var(--danger),
+    dark: var(--danger),
+  ),
+  text-danger-hover: (
+    light: var(--danger-darken-30),
+    dark: var(--danger-lighten-30),
+  ),
+  text-danger-active: (
+    light: var(--danger),
+    dark: var(--danger),
+  ),
+  text-danger-foreground: (
+    light: var(--contrast),
+    dark: var(--contrast),
+  ),
+  surface-main-primary: (
+    light: var(--main),
+    dark: var(--main),
+  ),
+  surface-main-default: (
+    light: var(--main),
+    dark: var(--contrast),
+  ),
+  surface-main-hover: (
+    light: var(--main-lighten-20),
+    dark: var(--main-lighten-80),
+  ),
+  surface-main-active: (
+    light: var(--accent),
+    dark: var(--accent),
+  ),
+  surface-main-ghost: (
+    light: var(--main-opacity-10),
+    dark: var(--contrast-opacity-10),
+  ),
+  surface-utility-primary: (
+    light: var(--utility),
+    dark: var(--utility),
+  ),
+  surface-utility-default: (
+    light: var(--utility),
+    dark: var(--main-lighten-10),
+  ),
+  surface-utility-hover: (
+    light: var(--utility-lighten-10),
+    dark: var(--utility-lighten-20),
+  ),
+  surface-utility-active: (
+    light: var(--accent),
+    dark: var(--accent),
+  ),
+  surface-utility-ghost: (
+    light: var(--utility-opacity-10),
+    dark: var(--contrast-opacity-10),
+  ),
+  surface-neutral-primary: (
+    light: var(--neutral),
+    dark: var(--main-lighten-10),
+  ),
+  surface-neutral-default: (
+    light: var(--neutral),
+    dark: var(--main-lighten-10),
+  ),
+  surface-neutral-hover: (
+    light: var(--neutral-darken-10),
+    dark: var(--main-lighten-20),
+  ),
+  surface-neutral-active: (
+    light: var(--accent),
+    dark: var(--accent),
+  ),
+  surface-neutral-ghost: (
+    light: var(--neutral-opacity-10),
+    dark: var(--contrast-opacity-10),
+  ),
+  surface-accent-primary: (
+    light: var(--accent),
+    dark: var(--accent-darken-10),
+  ),
+  surface-accent-default: (
+    light: var(--accent),
+    dark: var(--accent-darken-10),
+  ),
+  surface-accent-hover: (
+    light: var(--accent-darken-20),
+    dark: var(--accent),
+  ),
+  surface-accent-active: (
+    light: var(--accent),
+    dark: var(--accent-darken-10),
+  ),
+  surface-accent-ghost: (
+    light: var(--accent-opacity-10),
+    dark: var(--contrast-opacity-10),
+  ),
+  surface-contrast-primary: (
+    light: var(--contrast),
+    dark: var(--main),
+  ),
+  surface-contrast-default: (
+    light: var(--contrast),
+    dark: var(--main),
+  ),
+  surface-contrast-hover: (
+    light: var(--neutral-darken-10),
+    dark: var(--contrast-lighten-80),
+  ),
+  surface-contrast-active: (
+    light: var(--accent),
+    dark: var(--accent),
+  ),
+  surface-contrast-ghost: (
+    light: var(--contrast-opacity-10),
+    dark: var(--contrast-opacity-10),
+  ),
+  surface-phantom-primary: (
+    light: var(--contrast),
+    dark: var(--main),
+  ),
+  surface-phantom-default: (
+    light: var(--contrast),
+    dark: var(--main),
+  ),
+  surface-phantom-hover: (
+    light: var(--contrast-lighten-10),
+    dark: var(--contrast-lighten-80),
+  ),
+  surface-phantom-active: (
+    light: var(--accent),
+    dark: var(--accent),
+  ),
+  surface-phantom-ghost: (
+    light: var(--contrast-opacity-10),
+    dark: var(--contrast-opacity-10),
+  ),
+  surface-info-primary: (
+    light: var(--info),
+    dark: var(--info-darken-10),
+  ),
+  surface-info-default: (
+    light: var(--info),
+    dark: var(--info-darken-10),
+  ),
+  surface-info-hover: (
+    light: var(--info-darken-20),
+    dark: var(--info),
+  ),
+  surface-info-active: (
+    light: var(--info),
+    dark: var(--info-darken-10),
+  ),
+  surface-info-ghost: (
+    light: var(--info-opacity-10),
+    dark: var(--contrast-opacity-10),
+  ),
+  surface-success-primary: (
+    light: var(--success),
+    dark: var(--success-darken-10),
+  ),
+  surface-success-default: (
+    light: var(--success),
+    dark: var(--success-darken-10),
+  ),
+  surface-success-hover: (
+    light: var(--success-darken-20),
+    dark: var(--success),
+  ),
+  surface-success-active: (
+    light: var(--success),
+    dark: var(--success-darken-10),
+  ),
+  surface-success-ghost: (
+    light: var(--success-opacity-10),
+    dark: var(--contrast-opacity-10),
+  ),
+  surface-warning-primary: (
+    light: var(--warning),
+    dark: var(--warning-darken-10),
+  ),
+  surface-warning-default: (
+    light: var(--warning),
+    dark: var(--warning-darken-10),
+  ),
+  surface-warning-hover: (
+    light: var(--warning-darken-20),
+    dark: var(--warning),
+  ),
+  surface-warning-active: (
+    light: var(--warning),
+    dark: var(--warning-darken-10),
+  ),
+  surface-warning-ghost: (
+    light: var(--warning-opacity-10),
+    dark: var(--contrast-opacity-10),
+  ),
+  surface-danger-primary: (
+    light: var(--danger),
+    dark: var(--danger-darken-10),
+  ),
+  surface-danger-default: (
+    light: var(--danger),
+    dark: var(--danger-darken-10),
+  ),
+  surface-danger-hover: (
+    light: var(--danger-darken-20),
+    dark: var(--danger),
+  ),
+  surface-danger-active: (
+    light: var(--danger),
+    dark: var(--danger-darken-10),
+  ),
+  surface-danger-ghost: (
+    light: var(--danger-opacity-10),
+    dark: var(--contrast-opacity-10),
+  ),
+  overlay-100: (
+    light: var(--main),
+    dark: var(--black),
+  ),
+  overlay-90: (
+    light: var(--main-opacity-90),
+    dark: var(--black-opacity-70),
+  ),
+  overlay-80: (
+    light: var(--main-opacity-80),
+    dark: var(--black-opacity-60),
+  ),
+  overlay-70: (
+    light: var(--main-opacity-70),
+    dark: var(--black-opacity-50),
+  ),
+  overlay-60: (
+    light: var(--main-opacity-60),
+    dark: var(--black-opacity-40),
+  ),
+  overlay-50: (
+    light: var(--main-opacity-50),
+    dark: var(--black-opacity-30),
+  ),
+  overlay-40: (
+    light: var(--main-opacity-40),
+    dark: var(--black-opacity-20),
+  ),
+  overlay-30: (
+    light: var(--main-opacity-30),
+    dark: var(--black-opacity-20),
+  ),
+  overlay-20: (
+    light: var(--main-opacity-20),
+    dark: var(--black-opacity-10),
+  ),
+  overlay-10: (
+    light: var(--main-opacity-10),
+    dark: var(--black-opacity-10),
+  ),
+  overlay-0: (
+    light: var(--main-opacity-0),
+    dark: var(--black-opacity-0),
+  ),
+);
+
+.light {
+  @include theme-generator($themes, "light");
+}
+.dark {
+  @include theme-generator($themes, "dark");
+}

@@ -1,12 +1,14 @@
 {
-  "name": "verse-ui",
+  "name": "celestian",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "build:colors": "sass src/styles/colors.scss src/styles/colors.css --no-source-map",
+    "build:tokens": "sass src/styles/tokens.scss src/styles/tokens.css --no-source-map"
   },
   "dependencies": {
     "react": "^19.0.0",

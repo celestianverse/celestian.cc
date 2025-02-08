@@ -1,0 +1,18 @@
+@import "reset";
+@import "fonts";
+@import "mixins";
+
+body {
+  min-width: 375px;
+  background: var(--background-neutral-secondary);
+  color: var(--color-main-primary);
+  font-family: var(--font-family), sans-serif;
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-label-m);
+  @include transition($property: background);
+}
+
+::selection {
+  background: var(--background-accent-primary);
+  color: var(--color-contrast-primary);
+}
