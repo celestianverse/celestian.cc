@@ -1,5 +1,5 @@
-@import "colors";
-@import "mixins";
+@use "colors" as *;
+@use "mixins" as *;
 
 :root {
   --radius-max: 9999px;
@@ -34,13 +34,27 @@
   --line-height-description: 1.6;
   --line-height-note: 1.6;
 
-  --spacing-xxl: 80px;
-  --spacing-xl: 60px;
-  --spacing-l: 40px;
-  --spacing-m: 32px;
-  --spacing-s: 24px;
-  --spacing-xs: 16px;
-  --spacing-xxs: 8px;
+  --size-80: 80px;
+  --size-72: 72px;
+  --size-64: 64px;
+  --size-56: 56px;
+  --size-48: 48px;
+  --size-40: 40px;
+  --size-32: 32px;
+  --size-28: 28px;
+  --size-24: 24px;
+  --size-20: 20px;
+  --size-16: 16px;
+  --size-12: 12px;
+  --size-8: 8px;
+
+  --spacing-80: 80px;
+  --spacing-64: 64px;
+  --spacing-48: 48px;
+  --spacing-32: 32px;
+  --spacing-24: 24px;
+  --spacing-16: 16px;
+  --spacing-8: 8px;
 }
 
 $themes: (
@@ -498,9 +512,9 @@ $themes: (
   ),
 );
 
-.light {
+[data-theme="light"] {
   @include theme-generator($themes, "light");
 }
-.dark {
+[data-theme="dark"] {
   @include theme-generator($themes, "dark");
 }

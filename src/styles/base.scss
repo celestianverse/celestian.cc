@@ -1,11 +1,11 @@
-@import "reset";
-@import "fonts";
-@import "mixins";
+@use "reset" as *;
+@use "fonts" as *;
+@use "mixins" as *;
 
 body {
   min-width: 375px;
   background: var(--background-neutral-secondary);
-  color: var(--color-main-primary);
+  color: var(--text-main-primary);
   font-family: var(--font-family), sans-serif;
   font-weight: var(--font-weight-regular);
   font-size: var(--font-size-label-m);
@@ -13,6 +13,6 @@ body {
 }
 
 ::selection {
-  background: var(--background-accent-primary);
-  color: var(--color-contrast-primary);
+  background: var(--surface-accent-primary);
+  color: var(--text-contrast-primary);
 }
