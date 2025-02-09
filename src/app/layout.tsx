@@ -2,6 +2,7 @@ import React from "react";
 import type { Metadata, Viewport } from "next";
 import { ThemeProvider } from "next-themes";
 import { THEME } from "@/constants/theme";
+import "@/styles/themes.css";
 import "@/styles/tokens.css";
 import "@/styles/base.scss";
 

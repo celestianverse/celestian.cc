@@ -1,3 +1,16 @@
+$colors: (
+  main,
+  utility,
+  neutral,
+  accent,
+  contrast,
+  phantom,
+  info,
+  success,
+  warning,
+  danger,
+);
+
 @mixin desktop-only {
   @media (min-width: 1367px) and (max-width: 1920px) {
     @content;

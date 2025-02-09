@@ -1,0 +1,25 @@
+@use "@/styles/mixins" as *;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-32);
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-48);
+
+  @include transition($property: background);
+
+  @include laptop-only {
+    padding: 0 var(--spacing-32);
+  }
+
+  @include tablet-only {
+    padding: 0 var(--spacing-24);
+  }
+
+  @include mobile-only {
+    padding: 0 var(--spacing-16);
+  }
+}

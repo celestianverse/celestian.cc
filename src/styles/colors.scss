@@ -1,27 +1,27 @@
+@use 'sass:color';
+
 $colors: (
-  "main": #24282A,
-  "utility": #656D77,
-  "neutral": #EEEEF1,
-  "accent": #AD1875,
-  "contrast": #fff,
-  "info": #208CDB,
-  "success": #1CB474,
-  "warning": #F17400,
-  "danger": #C21B1B,
-  "black": #000,
-  "white": #fff,
+  main: #24282A,
+  utility: #656D77,
+  neutral: #EEEEF1,
+  accent: #AD1875,
+  contrast: #fff,
+  info: #208CDB,
+  success: #1CB474,
+  warning: #F17400,
+  danger: #C21B1B,
 );
 
 :root {
   @each $color, $value in $colors {
     --#{$color}: #{$value};
 
-    @for $i from 1 through 9 {
-      --#{$color}-darken-#{$i * 10}: #{mix($value, #000, (100 - $i * 10) * 1%)};
+    @for $i from 1 through 10 {
+      --#{$color}-darken-#{$i * 10}: #{color.mix($value, #000, (100 - $i * 10) * 1%)};
     }
 
-    @for $i from 1 through 9 {
-      --#{$color}-lighten-#{$i * 10}: #{mix($value, #fff, (100 - $i * 10) * 1%)};
+    @for $i from 1 through 10 {
+      --#{$color}-lighten-#{$i * 10}: #{color.mix($value, #fff, (100 - $i * 10) * 1%)};
     }
 
     @for $i from 1 through 10 {
