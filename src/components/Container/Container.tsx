@@ -1,28 +1,28 @@
 import React from "react";
 import classNames from "classnames";
+import { Props, Element } from "./_types/types";
+import { Polymorphic } from "@/types/Polymorphic";
 import styles from "./Container.module.scss";
 
-type Element = "div" | "section" | "article" | "header" | "footer";
+const DEFAULT_ELEMENT = "div";
 
-type Props = {
-  as?: Element;
-  className?: string;
-  children: React.ReactNode;
-};
-
-export const Container = ({
-  as: Element = "div",
+export const Container = <E extends React.ElementType<any, Element> = typeof DEFAULT_ELEMENT>({
+  as,
   className,
   children,
-}: Props) => {
+  ...rest
+}: Polymorphic<E, Props>) => {
+  const Component = as || DEFAULT_ELEMENT;
+
   return (
-    <Element
+    <Component
       className={classNames(
         styles.container,
         className,
       )}
+      {...rest}
     >
       {children}
-    </Element>
+    </Component>
   );
 };
