@@ -1,78 +1,44 @@
 import React from "react";
-import Link from "next/link";
 import classNames from "classnames";
-import { AnchorProps, ButtonProps, DivProps, LinkProps, Props } from "@/components/Button/_types/types";
+import { Polymorphic } from "@/types/Polymorphic";
+import { Props, Element } from "./_types/types";
 import styles from "./Button.module.scss";
 
-export const Button = ({
-  as = "button",
+const DEFAULT_ELEMENT = "button";
+
+export const Button = <E extends React.ElementType<any, Element> = typeof DEFAULT_ELEMENT>({
+  as,
   color = "main",
   variant = "fill",
   size = "m",
-  width = "auto",
-  href,
+  isFullWidth,
   isActive,
   isLoading,
   isDisabled,
   className,
   children,
-  ...props
-}: Props) => {
-  const classes= classNames(
-    styles.button,
-    styles[variant],
-    styles[color],
-    styles[size],
-    styles[width],
-    {
-      [styles.active]: isActive,
-      [styles.loading]: isLoading,
-      [styles.disabled]: isDisabled,
-    },
-    className,
-  );
-
-  if (as === "Link" && href) {
-    return (
-      <Link
-        {...props as LinkProps}
-        href={href}
-        className={classes}
-      >
-        {children}
-      </Link>
-    );
-  }
-
-  if (as === "a" && href) {
-    return (
-      <a
-        {...props as AnchorProps}
-        href={href}
-        className={classes}
-      >
-        {children}
-      </a>
-    );
-  }
-
-  if (as === "div") {
-    return (
-      <div
-        {...props as DivProps}
-        className={classes}
-      >
-        {children}
-      </div>
-    );
-  }
+  ...rest
+}: Polymorphic<E, Props>) => {
+  const Component = as || DEFAULT_ELEMENT;
 
   return (
-    <button
-      {...props as ButtonProps}
-      className={classes}
+    <Component
+      className={classNames(
+        styles.button,
+        styles[variant],
+        styles[color],
+        styles[size],
+        {
+          [styles.full]: isFullWidth,
+          [styles.active]: isActive,
+          [styles.loading]: isLoading,
+          [styles.disabled]: isDisabled,
+        },
+        className,
+      )}
+      {...rest}
     >
       {children}
-    </button>
+    </Component>
   );
 };

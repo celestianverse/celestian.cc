@@ -1,3 +1,5 @@
+@use "@/styles/mixins" as *;
+
 :root {
   --radius-max: 9999px;
   --radius-l: 20px;
@@ -52,4 +54,13 @@
   --spacing-24: 24px;
   --spacing-16: 16px;
   --spacing-8: 8px;
+}
+
+@include mobile-only {
+  :root {
+    --font-size-title-xl: 47px;
+    --font-size-title-l: 37px;
+    --font-size-title-m: 29px;
+    --font-size-title-s: 23px;
+  }
 }

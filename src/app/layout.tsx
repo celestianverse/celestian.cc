@@ -3,7 +3,7 @@ import type { Metadata, Viewport } from "next";
 import { ThemeProvider } from "next-themes";
 import { THEME } from "@/constants/theme";
 import "@/styles/themes.css";
-import "@/styles/tokens.css";
+import "@/styles/tokens.scss";
 import "@/styles/base.scss";
 
 export const metadata: Metadata = {
