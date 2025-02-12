@@ -11,12 +11,8 @@
 
   @include transition($property: background);
 
-  @include laptop-only {
-    padding: 0 var(--spacing-32);
-  }
-
   @include tablet-only {
-    padding: 0 var(--spacing-24);
+    padding: 0 var(--spacing-32);
   }
 
   @include mobile-only {

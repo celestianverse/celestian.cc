@@ -1,15 +1,15 @@
 import React from "react";
 import classNames from "classnames";
 import type { Element, Props } from "./_types/types";
-import styles from "./Title.module.scss";
+import styles from "./Label.module.scss";
 import { Polymorphic } from "@/types/Polymorphic";
 
-const DEFAULT_ELEMENT = "h3";
+const DEFAULT_ELEMENT = "p";
 
-export const Title = <E extends React.ElementType<any, Element> = typeof DEFAULT_ELEMENT>({
+export const Label = <E extends React.ElementType<any, Element> = typeof DEFAULT_ELEMENT>({
   as,
   color = "main",
-  weight = "bold",
+  weight = "regular",
   size = "m",
   isUppercase = false,
   isNowrap = false,
@@ -23,7 +23,7 @@ export const Title = <E extends React.ElementType<any, Element> = typeof DEFAULT
   return (
     <Component
       className={classNames(
-        styles.title,
+        styles.label,
         styles[color],
         styles[size],
         styles[weight],
