@@ -1,15 +1,15 @@
 @use "@/styles/mixins" as *;
 
-$sizes: "xl", "l", "m", "s", "xs";
+$sizes: "l", "m", "s";
 $weights: "bold", "regular";
 
-.title {
-  line-height: var(--line-height-title);
+.label {
+  line-height: var(--line-height-label);
   @include transition($property: color);
 
   @each $size in $sizes {
     &.#{$size} {
-      font-size: var(--font-size-title-#{$size});
+      font-size: var(--font-size-label-#{$size});
     }
   }
 
