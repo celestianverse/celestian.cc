@@ -1,9 +1,9 @@
 import type React from "react";
 import type { Color } from "@/types/Colors";
 
-export type Element = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+export type Element = "div" | "p" | "span" | "address" | "time";
 
-type Size = "xl" | "l" | "m" | "s" | "xs";
+type Size = "l" | "m" | "s";
 
 type Weight = "bold" | "regular";
 

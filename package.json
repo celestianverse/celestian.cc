@@ -8,8 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "tsc": "tsc",
-    "build:colors": "sass src/styles/colors.scss src/styles/colors.css --no-source-map",
-    "build:themes": "sass src/styles/themes.scss src/styles/themes.css --no-source-map"
+    "build:styles": "sass src/styles/colors.scss src/styles/colors.css --no-source-map && sass src/styles/themes.scss src/styles/themes.css --no-source-map"
   },
   "dependencies": {
     "classnames": "^2.5.1",
