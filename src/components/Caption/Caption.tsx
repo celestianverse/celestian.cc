@@ -1,12 +1,12 @@
 import React from "react";
 import classNames from "classnames";
-import type { Element, Props } from "./_types/types";
-import styles from "./Label.module.scss";
 import { Polymorphic } from "@/types/Polymorphic";
+import type { Element, Props } from "./_types/types";
+import styles from "./Caption.module.scss";
 
 const DEFAULT_ELEMENT = "p";
 
-export const Label = <E extends React.ElementType<any, Element> = typeof DEFAULT_ELEMENT>({
+export const Caption = <E extends React.ElementType<any, Element> = typeof DEFAULT_ELEMENT>({
   as,
   color = "main",
   weight = "regular",
@@ -23,7 +23,7 @@ export const Label = <E extends React.ElementType<any, Element> = typeof DEFAULT
   return (
     <Component
       className={classNames(
-        styles.label,
+        styles.caption,
         styles[color],
         styles[size],
         styles[weight],

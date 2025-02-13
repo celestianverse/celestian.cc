@@ -1,8 +1,8 @@
 import React from "react";
 import classNames from "classnames";
+import { Polymorphic } from "@/types/Polymorphic";
 import type { Element, Props } from "./_types/types";
 import styles from "./Title.module.scss";
-import { Polymorphic } from "@/types/Polymorphic";
 
 const DEFAULT_ELEMENT = "h3";
 
