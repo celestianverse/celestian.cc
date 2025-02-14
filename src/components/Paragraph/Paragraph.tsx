@@ -2,14 +2,15 @@ import React from "react";
 import classNames from "classnames";
 import { Polymorphic } from "@/types/Polymorphic";
 import type { Element, Props } from "./_types/types";
-import styles from "./Note.module.scss";
+import styles from "./Paragraph.module.scss";
 
-const DEFAULT_ELEMENT = "small";
+const DEFAULT_ELEMENT = "p";
 
-export const Note = <E extends React.ElementType<any, Element> = typeof DEFAULT_ELEMENT>({
+export const Paragraph = <E extends React.ElementType<any, Element> = typeof DEFAULT_ELEMENT>({
   as,
   color = "main",
   weight = "regular",
+  size = "m",
   isUppercase = false,
   isNowrap = false,
   isEllipsis = false,
@@ -22,8 +23,9 @@ export const Note = <E extends React.ElementType<any, Element> = typeof DEFAULT_
   return (
     <Component
       className={classNames(
-        styles.note,
+        styles.paragraph,
         styles[color],
+        styles[size],
         styles[weight],
         {
           [styles.uppercase]: isUppercase,

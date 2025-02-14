@@ -16,25 +16,25 @@
   &.l {
     height: var(--size-56);
     padding: 0 var(--spacing-32);
-    font-size: var(--font-size-label-l);
+    font-size: var(--font-size-text-l);
   }
 
   &.m {
     height: var(--size-48);
     padding: 0 var(--spacing-24);
-    font-size: var(--font-size-label-m);
+    font-size: var(--font-size-text-m);
   }
 
   &.s {
     height: var(--size-40);
     padding: 0 var(--spacing-24);
-    font-size: var(--font-size-label-s);
+    font-size: var(--font-size-text-s);
   }
 
   &.xs {
     height: var(--size-32);
     padding: 0 var(--spacing-16);
-    font-size: var(--font-size-label-s);
+    font-size: var(--font-size-text-s);
   }
 
   &.full {

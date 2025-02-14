@@ -8,7 +8,7 @@ body {
   color: var(--text-main-primary);
   font-family: var(--font-family), sans-serif;
   font-weight: var(--font-weight-regular);
-  font-size: var(--font-size-label-m);
+  font-size: var(--font-size-text-m);
   @include transition($property: background);
 }
 
