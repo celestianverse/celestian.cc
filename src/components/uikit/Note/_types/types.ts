@@ -1,15 +1,12 @@
 import type React from "react";
-import type { Color } from "@/types/Colors";
+import type { Color } from "@/types/Color";
 
-export type Element = "p" | "div";
-
-type Size = "l" | "m" | "s";
+export type Element = "div" | "p" | "span" | "small";
 
 type Weight = "bold" | "regular";
 
 export type Props = {
   color?: Color;
-  size?: Size;
   weight?: Weight;
   isUppercase?: boolean;
   isNowrap?: boolean;

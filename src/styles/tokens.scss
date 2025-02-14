@@ -1,30 +1,27 @@
 @use "@/styles/mixins" as *;
 
 :root {
-  --radius-max: 9999px;
-  --radius-l: 20px;
-  --radius-m: 16px;
-  --radius-s: 8px;
-  --radius-xs: 4px;
-  --radius-none: 0;
+  --font-family-default: "Montserrat";
 
-  --blur-m: 8px;
-
-  --font-family: "Montserrat";
-
+  --font-weight-default: 400;
   --font-weight-bold: 700;
   --font-weight-regular: 400;
 
+  --font-size-default: 16px;
   --font-size-title-xl: 60px;
   --font-size-title-l: 47px;
   --font-size-title-m: 37px;
   --font-size-title-s: 29px;
   --font-size-title-xs: 23px;
-  --font-size-text-l: 18px;
-  --font-size-text-m: 16px;
-  --font-size-text-s: 14px;
-  --font-size-text-xs: 12px;
+  --font-size-caption-l: 18px;
+  --font-size-caption-m: 16px;
+  --font-size-caption-s: 14px;
+  --font-size-paragraph-l: 18px;
+  --font-size-paragraph-m: 16px;
+  --font-size-paragraph-s: 14px;
+  --font-size-note-m: 12px;
 
+  --line-height-default: 1.45;
   --line-height-title: 1.35;
   --line-height-caption: 1.45;
   --line-height-paragraph: 1.6;
@@ -51,6 +48,15 @@
   --spacing-24: 24px;
   --spacing-16: 16px;
   --spacing-8: 8px;
+
+  --radius-max: 9999px;
+  --radius-l: 24px;
+  --radius-m: 16px;
+  --radius-s: 8px;
+  --radius-xs: 4px;
+  --radius-none: 0;
+
+  --blur-m: 8px;
 }
 
 @include mobile-only {
