@@ -1,5 +1,5 @@
 import type React from "react";
-import type { Color } from "@/types/Colors";
+import type { Color } from "@/types/Color";
 
 export type Element = "div" | "p" | "span" | "address" | "time";
 

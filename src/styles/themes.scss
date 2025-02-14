@@ -10,6 +10,10 @@ $themes: (
     light: var(--contrast-opacity-0),
     dark: var(--main-opacity-0),
   ),
+  text-default: (
+    light: var(--main),
+    dark: var(--contrast),
+  ),
   text-main-primary: (
     light: var(--main),
     dark: var(--contrast),
@@ -18,7 +22,7 @@ $themes: (
     light: var(--contrast),
     dark: var(--main),
   ),
-  text-main-default: (
+  text-main-initial: (
     light: var(--main),
     dark: var(--contrast),
   ),
@@ -34,7 +38,7 @@ $themes: (
     light: var(--utility),
     dark: var(--contrast),
   ),
-  text-utility-default: (
+  text-utility-initial: (
     light: var(--utility),
     dark: var(--contrast),
   ),
@@ -54,7 +58,7 @@ $themes: (
     light: var(--neutral),
     dark: var(--contrast),
   ),
-  text-neutral-default: (
+  text-neutral-initial: (
     light: var(--neutral),
     dark: var(--contrast),
   ),
@@ -74,7 +78,7 @@ $themes: (
     light: var(--accent),
     dark: var(--contrast),
   ),
-  text-accent-default: (
+  text-accent-initial: (
     light: var(--accent),
     dark: var(--contrast),
   ),
@@ -94,7 +98,7 @@ $themes: (
     light: var(--contrast),
     dark: var(--contrast),
   ),
-  text-contrast-default: (
+  text-contrast-initial: (
     light: var(--contrast),
     dark: var(--contrast),
   ),
@@ -114,7 +118,7 @@ $themes: (
     light: var(--contrast-opacity-60),
     dark: var(--contrast-opacity-60),
   ),
-  text-phantom-default: (
+  text-phantom-initial: (
     light: var(--contrast-opacity-60),
     dark: var(--contrast-opacity-60),
   ),
@@ -134,7 +138,7 @@ $themes: (
     light: var(--info),
     dark: var(--info),
   ),
-  text-info-default: (
+  text-info-initial: (
     light: var(--info),
     dark: var(--info),
   ),
@@ -154,7 +158,7 @@ $themes: (
     light: var(--success),
     dark: var(--success),
   ),
-  text-success-default: (
+  text-success-initial: (
     light: var(--success),
     dark: var(--success),
   ),
@@ -174,7 +178,7 @@ $themes: (
     light: var(--warning),
     dark: var(--warning),
   ),
-  text-warning-default: (
+  text-warning-initial: (
     light: var(--warning),
     dark: var(--warning),
   ),
@@ -194,7 +198,7 @@ $themes: (
     light: var(--danger),
     dark: var(--danger),
   ),
-  text-danger-default: (
+  text-danger-initial: (
     light: var(--danger),
     dark: var(--danger),
   ),
@@ -210,11 +214,15 @@ $themes: (
     light: var(--contrast),
     dark: var(--contrast),
   ),
+  surface-default: (
+    light: var(--neutral),
+    dark: var(--main-lighten-10),
+  ),
   surface-main-primary: (
     light: var(--main),
     dark: var(--main),
   ),
-  surface-main-default: (
+  surface-main-initial: (
     light: var(--main),
     dark: var(--contrast),
   ),
@@ -234,7 +242,7 @@ $themes: (
     light: var(--utility),
     dark: var(--utility),
   ),
-  surface-utility-default: (
+  surface-utility-initial: (
     light: var(--utility),
     dark: var(--main-lighten-10),
   ),
@@ -254,7 +262,7 @@ $themes: (
     light: var(--neutral),
     dark: var(--main-lighten-10),
   ),
-  surface-neutral-default: (
+  surface-neutral-initial: (
     light: var(--neutral),
     dark: var(--main-lighten-10),
   ),
@@ -274,7 +282,7 @@ $themes: (
     light: var(--accent),
     dark: var(--accent-darken-10),
   ),
-  surface-accent-default: (
+  surface-accent-initial: (
     light: var(--accent),
     dark: var(--accent-darken-10),
   ),
@@ -294,12 +302,12 @@ $themes: (
     light: var(--contrast),
     dark: var(--main),
   ),
-  surface-contrast-default: (
+  surface-contrast-initial: (
     light: var(--contrast),
     dark: var(--main),
   ),
   surface-contrast-hover: (
-    light: var(--neutral-darken-10),
+    light: var(--contrast-opacity-60),
     dark: var(--contrast-lighten-80),
   ),
   surface-contrast-active: (
@@ -311,19 +319,19 @@ $themes: (
     dark: var(--contrast-opacity-10),
   ),
   surface-phantom-primary: (
-    light: var(--contrast),
+    light: var(--contrast-opacity-60),
     dark: var(--main),
   ),
-  surface-phantom-default: (
-    light: var(--contrast),
+  surface-phantom-initial: (
+    light: var(--contrast-opacity-60),
     dark: var(--main),
   ),
   surface-phantom-hover: (
-    light: var(--contrast-lighten-10),
+    light: var(--contrast),
     dark: var(--contrast-lighten-80),
   ),
   surface-phantom-active: (
-    light: var(--accent),
+    light: var(--contrast),
     dark: var(--accent),
   ),
   surface-phantom-ghost: (
@@ -334,7 +342,7 @@ $themes: (
     light: var(--info),
     dark: var(--info-darken-10),
   ),
-  surface-info-default: (
+  surface-info-initial: (
     light: var(--info),
     dark: var(--info-darken-10),
   ),
@@ -354,7 +362,7 @@ $themes: (
     light: var(--success),
     dark: var(--success-darken-10),
   ),
-  surface-success-default: (
+  surface-success-initial: (
     light: var(--success),
     dark: var(--success-darken-10),
   ),
@@ -374,7 +382,7 @@ $themes: (
     light: var(--warning),
     dark: var(--warning-darken-10),
   ),
-  surface-warning-default: (
+  surface-warning-initial: (
     light: var(--warning),
     dark: var(--warning-darken-10),
   ),
@@ -394,7 +402,7 @@ $themes: (
     light: var(--danger),
     dark: var(--danger-darken-10),
   ),
-  surface-danger-default: (
+  surface-danger-initial: (
     light: var(--danger),
     dark: var(--danger-darken-10),
   ),

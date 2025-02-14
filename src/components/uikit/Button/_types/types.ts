@@ -1,8 +1,10 @@
 import React from "react";
-import type { Color } from "@/types/Colors";
+import type { Color } from "@/types/Color";
 
 export type Element = "button" | "a" | "div";
+
 type Variant = "fill" | "outline" | "ghost";
+
 type Size = "l" | "m" | "s" | "xs";
 
 export type Props = {
