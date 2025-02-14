@@ -16,25 +16,25 @@
   &.l {
     height: var(--size-56);
     padding: 0 var(--spacing-32);
-    font-size: var(--font-size-label-l);
+    font-size: var(--font-size-caption-l);
   }
 
   &.m {
     height: var(--size-48);
     padding: 0 var(--spacing-24);
-    font-size: var(--font-size-label-m);
+    font-size: var(--font-size-caption-m);
   }
 
   &.s {
     height: var(--size-40);
     padding: 0 var(--spacing-24);
-    font-size: var(--font-size-label-s);
+    font-size: var(--font-size-caption-s);
   }
 
   &.xs {
     height: var(--size-32);
     padding: 0 var(--spacing-16);
-    font-size: var(--font-size-label-s);
+    font-size: var(--font-size-caption-s);
   }
 
   &.full {
@@ -44,7 +44,7 @@
   @each $color in $colors {
     &.#{$color} {
       &.fill {
-        background: var(--surface-#{$color}-default);
+        background: var(--surface-#{$color}-initial);
         color: var(--text-#{$color}-foreground);
 
         &:hover {

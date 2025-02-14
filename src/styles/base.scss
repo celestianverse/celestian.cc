@@ -4,11 +4,12 @@
 
 body {
   min-width: 375px;
-  background: var(--background-neutral-secondary);
-  color: var(--text-main-primary);
-  font-family: var(--font-family), sans-serif;
-  font-weight: var(--font-weight-regular);
-  font-size: var(--font-size-label-m);
+  background: var(--surface-default);
+  color: var(--text-default);
+  line-height: var(--line-height-default);
+  font-family: var(--font-family-default), sans-serif;
+  font-weight: var(--font-weight-default);
+  font-size: var(--font-size-default);
   @include transition($property: background);
 }
 

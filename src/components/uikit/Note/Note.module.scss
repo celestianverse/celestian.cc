@@ -1,17 +1,11 @@
 @use "@/styles/mixins" as *;
 
-$sizes: "l", "m", "s";
 $weights: "bold", "regular";
 
-.label {
-  line-height: var(--line-height-label);
+.note {
+  line-height: var(--line-height-note);
+  font-size: var(--font-size-note-m);
   @include transition($property: color);
-
-  @each $size in $sizes {
-    &.#{$size} {
-      font-size: var(--font-size-label-#{$size});
-    }
-  }
 
   @each $weight in $weights {
     &.#{$weight} {

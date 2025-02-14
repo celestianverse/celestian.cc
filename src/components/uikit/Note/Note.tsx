@@ -1,16 +1,15 @@
 import React from "react";
 import classNames from "classnames";
-import type { Element, Props } from "./_types/types";
-import styles from "./Title.module.scss";
 import { Polymorphic } from "@/types/Polymorphic";
+import type { Element, Props } from "./_types/types";
+import styles from "./Note.module.scss";
 
-const DEFAULT_ELEMENT = "h3";
+const DEFAULT_ELEMENT = "small";
 
-export const Title = <E extends React.ElementType<any, Element> = typeof DEFAULT_ELEMENT>({
+export const Note = <E extends React.ElementType<any, Element> = typeof DEFAULT_ELEMENT>({
   as,
   color = "main",
-  weight = "bold",
-  size = "m",
+  weight = "regular",
   isUppercase = false,
   isNowrap = false,
   isEllipsis = false,
@@ -23,9 +22,8 @@ export const Title = <E extends React.ElementType<any, Element> = typeof DEFAULT
   return (
     <Component
       className={classNames(
-        styles.title,
+        styles.note,
         styles[color],
-        styles[size],
         styles[weight],
         {
           [styles.uppercase]: isUppercase,
