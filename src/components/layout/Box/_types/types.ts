@@ -11,13 +11,18 @@ export type Props = {
   color?: Color | "transparent";
   /**
    * <pre>
-   *   xl: 64px, l: 48px, m: 32px, s: 24px, none: 0
+   *   xl: 64px;
+   *   l: 48px;
+   *   m: 32px (default);
+   *   s: 24px;
+   *   none: 0;
    * </pre>
    */
   padding?: Padding;
   /**
    * <pre>
-   *   l: 24px, none: 0
+   *   l: 24px (default);
+   *   none: 0;
    * </pre>
    */
   radius?: Radius;

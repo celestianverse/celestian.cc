@@ -1,7 +1,7 @@
 import React from "react";
 import classNames from "classnames";
-import { Props, Element } from "./_types/types";
 import { Polymorphic } from "@/types/Polymorphic";
+import { Props, Element } from "./_types/types";
 import styles from "./Container.module.scss";
 
 const DEFAULT_ELEMENT = "div";
