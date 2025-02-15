@@ -17,7 +17,7 @@ export const Box = <E extends React.ElementType<any, Element> = typeof DEFAULT_E
     ...rest
   }: Polymorphic<E, Props>,
 ) => {
-  const Component = as ?? DEFAULT_ELEMENT;
+  const Component = as || DEFAULT_ELEMENT;
 
   return (
     <Component

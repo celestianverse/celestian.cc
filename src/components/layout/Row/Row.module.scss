@@ -1,0 +1,36 @@
+.row {
+  display: flex;
+  flex-wrap: wrap;
+
+  &.l {
+    gap: 32px;
+  }
+
+  &.m {
+    gap: 24px;
+  }
+
+  &.s {
+    gap: 16px;
+  }
+
+  &.xs {
+    gap: 8px;
+  }
+
+  &.nowrap {
+    flex-wrap: nowrap;
+  }
+
+  &.align-start {
+    align-items: flex-start;
+  }
+
+  &.align-center {
+    align-items: center;
+  }
+
+  &.align-end {
+    align-items: flex-end;
+  }
+}
