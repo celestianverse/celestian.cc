@@ -1,0 +1,25 @@
+@use "reset" as *;
+@use "fonts" as *;
+@use "mixins" as *;
+
+html {
+  font-size: 16px;
+
+  &[data-font="l"] {
+    font-size: 17px;
+  }
+}
+
+body {
+  min-width: 375px;
+  background: var(--neutral-background);
+  line-height: var(--line-height-m);
+  font-family: var(--font-family), sans-serif;
+  color: var(--neutral-foreground);
+  @include transition($property: background);
+}
+
+::selection {
+  background: var(--brand);
+  color: var(--contrast);
+}

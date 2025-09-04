@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "tsc": "tsc",
-    "build:styles": "sass src/styles/colors.scss src/styles/colors.css --no-source-map && sass src/styles/themes.scss src/styles/themes.css --no-source-map"
+    "build:styles": "sass src/styles/tokens.scss src/styles/tokens.css --no-source-map"
   },
   "dependencies": {
     "classnames": "^2.5.1",

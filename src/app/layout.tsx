@@ -2,9 +2,8 @@ import React from "react";
 import type { Metadata, Viewport } from "next";
 import { ThemeProvider } from "next-themes";
 import { THEME } from "@/constants/theme";
-import "@/styles/themes.css";
 import "@/styles/tokens.scss";
-import "@/styles/base.scss";
+import "@/styles/main.scss";
 
 export const metadata: Metadata = {
   title: "Celestian",

@@ -1,9 +1,8 @@
-import { Color } from "@/types/Color";
-
-export const COLORS: Color[] = [
-  "main",
-  "utility",
+export const COLORS = [
+  "primary",
+  "secondary",
   "neutral",
+  "brand",
   "accent",
   "contrast",
   "phantom",
@@ -11,4 +10,4 @@ export const COLORS: Color[] = [
   "success",
   "warning",
   "danger",
-];
+] as const;
