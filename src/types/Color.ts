@@ -1,13 +1,3 @@
-type Colors =
-  "main" |
-  "utility" |
-  "neutral" |
-  "accent" |
-  "contrast" |
-  "phantom" |
-  "info" |
-  "success" |
-  "warning" |
-  "danger";
+import { COLORS } from "@/constants/colors";
 
-export type Color<T extends Colors = Colors> = T;
+export type Color = typeof COLORS[number];

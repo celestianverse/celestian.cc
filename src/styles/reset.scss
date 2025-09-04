@@ -1,7 +1,7 @@
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -10,12 +10,14 @@
 }
 
 html {
-  text-size-adjust: none;
-  scroll-behavior: smooth;
+  height: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  overflow-wrap: break-word;
 }
 
 body {
-  min-height: 100vh;
+  height: 100%;
 }
 
 table {
@@ -23,14 +25,37 @@ table {
   border-spacing: 0;
 }
 
+label, small {
+  display: block;
+}
+
+img, picture, video, canvas {
+  display: block;
+  max-width: 100%;
+}
+
+img, video {
+  height: auto;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote::before, blockquote::after,
+q::before, q::after {
+  content: "";
+}
+
 a, button {
+  color: inherit;
   cursor: pointer;
   text-decoration: none;
   -webkit-touch-callout: none;
-}
-
-a {
-  color: inherit;
 }
 
 button, input, textarea, select {
@@ -43,6 +68,7 @@ button, input, textarea, select {
   font-size: inherit;
   font-weight: inherit;
   color: inherit;
+  appearance: none;
 }
 
 textarea {

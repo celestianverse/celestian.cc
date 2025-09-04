@@ -1,7 +1,11 @@
+@use "sass:color";
+@use "sass:math";
+
 $colors: (
-  main,
-  utility,
+  primary,
+  secondary,
   neutral,
+  brand,
   accent,
   contrast,
   phantom,
@@ -77,6 +81,7 @@ $colors: (
 
 @mixin backdrop($color, $blur) {
   background: $color;
+
   @supports (backdrop-filter: none) {
     background: $color;
     backdrop-filter: blur($blur);
@@ -136,4 +141,15 @@ $colors: (
       }
     }
   }
+}
+
+@function mix($color1, $color2, $weight: 50%) {
+  $mixed: color.mix($color1, $color2, $weight);
+
+  @return rgba(
+      math.round(color.channel($mixed, "red",   $space: rgb)),
+      math.round(color.channel($mixed, "green", $space: rgb)),
+      math.round(color.channel($mixed, "blue",  $space: rgb)),
+      color.channel($mixed, "alpha")
+  );
 }

@@ -1,34 +1,25 @@
-@use "@/styles/mixins" as *;
+@use "mixins" as *;
 
 :root {
-  --font-family-default: "Montserrat";
+  --font-family: "Montserrat";
 
-  --font-weight-default: 400;
   --font-weight-bold: 700;
   --font-weight-regular: 400;
 
-  --font-size-default: 16px;
-  --font-size-title-xl: 60px;
-  --font-size-title-l: 47px;
-  --font-size-title-m: 37px;
-  --font-size-title-s: 29px;
-  --font-size-title-xs: 23px;
-  --font-size-caption-l: 18px;
-  --font-size-caption-m: 16px;
-  --font-size-caption-s: 14px;
-  --font-size-paragraph-l: 18px;
-  --font-size-paragraph-m: 16px;
-  --font-size-paragraph-s: 14px;
-  --font-size-note-m: 12px;
+  --font-size-title-xxl: 3.875rem;
+  --font-size-title-xl: 3.125rem;
+  --font-size-title-l: 2.5rem;
+  --font-size-title-m: 2rem;
+  --font-size-title-s: 1.5625rem;
+  --font-size-title-xs: 1.25rem;
+  --font-size-text-m: 1rem;
+  --font-size-text-s: 0.8125rem;
 
-  --line-height-default: 1.45;
-  --line-height-title: 1.35;
-  --line-height-caption: 1.45;
-  --line-height-paragraph: 1.6;
-  --line-height-note: 1.6;
+  --line-height-l: 1.6;
+  --line-height-m: 1.45;
+  --line-height-s: 1.35;
 
-  --size-80: 80px;
-  --size-72: 72px;
+  --size-1366: 1366px;
   --size-64: 64px;
   --size-56: 56px;
   --size-48: 48px;
@@ -40,14 +31,18 @@
   --size-16: 16px;
   --size-12: 12px;
   --size-8: 8px;
+  --size-4: 4px;
+  --size-1: 1px;
 
-  --spacing-80: 80px;
+  --spacing-96: 96px;
   --spacing-64: 64px;
   --spacing-48: 48px;
   --spacing-32: 32px;
   --spacing-24: 24px;
   --spacing-16: 16px;
   --spacing-8: 8px;
+  --spacing-4: 4px;
+  --spacing-0: 0;
 
   --radius-max: 9999px;
   --radius-l: 24px;
@@ -61,9 +56,304 @@
 
 @include mobile-only {
   :root {
-    --font-size-title-xl: 47px;
-    --font-size-title-l: 37px;
-    --font-size-title-m: 29px;
-    --font-size-title-s: 23px;
+    --font-size-title-xxl: 3.125rem;
+    --font-size-title-xl: 2.5rem;
+    --font-size-title-l: 2rem;
+    --font-size-title-m: 1.5625rem;
+    --font-size-title-s: 1.25rem;
   }
+}
+
+$primary: #24103C;
+$secondary: #7b7487;
+$neutral: #efeef1;
+$brand: #AD1875;
+$accent: #F4BF0A;
+$contrast: #FFFFFF;
+$phantom: rgba(255, 255, 255, 0.6);
+$info: #208CDB;
+$success: #1CB474;
+$warning: #F17400;
+$danger: #C21B1B;
+
+$themes: (
+  primary: (
+    light: $primary,
+    dark: $contrast,
+  ),
+  primary-hover: (
+    light: mix($primary, #fff, 80%),
+    dark: mix($primary, #fff, 20%),
+  ),
+  primary-active: (
+    light: $brand,
+    dark: $brand,
+  ),
+  primary-background: (
+    light: $primary,
+    dark: $primary,
+  ),
+  primary-foreground: (
+    light: $contrast,
+    dark: $contrast,
+  ),
+  primary-ghost: (
+    light: rgba($primary, 0.1),
+    dark: rgba($contrast, 0.1),
+  ),
+  secondary: (
+    light: $secondary,
+    dark: $phantom,
+  ),
+  secondary-hover: (
+    light: mix($secondary, #fff, 80%),
+    dark: mix($secondary, #fff, 20%),
+  ),
+  secondary-active: (
+    light: $brand,
+    dark: $brand,
+  ),
+  secondary-background: (
+    light: $secondary,
+    dark: $secondary,
+  ),
+  secondary-foreground: (
+    light: $contrast,
+    dark: $contrast,
+  ),
+  secondary-ghost: (
+    light: rgba($secondary, 0.1),
+    dark: rgba($phantom, 0.1),
+  ),
+  neutral: (
+    light: $neutral,
+    dark: $contrast,
+  ),
+  neutral-hover: (
+    light: mix($neutral, #fff, 80%),
+    dark: mix($neutral, #fff, 20%),
+  ),
+  neutral-active: (
+    light: $brand,
+    dark: $brand,
+  ),
+  neutral-background: (
+    light: $neutral,
+    dark: $neutral,
+  ),
+  neutral-foreground: (
+    light: $primary,
+    dark: $contrast,
+  ),
+  neutral-ghost: (
+    light: rgba($neutral, 0.1),
+    dark: rgba($neutral, 0.1),
+  ),
+  brand: (
+    light: $brand,
+    dark: $brand,
+  ),
+  brand-hover: (
+    light: mix($brand, #fff, 80%),
+    dark: mix($brand, #fff, 20%),
+  ),
+  brand-active: (
+    light: $brand,
+    dark: $brand,
+  ),
+  brand-background: (
+    light: $brand,
+    dark: $brand,
+  ),
+  brand-foreground: (
+    light: $contrast,
+    dark: $contrast,
+  ),
+  brand-ghost: (
+    light: rgba($brand, 0.1),
+    dark: rgba($brand, 0.1),
+  ),
+  accent: (
+    light: $accent,
+    dark: $accent,
+  ),
+  accent-hover: (
+    light: mix($accent, #fff, 80%),
+    dark: mix($accent, #fff, 20%),
+  ),
+  accent-active: (
+    light: $accent,
+    dark: $accent,
+  ),
+  accent-background: (
+    light: $accent,
+    dark: $accent,
+  ),
+  accent-foreground: (
+    light: $primary,
+    dark: $primary,
+  ),
+  accent-ghost: (
+    light: rgba($accent, 0.1),
+    dark: rgba($accent, 0.1),
+  ),
+  contrast: (
+    light: $contrast,
+    dark: $contrast,
+  ),
+  contrast-hover: (
+    light: mix($contrast, #fff, 80%),
+    dark: mix($contrast, #fff, 20%),
+  ),
+  contrast-active: (
+    light: $brand,
+    dark: $brand,
+  ),
+  contrast-background: (
+    light: $contrast,
+    dark: $primary,
+  ),
+  contrast-foreground: (
+    light: $primary,
+    dark: $contrast,
+  ),
+  contrast-ghost: (
+    light: rgba($contrast, 0.1),
+    dark: rgba($contrast, 0.1),
+  ),
+  phantom: (
+    light: $phantom,
+    dark: $phantom,
+  ),
+  phantom-hover: (
+    light: mix($phantom, #fff, 80%),
+    dark: mix($phantom, #fff, 20%),
+  ),
+  phantom-active: (
+    light: $brand,
+    dark: $brand,
+  ),
+  phantom-background: (
+    light: $phantom,
+    dark: $primary,
+  ),
+  phantom-foreground: (
+    light: $primary,
+    dark: $phantom,
+  ),
+  phantom-ghost: (
+    light: rgba($phantom, 0.1),
+    dark: rgba($phantom, 0.1),
+  ),
+  info: (
+    light: $info,
+    dark: $contrast,
+  ),
+  info-hover: (
+    light: mix($info, #fff, 80%),
+    dark: mix($info, #fff, 20%),
+  ),
+  info-active: (
+    light: $brand,
+    dark: $brand,
+  ),
+  info-background: (
+    light: $info,
+    dark: $info,
+  ),
+  info-foreground: (
+    light: $contrast,
+    dark: $contrast,
+  ),
+  info-ghost: (
+    light: rgba($info, 0.1),
+    dark: rgba($info, 0.1),
+  ),
+  success: (
+    light: $success,
+    dark: $contrast,
+  ),
+  success-hover: (
+    light: mix($success, #fff, 80%),
+    dark: mix($success, #fff, 20%),
+  ),
+  success-active: (
+    light: $brand,
+    dark: $brand,
+  ),
+  success-background: (
+    light: $success,
+    dark: $success,
+  ),
+  success-foreground: (
+    light: $contrast,
+    dark: $contrast,
+  ),
+  success-ghost: (
+    light: rgba($success, 0.1),
+    dark: rgba($success, 0.1),
+  ),
+  warning: (
+    light: $warning,
+    dark: $contrast,
+  ),
+  warning-hover: (
+    light: mix($warning, #fff, 80%),
+    dark: mix($warning, #fff, 20%),
+  ),
+  warning-active: (
+    light: $brand,
+    dark: $brand,
+  ),
+  warning-background: (
+    light: $warning,
+    dark: $warning,
+  ),
+  warning-foreground: (
+    light: $contrast,
+    dark: $contrast,
+  ),
+  warning-ghost: (
+    light: rgba($warning, 0.1),
+    dark: rgba($warning, 0.1),
+  ),
+  danger: (
+    light: $danger,
+    dark: $contrast,
+  ),
+  danger-hover: (
+    light: mix($danger, #fff, 80%),
+    dark: mix($danger, #fff, 20%),
+  ),
+  danger-active: (
+    light: $brand,
+    dark: $brand,
+  ),
+  danger-background: (
+    light: $danger,
+    dark: $danger,
+  ),
+  danger-foreground: (
+    light: $contrast,
+    dark: $contrast,
+  ),
+  danger-ghost: (
+    light: rgba($danger, 0.1),
+    dark: rgba($danger, 0.1),
+  ),
+  shadow-m: (
+    light: 0 4px 20px rgba($primary, 0.1),
+    dark: 0 4px 20px rgba($contrast, 0.1),
+  ),
+  "transparent": (
+    light: rgba($contrast, 0),
+    dark: rgba($primary, 0),
+  ),
+);
+
+[data-theme="light"] {
+  @include theme-generator($themes, "light");
+}
+[data-theme="dark"] {
+  @include theme-generator($themes, "dark");
 }
