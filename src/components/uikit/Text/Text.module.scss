@@ -1,0 +1,49 @@
+@use "@/styles/mixins" as *;
+
+$sizes: "m", "s";
+$weights: "bold", "regular";
+$line-heights: "l", "m", "s";
+
+.text {
+  @include transition($property: color);
+
+  @each $size in $sizes {
+    &.size-#{$size} {
+      font-size: var(--font-size-text-#{$size});
+    }
+  }
+
+  @each $weight in $weights {
+    &.weight-#{$weight} {
+      font-weight: var(--font-weight-#{$weight});
+    }
+  }
+
+  @each $line-height in $line-heights {
+    &.line-height-#{$line-height} {
+      line-height: var(--line-height-#{$line-height});
+    }
+  }
+
+  @each $color in $colors {
+    &.color-#{$color} {
+      color: var(--#{$color});
+    }
+  }
+
+  &.uppercase {
+    text-transform: uppercase;
+  }
+
+  &.lowercase {
+    text-transform: lowercase;
+  }
+
+  &.nowrap {
+    white-space: nowrap;
+  }
+
+  &.ellipsis {
+    @include ellipsis;
+  }
+}

@@ -2,6 +2,7 @@ import React from "react";
 import type { Metadata, Viewport } from "next";
 import { ThemeProvider } from "next-themes";
 import { THEME } from "@/constants/theme";
+import { MainLayout } from "@/layouts/MainLayout/MainLayout";
 import "@/styles/tokens.scss";
 import "@/styles/main.scss";
 
@@ -26,7 +27,9 @@ const RootLayout = ({ children }: Props) => {
     >
       <body>
         <ThemeProvider value={{ light: THEME.light, dark: THEME.dark }}>
-          {children}
+          <MainLayout>
+            {children}
+          </MainLayout>
         </ThemeProvider>
       </body>
     </html>
