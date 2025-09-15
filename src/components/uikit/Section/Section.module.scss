@@ -39,8 +39,12 @@
     min-height: 100vh;
   }
 
-  &.height-xl {
-    min-height: min(100vh, var(--screen-xl));
+  &.height-l {
+    min-height: min(100vh, 720px);
+  }
+
+  &.height-m {
+    min-height: 400px;
   }
 
   &.padding-y-l {
@@ -133,8 +137,8 @@
   &.overlap-bottom-l {
     margin-bottom: var(--spacing-minus-128);
 
-    &.height-xl {
-      min-height: calc(min(100vh, var(--screen-xl)) + var(--spacing-128));
+    &.height-l {
+      min-height: calc(min(100vh, 720px) + var(--spacing-128));
     }
 
     .container {
@@ -145,8 +149,8 @@
   &.overlap-bottom-m {
     margin-bottom: var(--spacing-minus-96);
 
-    &.height-xl {
-      min-height: calc(min(100vh, var(--screen-xl)) + var(--spacing-96));
+    &.height-l {
+      min-height: calc(min(100vh, 720px) + var(--spacing-96));
     }
 
     .container {
@@ -157,8 +161,8 @@
   &.overlap-bottom-s {
     margin-bottom: var(--spacing-minus-64);
 
-    &.height-xl {
-      min-height: calc(min(100vh, var(--screen-xl)) + var(--spacing-64));
+    &.height-l {
+      min-height: calc(min(100vh, 720px) + var(--spacing-64));
     }
 
     .container {

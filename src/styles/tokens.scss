@@ -21,11 +21,9 @@
   --line-height-s: 1.3;
 
   --container-desktop: 1366px;
-  --container-laptop: 1000px;
-  --container-tablet: 700px;
-  --container-mobile: 400px;
-
-  --screen-xl: 720px;
+  --container-laptop: 1024px;
+  --container-tablet: 768px;
+  --container-mobile: 425px;
 
   --size-64: 64px;
   --size-56: 56px;
@@ -170,6 +168,10 @@ $themes: (
     light: $neutral,
     dark: $neutral,
   ),
+  neutral-gradient: (
+    light: linear-gradient(90deg, color.scale($neutral, $lightness: -5%) 0, color.scale($neutral, $lightness: 2%) 100%),
+    dark: $neutral,
+  ),
   neutral-foreground: (
     light: $primary,
     dark: $contrast,
@@ -223,7 +225,7 @@ $themes: (
     dark: $accent,
   ),
   accent-gradient: (
-    light: linear-gradient(90deg, color.scale($accent, $lightness: -25%) 0, color.scale($accent, $lightness: 5%) 100%),
+    light: linear-gradient(90deg, color.scale($accent, $lightness: -10%) 0, color.scale($accent, $lightness: 10%) 100%),
     dark: $accent,
   ),
   accent-foreground: (

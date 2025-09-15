@@ -9,7 +9,7 @@ type Variant = "fill" | "gradient";
 
 type Padding = "l" | "m" | "s" | "xs" | "none";
 
-type Height = "fullscreen" | "xl" | "auto";
+type Height = "fullscreen" | "l" | "m" | "auto";
 
 type Radius = "l" | "m" | "s" | "none";
 
@@ -38,12 +38,10 @@ type SectionProps = {
   overlapBottom?: Radius;
   /**
    * <pre>
-   *      xl - 64px
-   *       l - 48px
-   *       m - 32px (default)
-   *       s - 24px
-   *      xs - 16px
-   *    none - 0
+   *    fullscreen - 100vh
+   *             l - 720px
+   *             m - 400px
+   *          auto - auto (default)
    * </pre>
    */
   height?: Height;
