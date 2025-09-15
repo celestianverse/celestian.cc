@@ -56,6 +56,8 @@ a, button {
   cursor: pointer;
   text-decoration: none;
   -webkit-touch-callout: none;
+  user-select: none;
+  appearance: none;
 }
 
 button, input, textarea, select {

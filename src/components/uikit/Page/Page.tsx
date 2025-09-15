@@ -4,7 +4,7 @@ import type { Props } from "./Page.types";
 import styles from "./Page.module.scss";
 
 export const Page = ({
-  gap = "m",
+  gap,
   align,
   justify,
   children,

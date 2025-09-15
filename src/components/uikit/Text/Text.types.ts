@@ -4,7 +4,7 @@ import { LineHeight, Weight } from "@/types/Styles";
 
 export type Element = "div" | "p" | "span" | "small" | "address" | "time";
 
-type Size = "m" | "s";
+type Size = "body" | "caption";
 
 export type Props = {
   color?: Color | "inherit";

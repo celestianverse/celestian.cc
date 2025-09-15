@@ -1,35 +1,34 @@
 import React from "react";
 import classNames from "classnames";
-import type { Polymorphic } from "@/types/Polymorphic";
 import type { Props, Element } from "./Section.types";
+import { Flex } from "@/components/uikit/Flex/Flex";
 import styles from "./Section.module.scss";
 
-const DEFAULT_ELEMENT = "div";
-
-export const Section = <E extends React.ElementType<any, Element> = typeof DEFAULT_ELEMENT>({
-  as,
-  color,
-  paddingY = "m",
-  gap = "m",
-  align,
-  justify,
-  radius,
-  radiusTop,
-  radiusBottom,
-  className,
-  children,
-  ...rest
-}: Polymorphic<E, Props>) => {
-  const Component = as ?? DEFAULT_ELEMENT;
-
+export const Section = (
+  {
+    color,
+    variant = "fill",
+    paddingY = "m",
+    height = "auto",
+    radius,
+    radiusTop,
+    radiusBottom,
+    overlapBottom = "none",
+    offsetHeader,
+    className,
+    children,
+    ...rest
+  }: Props) => {
   return (
-    <Component
+    <Flex
+      as="section"
       className={classNames(
         styles.section,
         styles[`color-${color}`],
+        styles[`variant-${variant}`],
         styles[`padding-y-${paddingY}`],
-        styles[`align-${align}`],
-        styles[`justify-${justify}`],
+        styles[`height-${height}`],
+        styles[`overlap-bottom-${overlapBottom}`],
         styles[`radius-${radius}`],
         styles[`radius-top-${radiusTop}`],
         styles[`radius-bottom-${radiusBottom}`],
@@ -37,16 +36,21 @@ export const Section = <E extends React.ElementType<any, Element> = typeof DEFAU
       )}
       {...rest}
     >
-      <div
+      <Flex
+        direction={rest.direction}
+        gap={rest.gap}
+        align={rest.align}
+        justify={rest.justify}
+        wrap={rest.wrap}
         className={classNames(
           styles.container,
-          styles[`gap-${gap}`],
-          styles[`align-${align}`],
-          styles[`justify-${justify}`],
+          {
+            [styles["offset-header"]]: offsetHeader,
+          },
         )}
       >
         {children}
-      </div>
-    </Component>
+      </Flex>
+    </Flex>
   );
 };

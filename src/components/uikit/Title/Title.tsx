@@ -10,7 +10,7 @@ export const Title = <E extends React.ElementType<any, Element> = typeof DEFAULT
   as,
   color = "inherit",
   weight = "bold",
-  size = "m",
+  size = "block",
   lineHeight = "m",
   uppercase = false,
   lowercase = false,

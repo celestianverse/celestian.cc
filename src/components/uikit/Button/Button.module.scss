@@ -4,14 +4,73 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: var(--radius-max);
-  text-align: center;
-  line-height: 1;
-  cursor: pointer;
   gap: var(--spacing-8);
-  user-select: none;
-  -webkit-touch-callout: none;
+  line-height: 1;
+  text-align: center;
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
   @include transition;
+
+  @each $color in $colors {
+    &.color-#{$color} {
+      &.variant-fill {
+        background: var(--#{$color});
+        color: var(--#{$color}-foreground);
+
+        &:hover {
+          background: var(--#{$color}-hover);
+        }
+
+        &.active {
+          background: var(--#{$color}-active);
+        }
+      }
+
+      &.variant-outline {
+        border: 1px solid var(--#{$color});
+        color: var(--#{$color});
+
+        &:hover {
+          background: var(--#{$color}-ghost);
+        }
+
+        &.active {
+          background: var(--#{$color});
+          border-color: var(--#{$color});
+          color: var(--#{$color}-foreground);
+        }
+      }
+
+      &.variant-dash {
+        border: 2px dashed var(--#{$color});
+        color: var(--#{$color});
+
+        &:hover {
+          border-color: var(--#{$color}-hover);
+          color: var(--#{$color}-hover);
+        }
+
+        &.active {
+          background: var(--#{$color});
+          border-color: var(--#{$color});
+          color: var(--#{$color}-foreground);
+        }
+      }
+
+      &.variant-ghost {
+        color: var(--#{$color});
+
+        &:hover {
+          background: var(--#{$color}-ghost);
+        }
+
+        &.active {
+          background: var(--#{$color});
+          color: var(--#{$color}-foreground);
+        }
+      }
+    }
+  }
 
   &.size-l {
     height: var(--size-64);
@@ -56,68 +115,8 @@
     border-radius: var(--radius-4);
   }
 
-  &.full {
+  &.fullwidth {
     width: 100%;
-  }
-
-  @each $color in $colors {
-    &.color-#{$color} {
-      &.variant-fill {
-        background: var(--#{$color});
-        color: var(--#{$color}-foreground);
-
-        &:hover {
-          background: var(--#{$color}-hover);
-        }
-
-        &.active {
-          background: var(--#{$color}-active);
-        }
-      }
-
-      &.variant-outline {
-        border: 1px solid var(--#{$color});
-        color: var(--#{$color});
-
-        &:hover {
-          background: var(--#{$color}-ghost);
-        }
-
-        &.active {
-          background: var(--#{$color});
-          border-color: var(--#{$color});
-          color: var(--#{$color}-foreground);
-        }
-      }
-
-      &.variant-dash {
-        border: 2px dashed var(--#{$color});
-        color: var(--#{$color});
-
-        &:hover {
-          background: var(--#{$color}-ghost);
-        }
-
-        &.active {
-          background: var(--#{$color});
-          border-color: var(--#{$color});
-          color: var(--#{$color}-foreground);
-        }
-      }
-
-      &.variant-ghost {
-        color: var(--#{$color});
-
-        &:hover {
-          background: var(--#{$color}-ghost);
-        }
-
-        &.active {
-          background: var(--#{$color});
-          color: var(--#{$color}-foreground);
-        }
-      }
-    }
   }
 
   &.disabled {

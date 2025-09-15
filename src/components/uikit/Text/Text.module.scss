@@ -1,6 +1,6 @@
 @use "@/styles/mixins" as *;
 
-$sizes: "m", "s";
+$sizes: "body", "caption";
 $weights: "bold", "regular";
 $line-heights: "l", "m", "s";
 
@@ -9,7 +9,7 @@ $line-heights: "l", "m", "s";
 
   @each $size in $sizes {
     &.size-#{$size} {
-      font-size: var(--font-size-text-#{$size});
+      font-size: var(--font-size-#{$size});
     }
   }
 

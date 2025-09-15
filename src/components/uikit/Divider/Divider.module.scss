@@ -1,0 +1,28 @@
+@use "@/styles/mixins" as *;
+
+.divider {
+  @each $color in $colors {
+    &.color-#{$color} {
+
+      &.variant-outline {
+        border-top: 1px solid var(--#{$color});
+        border-bottom: 1px solid var(--#{$color});
+      }
+
+      &.variant-outline-soft {
+        border-top: 1px solid var(--#{$color}-soft);
+        border-bottom: 1px solid var(--#{$color}-soft);
+      }
+
+      &.variant-dash {
+        border-top: 1px dashed var(--#{$color});
+        border-bottom: 1px dashed var(--#{$color});
+      }
+
+      &.variant-dash-soft {
+        border-top: 1px dashed var(--#{$color}-soft);
+        border-bottom: 1px dashed var(--#{$color}-soft);
+      }
+    }
+  }
+}

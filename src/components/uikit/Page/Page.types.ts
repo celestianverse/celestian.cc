@@ -1,17 +1,17 @@
 import React from "react";
 import { Align, Justify } from "@/types/Styles";
 
-type Gap = "l" | "m" | "s" | "none";
+type Gap = "xl" | "l" | "m" | "s" | "xs" | "none";
 
 export type Props = {
   /**
    * <pre>
    *      xl - 128px
    *       l - 96px
-   *       m - 64px (default)
+   *       m - 64px
    *       s - 48px
    *      xs - 32px
-   *    none - 0
+   *    none - 0 (default)
    * </pre>
    */
   gap?: Gap;

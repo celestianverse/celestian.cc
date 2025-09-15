@@ -3,7 +3,7 @@ import type { Color } from "@/types/Color";
 
 export type Element = "button" | "a" | "div";
 
-export type Variant = "fill" | "soft" | "gradient" | "outline" | "dash" | "ghost";
+export type Variant = "fill" | "fill-soft" | "gradient" | "outline" | "outline-soft" | "dash" | "dash-soft" | "ghost";
 
 export type Size = "l" | "m" | "s";
 
@@ -32,7 +32,7 @@ export type Props = {
    * </pre>
    */
   radius?: Radius;
-  full?: boolean;
+  fullwidth?: boolean;
   active?: boolean;
   loading?: boolean;
   disabled?: boolean;
