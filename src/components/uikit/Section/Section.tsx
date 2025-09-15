@@ -1,7 +1,7 @@
 import React from "react";
 import classNames from "classnames";
-import type { Props, Element } from "./Section.types";
 import { Flex } from "@/components/uikit/Flex/Flex";
+import type { Props } from "./Section.types";
 import styles from "./Section.module.scss";
 
 export const Section = (

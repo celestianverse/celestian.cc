@@ -7,6 +7,7 @@ export const Footer = () => {
   return (
     <Section
       as="footer"
+      variant="gradient"
       color="accent"
       direction="row"
       align="center"
