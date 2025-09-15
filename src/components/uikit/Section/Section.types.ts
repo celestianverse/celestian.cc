@@ -1,20 +1,22 @@
 import type React from "react";
 import type { Color } from "@/types/Color";
-import { Align, Justify } from "@/types/Styles";
+import { Flex } from "@/components/uikit/Flex/Flex";
+import { Align } from "@/types/Styles";
 
 export type Element = "div" | "section" | "article" | "header" | "footer" | "button" | "a";
 
 type Variant = "fill" | "gradient";
 
-type Gap = "xxl" | "xl" | "l" | "m" | "s" | "xs" | "none";
-
 type Padding = "l" | "m" | "s" | "xs" | "none";
+
+type Height = "fullscreen" | "xl" | "auto";
 
 type Radius = "l" | "m" | "s" | "none";
 
-export type Props = {
+type SectionProps = {
   variant?: Variant;
   color?: Color | "transparent";
+  alignSection?: Align;
   /**
    * <pre>
    *      l - 128px
@@ -27,6 +29,15 @@ export type Props = {
   paddingY?: Padding;
   /**
    * <pre>
+   *      l - 128px
+   *      m - 96px
+   *      s - 64px
+   *   none - 0 (default)
+   * </pre>
+   */
+  overlapBottom?: Radius;
+  /**
+   * <pre>
    *      xl - 64px
    *       l - 48px
    *       m - 32px (default)
@@ -35,9 +46,7 @@ export type Props = {
    *    none - 0
    * </pre>
    */
-  gap?: Gap;
-  align?: Align;
-  justify?: Justify;
+  height?: Height;
   /**
    * <pre>
    *      l - 128px
@@ -65,6 +74,9 @@ export type Props = {
    * </pre>
    */
   radiusBottom?: Radius;
+  offsetHeader?: boolean;
   className?: string;
   children: React.ReactNode;
 };
+
+export type Props = SectionProps & React.ComponentProps<typeof Flex>;

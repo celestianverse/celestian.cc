@@ -1,26 +1,32 @@
 @use "mixins" as *;
+@use "sass:color";
 
 :root {
   --font-family: "Montserrat";
 
   --font-weight-bold: 700;
+  --font-weight-medium: 500;
   --font-weight-regular: 400;
 
-  --font-size-title-xxxl: 4.8125rem;
-  --font-size-title-xxl: 3.875rem;
-  --font-size-title-xl: 3.125rem;
-  --font-size-title-l: 2.5rem;
-  --font-size-title-m: 2rem;
-  --font-size-title-s: 1.5625rem;
-  --font-size-title-xs: 1.25rem;
-  --font-size-text-m: 1rem;
-  --font-size-text-s: 0.8125rem;
+  --font-size-display: 4.8125rem;
+  --font-size-hero: 3.75rem;
+  --font-size-section: 2.75rem;
+  --font-size-block: 1.875rem;
+  --font-size-element: 1.25rem;
+  --font-size-body: 1rem;
+  --font-size-caption: 0.8125rem;
 
   --line-height-l: 1.6;
   --line-height-m: 1.45;
   --line-height-s: 1.3;
 
-  --size-1366: 1366px;
+  --container-desktop: 1366px;
+  --container-laptop: 1000px;
+  --container-tablet: 700px;
+  --container-mobile: 400px;
+
+  --screen-xl: 720px;
+
   --size-64: 64px;
   --size-56: 56px;
   --size-48: 48px;
@@ -46,8 +52,18 @@
   --spacing-8: 8px;
   --spacing-4: 4px;
   --spacing-0: 0;
+  --spacing-minus-4: -4px;
+  --spacing-minus-8: -8px;
+  --spacing-minus-16: -16px;
+  --spacing-minus-24: -24px;
+  --spacing-minus-32: -32px;
+  --spacing-minus-48: -48px;
+  --spacing-minus-64: -64px;
+  --spacing-minus-96: -96px;
+  --spacing-minus-128: -128px;
 
   --radius-9999: 9999px;
+  --radius-128: 96px;
   --radius-96: 96px;
   --radius-64: 64px;
   --radius-48: 48px;
@@ -75,12 +91,12 @@
 $primary: #1A0A2E;
 $secondary: #7B7487;
 $neutral: #F2F4F8;
-$brand: #E6F354;
+$brand: #F0FF48;
 $accent: #AD1875;
 $utility: #6DFFF5;
 $contrast: #FFFFFF;
 $phantom: rgba(255, 255, 255, 0.6);
-$info: #208CDB;
+$info: #0B95D6;
 $success: #1CB474;
 $warning: #F17400;
 $danger: #C21B1B;
@@ -91,12 +107,12 @@ $themes: (
     dark: $contrast,
   ),
   primary-hover: (
-    light: mix($primary, #fff, 80%),
-    dark: mix($primary, #fff, 20%),
+    light: $accent,
+    dark: $accent,
   ),
   primary-active: (
-    light: $brand,
-    dark: $brand,
+    light: $accent,
+    dark: $accent,
   ),
   primary-background: (
     light: $primary,
@@ -106,9 +122,13 @@ $themes: (
     light: $contrast,
     dark: $contrast,
   ),
+  primary-soft: (
+    light: rgba($primary, 0.15),
+    dark: rgba($contrast, 0.15),
+  ),
   primary-ghost: (
-    light: rgba($primary, 0.1),
-    dark: rgba($contrast, 0.1),
+    light: rgba($primary, 0.05),
+    dark: rgba($contrast, 0.05),
   ),
   secondary: (
     light: $secondary,
@@ -119,8 +139,8 @@ $themes: (
     dark: mix($secondary, #fff, 20%),
   ),
   secondary-active: (
-    light: $brand,
-    dark: $brand,
+    light: $accent,
+    dark: $accent,
   ),
   secondary-background: (
     light: $secondary,
@@ -174,6 +194,10 @@ $themes: (
     light: $brand,
     dark: $brand,
   ),
+  brand-gradient: (
+    light: linear-gradient(90deg, color.scale($brand, $lightness: -25%) 0, color.scale($brand, $lightness: 5%) 100%),
+    dark: $brand,
+  ),
   brand-foreground: (
     light: $primary,
     dark: $contrast,
@@ -198,9 +222,13 @@ $themes: (
     light: $accent,
     dark: $accent,
   ),
+  accent-gradient: (
+    light: linear-gradient(90deg, color.scale($accent, $lightness: -25%) 0, color.scale($accent, $lightness: 5%) 100%),
+    dark: $accent,
+  ),
   accent-foreground: (
-    light: $primary,
-    dark: $primary,
+    light: $contrast,
+    dark: $contrast,
   ),
   accent-ghost: (
     light: rgba($accent, 0.1),
@@ -225,6 +253,10 @@ $themes: (
   contrast-foreground: (
     light: $primary,
     dark: $contrast,
+  ),
+  contrast-soft: (
+    light: rgba($contrast, 0.2),
+    dark: rgba($contrast, 0.2),
   ),
   contrast-ghost: (
     light: rgba($contrast, 0.1),
@@ -268,6 +300,10 @@ $themes: (
   ),
   info-background: (
     light: $info,
+    dark: $info,
+  ),
+  info-gradient: (
+    light: linear-gradient(90deg, color.scale($info, $lightness: -15%) 0, color.scale($info, $lightness: 5%) 100%),
     dark: $info,
   ),
   info-foreground: (
@@ -351,8 +387,8 @@ $themes: (
     dark: rgba($danger, 0.1),
   ),
   shadow-m: (
-    light: 0 4px 20px rgba($primary, 0.1),
-    dark: 0 4px 20px rgba($contrast, 0.1),
+    light: 0 4px 24px rgba($primary, 0.07),
+    dark: 0 4px 24px rgba($contrast, 0.07),
   ),
   "transparent": (
     light: rgba($contrast, 0),

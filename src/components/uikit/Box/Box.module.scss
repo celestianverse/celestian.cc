@@ -1,27 +1,20 @@
 @use "@/styles/mixins" as *;
 
 .box {
-  @include transition($property: background);
+  position: relative;
+  top: 0;
+  flex-direction: column;
+  @include transition;
 
-  @each $color in $colors {
-    &.color-#{$color} {
-      &.variant-fill {
-        background: var(--#{$color}-background);
-        color: var(--#{$color}-foreground);
-      }
+  &.padding-xxl {
+    padding: var(--spacing-96);
 
-      &.variant-soft {
-        background: var(--#{$color}-ghost);
-        color: var(--#{$color});
-      }
+    @include tablet-only {
+      padding: var(--spacing-48) var(--spacing-48);
+    }
 
-      &.variant-outline {
-        border: 2px solid var(--#{$color}-ghost);
-      }
-
-      &.variant-dash {
-        border: 2px dashed var(--#{$color}-ghost);
-      }
+    @include mobile-only {
+      padding: var(--spacing-48) var(--spacing-24);
     }
   }
 
@@ -59,6 +52,20 @@
 
   &.padding-xs {
     padding: var(--spacing-16);
+  }
+
+  &.padding-xxs {
+    padding: var(--spacing-8);
+  }
+
+  &.padding-y-xxl {
+    padding-top: var(--spacing-96);
+    padding-bottom: var(--spacing-96);
+
+    @include tablet-max {
+      padding-top: var(--spacing-48);
+      padding-bottom: var(--spacing-48);
+    }
   }
 
   &.padding-y-xl {
@@ -99,6 +106,26 @@
   &.padding-y-xs {
     padding-top: var(--spacing-16);
     padding-bottom: var(--spacing-16);
+  }
+
+  &.padding-y-xxs {
+    padding-top: var(--spacing-8);
+    padding-bottom: var(--spacing-8);
+  }
+
+  &.padding-x-xxl {
+    padding-left: var(--spacing-96);
+    padding-right: var(--spacing-96);
+
+    @include tablet-only {
+      padding-left: var(--spacing-48);
+      padding-right: var(--spacing-48);
+    }
+
+    @include mobile-only {
+      padding-left: var(--spacing-24);
+      padding-right: var(--spacing-24);
+    }
   }
 
   &.padding-x-xl {
@@ -146,6 +173,11 @@
     padding-right: var(--spacing-16);
   }
 
+  &.padding-x-xxs {
+    padding-left: var(--spacing-8);
+    padding-right: var(--spacing-8);
+  }
+
   &.radius-max {
     border-radius: var(--radius-9999);
   }
@@ -172,6 +204,43 @@
 
   &.radius-xs {
     border-radius: var(--radius-8);
+  }
+
+  @each $color in $colors {
+    &.color-#{$color} {
+      &.variant-fill {
+        background: var(--#{$color}-background);
+        color: var(--#{$color}-foreground);
+      }
+
+      &.variant-fill-soft {
+        background: var(--#{$color}-soft);
+        color: var(--#{$color});
+      }
+
+      &.variant-outline {
+        border: 2px solid var(--#{$color});
+      }
+
+      &.variant-outline-soft {
+        border: 2px solid var(--#{$color}-soft);
+      }
+
+      &.variant-dash {
+        border: 2px dashed var(--#{$color});
+      }
+
+      &.variant-dash-soft {
+        border: 2px dashed var(--#{$color}-soft);
+      }
+    }
+  }
+
+  &.hoverable {
+    &:hover {
+      top: var(--spacing-minus-8);
+      box-shadow: var(--shadow-m);
+    }
   }
 }
 

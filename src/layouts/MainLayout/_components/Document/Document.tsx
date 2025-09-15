@@ -1,9 +1,5 @@
-import React from "react";
+import type { Props } from "./Document.types";
 import styles from "./Document.module.scss";
-
-type Props = {
-  children: React.ReactNode;
-};
 
 export const Document = ({ children }: Props) => {
   return (

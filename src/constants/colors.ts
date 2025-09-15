@@ -4,6 +4,7 @@ export const COLORS = [
   "neutral",
   "brand",
   "accent",
+  "utility",
   "contrast",
   "phantom",
   "info",

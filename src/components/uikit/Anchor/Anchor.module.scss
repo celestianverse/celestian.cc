@@ -1,0 +1,96 @@
+@use "@/styles/mixins" as *;
+
+.anchor {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-8);
+  font-weight: var(--font-weight-medium);
+  @include transition;
+
+  @each $color in $colors {
+    &.color-#{$color} {
+      color: var(--#{$color});
+
+      .icon {
+        * {
+          fill: var(--#{$color});
+        }
+      }
+
+      &:hover {
+        color: var(--#{$color}-hover);
+
+        .icon {
+          * {
+            fill: var(--#{$color}-hover);
+          }
+        }
+      }
+
+      &.underline {
+        .content {
+          border-bottom-color: var(--#{$color});
+        }
+
+        &:hover {
+          .content {
+            border-bottom-color: var(--#{$color}-hover);
+          }
+        }
+      }
+
+      &.dash {
+        .content {
+          border-bottom-color: var(--#{$color});
+          border-bottom-style: dashed;
+        }
+
+        &:hover {
+          .content {
+            border-bottom-color: var(--#{$color}-hover);
+          }
+        }
+      }
+
+      &.active {
+        color: var(--#{$color}-active);
+
+        .icon {
+          * {
+            fill: var(--#{$color}-active);
+          }
+        }
+      }
+    }
+  }
+
+  &.size-s {
+    font-size: var(--font-size-text-s);
+  }
+
+  &.padding-l {
+    padding: var(--spacing-8) var(--spacing-24);
+  }
+
+  &.padding-m {
+    padding: var(--spacing-8) var(--spacing-16);
+  }
+
+  &.padding-s {
+    padding: var(--spacing-4) var(--spacing-8);
+  }
+
+  &.fullwidth {
+    width: 100%;
+  }
+
+  &.disabled {
+    pointer-events: none;
+    opacity: 0.35;
+  }
+}
+
+.content {
+  border-bottom: 2px solid var(--transparent);
+  @include transition($property: border-color);
+}

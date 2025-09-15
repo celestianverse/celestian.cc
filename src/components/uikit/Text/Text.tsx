@@ -9,7 +9,7 @@ const DEFAULT_ELEMENT = "p";
 export const Text = <E extends React.ElementType<any, Element> = typeof DEFAULT_ELEMENT>({
   as,
   color = "inherit",
-  size = "m",
+  size = "body",
   weight = "regular",
   lineHeight = "m",
   uppercase = false,

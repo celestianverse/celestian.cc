@@ -6,19 +6,21 @@ import styles from "./Button.module.scss";
 
 const DEFAULT_ELEMENT = "button";
 
-export const Button = <E extends React.ElementType<any, Element> = typeof DEFAULT_ELEMENT>({
-  as,
-  color = "primary",
-  variant = "fill",
-  size = "m",
-  full,
-  active,
-  loading,
-  disabled,
-  className,
-  children,
-  ...rest
-}: Polymorphic<E, Props>) => {
+export const Button = <E extends React.ElementType<any, Element> = typeof DEFAULT_ELEMENT>(
+  {
+    as,
+    color = "primary",
+    variant = "fill",
+    size = "m",
+    radius,
+    fullwidth,
+    active,
+    loading,
+    disabled,
+    className,
+    children,
+    ...rest
+  }: Polymorphic<E, Props>) => {
   const Component = as || DEFAULT_ELEMENT;
 
   return (
@@ -28,8 +30,9 @@ export const Button = <E extends React.ElementType<any, Element> = typeof DEFAUL
         styles[`variant-${variant}`],
         styles[`color-${color}`],
         styles[`size-${size}`],
+        styles[`radius-${radius}`],
         {
-          [styles.full]: full,
+          [styles.fullwidth]: fullwidth,
           [styles.active]: active,
           [styles.loading]: loading,
           [styles.disabled]: disabled,

@@ -1,9 +1,5 @@
-import React from "react";
+import type { Props } from "./Body.types";
 import styles from "./Body.module.scss";
-
-type Props = {
-  children: React.ReactNode;
-};
 
 export const Body = ({ children }: Props) => {
   return (

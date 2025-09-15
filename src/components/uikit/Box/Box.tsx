@@ -1,27 +1,23 @@
 import React from "react";
 import classNames from "classnames";
-import type { Polymorphic } from "@/types/Polymorphic";
-import type { Props, Element } from "./Box.types";
+import { Flex } from "@/components/uikit/Flex/Flex";
+import type { Props } from "./Box.types";
 import styles from "./Box.module.scss";
 
-const DEFAULT_ELEMENT = "div";
-
-export const Box = <E extends React.ElementType<any, Element> = typeof DEFAULT_ELEMENT>({
-  as,
-  variant = "fill",
-  color = "neutral",
-  padding = "m",
-  paddingY,
-  paddingX,
-  radius = "m",
-  className,
-  children,
-  ...rest
-}: Polymorphic<E, Props>) => {
-  const Component = as ?? DEFAULT_ELEMENT;
-
+export const Box = (
+  {
+    variant = "fill",
+    color = "neutral",
+    padding = "m",
+    paddingY,
+    paddingX,
+    radius = "m",
+    hoverable,
+    className,
+    ...rest
+  }: Props) => {
   return (
-    <Component
+    <Flex
       className={classNames(
         styles.box,
         styles[`variant-${variant}`],
@@ -30,11 +26,12 @@ export const Box = <E extends React.ElementType<any, Element> = typeof DEFAULT_E
         styles[`padding-y-${paddingY}`],
         styles[`padding-x-${paddingX}`],
         styles[`radius-${radius}`],
+        {
+          [styles.hoverable]: hoverable,
+        },
         className,
       )}
       {...rest}
-    >
-      {children}
-    </Component>
+    />
   );
 };

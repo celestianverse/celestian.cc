@@ -1,0 +1,126 @@
+@use "@/styles/mixins" as *;
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-8);
+  height: var(--size-32);
+  padding: 0 var(--spacing-8);
+  line-height: 1;
+  text-align: center;
+  font-size: var(--font-size-caption);
+  cursor: pointer;
+  @include transition;
+
+  @each $color in $colors {
+    &.color-#{$color} {
+      &.variant-fill {
+        background: var(--#{$color});
+        color: var(--#{$color}-foreground);
+      }
+
+      &.variant-fill-soft {
+        background: var(--#{$color}-ghost);
+      }
+
+      &.variant-outline {
+        border: 1px solid var(--#{$color});
+        color: var(--#{$color});
+
+        &:hover {
+          background: var(--#{$color}-ghost);
+        }
+
+        &.active {
+          background: var(--#{$color});
+          border-color: var(--#{$color});
+          color: var(--#{$color}-foreground);
+        }
+      }
+
+      &.variant-dash {
+        border: 2px dashed var(--#{$color});
+        color: var(--#{$color});
+
+        &:hover {
+          border-color: var(--#{$color}-hover);
+          color: var(--#{$color}-hover);
+        }
+
+        &.active {
+          background: var(--#{$color});
+          border-color: var(--#{$color});
+          color: var(--#{$color}-foreground);
+        }
+      }
+
+      &.variant-ghost {
+        color: var(--#{$color});
+
+        &:hover {
+          background: var(--#{$color}-ghost);
+        }
+
+        &.active {
+          background: var(--#{$color});
+          color: var(--#{$color}-foreground);
+        }
+      }
+    }
+  }
+
+  &.size-l {
+    height: var(--size-64);
+    padding: 0 var(--spacing-32);
+    border-radius: var(--radius-16);
+  }
+
+  &.size-m {
+    height: var(--size-48);
+    padding: 0 var(--spacing-24);
+    border-radius: var(--radius-12);
+  }
+
+  &.size-s {
+    height: var(--size-32);
+    padding: 0 var(--spacing-16);
+    border-radius: var(--radius-8);
+    font-size: var(--font-size-text-s);
+  }
+
+  &.radius-max {
+    border-radius: var(--radius-9999);
+  }
+
+  &.radius-xl {
+    border-radius: var(--radius-24);
+  }
+
+  &.radius-l {
+    border-radius: var(--radius-16);
+  }
+
+  &.radius-m {
+    border-radius: var(--radius-12);
+  }
+
+  &.radius-s {
+    border-radius: var(--radius-8);
+  }
+
+  &.radius-xs {
+    border-radius: var(--radius-4);
+  }
+
+  &.fullwidth {
+    width: 100%;
+  }
+
+  &.disabled {
+    opacity: 0.35;
+    pointer-events: none;
+  }
+}
+
+
