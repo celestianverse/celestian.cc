@@ -5,7 +5,7 @@ import styles from "./Grid.module.scss";
 
 export const Grid = ({
   columns = 3,
-  gap = "m",
+  gap = "s",
   align = "start",
   children,
   className,

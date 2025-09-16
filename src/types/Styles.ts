@@ -1,3 +1,5 @@
+export type Overflow = "auto" | "hidden" | "visible" | "scroll";
+
 export type Direction = "row" | "row-reverse" | "column" | "column-reverse";
 
 export type Align = "start" | "center" | "end";
