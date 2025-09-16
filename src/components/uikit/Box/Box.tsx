@@ -13,6 +13,7 @@ export const Box = (
     paddingX,
     radius = "m",
     hoverable,
+    overflow,
     className,
     ...rest
   }: Props) => {
@@ -26,6 +27,7 @@ export const Box = (
         styles[`padding-y-${paddingY}`],
         styles[`padding-x-${paddingX}`],
         styles[`radius-${radius}`],
+        styles[`overflow-${overflow}`],
         {
           [styles.hoverable]: hoverable,
         },

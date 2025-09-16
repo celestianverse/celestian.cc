@@ -1,7 +1,7 @@
 import type React from "react";
 import { Flex } from "@/components/uikit/Flex/Flex";
 import type { Color } from "@/types/Color";
-import type { Padding } from "@/types/Styles";
+import type { Overflow, Padding } from "@/types/Styles";
 
 type Variant = "fill" | "fill-soft" | "gradient" | "outline" | "outline-soft" | "dash" | "dash-soft";
 
@@ -62,6 +62,7 @@ type BoxProps = {
    */
   radius?: Radius;
   hoverable?: boolean;
+  overflow?: Overflow;
   className?: string;
   children: React.ReactNode;
 };

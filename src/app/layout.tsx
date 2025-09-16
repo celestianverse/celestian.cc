@@ -7,7 +7,7 @@ import "@/styles/tokens.scss";
 import "@/styles/main.scss";
 
 export const metadata: Metadata = {
-  title: "Celestian",
+  title: "Celestian — design & frontend for your project",
 };
 
 export const viewport: Viewport = {

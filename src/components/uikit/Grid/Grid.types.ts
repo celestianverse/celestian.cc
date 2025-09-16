@@ -1,9 +1,7 @@
 import React from "react";
-import { Align } from "@/types/Styles";
+import { Align, Gap } from "@/types/Styles";
 
 type Columns = 4 | 3 | 2;
-
-type Gap = "xxl" | "xl" | "l" | "m" | "s" | "xs" | "none";
 
 export type Props = {
   /**
@@ -16,13 +14,14 @@ export type Props = {
   columns?: Columns;
   /**
    * <pre>
-   *     xxl — 64px
-   *      xl — 48px
-   *       l — 32px
-   *       m — 24px (default)
-   *       s — 16px
-   *      xs — 8px
-   *    none — 0
+   *     xxl - 96px
+   *      xl - 64px
+   *       l - 48px
+   *       m - 32px (default)
+   *       s - 24px
+   *      xs - 16px
+   *     xxs - 8px
+   *    none - 0
    * </pre>
    */
   gap?: Gap;

@@ -92,6 +92,7 @@
   --neutral-hover: rgb(245, 246, 249);
   --neutral-active: #F0FF48;
   --neutral-background: #F2F4F8;
+  --neutral-gradient: linear-gradient(90deg, rgb(226.075, 230.525, 239.425) 0, rgb(242.26, 244.22, 248.14) 100%);
   --neutral-foreground: #1A0A2E;
   --neutral-ghost: rgba(242, 244, 248, 0.1);
   --brand: #F0FF48;
@@ -105,7 +106,7 @@
   --accent-hover: rgb(189, 70, 145);
   --accent-active: #AD1875;
   --accent-background: #AD1875;
-  --accent-gradient: linear-gradient(90deg, rgb(129.75, 18, 87.75) 0, rgb(186.7434010152, 25.9065989848, 126.2946700508) 100%);
+  --accent-gradient: linear-gradient(90deg, rgb(155.7, 21.6, 105.3) 0, rgb(200.4868020305, 27.8131979695, 135.5893401015) 100%);
   --accent-foreground: #FFFFFF;
   --accent-ghost: rgba(173, 24, 117, 0.1);
   --contrast: #FFFFFF;
@@ -168,6 +169,7 @@
   --neutral-hover: rgb(252, 253, 254);
   --neutral-active: #F0FF48;
   --neutral-background: #F2F4F8;
+  --neutral-gradient: #F2F4F8;
   --neutral-foreground: #FFFFFF;
   --neutral-ghost: rgba(242, 244, 248, 0.1);
   --brand: #F0FF48;

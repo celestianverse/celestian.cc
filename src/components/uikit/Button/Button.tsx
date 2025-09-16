@@ -25,6 +25,7 @@ export const Button = <E extends React.ElementType<any, Element> = typeof DEFAUL
 
   return (
     <Component
+      rel={as === "a" ? "noopener noreferrer" : undefined}
       className={classNames(
         styles.button,
         styles[`variant-${variant}`],
