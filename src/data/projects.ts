@@ -8,7 +8,7 @@ export const projects = {
       url: "https://tractikum.com/en/",
       domain: "tractikum.com",
       logo: "/images/projects/logos/tractikum.svg",
-      screenshot: "/images/projects/screenshots/tractikum--x2.png",
+      screenshot: "/images/projects/screenshots/compressed/tractikum--x2.png",
     },
     {
       title: "PSB academy",
@@ -17,7 +17,7 @@ export const projects = {
       url: "https://psb-academy.ru/",
       domain: "psb-academy.ru",
       logo: "/images/projects/logos/apsb.svg",
-      screenshot: "/images/projects/screenshots/apsb--x2.png",
+      screenshot: "/images/projects/screenshots/compressed/apsb--x2.png",
     },
     {
       title: "Sodrujestvo",
@@ -26,7 +26,7 @@ export const projects = {
       url: "https://sodrujestvo.org/en",
       domain: "sodrujestvo.org",
       logo: "/images/projects/logos/sodrujestvo.svg",
-      screenshot: "/images/projects/screenshots/sodrujestvo--x2.png",
+      screenshot: "/images/projects/screenshots/compressed/sodrujestvo--x2.png",
     },
     {
       title: "Rosdetcenter",
@@ -35,7 +35,7 @@ export const projects = {
       url: "https://xn--80aaagbeiix1cqypjeb2m.xn--p1ai/",
       domain: "навигаторыдетства.рф",
       logo: "/images/projects/logos/rdc.svg",
-      screenshot: "/images/projects/screenshots/rdc--x2.png",
+      screenshot: "/images/projects/screenshots/compressed/rdc--x2.png",
     },
     {
       title: "Lift to the future",
@@ -44,7 +44,7 @@ export const projects = {
       url: "https://lift-bf.ru/",
       domain: "lift-bf.ru",
       logo: "/images/projects/logos/lift.svg",
-      screenshot: "/images/projects/screenshots/lift--x2.png",
+      screenshot: "/images/projects/screenshots/compressed/lift--x2.png",
     },
     {
       title: "Sibur",
@@ -53,7 +53,7 @@ export const projects = {
       url: "https://sibured.ru/",
       domain: "sibured.ru",
       logo: "/images/projects/logos/sibur.svg",
-      screenshot: "/images/projects/screenshots/sibur--x2.png",
+      screenshot: "/images/projects/screenshots/compressed/sibur--x2.png",
     },
   ],
 };
