@@ -16,7 +16,7 @@ export const IntroSection = ({title, className}: Props) => {
     >
       <Title
         as="h2"
-        size="hero"
+        size="l"
       >
         {title}
       </Title>

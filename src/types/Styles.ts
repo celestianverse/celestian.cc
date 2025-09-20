@@ -15,3 +15,5 @@ export type Padding = "xxl" | "xl" | "l" | "m" | "s" | "xs" | "xxs" | "none";
 export type Weight = "bold" | "regular";
 
 export type LineHeight = "l" | "m" | "s";
+
+export type WhiteSpace = "nowrap" | "pre-line";

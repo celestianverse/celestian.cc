@@ -1,3 +1,4 @@
+import withSvgr from "next-plugin-svgr";
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
@@ -11,4 +12,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+export default withSvgr(nextConfig);

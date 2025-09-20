@@ -1,5 +1,5 @@
 import React from "react";
-import { Align, Justify } from "@/types/Styles";
+import type { Align, Justify } from "@/types/Styles";
 
 type Gap = "xl" | "l" | "m" | "s" | "xs" | "none";
 

@@ -1,6 +1,6 @@
 import React from "react";
 import classNames from "classnames";
-import { Props } from "./Container.types";
+import type { Props } from "./Container.types";
 import styles from "./Container.module.scss";
 
 export const Container = ({
