@@ -1,7 +1,8 @@
 import React from "react";
 import classNames from "classnames";
-import { Polymorphic } from "@/types/Polymorphic";
-import { Props, Element } from "./Tag.types";
+import { useIcon } from "@/hooks/useIcon";
+import type { Polymorphic } from "@/types/Polymorphic";
+import type { Props, Element } from "./Tag.types";
 import styles from "./Tag.module.scss";
 
 const DEFAULT_ELEMENT = "span";
@@ -11,12 +12,20 @@ export const Tag = <E extends React.ElementType<any, Element> = typeof DEFAULT_E
     as,
     color = "primary",
     variant = "fill-soft",
-    radius = "s",
+    size = "m",
+    radius = "m",
+    iconStart,
+    iconEnd,
+    iconOnly,
     className,
     children,
     ...rest
   }: Polymorphic<E, Props>) => {
   const Component = as || DEFAULT_ELEMENT;
+
+  const Content = useIcon({
+    iconStart, iconEnd, iconOnly, styles, children,
+  });
 
   return (
     <Component
@@ -24,12 +33,13 @@ export const Tag = <E extends React.ElementType<any, Element> = typeof DEFAULT_E
         styles.button,
         styles[`variant-${variant}`],
         styles[`color-${color}`],
+        styles[`size-${size}`],
         styles[`radius-${radius}`],
         className,
       )}
       {...rest}
     >
-      {children}
+      {Content}
     </Component>
   );
 };

@@ -1,0 +1,16 @@
+@use "@/styles/mixins" as *;
+
+.box {
+  min-height: 220px;
+}
+
+.image {
+  position: relative;
+  top: var(--spacing-4);
+  left: var(--spacing-4);
+  flex-shrink: 0;
+}
+
+.button {
+  min-width: 140px;
+}

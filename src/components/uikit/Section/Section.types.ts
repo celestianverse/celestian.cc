@@ -1,7 +1,7 @@
 import type React from "react";
 import type { Color } from "@/types/Color";
 import { Flex } from "@/components/uikit/Flex/Flex";
-import { Align } from "@/types/Styles";
+import type { Align } from "@/types/Styles";
 
 export type Element = "div" | "section" | "article" | "header" | "footer" | "button" | "a";
 
@@ -27,6 +27,26 @@ type SectionProps = {
    * </pre>
    */
   paddingY?: Padding;
+  /**
+   * <pre>
+   *      l - 128px
+   *      m - 96px (default)
+   *      s - 64px
+   *     xs - 48px
+   *   none - 0
+   * </pre>
+   */
+  paddingTop?: Padding;
+  /**
+   * <pre>
+   *      l - 128px
+   *      m - 96px (default)
+   *      s - 64px
+   *     xs - 48px
+   *   none - 0
+   * </pre>
+   */
+  paddingBottom?: Padding;
   /**
    * <pre>
    *      l - 128px

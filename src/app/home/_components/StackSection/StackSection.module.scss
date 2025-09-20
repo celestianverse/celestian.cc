@@ -1,0 +1,9 @@
+@use "@/styles/mixins" as *;
+
+.box {
+  min-height: 220px;
+}
+
+.image {
+  margin-top: var(--spacing-minus-32);
+}

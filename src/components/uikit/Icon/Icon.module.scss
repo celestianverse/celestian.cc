@@ -1,0 +1,50 @@
+@use "@/styles/mixins" as *;
+
+.icon {
+  flex-shrink: 0;
+  display: inline-flex;
+
+  &.xxl {
+    width: 60px;
+    height: 60px;
+  }
+
+  &.xl {
+    width: 40px;
+    height: 40px;
+  }
+
+  &.l {
+    width: 28px;
+    height: 28px;
+  }
+
+  &.m {
+    width: 24px;
+    height: 24px;
+  }
+
+  &.s {
+    width: 20px;
+    height: 20px;
+  }
+
+  &.xs {
+    width: 16px;
+    height: 16px;
+  }
+
+  svg {
+    * {
+      @include transition;
+    }
+  }
+
+  @each $color in $colors {
+    &.#{$color} {
+      * {
+        fill: var(--#{$color});
+      }
+    }
+  }
+}

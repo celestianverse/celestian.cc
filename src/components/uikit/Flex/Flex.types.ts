@@ -1,5 +1,5 @@
 import React from "react";
-import { Align, Direction, Gap, Justify, Wrap } from "@/types/Styles";
+import type { Align, Direction, Gap, Justify, Wrap } from "@/types/Styles";
 
 export type Element = "div" | "section" | "article" | "header" | "footer" | "aside" | "nav" | "ul" | "ol" | "button" | "a";
 

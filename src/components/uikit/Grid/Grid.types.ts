@@ -1,5 +1,5 @@
 import React from "react";
-import { Align, Gap } from "@/types/Styles";
+import type { Align, Gap } from "@/types/Styles";
 
 type Columns = 4 | 3 | 2;
 

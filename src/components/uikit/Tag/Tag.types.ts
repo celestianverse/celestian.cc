@@ -1,15 +1,19 @@
 import React from "react";
 import type { Color } from "@/types/Color";
+import type { IconProps } from "@/hooks/useIcon";
 
 export type Element = "p" | "address" | "time" | "span";
 
 export type Variant = "fill" | "fill-soft" | "gradient" | "outline" | "outline-soft" | "dash" | "dash-soft" | "ghost";
 
-type Radius = "max" | "m" | "s" | "xs" | "none";
+type Size = "m" | "s";
+
+type Radius = "max" | "l" | "m" | "s" | "none";
 
 export type Props = {
   variant?: Variant;
   color?: Color;
+  size?: Size;
   /**
    * <pre>
    *    max - 999px
@@ -22,4 +26,4 @@ export type Props = {
   radius?: Radius;
   className?: string;
   children?: React.ReactNode;
-};
+} & IconProps;

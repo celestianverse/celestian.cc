@@ -1,5 +1,6 @@
 import React from "react";
 import type { Color } from "@/types/Color";
+import type { IconProps } from "@/hooks/useIcon";
 
 export type Element = "button" | "a" | "div";
 
@@ -38,4 +39,4 @@ export type Props = {
   disabled?: boolean;
   className?: string;
   children?: React.ReactNode;
-};
+} & IconProps;

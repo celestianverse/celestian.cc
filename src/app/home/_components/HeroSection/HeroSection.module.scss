@@ -1,0 +1,6 @@
+@use "@/styles/mixins" as *;
+
+.image {
+  position: relative;
+  top: var(--spacing-24);
+}

@@ -4,7 +4,6 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--spacing-8);
   line-height: 1;
   text-align: center;
   font-weight: var(--font-weight-medium);
@@ -16,6 +15,12 @@
       &.variant-fill {
         background: var(--#{$color});
         color: var(--#{$color}-foreground);
+
+        .icon {
+          * {
+            fill: var(--#{$color}-foreground);
+          }
+        }
 
         &:hover {
           background: var(--#{$color}-hover);
@@ -29,6 +34,12 @@
       &.variant-outline {
         border: 1px solid var(--#{$color});
         color: var(--#{$color});
+
+        .icon {
+          * {
+            fill: var(--#{$color});
+          }
+        }
 
         &:hover {
           background: var(--#{$color}-ghost);
@@ -45,6 +56,12 @@
         border: 2px dashed var(--#{$color});
         color: var(--#{$color});
 
+        .icon {
+          * {
+            fill: var(--#{$color});
+          }
+        }
+
         &:hover {
           border-color: var(--#{$color}-hover);
           color: var(--#{$color}-hover);
@@ -60,6 +77,12 @@
       &.variant-ghost {
         color: var(--#{$color});
 
+        .icon {
+          * {
+            fill: var(--#{$color});
+          }
+        }
+
         &:hover {
           background: var(--#{$color}-ghost);
         }
@@ -73,22 +96,70 @@
   }
 
   &.size-l {
+    gap: var(--spacing-12);
     height: var(--size-64);
     padding: 0 var(--spacing-32);
     border-radius: var(--radius-16);
+
+    .icon {
+      width: var(--size-24);
+      height: var(--size-24);
+    }
+
+    &.icon-only {
+      width: var(--size-64);
+      padding: 0;
+
+      .icon {
+        width: var(--size-28);
+        height: var(--size-28);
+      }
+    }
   }
 
   &.size-m {
+    gap: var(--spacing-8);
     height: var(--size-48);
     padding: 0 var(--spacing-24);
     border-radius: var(--radius-12);
+
+    .icon {
+      width: var(--size-20);
+      height: var(--size-20);
+    }
+
+    &.icon-only {
+      width: var(--size-48);
+      padding: 0;
+
+      .icon {
+        width: var(--size-24);
+        height: var(--size-24);
+      }
+    }
   }
 
   &.size-s {
+    gap: var(--spacing-8);
     height: var(--size-32);
     padding: 0 var(--spacing-16);
     border-radius: var(--radius-8);
     font-size: var(--font-size-text-s);
+
+    .icon {
+      width: var(--size-16);
+      height: var(--size-16);
+    }
+
+    &.icon-only {
+      width: var(--size-32);
+      padding: 0;
+
+      .icon {
+        width: var(--size-20);
+        height: var(--size-20);
+      }
+    }
   }
 
   &.radius-max {

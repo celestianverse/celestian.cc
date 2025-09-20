@@ -1,6 +1,6 @@
 @use "@/styles/mixins" as *;
 
-$sizes: "body", "caption";
+$sizes: "m", "s";
 $weights: "bold", "regular";
 $line-heights: "l", "m", "s";
 
@@ -9,7 +9,7 @@ $line-heights: "l", "m", "s";
 
   @each $size in $sizes {
     &.size-#{$size} {
-      font-size: var(--font-size-#{$size});
+      font-size: var(--font-size-text-#{$size});
     }
   }
 
@@ -39,8 +39,12 @@ $line-heights: "l", "m", "s";
     text-transform: lowercase;
   }
 
-  &.nowrap {
+  &.white-space-nowrap {
     white-space: nowrap;
+  }
+
+  &.white-space-pre-line {
+    white-space: pre-line;
   }
 
   &.ellipsis {
