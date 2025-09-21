@@ -1,6 +1,6 @@
 import { Section } from "@/components/uikit/Section/Section";
 import { Grid } from "@/components/uikit/Grid/Grid";
-import { Contact } from "@/app/contacts/_components/ContactsSection/_components/Contact/Contact";
+import { Contact } from "./_components/Contact/Contact";
 import { contacts } from "@/data/contacts";
 
 export const ContactsSection = () => {

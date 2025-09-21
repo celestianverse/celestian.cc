@@ -18,25 +18,25 @@
 
       &.variant-outline {
         &::after {
-          border-bottom: 2px solid var(--#{$color});
+          border-bottom: 2px solid var(--#{$color}-outline);
         }
       }
 
       &.variant-outline-soft {
         &::after {
-          border-bottom: 2px solid var(--#{$color}-soft);
+          border-bottom: 2px solid var(--#{$color}-outline-soft);
         }
       }
 
       &.variant-dash {
         &::after {
-          border-bottom: 2px dashed var(--#{$color});
+          border-bottom: 2px dashed var(--#{$color}-outline);
         }
       }
 
       &.variant-dash-soft {
         &::after {
-          border-bottom: 2px dashed var(--#{$color}-soft);
+          border-bottom: 2px dashed var(--#{$color}-outline-soft);
         }
       }
     }

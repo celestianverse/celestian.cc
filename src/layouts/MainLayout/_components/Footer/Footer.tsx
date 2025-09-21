@@ -4,9 +4,13 @@ import { Text } from "@/components/uikit/Text/Text";
 import { Divider } from "@/components/uikit/Divider/Divider";
 import { Row } from "@/components/uikit/Row/Row";
 import { Tag } from "@/components/uikit/Tag/Tag";
+import { ThemeSwitcher } from "@/components/custom/ThemeSwitcher/ThemeSwitcher";
+import { FontSwitcher } from "@/components/custom/FontSwitcher/FontSwitcher";
 import { contacts } from "@/data/contacts";
+import { app } from "@/data/app";
 
 export const Footer = () => {
+  const year = new Date().getFullYear();
 
   return (
     <Section
@@ -19,14 +23,18 @@ export const Footer = () => {
       radiusTop="m"
     >
       <Row justify="space-between">
-        <Logo color="contrast"></Logo>
+        <Logo color="contrast" />
+        <Row gap="xs">
+          <ThemeSwitcher color="contrast" />
+          <FontSwitcher color="contrast" />
+        </Row>
       </Row>
       <Divider
         variant="dash-soft"
         color="contrast"
       />
       <Row justify="space-between">
-        <Text>Celestian © 2025</Text>
+        <Text>{app.name} © {year}</Text>
         <Row>
           <Tag
             variant="ghost"

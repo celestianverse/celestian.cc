@@ -7,8 +7,11 @@ export const projects = {
       tag: "Design + Frontend",
       url: "https://tractikum.com/en/",
       domain: "tractikum.com",
-      logo: "/images/projects/logos/tractikum.svg",
       screenshot: "/images/projects/screenshots/compressed/tractikum--x2.png",
+      logo: {
+        light: "/images/projects/logos/tractikum.svg",
+        dark: "/images/projects/logos/tractikum.svg",
+      },
     },
     {
       title: "PSB academy",
@@ -16,8 +19,11 @@ export const projects = {
       tag: "Design + Frontend",
       url: "https://psb-academy.ru/",
       domain: "psb-academy.ru",
-      logo: "/images/projects/logos/apsb.svg",
       screenshot: "/images/projects/screenshots/compressed/apsb--x2.png",
+      logo: {
+        light: "/images/projects/logos/apsb.svg",
+        dark: "/images/projects/logos/apsb--dark.svg",
+      },
     },
     {
       title: "Sodrujestvo",
@@ -25,8 +31,11 @@ export const projects = {
       tag: "Design + Frontend",
       url: "https://sodrujestvo.org/en",
       domain: "sodrujestvo.org",
-      logo: "/images/projects/logos/sodrujestvo.svg",
       screenshot: "/images/projects/screenshots/compressed/sodrujestvo--x2.png",
+      logo: {
+        light: "/images/projects/logos/sodrujestvo.svg",
+        dark: "/images/projects/logos/sodrujestvo.svg",
+      },
     },
     {
       title: "Rosdetcenter",
@@ -34,8 +43,11 @@ export const projects = {
       tag: "Design + Frontend",
       url: "https://xn--80aaagbeiix1cqypjeb2m.xn--p1ai/",
       domain: "навигаторыдетства.рф",
-      logo: "/images/projects/logos/rdc.svg",
       screenshot: "/images/projects/screenshots/compressed/rdc--x2.png",
+      logo: {
+        light: "/images/projects/logos/rdc.svg",
+        dark: "/images/projects/logos/rdc.svg",
+      },
     },
     {
       title: "Lift to the future",
@@ -43,8 +55,11 @@ export const projects = {
       tag: "Design + Frontend",
       url: "https://lift-bf.ru/",
       domain: "lift-bf.ru",
-      logo: "/images/projects/logos/lift.svg",
       screenshot: "/images/projects/screenshots/compressed/lift--x2.png",
+      logo: {
+        light: "/images/projects/logos/lift.svg",
+        dark: "/images/projects/logos/lift--dark.svg",
+      },
     },
     {
       title: "Sibur",
@@ -52,8 +67,11 @@ export const projects = {
       tag: "Design + Frontend",
       url: "https://sibured.ru/",
       domain: "sibured.ru",
-      logo: "/images/projects/logos/sibur.svg",
       screenshot: "/images/projects/screenshots/compressed/sibur--x2.png",
+      logo: {
+        light: "/images/projects/logos/sibur.svg",
+        dark: "/images/projects/logos/sibur.svg",
+      },
     },
   ],
 };

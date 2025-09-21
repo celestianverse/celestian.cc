@@ -1,0 +1,47 @@
+"use client";
+import Cookies from "js-cookie";
+import { useShallow } from "zustand/react/shallow";
+import { useUserContext } from "@/contexts/UserContext/UserContext";
+import { Button } from "@/components/uikit/Button/Button";
+import { Segmented } from "@/components/uikit/Segmented/Segmented";
+import { FONT } from "@/constants/font";
+import type { Props } from "./FontSwitcher.types";
+
+export const FontSwitcher = ({color = "primary"}: Props) => {
+  const {font, setFont} = useUserContext(useShallow((state) => ({
+    font: state.font,
+    setFont: state.setFont,
+  })));
+
+  const handleChooseFont = async (font) => {
+    setFont(font);
+    Cookies.set("font", font);
+
+    document.documentElement.setAttribute("data-font", font);
+  };
+
+  return (
+    <Segmented color={color}>
+      <Button
+        variant="ghost"
+        color={color}
+        size="s"
+        iconOnly="none"
+        active={font === FONT.m}
+        onClick={() => handleChooseFont(FONT.m)}
+      >
+        a
+      </Button>
+      <Button
+        variant="ghost"
+        color={color}
+        size="s"
+        iconOnly="none"
+        active={font === FONT.l}
+        onClick={() => handleChooseFont(FONT.l)}
+      >
+        A
+      </Button>
+    </Segmented>
+  );
+};

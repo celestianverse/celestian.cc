@@ -7,7 +7,7 @@ import styles from "./Icon.module.scss";
 export const Icon = ({
   name,
   className,
-  color = "primary",
+  color,
   size = "m",
 }: Props) => {
   const Component = ICONS[name];
@@ -17,9 +17,9 @@ export const Icon = ({
       aria-hidden="true"
       className={classNames(
         styles.icon,
+        styles[`color-${color}`],
+        styles[`size-${size}`],
         className,
-        styles[size],
-        styles[color],
       )}
     >
       <Component />
