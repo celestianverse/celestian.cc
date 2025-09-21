@@ -25,12 +25,12 @@
     &.color-#{$color} {
       &.variant-fill {
         background: var(--#{$color}-background);
-        color: var(--#{$color}-foreground);
+        color: var(--#{$color}-background-on);
       }
 
       &.variant-gradient {
         background: var(--#{$color}-gradient);
-        color: var(--#{$color}-foreground);
+        color: var(--#{$color}-background-on);
       }
     }
   }

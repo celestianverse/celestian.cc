@@ -4,7 +4,9 @@
   display: inline-flex;
 
   .title {
-    font-size: 32px;
+    &.title {
+      font-size: 2rem;
+    }
   }
 
   img {

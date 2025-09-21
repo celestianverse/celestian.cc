@@ -6,7 +6,7 @@ html {
   font-size: 16px;
 
   &[data-font="l"] {
-    font-size: 17px;
+    font-size: 18px;
   }
 }
 
@@ -15,11 +15,11 @@ body {
   background: var(--neutral-background);
   line-height: var(--line-height-m);
   font-family: var(--font-family), sans-serif;
-  color: var(--neutral-foreground);
+  color: var(--primary-content);
   @include transition($property: background);
 }
 
 ::selection {
-  background: var(--accent);
-  color: var(--contrast);
+  background: var(--accent-background);
+  color: var(--accent-background-on);
 }

@@ -1,47 +1,48 @@
 @use "@/styles/mixins" as *;
 
 .icon {
-  flex-shrink: 0;
   display: inline-flex;
+  flex-shrink: 0;
 
-  &.xxl {
-    width: 60px;
-    height: 60px;
+  &.size-xxl {
+    width: var(--size-64);
+    height: var(--size-64);
   }
 
-  &.xl {
-    width: 40px;
-    height: 40px;
+  &.size-xl {
+    width: var(--size-32);
+    height: var(--size-32);
   }
 
-  &.l {
-    width: 28px;
-    height: 28px;
+  &.size-l {
+    width: var(--size-28);
+    height: var(--size-28);
   }
 
-  &.m {
-    width: 24px;
-    height: 24px;
+  &.size-m {
+    width: var(--size-24);
+    height: var(--size-24);
   }
 
-  &.s {
-    width: 20px;
-    height: 20px;
+  &.size-s {
+    width: var(--size-20);
+    height: var(--size-20);
   }
 
-  &.xs {
-    width: 16px;
-    height: 16px;
+  &.size-xs {
+    width: var(--size-16);
+    height: var(--size-16);
   }
 
   svg {
     * {
+      fill: currentColor;
       @include transition;
     }
   }
 
   @each $color in $colors {
-    &.#{$color} {
+    &.color-#{$color} {
       * {
         fill: var(--#{$color});
       }

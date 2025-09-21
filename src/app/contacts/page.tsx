@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Page } from "@/components/uikit/Page/Page";
 import { IntroSection } from "@/components/custom/IntroSection/IntroSection";
-import { ContactsSection } from "@/app/contacts/_components/ContactsSection/ContactsSection";
-import { MeSection } from "@/app/contacts/_components/MeSection/MeSection";
+import { ContactsSection } from "./_components/ContactsSection/ContactsSection";
+import { MeSection } from "./_components/MeSection/MeSection";
 import { contacts } from "@/data/contacts";
 
 export const metadata: Metadata = {

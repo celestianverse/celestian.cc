@@ -222,28 +222,28 @@
     &.color-#{$color} {
       &.variant-fill {
         background: var(--#{$color}-background);
-        color: var(--#{$color}-foreground);
+        color: var(--#{$color}-background-on);
       }
 
       &.variant-fill-soft {
-        background: var(--#{$color}-soft);
-        color: var(--#{$color});
+        background: var(--#{$color}-background-soft);
+        color: var(--#{$color}-content);
       }
 
       &.variant-outline {
-        border: 2px solid var(--#{$color});
+        border: 2px solid var(--#{$color}-outline);
       }
 
       &.variant-outline-soft {
-        border: 2px solid var(--#{$color}-soft);
+        border: 2px solid var(--#{$color}-outline-soft);
       }
 
       &.variant-dash {
-        border: 2px dashed var(--#{$color});
+        border: 2px dashed var(--#{$color}-outline);
       }
 
       &.variant-dash-soft {
-        border: 2px dashed var(--#{$color}-soft);
+        border: 2px dashed var(--#{$color}-outline-soft);
       }
     }
   }

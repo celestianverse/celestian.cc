@@ -6,7 +6,7 @@ export type Keys = keyof typeof ICONS;
 type Size = "xxl" | "xl" | "l" | "m" | "s" | "xs";
 
 export type Props = {
-  name: Keys;
+  name: Keys | "none";
   color?: Color;
   /**
    * <pre>

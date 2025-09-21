@@ -9,8 +9,8 @@ type Styles = {
 
 export type IconProps = {
   iconStart?: Keys;
-  iconEnd?: Keys | null;
-  iconOnly?: Keys;
+  iconEnd?: Keys;
+  iconOnly?: Keys | "none";
 };
 
 type Props = IconProps & {
@@ -25,12 +25,20 @@ export const useIcon = ({
   children,
   styles = {},
 }: Props) => {
-  if (iconOnly) {
+  if (iconOnly && iconOnly !== "none") {
     return (
       <Icon
         name={iconOnly}
         className={styles.icon}
       />
+    );
+  }
+
+  if (iconOnly && iconOnly === "none") {
+    return (
+      <span className={styles.content}>
+        {children}
+      </span>
     );
   }
 

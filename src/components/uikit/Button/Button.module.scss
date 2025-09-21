@@ -4,6 +4,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
   line-height: 1;
   text-align: center;
   font-weight: var(--font-weight-medium);
@@ -13,83 +14,60 @@
   @each $color in $colors {
     &.color-#{$color} {
       &.variant-fill {
-        background: var(--#{$color});
-        color: var(--#{$color}-foreground);
-
-        .icon {
-          * {
-            fill: var(--#{$color}-foreground);
-          }
-        }
+        background: var(--#{$color}-fill);
+        color: var(--#{$color}-fill-on);
 
         &:hover {
-          background: var(--#{$color}-hover);
+          background: var(--#{$color}-fill-hover);
         }
 
         &.active {
-          background: var(--#{$color}-active);
+          background: var(--#{$color}-fill-active);
         }
       }
 
       &.variant-outline {
-        border: 1px solid var(--#{$color});
-        color: var(--#{$color});
-
-        .icon {
-          * {
-            fill: var(--#{$color});
-          }
-        }
+        border: 1px solid var(--#{$color}-outline);
+        color: var(--#{$color}-content);
 
         &:hover {
-          background: var(--#{$color}-ghost);
+          border-color: var(--#{$color}-outline-hover);
+          color: var(--#{$color}-content-hover);
         }
 
         &.active {
-          background: var(--#{$color});
-          border-color: var(--#{$color});
-          color: var(--#{$color}-foreground);
+          background: var(--#{$color}-fill);
+          border-color: var(--#{$color}-fill);
+          color: var(--#{$color}-fill-on);
         }
       }
 
       &.variant-dash {
-        border: 2px dashed var(--#{$color});
-        color: var(--#{$color});
-
-        .icon {
-          * {
-            fill: var(--#{$color});
-          }
-        }
+        border: 2px dashed var(--#{$color}-outline);
+        color: var(--#{$color}-content);
 
         &:hover {
-          border-color: var(--#{$color}-hover);
-          color: var(--#{$color}-hover);
+          border-color: var(--#{$color}-outline-hover);
+          color: var(--#{$color}-content-hover);
         }
 
         &.active {
-          background: var(--#{$color});
-          border-color: var(--#{$color});
-          color: var(--#{$color}-foreground);
+          background: var(--#{$color}-fill);
+          border-color: var(--#{$color}-fill);
+          color: var(--#{$color}-fill-on);
         }
       }
 
       &.variant-ghost {
-        color: var(--#{$color});
-
-        .icon {
-          * {
-            fill: var(--#{$color});
-          }
-        }
+        color: var(--#{$color}-content);
 
         &:hover {
-          background: var(--#{$color}-ghost);
+          background: var(--#{$color}-fill-soft);
         }
 
         &.active {
-          background: var(--#{$color});
-          color: var(--#{$color}-foreground);
+          background: var(--#{$color}-fill);
+          color: var(--#{$color}-fill-on);
         }
       }
     }

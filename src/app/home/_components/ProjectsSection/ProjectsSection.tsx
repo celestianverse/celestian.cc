@@ -1,14 +1,18 @@
+"use client";
 import { Section } from "@/components/uikit/Section/Section";
 import { Title } from "@/components/uikit/Title/Title";
-import { projects } from "@/data/projects";
 import { Grid } from "@/components/uikit/Grid/Grid";
 import { Box } from "@/components/uikit/Box/Box";
 import { Row } from "@/components/uikit/Row/Row";
 import { Tag } from "@/components/uikit/Tag/Tag";
-import styles from "./ProjectsSection.module.scss";
 import { Icon } from "@/components/uikit/Icon/Icon";
+import { useUserContext } from "@/contexts/UserContext/UserContext";
+import { projects } from "@/data/projects";
+import styles from "./ProjectsSection.module.scss";
 
 export const ProjectsSection = () => {
+  const theme = useUserContext((state) => state.theme);
+
   return (
     <Section
       color="contrast"
@@ -33,7 +37,10 @@ export const ProjectsSection = () => {
             className={styles.box}
           >
             <Row justify="space-between">
-              <img src={item.logo} alt={item.subtitle} />
+              <img
+                src={theme === "dark" ? item.logo.dark : item.logo.light}
+                alt={item.subtitle}
+              />
               <Tag size="s">{item.tag}</Tag>
             </Row>
             <Row

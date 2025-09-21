@@ -9,55 +9,33 @@
 
   @each $color in $colors {
     &.color-#{$color} {
-      color: var(--#{$color});
-
-      .icon {
-        * {
-          fill: var(--#{$color});
-        }
-      }
+      color: var(--#{$color}-content);
 
       &:hover {
-        color: var(--#{$color}-hover);
-
-        .icon {
-          * {
-            fill: var(--#{$color}-hover);
-          }
-        }
+        color: var(--#{$color}-content-hover);
       }
 
       &.underline {
         .content {
-          border-bottom-color: var(--#{$color});
+          border-bottom-color: var(--#{$color}-content);
         }
 
         &:hover {
           .content {
-            border-bottom-color: var(--#{$color}-hover);
+            border-bottom-color: var(--#{$color}-content-hover);
           }
         }
       }
 
       &.dash {
         .content {
-          border-bottom-color: var(--#{$color});
+          border-bottom-color: var(--#{$color}-content);
           border-bottom-style: dashed;
         }
 
         &:hover {
           .content {
-            border-bottom-color: var(--#{$color}-hover);
-          }
-        }
-      }
-
-      &.active {
-        color: var(--#{$color}-active);
-
-        .icon {
-          * {
-            fill: var(--#{$color}-active);
+            border-bottom-color: var(--#{$color}-content-hover);
           }
         }
       }

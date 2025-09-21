@@ -1,0 +1,43 @@
+@use "@/styles/mixins" as *;
+
+.segmented {
+  display: flex;
+  align-self: center;
+  flex-shrink: 0;
+  gap: var(--spacing-4);
+  padding: var(--spacing-4);
+
+  &.fullwidth {
+    width: 100%;
+  }
+
+  &.radius-max {
+    border-radius: var(--radius-9999);
+  }
+
+  &.radius-xl {
+    border-radius: var(--radius-24);
+  }
+
+  &.radius-l {
+    border-radius: var(--radius-16);
+  }
+
+  &.radius-m {
+    border-radius: var(--radius-12);
+  }
+
+  &.radius-s {
+    border-radius: var(--radius-8);
+  }
+
+  &.radius-xs {
+    border-radius: var(--radius-4);
+  }
+
+  @each $color in $colors {
+    &.color-#{$color} {
+      background: var(--#{$color}-fill-soft);
+    }
+  }
+}

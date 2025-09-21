@@ -80,11 +80,11 @@
 
 @include mobile-only {
   :root {
-    --font-size-title-xxl: 3.125rem;
-    --font-size-title-xl: 2.5rem;
-    --font-size-title-l: 2rem;
-    --font-size-title-m: 1.5625rem;
+    --font-size-title-xl: 3.75rem;
+    --font-size-title-l: 2.75rem;
+    --font-size-title-m: 1.875rem;
     --font-size-title-s: 1.25rem;
+    --font-size-title-xs: 1.25rem;
   }
 }
 
@@ -102,33 +102,57 @@ $warning: #F17400;
 $danger: #C21B1B;
 
 $themes: (
-  primary: (
+  primary-content: (
     light: $primary,
     dark: $contrast,
   ),
-  primary-hover: (
+  primary-content-hover: (
     light: $accent,
-    dark: $accent,
-  ),
-  primary-active: (
-    light: $accent,
-    dark: $accent,
+    dark: color.scale($accent, $lightness: 20%),
   ),
   primary-background: (
     light: $primary,
     dark: $primary,
   ),
-  primary-foreground: (
+  primary-background-on: (
     light: $contrast,
     dark: $contrast,
   ),
-  primary-soft: (
+  primary-background-on-hover: (
+    light: $phantom,
+    dark: $phantom,
+  ),
+  primary-fill: (
+    light: $primary,
+    dark: $contrast,
+  ),
+  primary-fill-on: (
+    light: $contrast,
+    dark: $primary,
+  ),
+  primary-fill-hover: (
+    light: $accent,
+    dark: color.scale($accent, $lightness: 20%),
+  ),
+  primary-fill-active: (
+    light: $accent,
+    dark: $accent,
+  ),
+  primary-fill-soft: (
+    light: rgba($primary, 0.05),
+    dark: rgba($contrast, 0.05),
+  ),
+  primary-outline: (
+    light: $primary,
+    dark: $contrast,
+  ),
+  primary-outline-soft: (
     light: rgba($primary, 0.15),
     dark: rgba($contrast, 0.15),
   ),
-  primary-ghost: (
-    light: rgba($primary, 0.05),
-    dark: rgba($contrast, 0.05),
+  primary-gradient: (
+    light: linear-gradient(90deg, color.scale($primary, $lightness: -12%, $saturation: 20%) 0, color.scale($primary, $lightness: 4%, $saturation: 20%) 100%),
+    dark: linear-gradient(90deg, color.scale($primary, $lightness: -12%, $saturation: 20%) 0, color.scale($primary, $lightness: 4%, $saturation: 20%) 100%),
   ),
   secondary: (
     light: $secondary,
@@ -154,117 +178,209 @@ $themes: (
     light: rgba($secondary, 0.1),
     dark: rgba($phantom, 0.1),
   ),
-  neutral: (
+  neutral-content: (
     light: $neutral,
     dark: $contrast,
   ),
-  neutral-hover: (
-    light: mix($neutral, #fff, 80%),
-    dark: mix($neutral, #fff, 20%),
-  ),
-  neutral-active: (
-    light: $brand,
-    dark: $brand,
+  neutral-content-hover: (
+    light: $accent,
+    dark: $accent,
   ),
   neutral-background: (
     light: $neutral,
     dark: $neutral,
   ),
-  neutral-gradient: (
-    light: linear-gradient(90deg, color.scale($neutral, $lightness: -5%) 0, color.scale($neutral, $lightness: 2%) 100%),
-    dark: $neutral,
-  ),
-  neutral-foreground: (
+  neutral-background-on: (
     light: $primary,
     dark: $contrast,
   ),
-  neutral-ghost: (
-    light: rgba($neutral, 0.1),
-    dark: rgba($neutral, 0.1),
+  neutral-background-on-hover: (
+    light: $phantom,
+    dark: $phantom,
   ),
-  brand: (
+  neutral-fill: (
+    light: $neutral,
+    dark: $contrast,
+  ),
+  neutral-fill-on: (
+    light: $contrast,
+    dark: $neutral,
+  ),
+  neutral-fill-hover: (
+    light: $accent,
+    dark: $accent,
+  ),
+  neutral-fill-active: (
+    light: $accent,
+    dark: $accent,
+  ),
+  neutral-fill-soft: (
+    light: rgba($neutral, 0.05),
+    dark: rgba($contrast, 0.05),
+  ),
+  neutral-outline: (
+    light: $neutral,
+    dark: $contrast,
+  ),
+  neutral-outline-soft: (
+    light: rgba($neutral, 0.15),
+    dark: rgba($contrast, 0.15),
+  ),
+  neutral-gradient: (
+    light: linear-gradient(90deg, color.scale($neutral, $lightness: -5%) 0, color.scale($neutral, $lightness: 2%) 100%),
+    dark: linear-gradient(90deg, color.scale($primary, $lightness: -12%, $saturation: 20%) 0, color.scale($primary, $lightness: 4%, $saturation: 20%) 100%),
+  ),
+  brand-content: (
     light: $brand,
     dark: $brand,
   ),
-  brand-hover: (
-    light: mix($brand, #fff, 80%),
-    dark: mix($brand, #fff, 20%),
-  ),
-  brand-active: (
-    light: $brand,
-    dark: $brand,
+  brand-content-hover: (
+    light: $accent,
+    dark: $accent,
   ),
   brand-background: (
     light: $brand,
     dark: $brand,
   ),
-  brand-gradient: (
-    light: linear-gradient(90deg, color.scale($brand, $lightness: -25%) 0, color.scale($brand, $lightness: 5%) 100%),
-    dark: $brand,
-  ),
-  brand-foreground: (
+  brand-background-on: (
     light: $primary,
     dark: $contrast,
   ),
-  brand-ghost: (
-    light: rgba($brand, 0.1),
-    dark: rgba($brand, 0.1),
+  brand-background-on-hover: (
+    light: $phantom,
+    dark: $phantom,
   ),
-  accent: (
+  brand-fill: (
+    light: $brand,
+    dark: $contrast,
+  ),
+  brand-fill-on: (
+    light: $contrast,
+    dark: $brand,
+  ),
+  brand-fill-hover: (
     light: $accent,
     dark: $accent,
   ),
-  accent-hover: (
-    light: mix($accent, #fff, 80%),
-    dark: mix($accent, #fff, 20%),
+  brand-fill-active: (
+    light: $accent,
+    dark: $accent,
   ),
-  accent-active: (
+  brand-fill-soft: (
+    light: rgba($brand, 0.05),
+    dark: rgba($contrast, 0.05),
+  ),
+  brand-outline: (
+    light: $brand,
+    dark: $contrast,
+  ),
+  brand-outline-soft: (
+    light: rgba($brand, 0.15),
+    dark: rgba($contrast, 0.15),
+  ),
+  brand-gradient: (
+    light: linear-gradient(90deg, color.scale($brand, $lightness: -25%) 0, color.scale($brand, $lightness: 5%) 100%),
+    dark: linear-gradient(90deg, color.scale($primary, $lightness: -12%, $saturation: 20%) 0, color.scale($primary, $lightness: 4%, $saturation: 20%) 100%),
+  ),
+  accent-content: (
+    light: $accent,
+    dark: $accent,
+  ),
+  accent-content-hover: (
     light: $accent,
     dark: $accent,
   ),
   accent-background: (
     light: $accent,
+    dark: color.scale($accent, $lightness: -15%),
+  ),
+  accent-background-on: (
+    light: $contrast,
+    dark: $contrast,
+  ),
+  accent-background-on-hover: (
+    light: $phantom,
+    dark: $phantom,
+  ),
+  accent-fill: (
+    light: $accent,
+    dark: $contrast,
+  ),
+  accent-fill-on: (
+    light: $contrast,
     dark: $accent,
+  ),
+  accent-fill-hover: (
+    light: $accent,
+    dark: $accent,
+  ),
+  accent-fill-active: (
+    light: $accent,
+    dark: $accent,
+  ),
+  accent-fill-soft: (
+    light: rgba($accent, 0.05),
+    dark: rgba($contrast, 0.05),
+  ),
+  accent-outline: (
+    light: $accent,
+    dark: $contrast,
+  ),
+  accent-outline-soft: (
+    light: rgba($accent, 0.15),
+    dark: rgba($contrast, 0.15),
   ),
   accent-gradient: (
     light: linear-gradient(90deg, color.scale($accent, $lightness: -10%) 0, color.scale($accent, $lightness: 10%) 100%),
-    dark: $accent,
+    dark: linear-gradient(90deg, color.scale($primary, $lightness: -35%, $saturation: 20%) 0, color.scale($primary, $lightness: -5%, $saturation: 20%) 100%),
   ),
-  accent-foreground: (
+  contrast-content: (
     light: $contrast,
     dark: $contrast,
   ),
-  accent-ghost: (
-    light: rgba($accent, 0.1),
-    dark: rgba($accent, 0.1),
-  ),
-  contrast: (
-    light: $contrast,
-    dark: $contrast,
-  ),
-  contrast-hover: (
-    light: mix($contrast, #fff, 80%),
-    dark: mix($contrast, #fff, 20%),
-  ),
-  contrast-active: (
-    light: $brand,
-    dark: $brand,
+  contrast-content-hover: (
+    light: $phantom,
+    dark: $phantom,
   ),
   contrast-background: (
     light: $contrast,
-    dark: $primary,
+    dark: linear-gradient(90deg, color.scale($primary, $lightness: 3%, $saturation: 10%) 0, color.scale($primary, $lightness: 8%, $saturation: 10%) 100%),
   ),
-  contrast-foreground: (
+  contrast-background-on: (
     light: $primary,
     dark: $contrast,
   ),
-  contrast-soft: (
-    light: rgba($contrast, 0.2),
-    dark: rgba($contrast, 0.2),
+  contrast-background-on-hover: (
+    light: $phantom,
+    dark: $phantom,
   ),
-  contrast-ghost: (
+  contrast-fill: (
+    light: $contrast,
+    dark: $contrast,
+  ),
+  contrast-fill-on: (
+    light: $primary,
+    dark: $primary,
+  ),
+  contrast-fill-hover: (
+    light: $contrast,
+    dark: $contrast,
+  ),
+  contrast-fill-active: (
+    light: $contrast,
+    dark: $contrast,
+  ),
+  contrast-fill-soft: (
     light: rgba($contrast, 0.1),
     dark: rgba($contrast, 0.1),
+  ),
+  contrast-outline: (
+    light: $contrast,
+    dark: $contrast,
+  ),
+  contrast-outline-soft: (
+    light: rgba($contrast, 0.2),
+    dark: rgba($contrast, 0.2),
   ),
   phantom: (
     light: $phantom,
@@ -290,33 +406,57 @@ $themes: (
     light: rgba($phantom, 0.1),
     dark: rgba($phantom, 0.1),
   ),
-  info: (
+  info-content: (
     light: $info,
     dark: $info,
   ),
-  info-hover: (
-    light: mix($info, #fff, 80%),
-    dark: mix($info, #fff, 20%),
-  ),
-  info-active: (
-    light: $brand,
-    dark: $brand,
+  info-content-hover: (
+    light: $info,
+    dark: $info,
   ),
   info-background: (
     light: $info,
     dark: $info,
   ),
-  info-gradient: (
-    light: linear-gradient(90deg, color.scale($info, $lightness: -15%) 0, color.scale($info, $lightness: 5%) 100%),
-    dark: $info,
-  ),
-  info-foreground: (
+  info-background-on: (
     light: $contrast,
     dark: $contrast,
   ),
-  info-ghost: (
-    light: rgba($info, 0.1),
-    dark: rgba($info, 0.1),
+  info-background-on-hover: (
+    light: $phantom,
+    dark: $phantom,
+  ),
+  info-fill: (
+    light: $info,
+    dark: color.scale($info, $lightness: -20%),
+  ),
+  info-fill-on: (
+    light: $contrast,
+    dark: $contrast,
+  ),
+  info-fill-hover: (
+    light: color.scale($info, $lightness: 15%),
+    dark: color.scale($info, $lightness: -35%),
+  ),
+  info-fill-active: (
+    light: $info,
+    dark: $info,
+  ),
+  info-fill-soft: (
+    light: rgba($info, 0.05),
+    dark: rgba($contrast, 0.05),
+  ),
+  info-outline: (
+    light: $info,
+    dark: $contrast,
+  ),
+  info-outline-soft: (
+    light: rgba($info, 0.10),
+    dark: rgba($contrast, 0.10),
+  ),
+  info-gradient: (
+    light: linear-gradient(90deg, color.scale($info, $lightness: -15%) 0, color.scale($info, $lightness: 5%) 100%),
+    dark: linear-gradient(90deg, color.scale($primary, $lightness: -12%, $saturation: 20%) 0, color.scale($primary, $lightness: 4%, $saturation: 20%) 100%),
   ),
   success: (
     light: $success,
