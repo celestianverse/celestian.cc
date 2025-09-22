@@ -2,4 +2,14 @@
 
 .box {
   min-height: 300px;
+
+  @include mobile-only {
+    min-height: 260px;
+  }
+
+  .subtitle {
+    @media (max-width: 386px) {
+      white-space: normal;
+    }
+  }
 }

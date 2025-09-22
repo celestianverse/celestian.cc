@@ -3,8 +3,13 @@
 .container {
   &.container {
     &.container {
+      @include tablet-max {
+        align-items: flex-end;
+      }
+
       @include mobile-only {
-        flex-direction: column-reverse;
+        flex-direction: column;
+        align-items: center;
         text-align: center;
       }
 
@@ -23,6 +28,15 @@
       .titles {
         @include mobile-only {
           align-items: center;
+        }
+      }
+
+      .image {
+        @include tablet-max {
+          position: relative;
+          top: 7px;
+          width: 360px;
+          height: auto;
         }
       }
     }

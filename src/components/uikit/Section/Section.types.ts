@@ -94,6 +94,7 @@ type SectionProps = {
   radiusBottom?: Radius;
   offsetHeader?: boolean;
   className?: string;
+  classNameContainer?: string;
   children: React.ReactNode;
 };
 

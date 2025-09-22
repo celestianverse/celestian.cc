@@ -1,0 +1,17 @@
+@use "@/styles/mixins" as *;
+
+.contact {
+  order: 10;
+
+  &:nth-child(1) {
+    @include tablet-max {
+      order: 1;
+    }
+  }
+
+  &:nth-child(4) {
+    @include tablet-max {
+      order: 2;
+    }
+  }
+}

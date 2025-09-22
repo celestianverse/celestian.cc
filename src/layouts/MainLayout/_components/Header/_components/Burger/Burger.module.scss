@@ -1,0 +1,39 @@
+@use "@/styles/mixins" as *;
+
+.open {
+  .drawer {
+    &.drawer {
+      margin-left: -300px;
+    }
+  }
+
+  .overlay{
+    opacity: 1;
+    visibility: visible;
+    width: 100%;
+  }
+}
+
+.drawer {
+  &.drawer {
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 100%;
+    width: 300px;
+    height: 100%;
+  }
+}
+
+.overlay {
+  opacity: 0;
+  visibility: hidden;
+  z-index: 99;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 100%;
+  @include backdrop(var(--overlay), 8px);
+  @include transition($property: opacity);
+}

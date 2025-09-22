@@ -5,6 +5,7 @@ import { Row } from "@/components/uikit/Row/Row";
 import { Button } from "@/components/uikit/Button/Button";
 import { Section } from "@/components/uikit/Section/Section";
 import { Column } from "@/components/uikit/Column/Column";
+import { Hidden } from "@/components/uikit/Hidden/Hidden";
 import { hero } from "@/data/hero";
 import styles from "./HeroSection.module.scss";
 
@@ -35,13 +36,17 @@ export const HeroSection = () => {
             {hero.subtitle}
           </Title>
         </Column>
-        <Row gap="s">
+        <Row
+          wrap="wrap"
+          gap="s"
+        >
           <Button
             as={Link}
             href={hero.projects.path}
             size="l"
             color="primary"
             variant="fill"
+            className={styles.button}
           >
             {hero.projects.label}
           </Button>
@@ -51,19 +56,22 @@ export const HeroSection = () => {
             size="l"
             color="primary"
             variant="dash"
+            className={styles.button}
           >
             {hero.contacts.label}
           </Button>
         </Row>
       </Column>
-      <Image
-        width={340}
-        height={340}
-        src={hero.image}
-        alt={hero.title}
-        quality={100}
-        className={styles.image}
-      />
+      <Hidden on="tablet-max">
+        <Image
+          width={340}
+          height={340}
+          src={hero.image}
+          alt={hero.title}
+          quality={100}
+          className={styles.image}
+        />
+      </Hidden>
     </Section>
   );
 };

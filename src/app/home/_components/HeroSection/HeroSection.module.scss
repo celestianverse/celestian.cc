@@ -2,5 +2,21 @@
 
 .image {
   position: relative;
-  top: var(--spacing-24);
+  top: 24px;
+
+  @media (max-width: 1260px) {
+    width: 320px;
+    height: 320px;
+  }
+
+  @media (max-width: 1240px) {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+.button {
+  @include mobile-only {
+    width: 100%;
+  }
 }
