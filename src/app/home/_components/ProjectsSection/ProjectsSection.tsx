@@ -6,6 +6,7 @@ import { Box } from "@/components/uikit/Box/Box";
 import { Row } from "@/components/uikit/Row/Row";
 import { Tag } from "@/components/uikit/Tag/Tag";
 import { Icon } from "@/components/uikit/Icon/Icon";
+import { Hidden } from "@/components/uikit/Hidden/Hidden";
 import { useUserContext } from "@/contexts/UserContext/UserContext";
 import { projects } from "@/data/projects";
 import styles from "./ProjectsSection.module.scss";
@@ -41,7 +42,17 @@ export const ProjectsSection = () => {
                 src={theme === "dark" ? item.logo.dark : item.logo.light}
                 alt={item.subtitle}
               />
-              <Tag size="s">{item.tag}</Tag>
+              <Hidden on="mobile-only">
+                <Tag size="s">
+                  {item.tag}
+                </Tag>
+              </Hidden>
+              <Hidden on="tablet-min">
+                <Icon
+                  name="arrowUpRight"
+                  size="l"
+                />
+              </Hidden>
             </Row>
             <Row
               align="end"
@@ -51,13 +62,16 @@ export const ProjectsSection = () => {
                 as="h4"
                 size="xs"
                 whiteSpace="pre-line"
+                className={styles.subtitle}
               >
                 {item.subtitle}
               </Title>
-              <Icon
-                name="arrowUpRight"
-                size="l"
-              />
+              <Hidden on="mobile-only">
+                <Icon
+                  name="arrowUpRight"
+                  size="l"
+                />
+              </Hidden>
             </Row>
           </Box>
         ))}

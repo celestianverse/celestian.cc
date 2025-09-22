@@ -78,13 +78,23 @@
   --blur-m: 8px;
 }
 
-@include mobile-only {
+@include tablet-max {
   :root {
     --font-size-title-xl: 3.75rem;
     --font-size-title-l: 2.75rem;
-    --font-size-title-m: 1.875rem;
-    --font-size-title-s: 1.25rem;
-    --font-size-title-xs: 1.25rem;
+    --font-size-title-m: 2rem;
+    --font-size-title-s: 1.5rem;
+    --font-size-title-xs: 1.15rem;
+  }
+}
+
+@include mobile-only {
+  :root {
+    --font-size-title-xl: 3rem;
+    --font-size-title-l: 2.2rem;
+    --font-size-title-m: 1.8rem;
+    --font-size-title-s: 1.4rem;
+    --font-size-title-xs: 1.1rem;
   }
 }
 
@@ -134,10 +144,6 @@ $themes: (
     light: $accent,
     dark: color.scale($accent, $lightness: 20%),
   ),
-  primary-fill-active: (
-    light: $accent,
-    dark: $accent,
-  ),
   primary-fill-soft: (
     light: rgba($primary, 0.05),
     dark: rgba($contrast, 0.05),
@@ -152,7 +158,7 @@ $themes: (
   ),
   primary-gradient: (
     light: linear-gradient(90deg, color.scale($primary, $lightness: -12%, $saturation: 20%) 0, color.scale($primary, $lightness: 4%, $saturation: 20%) 100%),
-    dark: linear-gradient(90deg, color.scale($primary, $lightness: -12%, $saturation: 20%) 0, color.scale($primary, $lightness: 4%, $saturation: 20%) 100%),
+    dark: linear-gradient(90deg, color.scale($primary, $lightness: -13%, $saturation: 20%) 0, color.scale($primary, $lightness: 3%, $saturation: 20%) 100%),
   ),
   secondary: (
     light: $secondary,
@@ -161,10 +167,6 @@ $themes: (
   secondary-hover: (
     light: mix($secondary, #fff, 80%),
     dark: mix($secondary, #fff, 20%),
-  ),
-  secondary-active: (
-    light: $accent,
-    dark: $accent,
   ),
   secondary-background: (
     light: $secondary,
@@ -188,7 +190,7 @@ $themes: (
   ),
   neutral-background: (
     light: $neutral,
-    dark: $neutral,
+    dark: linear-gradient(90deg, color.scale($primary, $lightness: -13%, $saturation: 20%) 0, color.scale($primary, $lightness: 3%, $saturation: 20%) 100%),
   ),
   neutral-background-on: (
     light: $primary,
@@ -210,10 +212,6 @@ $themes: (
     light: $accent,
     dark: $accent,
   ),
-  neutral-fill-active: (
-    light: $accent,
-    dark: $accent,
-  ),
   neutral-fill-soft: (
     light: rgba($neutral, 0.05),
     dark: rgba($contrast, 0.05),
@@ -228,7 +226,7 @@ $themes: (
   ),
   neutral-gradient: (
     light: linear-gradient(90deg, color.scale($neutral, $lightness: -5%) 0, color.scale($neutral, $lightness: 2%) 100%),
-    dark: linear-gradient(90deg, color.scale($primary, $lightness: -12%, $saturation: 20%) 0, color.scale($primary, $lightness: 4%, $saturation: 20%) 100%),
+    dark: linear-gradient(90deg, color.scale($primary, $lightness: -13%, $saturation: 20%) 0, color.scale($primary, $lightness: 3%, $saturation: 20%) 100%),
   ),
   brand-content: (
     light: $brand,
@@ -262,10 +260,6 @@ $themes: (
     light: $accent,
     dark: $accent,
   ),
-  brand-fill-active: (
-    light: $accent,
-    dark: $accent,
-  ),
   brand-fill-soft: (
     light: rgba($brand, 0.05),
     dark: rgba($contrast, 0.05),
@@ -280,7 +274,7 @@ $themes: (
   ),
   brand-gradient: (
     light: linear-gradient(90deg, color.scale($brand, $lightness: -25%) 0, color.scale($brand, $lightness: 5%) 100%),
-    dark: linear-gradient(90deg, color.scale($primary, $lightness: -12%, $saturation: 20%) 0, color.scale($primary, $lightness: 4%, $saturation: 20%) 100%),
+    dark: linear-gradient(90deg, color.scale($primary, $lightness: -13%, $saturation: 20%) 0, color.scale($primary, $lightness: 3%, $saturation: 20%) 100%),
   ),
   accent-content: (
     light: $accent,
@@ -311,10 +305,6 @@ $themes: (
     dark: $accent,
   ),
   accent-fill-hover: (
-    light: $accent,
-    dark: $accent,
-  ),
-  accent-fill-active: (
     light: $accent,
     dark: $accent,
   ),
@@ -366,10 +356,6 @@ $themes: (
     light: $contrast,
     dark: $contrast,
   ),
-  contrast-fill-active: (
-    light: $contrast,
-    dark: $contrast,
-  ),
   contrast-fill-soft: (
     light: rgba($contrast, 0.1),
     dark: rgba($contrast, 0.1),
@@ -389,10 +375,6 @@ $themes: (
   phantom-hover: (
     light: mix($phantom, #fff, 80%),
     dark: mix($phantom, #fff, 20%),
-  ),
-  phantom-active: (
-    light: $brand,
-    dark: $brand,
   ),
   phantom-background: (
     light: $phantom,
@@ -438,10 +420,6 @@ $themes: (
     light: color.scale($info, $lightness: 15%),
     dark: color.scale($info, $lightness: -35%),
   ),
-  info-fill-active: (
-    light: $info,
-    dark: $info,
-  ),
   info-fill-soft: (
     light: rgba($info, 0.05),
     dark: rgba($contrast, 0.05),
@@ -456,7 +434,7 @@ $themes: (
   ),
   info-gradient: (
     light: linear-gradient(90deg, color.scale($info, $lightness: -15%) 0, color.scale($info, $lightness: 5%) 100%),
-    dark: linear-gradient(90deg, color.scale($primary, $lightness: -12%, $saturation: 20%) 0, color.scale($primary, $lightness: 4%, $saturation: 20%) 100%),
+    dark: linear-gradient(90deg, color.scale($primary, $lightness: -13%, $saturation: 20%) 0, color.scale($primary, $lightness: 3%, $saturation: 20%) 100%),
   ),
   success: (
     light: $success,
@@ -465,10 +443,6 @@ $themes: (
   success-hover: (
     light: mix($success, #fff, 80%),
     dark: mix($success, #fff, 20%),
-  ),
-  success-active: (
-    light: $brand,
-    dark: $brand,
   ),
   success-background: (
     light: $success,
@@ -490,10 +464,6 @@ $themes: (
     light: mix($warning, #fff, 80%),
     dark: mix($warning, #fff, 20%),
   ),
-  warning-active: (
-    light: $brand,
-    dark: $brand,
-  ),
   warning-background: (
     light: $warning,
     dark: $warning,
@@ -514,10 +484,6 @@ $themes: (
     light: mix($danger, #fff, 80%),
     dark: mix($danger, #fff, 20%),
   ),
-  danger-active: (
-    light: $brand,
-    dark: $brand,
-  ),
   danger-background: (
     light: $danger,
     dark: $danger,
@@ -537,6 +503,10 @@ $themes: (
   "transparent": (
     light: rgba($contrast, 0),
     dark: rgba($primary, 0),
+  ),
+  overlay: (
+    light: rgba($primary, 0.2),
+    dark: rgba($contrast, 0.2),
   ),
 );
 

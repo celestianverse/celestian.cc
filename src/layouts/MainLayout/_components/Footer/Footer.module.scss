@@ -1,0 +1,19 @@
+@use "@/styles/mixins" as *;
+
+.main {
+  @include mobile-only {
+    flex-direction: column;
+  }
+}
+
+.info {
+  @include mobile-only {
+    flex-direction: column-reverse;
+  }
+}
+
+.tags {
+  @include mobile-only {
+    flex-direction: column;
+  }
+}

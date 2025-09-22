@@ -18,6 +18,7 @@ export const Section = (
     overlapBottom = "none",
     offsetHeader,
     className,
+    classNameContainer,
     children,
     ...rest
   }: Props) => {
@@ -51,6 +52,7 @@ export const Section = (
           {
             [styles["offset-header"]]: offsetHeader,
           },
+          classNameContainer,
         )}
       >
         {children}

@@ -8,33 +8,8 @@
   line-height: 1;
   @include transition;
 
-  @each $color in $colors {
-    &.color-#{$color} {
-      &.variant-fill {
-        background: var(--#{$color}-fill);
-        color: var(--#{$color}-fill-on);
-      }
-
-      &.variant-fill-soft {
-        background: var(--#{$color}-fill-soft);
-        color: var(--#{$color}-content);
-      }
-
-      &.variant-outline {
-        border: 1px solid var(--#{$color}-outline);
-        color: var(--#{$color}-content);
-      }
-
-      &.variant-dash {
-        border: 2px dashed var(--#{$color}-outline);
-        color: var(--#{$color}-content);
-      }
-
-      &.variant-ghost {
-        padding: 0;
-        color: var(--#{$color}-content);
-      }
-    }
+  &.fullwidth {
+    width: 100%;
   }
 
   &.size-m {
@@ -75,8 +50,34 @@
     border-radius: var(--radius-4);
   }
 
-  &.fullwidth {
-    width: 100%;
+  @each $color in $colors {
+    &.color-#{$color} {
+      &.variant-fill {
+        background: var(--#{$color}-fill);
+        color: var(--#{$color}-fill-on);
+      }
+
+      &.variant-fill-soft {
+        background: var(--#{$color}-fill-soft);
+        color: var(--#{$color}-content);
+      }
+
+      &.variant-outline {
+        border: 1px solid var(--#{$color}-outline);
+        color: var(--#{$color}-content);
+      }
+
+      &.variant-dash {
+        border: 2px dashed var(--#{$color}-outline);
+        color: var(--#{$color}-content);
+      }
+
+      &.variant-ghost {
+        padding: 0;
+        height: auto;
+        color: var(--#{$color}-content);
+      }
+    }
   }
 
   &.disabled {

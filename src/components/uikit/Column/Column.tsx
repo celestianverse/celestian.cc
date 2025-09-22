@@ -5,9 +5,9 @@ import type { Props } from "./Column.types";
 export const Column = (props: Props) => {
   return (
     <Flex
-      {...props}
       direction="column"
       align="start"
+      {...props}
     />
   );
 };

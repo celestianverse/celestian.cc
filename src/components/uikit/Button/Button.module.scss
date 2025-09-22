@@ -22,7 +22,7 @@
         }
 
         &.active {
-          background: var(--#{$color}-fill-active);
+          background: var(--#{$color}-fill-hover);
         }
       }
 
@@ -173,5 +173,3 @@
     pointer-events: none;
   }
 }
-
-

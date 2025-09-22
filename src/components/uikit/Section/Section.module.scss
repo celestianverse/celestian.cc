@@ -50,41 +50,16 @@
   &.padding-y-l {
     padding-top: var(--spacing-128);
     padding-bottom: var(--spacing-128);
-
-    @include tablet-max {
-      padding-top: var(--spacing-96);
-      padding-bottom: var(--spacing-96);
-    }
-
-    @include mobile-only {
-      padding-top: var(--spacing-64);
-      padding-bottom: var(--spacing-64);
-    }
   }
 
   &.padding-y-m {
     padding-top: var(--spacing-96);
     padding-bottom: var(--spacing-96);
-
-    @include tablet-max {
-      padding-top: var(--spacing-64);
-      padding-bottom: var(--spacing-64);
-    }
-
-    @include mobile-only {
-      padding-top: var(--spacing-48);
-      padding-bottom: var(--spacing-48);
-    }
   }
 
   &.padding-y-s {
     padding-top: var(--spacing-64);
     padding-bottom: var(--spacing-64);
-
-    @include tablet-max {
-      padding-top: var(--spacing-48);
-      padding-bottom: var(--spacing-48);
-    }
   }
 
   &.padding-y-xs {
@@ -94,34 +69,14 @@
 
   &.padding-top-l {
     padding-top: var(--spacing-128);
-
-    @include tablet-max {
-      padding-top: var(--spacing-96);
-    }
-
-    @include mobile-only {
-      padding-top: var(--spacing-64);
-    }
   }
 
   &.padding-top-m {
     padding-top: var(--spacing-96);
-
-    @include tablet-max {
-      padding-top: var(--spacing-64);
-    }
-
-    @include mobile-only {
-      padding-top: var(--spacing-48);
-    }
   }
 
   &.padding-top-s {
     padding-top: var(--spacing-64);
-
-    @include tablet-max {
-      padding-top: var(--spacing-48);
-    }
   }
 
   &.padding-top-xs {
@@ -130,34 +85,14 @@
 
   &.padding-bottom-l {
     padding-bottom: var(--spacing-128);
-
-    @include tablet-max {
-      padding-bottom: var(--spacing-96);
-    }
-
-    @include mobile-only {
-      padding-bottom: var(--spacing-64);
-    }
   }
 
   &.padding-bottom-m {
     padding-bottom: var(--spacing-96);
-
-    @include tablet-max {
-      padding-bottom: var(--spacing-64);
-    }
-
-    @include mobile-only {
-      padding-bottom: var(--spacing-48);
-    }
   }
 
   &.padding-bottom-s {
     padding-bottom: var(--spacing-64);
-
-    @include tablet-max {
-      padding-bottom: var(--spacing-48);
-    }
   }
 
   &.padding-bottom-xs {
@@ -166,44 +101,86 @@
 
   &.radius-l {
     border-radius: var(--radius-128);
+
+    @include mobile-only {
+      border-radius: var(--radius-96);
+    }
   }
 
   &.radius-m {
     border-radius: var(--radius-96);
+
+    @include mobile-only {
+      border-radius: var(--radius-64);
+    }
   }
 
   &.radius-s {
     border-radius: var(--radius-64);
+
+    @include mobile-only {
+      border-radius: var(--radius-48);
+    }
   }
 
   &.radius-top-l {
     border-top-left-radius: var(--radius-128);
     border-top-right-radius: var(--radius-128);
+
+    @include mobile-only {
+      border-top-left-radius: var(--radius-96);
+      border-top-right-radius: var(--radius-96);
+    }
   }
 
   &.radius-top-m {
     border-top-left-radius: var(--radius-96);
     border-top-right-radius: var(--radius-96);
+
+    @include mobile-only {
+      border-top-left-radius: var(--radius-64);
+      border-top-right-radius: var(--radius-64);
+    }
   }
 
   &.radius-top-s {
     border-top-left-radius: var(--radius-64);
     border-top-right-radius: var(--radius-64);
+
+    @include mobile-only {
+      border-top-left-radius: var(--radius-48);
+      border-top-right-radius: var(--radius-48);
+    }
   }
 
   &.radius-bottom-l {
     border-bottom-left-radius: var(--radius-128);
     border-bottom-right-radius: var(--radius-128);
+
+    @include mobile-only {
+      border-bottom-left-radius: var(--radius-96);
+      border-bottom-right-radius: var(--radius-96);
+    }
   }
 
   &.radius-bottom-m {
     border-bottom-left-radius: var(--radius-96);
     border-bottom-right-radius: var(--radius-96);
+
+    @include mobile-only {
+      border-bottom-left-radius: var(--radius-64);
+      border-bottom-right-radius: var(--radius-64);
+    }
   }
 
   &.radius-bottom-s {
     border-bottom-left-radius: var(--radius-64);
     border-bottom-right-radius: var(--radius-64);
+
+    @include mobile-only {
+      border-bottom-left-radius: var(--radius-48);
+      border-bottom-right-radius: var(--radius-48);
+    }
   }
 
   &.overlap-bottom-l {
@@ -253,10 +230,12 @@
   @include transition($property: background);
 
   @include tablet-only {
+    max-width: var(--container-tablet);
     padding: 0 var(--spacing-32);
   }
 
   @include mobile-only {
+    max-width: var(--container-mobile);
     padding: 0 var(--spacing-16);
   }
 

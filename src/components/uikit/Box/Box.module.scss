@@ -196,10 +196,18 @@
 
   &.radius-xxl {
     border-radius: var(--radius-64);
+
+    @include mobile-only {
+      border-radius: var(--radius-48);
+    }
   }
 
   &.radius-xl {
     border-radius: var(--radius-48);
+
+    @include mobile-only {
+      border-radius: var(--radius-32);
+    }
   }
 
   &.radius-l {

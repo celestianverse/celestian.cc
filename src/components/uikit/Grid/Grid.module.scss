@@ -35,7 +35,7 @@
   &.columns-2 {
     grid-template-columns: repeat(2, max(1fr));
 
-    @include mobile-only {
+    @include tablet-max {
       grid-template-columns: max(1fr);
     }
   }

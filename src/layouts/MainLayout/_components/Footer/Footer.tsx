@@ -8,6 +8,7 @@ import { ThemeSwitcher } from "@/components/custom/ThemeSwitcher/ThemeSwitcher";
 import { FontSwitcher } from "@/components/custom/FontSwitcher/FontSwitcher";
 import { contacts } from "@/data/contacts";
 import { app } from "@/data/app";
+import styles from "./Footer.module.scss";
 
 export const Footer = () => {
   const year = new Date().getFullYear();
@@ -22,7 +23,11 @@ export const Footer = () => {
       paddingBottom="xs"
       radiusTop="m"
     >
-      <Row justify="space-between">
+      <Row
+        justify="space-between"
+        gap="xl"
+        className={styles.main}
+      >
         <Logo color="contrast" />
         <Row gap="xs">
           <ThemeSwitcher color="contrast" />
@@ -33,9 +38,13 @@ export const Footer = () => {
         variant="dash-soft"
         color="contrast"
       />
-      <Row justify="space-between">
+      <Row
+        justify="space-between"
+        gap="xl"
+        className={styles.info}
+      >
         <Text>{app.name} © {year}</Text>
-        <Row>
+        <Row className={styles.tags}>
           <Tag
             variant="ghost"
             color="contrast"

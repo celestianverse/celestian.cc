@@ -2,10 +2,10 @@ import Image from "next/image";
 import { Section } from "@/components/uikit/Section/Section";
 import { Box } from "@/components/uikit/Box/Box";
 import { Column } from "@/components/uikit/Column/Column";
-import { contacts } from "@/data/contacts";
-import styles from "./MeSection.module.scss";
 import { Title } from "@/components/uikit/Title/Title";
 import { Button } from "@/components/uikit/Button/Button";
+import { contacts } from "@/data/contacts";
+import styles from "./MeSection.module.scss";
 
 export const MeSection = () => {
   return (
@@ -16,6 +16,7 @@ export const MeSection = () => {
       gap="l"
       radiusTop="m"
       overlapBottom="m"
+      classNameContainer={styles.container}
     >
       <Box
         radius="l"
@@ -31,9 +32,18 @@ export const MeSection = () => {
           className={styles.image}
         />
       </Box>
-      <Column gap="l">
-        <Column gap="s">
-          <Column gap="none">
+      <Column
+        gap="l"
+        className={styles.content}
+      >
+        <Column
+          gap="s"
+          className={styles.info}
+        >
+          <Column
+            gap="none"
+            className={styles.titles}
+          >
             <Title
               as="h3"
               size="s"

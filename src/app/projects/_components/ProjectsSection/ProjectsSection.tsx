@@ -5,6 +5,7 @@ import { Tag } from "@/components/uikit/Tag/Tag";
 import { Column } from "@/components/uikit/Column/Column";
 import { Button } from "@/components/uikit/Button/Button";
 import { projects } from "@/data/projects";
+import styles from "./ProjectsSection.module.scss";
 
 export const ProjectsSection = () => {
   return (
@@ -19,11 +20,21 @@ export const ProjectsSection = () => {
           justify="space-between"
           radiusTop="m"
           overlapBottom="m"
+          classNameContainer={styles.container}
         >
-          <Column gap="l">
-            <Column gap="s">
+          <Column
+            gap="l"
+            className={styles.content}
+          >
+            <Column
+              gap="s"
+              className={styles.info}
+            >
               <Tag size="s">{item.tag}</Tag>
-              <Column gap="xs">
+              <Column
+                gap="xs"
+                className={styles.titles}
+              >
                 <Title>
                   {item.title}
                 </Title>
@@ -53,6 +64,7 @@ export const ProjectsSection = () => {
             src={item.screenshot}
             alt={item.subtitle}
             quality={100}
+            className={styles.image}
           />
         </Section>
       ))}
