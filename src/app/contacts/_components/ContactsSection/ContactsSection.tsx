@@ -17,10 +17,11 @@ export const ContactsSection = () => {
   return (
     <Section
       variant="gradient"
-      color="neutral"
-      gap="xl"
-      radiusTop="m"
-      overlapBottom="m"
+      color="primary"
+      tone="soft"
+      radiusTop={96}
+      overlapBottom={96}
+      mobileRadiusTop={64}
     >
       <Grid>
         {contactsItems.map((item) => (

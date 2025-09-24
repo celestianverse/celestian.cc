@@ -1,11 +1,12 @@
 import type { Color } from "@/types/Color";
+import type { BorderStyle, BorderWidth, Tone } from "@/types/Styles";
 
 export type Element = "div" | "hr";
 
-type Variant = "outline" | "outline-soft" | "dash" | "dash-soft";
-
 export type Props = {
-  variant?: Variant;
   color?: Color;
+  tone?: Tone;
+  borderStyle?: BorderStyle;
+  borderWidth?: BorderWidth;
   className?: string;
 };

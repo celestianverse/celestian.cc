@@ -12,7 +12,7 @@ html {
 
 body {
   min-width: 375px;
-  background: var(--neutral-background);
+  background: var(--primary-surface-soft);
   line-height: var(--line-height-m);
   font-family: var(--font-family), sans-serif;
   color: var(--primary-content);
@@ -20,6 +20,162 @@ body {
 }
 
 ::selection {
-  background: var(--accent-background);
-  color: var(--accent-background-on);
+  background: var(--accent-surface);
+  color: var(--accent-surface-on);
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.25;
+  filter: grayscale(1);
+}
+
+.fullwidth {
+  width: 100%;
+}
+
+$breakpoints: (
+  "": null,
+  "laptop-": laptop-max,
+  "tablet-": tablet-max,
+  "mobile-": mobile-only
+);
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == null {
+    @content;
+  }
+  @else if $breakpoint == laptop-max {
+    @include laptop-max {
+      @content;
+    }
+  }
+  @else if $breakpoint == tablet-max {
+    @include tablet-max {
+      @content;
+    }
+  }
+  @else if $breakpoint == mobile-only {
+    @include mobile-only {
+      @content;
+    }
+  }
+}
+
+$styles: (
+  overflow: ("auto", "hidden", "scroll"),
+  display: ("flex", "grid"),
+  flex-wrap: ("wrap", "nowrap"),
+  border-style: ("solid", "dashed", "dotted"),
+  border-bottom-style: ("solid", "dashed", "dotted"),
+);
+
+@each $property, $values in $styles {
+  @each $value in $values {
+    .#{$property}-#{$value} {
+      #{$property}: #{$value};
+    }
+  }
+}
+
+$flex-direction: ("row", "row-reverse", "column", "column-reverse");
+
+@each $style in $flex-direction {
+  @each $prefix, $breakpoint in $breakpoints {
+    .#{$prefix}flex-direction-#{$style} {
+      @include respond($breakpoint) {
+        flex-direction: #{$style};
+      }
+    }
+  }
+}
+
+$align-items: ("flex-start", "center", "flex-end", "stretch");
+
+@each $style in $align-items {
+  @each $prefix, $breakpoint in $breakpoints {
+    .#{$prefix}align-items-#{$style} {
+      @include respond($breakpoint) {
+        align-items: #{$style};
+      }
+    }
+  }
+}
+
+$justify-content: ("flex-start", "center", "flex-end", "space-between");
+
+@each $style in $justify-content {
+  @each $prefix, $breakpoint in $breakpoints {
+    .#{$prefix}justify-content-#{$style} {
+      @include respond($breakpoint) {
+        justify-content: #{$style};
+      }
+    }
+  }
+}
+
+$gap: (128, 96, 64, 48, 32, 24, 16, 8, 4, 0);
+
+@each $size in $gap {
+  @each $prefix, $breakpoint in $breakpoints {
+    .#{$prefix}gap-#{$size} {
+      @include respond($breakpoint) {
+        gap: var(--spacing-#{$size});
+      }
+    }
+  }
+}
+
+$padding: (128, 96, 64, 48, 32, 24, 16, 8, 4, 0);
+
+$padding-axes: (
+  "": (padding),
+  "y": (padding-top, padding-bottom),
+  "x": (padding-left, padding-right),
+  "top": (padding-top),
+  "bottom": (padding-bottom),
+);
+
+@mixin emit-padding($properties, $size) {
+  @each $property in $properties {
+    #{$property}: var(--spacing-#{$size});
+  }
+}
+
+@each $size in $padding {
+  @each $prefix, $breakpoint in $breakpoints {
+    @each $axis, $props in $padding-axes {
+      .#{$prefix}padding#{if($axis == "", "", "-#{$axis}")}-#{$size} {
+        @include respond($breakpoint) {
+          @include emit-padding($props, $size);
+        }
+      }
+    }
+  }
+}
+
+$border-radius: (999, 128, 96, 64, 48, 32, 24, 16, 12, 8, 4, 0);
+
+$border-radius-axes: (
+  "": (border-radius),
+  "top": (border-top-left-radius, border-top-right-radius),
+  "bottom": (border-bottom-left-radius, border-bottom-right-radius),
+);
+
+@mixin emit-border-radius($props, $size) {
+  @each $prop in $props {
+    #{$prop}: var(--radius-#{$size});
+  }
+}
+
+@each $size in $border-radius {
+  @each $prefix, $bp in $breakpoints {
+    @each $axis, $props in $border-radius-axes {
+      .#{$prefix}border-radius#{if($axis == "", "", "-#{$axis}")}-#{$size} {
+        @include respond($bp) {
+          @include emit-border-radius($props, $size);
+        }
+      }
+    }
+  }
 }

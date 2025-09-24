@@ -3,14 +3,11 @@
 .button {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   flex-shrink: 0;
   gap: var(--spacing-8);
   line-height: 1;
   @include transition;
-
-  &.fullwidth {
-    width: 100%;
-  }
 
   &.size-m {
     height: var(--size-40);
@@ -34,42 +31,31 @@
     }
   }
 
-  &.radius-max {
-    border-radius: var(--radius-9999);
-  }
-
-  &.radius-l {
-    border-radius: var(--radius-12);
-  }
-
-  &.radius-m {
-    border-radius: var(--radius-8);
-  }
-
-  &.radius-s {
-    border-radius: var(--radius-4);
-  }
-
   @each $color in $colors {
     &.color-#{$color} {
-      &.variant-fill {
+      &.variant-flat {
         background: var(--#{$color}-fill);
         color: var(--#{$color}-fill-on);
-      }
 
-      &.variant-fill-soft {
-        background: var(--#{$color}-fill-soft);
-        color: var(--#{$color}-content);
+        &.tone-soft {
+          background: var(--#{$color}-fill-soft);
+          color: var(--#{$color}-fill-soft-on);
+        }
       }
 
       &.variant-outline {
-        border: 1px solid var(--#{$color}-outline);
+        border-color: var(--#{$color}-outline);
+        border-width: 1px;
         color: var(--#{$color}-content);
-      }
 
-      &.variant-dash {
-        border: 2px dashed var(--#{$color}-outline);
-        color: var(--#{$color}-content);
+        &.tone-soft {
+          border-color: var(--#{$color}-outline-soft);
+          color: var(--#{$color}-content);
+        }
+
+        &:not([class*="border-style"]) {
+          border-style: solid;
+        }
       }
 
       &.variant-ghost {
@@ -78,10 +64,5 @@
         color: var(--#{$color}-content);
       }
     }
-  }
-
-  &.disabled {
-    opacity: 0.35;
-    pointer-events: none;
   }
 }

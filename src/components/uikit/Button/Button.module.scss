@@ -3,7 +3,6 @@
 .button {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
   flex-shrink: 0;
   line-height: 1;
   text-align: center;
@@ -11,73 +10,10 @@
   cursor: pointer;
   @include transition;
 
-  @each $color in $colors {
-    &.color-#{$color} {
-      &.variant-fill {
-        background: var(--#{$color}-fill);
-        color: var(--#{$color}-fill-on);
-
-        &:hover {
-          background: var(--#{$color}-fill-hover);
-        }
-
-        &.active {
-          background: var(--#{$color}-fill-hover);
-        }
-      }
-
-      &.variant-outline {
-        border: 1px solid var(--#{$color}-outline);
-        color: var(--#{$color}-content);
-
-        &:hover {
-          border-color: var(--#{$color}-outline-hover);
-          color: var(--#{$color}-content-hover);
-        }
-
-        &.active {
-          background: var(--#{$color}-fill);
-          border-color: var(--#{$color}-fill);
-          color: var(--#{$color}-fill-on);
-        }
-      }
-
-      &.variant-dash {
-        border: 2px dashed var(--#{$color}-outline);
-        color: var(--#{$color}-content);
-
-        &:hover {
-          border-color: var(--#{$color}-outline-hover);
-          color: var(--#{$color}-content-hover);
-        }
-
-        &.active {
-          background: var(--#{$color}-fill);
-          border-color: var(--#{$color}-fill);
-          color: var(--#{$color}-fill-on);
-        }
-      }
-
-      &.variant-ghost {
-        color: var(--#{$color}-content);
-
-        &:hover {
-          background: var(--#{$color}-fill-soft);
-        }
-
-        &.active {
-          background: var(--#{$color}-fill);
-          color: var(--#{$color}-fill-on);
-        }
-      }
-    }
-  }
-
   &.size-l {
     gap: var(--spacing-12);
     height: var(--size-64);
     padding: 0 var(--spacing-32);
-    border-radius: var(--radius-16);
 
     .icon {
       width: var(--size-24);
@@ -93,13 +29,16 @@
         height: var(--size-28);
       }
     }
+
+    &:not([class*="border-radius"]) {
+      border-radius: var(--radius-16);
+    }
   }
 
   &.size-m {
     gap: var(--spacing-8);
     height: var(--size-48);
     padding: 0 var(--spacing-24);
-    border-radius: var(--radius-12);
 
     .icon {
       width: var(--size-20);
@@ -115,13 +54,16 @@
         height: var(--size-24);
       }
     }
+
+    &:not([class*="border-radius"]) {
+      border-radius: var(--radius-12);
+    }
   }
 
   &.size-s {
     gap: var(--spacing-8);
     height: var(--size-32);
     padding: 0 var(--spacing-16);
-    border-radius: var(--radius-8);
     font-size: var(--font-size-text-s);
 
     .icon {
@@ -138,38 +80,94 @@
         height: var(--size-20);
       }
     }
+
+    &:not([class*="border-radius"]) {
+      border-radius: var(--radius-8);
+    }
   }
 
-  &.radius-max {
-    border-radius: var(--radius-9999);
-  }
+  @each $color in $colors {
+    &.color-#{$color} {
+      &.variant-flat {
+        background: var(--#{$color}-fill);
+        color: var(--#{$color}-fill-on);
 
-  &.radius-xl {
-    border-radius: var(--radius-24);
-  }
+        &:hover {
+          background: var(--#{$color}-fill-hover);
+        }
 
-  &.radius-l {
-    border-radius: var(--radius-16);
-  }
+        &.active {
+          background: var(--#{$color}-fill-hover);
+        }
 
-  &.radius-m {
-    border-radius: var(--radius-12);
-  }
+        &.tone-soft {
+          background: var(--#{$color}-fill-soft);
+          color: var(--#{$color}-fill-soft-on);
 
-  &.radius-s {
-    border-radius: var(--radius-8);
-  }
+          &:hover {
+            background: var(--#{$color}-fill-soft-hover);
+          }
 
-  &.radius-xs {
-    border-radius: var(--radius-4);
-  }
+          &.active {
+            background: var(--#{$color}-fill-soft-hover);
+          }
+        }
+      }
 
-  &.fullwidth {
-    width: 100%;
-  }
+      &.variant-outline {
+        border-color: var(--#{$color}-outline);
+        border-width: 1px;
+        color: var(--#{$color}-content);
 
-  &.disabled {
-    opacity: 0.35;
-    pointer-events: none;
+        &:hover {
+          border-color: var(--#{$color}-outline-hover);
+          color: var(--#{$color}-content-hover);
+        }
+
+        &.active {
+          background: var(--#{$color}-fill);
+          border-color: var(--#{$color}-fill);
+          color: var(--#{$color}-fill-on);
+        }
+
+        &.tone-soft {
+          border-color: var(--#{$color}-outline-soft);
+          color: var(--#{$color}-content);
+
+          &:hover {
+            border-color: var(--#{$color}-outline-soft-hover);
+            color: var(--#{$color}-content-hover);
+          }
+
+          &.active {
+            background: var(--#{$color}-fill-soft);
+            border-color: var(--#{$color}-fill-soft);
+            color: var(--#{$color}-fill-soft-on);
+          }
+        }
+
+        &:not([class*="border-style"]) {
+          border-style: solid;
+        }
+      }
+
+      &.variant-ghost {
+        color: var(--#{$color}-content);
+
+        &:hover {
+          background: var(--#{$color}-fill-soft);
+        }
+
+        &.active {
+          background: var(--#{$color}-fill);
+          color: var(--#{$color}-fill-on);
+
+          &.tone-soft {
+            background: var(--#{$color}-fill-soft);
+            color: var(--#{$color}-fill-soft-on);
+          }
+        }
+      }
+    }
   }
 }

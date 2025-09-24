@@ -1,4 +1,4 @@
-import React from "react";
+import type { ReactNode } from "react";
 import type { Metadata, Viewport } from "next";
 import { MainLayout } from "@/layouts/MainLayout/MainLayout";
 import { UserProvider } from "@/contexts/UserContext/UserContext";
@@ -7,11 +7,12 @@ import { getCookieFont } from "@/services/FontService";
 import { getCookieTheme } from "@/services/ThemeService";
 import type { Theme } from "@/types/Theme";
 import type { Font } from "@/types/Font";
+import { app } from "@/data/app";
 import "@/styles/tokens.scss";
 import "@/styles/main.scss";
 
 export const metadata: Metadata = {
-  title: "Design & frontend for your project — Celestian",
+  title: app.title,
 };
 
 export const viewport: Viewport = {
@@ -20,7 +21,7 @@ export const viewport: Viewport = {
 };
 
 type Props = {
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
 type ProvidersData = {

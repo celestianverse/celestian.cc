@@ -1,22 +1,41 @@
-import React from "react";
-import type { Align, Justify } from "@/types/Styles";
+import type { HTMLAttributes, ReactNode } from "react";
+import type { AlignItems, JustifyContent } from "@/types/Styles";
 
 type Gap = "xl" | "l" | "m" | "s" | "xs" | "none";
 
 export type Props = {
   /**
    * <pre>
-   *      xl - 128px
-   *       l - 96px
-   *       m - 64px
-   *       s - 48px
-   *      xs - 32px
-   *    none - 0 (default)
+   *   0 | 4 | 8 | 16 | 24 | 32 | 48 | 64 | 96 | 128
    * </pre>
    */
   gap?: Gap;
-  align?: Align;
-  justify?: Justify;
+  /**
+   * <pre>
+   *   0 | 4 | 8 | 16 | 24 | 32 | 48 | 64 | 96 | 128
+   * </pre>
+   */
+  laptopGap?: Gap;
+  /**
+   * <pre>
+   *   0 | 4 | 8 | 16 | 24 | 32 | 48 | 64 | 96 | 128
+   * </pre>
+   */
+  tabletGap?: Gap;
+  /**
+   * <pre>
+   *   0 | 4 | 8 | 16 | 24 | 32 | 48 | 64 | 96 | 128
+   * </pre>
+   */
+  mobileGap?: Gap;
+  align?: AlignItems;
+  laptopAlign?: AlignItems;
+  tabletAlign?: AlignItems;
+  mobileAlign?: AlignItems;
+  justify?: JustifyContent;
+  laptopJustify?: JustifyContent;
+  tabletJustify?: JustifyContent;
+  mobileJustify?: JustifyContent;
   className?: string;
-  children?: React.ReactNode;
-} & React.HTMLAttributes<HTMLDivElement>;
+  children?: ReactNode;
+} & HTMLAttributes<HTMLDivElement>;

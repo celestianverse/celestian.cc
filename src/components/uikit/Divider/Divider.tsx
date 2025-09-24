@@ -9,8 +9,10 @@ const DEFAULT_ELEMENT = "div";
 export const Divider = <E extends React.ElementType<any, Element> = typeof DEFAULT_ELEMENT>
 ({
    as,
-   variant = "outline",
    color = "primary",
+   tone = "base",
+   borderStyle = "solid",
+   borderWidth,
    className,
    ...rest
  }: Polymorphic<E, Props>) => {
@@ -20,10 +22,12 @@ export const Divider = <E extends React.ElementType<any, Element> = typeof DEFAU
     <Component
       className={classNames(
         styles.divider,
-        styles[`variant-${variant}`],
         styles[`color-${color}`],
+        styles[`tone-${tone}`],
+        styles[`border-style-${borderStyle}`],
         className,
       )}
+      style={{ borderWidth: borderWidth }}
       {...rest}
     />
   );

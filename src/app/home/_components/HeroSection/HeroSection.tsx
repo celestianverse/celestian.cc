@@ -18,11 +18,11 @@ export const HeroSection = () => {
       align="center"
       justify="space-between"
       height="l"
-      overlapBottom="m"
+      overlapBottom={96}
       offsetHeader
     >
-      <Column gap="xl">
-        <Column gap="xs">
+      <Column gap={64}>
+        <Column gap={16}>
           <Title
             as="h1"
             size="xl"
@@ -38,14 +38,13 @@ export const HeroSection = () => {
         </Column>
         <Row
           wrap="wrap"
-          gap="s"
+          gap={24}
         >
           <Button
             as={Link}
             href={hero.projects.path}
             size="l"
             color="primary"
-            variant="fill"
             className={styles.button}
           >
             {hero.projects.label}
@@ -54,8 +53,10 @@ export const HeroSection = () => {
             as={Link}
             href={hero.contacts.path}
             size="l"
+            variant="outline"
             color="primary"
-            variant="dash"
+            borderStyle="dashed"
+            borderWidth={2}
             className={styles.button}
           >
             {hero.contacts.label}

@@ -1,57 +1,7 @@
 @use "@/styles/mixins" as *;
 
 .page {
-  display: flex;
-  flex-direction: column;
   flex-grow: 1;
   width: 100%;
   min-height: 100%;
-
-  &.gap-xl {
-    gap: var(--spacing-128);
-  }
-
-  &.gap-l {
-    gap: var(--spacing-96);
-  }
-
-  &.gap-m {
-    gap: var(--spacing-64);
-  }
-
-  &.gap-s {
-    gap: var(--spacing-48);
-  }
-
-  &.gap-xs {
-    gap: var(--spacing-32);
-  }
-
-  &.align-start {
-    align-items: flex-start;
-  }
-
-  &.align-center {
-    align-items: center;
-  }
-
-  &.align-end {
-    align-items: flex-end;
-  }
-
-  &.justify-start {
-    justify-content: flex-start;
-  }
-
-  &.justify-center {
-    justify-content: center;
-  }
-
-  &.justify-end {
-    justify-content: flex-end;
-  }
-
-  &.justify-space-between {
-    justify-content: space-between;
-  }
 }
