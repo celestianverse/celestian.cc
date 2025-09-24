@@ -13,22 +13,24 @@ export const MethodologySection = () => {
       color="info"
       justify="center"
       align="center"
-      gap="xl"
-      radiusTop="m"
-      overlapBottom="m"
+      radiusTop={96}
+      overlapBottom={96}
+      mobileRadiusTop={64}
     >
       <Title>{methodology.title}</Title>
-      <Column gap="l">
+      <Column gap={48}>
         {methodology.items.map((item, index) => (
           <Column
             key={item.title}
             as="article"
-            gap="l"
+            gap={48}
           >
             {index !== 0 && (
               <Divider
-                variant="dash-soft"
                 color="contrast"
+                tone="soft"
+                borderStyle="dashed"
+                borderWidth={2}
               />
             )}
             <Grid

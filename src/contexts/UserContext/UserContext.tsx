@@ -1,5 +1,6 @@
 "use client";
-import React, { createContext, useContext, useRef } from "react";
+import type { ReactNode } from "react";
+import { createContext, useContext, useRef } from "react";
 import { createStore, useStore } from "zustand";
 import type { Nullable } from "@/types/Nullable";
 import type { Font } from "@/types/Font";
@@ -22,7 +23,7 @@ type State =
 
 type ProviderProps =
   Props & {
-    children: React.ReactNode;
+    children: ReactNode;
   };
 
 type UserStore = ReturnType<typeof createUserStore>;

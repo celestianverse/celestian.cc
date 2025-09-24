@@ -1,7 +1,7 @@
-import React from "react";
-import type { Align, Gap } from "@/types/Styles";
+import type { HTMLAttributes, ReactNode } from "react";
+import type { AlignItems, Gap } from "@/types/Styles";
 
-type Columns = 4 | 3 | 2;
+type Columns = 2 | 3 | 4;
 
 export type Props = {
   /**
@@ -14,18 +14,32 @@ export type Props = {
   columns?: Columns;
   /**
    * <pre>
-   *     xxl - 96px
-   *      xl - 64px
-   *       l - 48px
-   *       m - 32px (default)
-   *       s - 24px
-   *      xs - 16px
-   *     xxs - 8px
-   *    none - 0
+   *   0 | 4 | 8 | 16 | 24 | 32 | 48 | 64 | 96 | 128
    * </pre>
    */
   gap?: Gap;
-  align?: Align;
-  children?: React.ReactNode;
+  /**
+   * <pre>
+   *   0 | 4 | 8 | 16 | 24 | 32 | 48 | 64 | 96 | 128
+   * </pre>
+   */
+  laptopGap?: Gap;
+  /**
+   * <pre>
+   *   0 | 4 | 8 | 16 | 24 | 32 | 48 | 64 | 96 | 128
+   * </pre>
+   */
+  tabletGap?: Gap;
+  /**
+   * <pre>
+   *   0 | 4 | 8 | 16 | 24 | 32 | 48 | 64 | 96 | 128
+   * </pre>
+   */
+  mobileGap?: Gap;
+  align?: AlignItems;
+  laptopAlign?: AlignItems;
+  tabletAlign?: AlignItems;
+  mobileAlign?: AlignItems;
+  children?: ReactNode;
   className?: string;
-} & React.HTMLAttributes<HTMLDivElement>;
+} & HTMLAttributes<HTMLDivElement>;

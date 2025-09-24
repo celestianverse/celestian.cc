@@ -1,18 +1,18 @@
 "use client";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { Row } from "@/components/uikit/Row/Row";
 import { Anchor } from "@/components/uikit/Anchor/Anchor";
 import { ROUTES } from "@/constants/routes";
+import { useIsActivePath } from "@/hooks/useActivePage";
 
 export const Navigation = () => {
-  const pathname = usePathname();
+  const isActivePath = useIsActivePath();
 
   return (
     <nav>
       <Row
         as="ul"
-        gap="none"
+        gap={0}
       >
         {Object.values(ROUTES.main).map((page) => (
           <li key={page.path}>
@@ -20,7 +20,9 @@ export const Navigation = () => {
               as={Link}
               href={page.path}
               padding="l"
-              dash={page.path === "/" ? pathname === "/" : pathname.startsWith(page.path)}
+              variant={isActivePath(page.path) ? "outline" : "base"}
+              borderWidth={isActivePath(page.path) ? 2 : 0}
+              borderStyle={isActivePath(page.path) ? "dashed" : "none"}
             >
               {page.title}
             </Anchor>

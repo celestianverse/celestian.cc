@@ -1,7 +1,6 @@
 export const COLORS = [
   "primary",
   "secondary",
-  "neutral",
   "brand",
   "accent",
   "utility",

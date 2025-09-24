@@ -1,5 +1,5 @@
-import React from "react";
+import type { ReactNode } from "react";
 
 export type Props = {
-  children: React.ReactNode;
+  children: ReactNode;
 };

@@ -13,27 +13,38 @@ export const ProjectsSection = () => {
       {projects.items.map((item, index) => (
         <Section
           key={item.title}
-          variant={index % 2 === 0 ? "fill" : "gradient"}
-          color={index % 2 === 0 ? "contrast" : "neutral"}
+          variant={index % 2 === 0 ? "flat" : "gradient"}
+          color={index % 2 === 0 ? "contrast" : "primary"}
+          tone={index % 2 === 0 ? "base" : "soft"}
           direction="row"
           align="center"
           justify="space-between"
-          radiusTop="m"
-          overlapBottom="m"
-          classNameContainer={styles.container}
+          radiusTop={96}
+          overlapBottom={96}
+          tabletAlign="flex-end"
+          mobileGap={48}
+          mobileDirection="column"
+          mobileAlign="center"
+          mobileRadiusTop={64}
+          className={styles.section}
         >
           <Column
-            gap="l"
-            className={styles.content}
+            gap={48}
+            mobileAlign="center"
           >
             <Column
-              gap="s"
-              className={styles.info}
+              gap={24}
+              mobileAlign="center"
             >
-              <Tag size="s">{item.tag}</Tag>
+              <Tag
+                size="s"
+                tone="soft"
+              >
+                {item.tag}
+              </Tag>
               <Column
-                gap="xs"
-                className={styles.titles}
+                gap={16}
+                mobileAlign="center"
               >
                 <Title>
                   {item.title}
@@ -51,8 +62,8 @@ export const ProjectsSection = () => {
               as="a"
               href={item.url}
               target="_blank"
-              size="l"
               color="info"
+              size="l"
               iconStart="arrowUpRight"
             >
               Open project

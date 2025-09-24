@@ -62,8 +62,8 @@
   --spacing-minus-96: -96px;
   --spacing-minus-128: -128px;
 
-  --radius-9999: 9999px;
-  --radius-128: 96px;
+  --radius-999: 999px;
+  --radius-128: 128px;
   --radius-96: 96px;
   --radius-64: 64px;
   --radius-48: 48px;
@@ -120,17 +120,21 @@ $themes: (
     light: $accent,
     dark: color.scale($accent, $lightness: 20%),
   ),
-  primary-background: (
+  primary-surface: (
     light: $primary,
     dark: $primary,
   ),
-  primary-background-on: (
+  primary-surface-on: (
     light: $contrast,
     dark: $contrast,
   ),
-  primary-background-on-hover: (
-    light: $phantom,
-    dark: $phantom,
+  primary-surface-soft: (
+    light: $neutral,
+    dark: color.scale($primary, $lightness: 5%),
+  ),
+  primary-surface-soft-on: (
+    light: $primary,
+    dark: $contrast,
   ),
   primary-fill: (
     light: $primary,
@@ -148,6 +152,14 @@ $themes: (
     light: rgba($primary, 0.05),
     dark: rgba($contrast, 0.05),
   ),
+  primary-fill-soft-hover: (
+    light: rgba($primary, 0.1),
+    dark: rgba($contrast, 0.1),
+  ),
+  primary-fill-soft-on: (
+    light: $primary,
+    dark: $contrast,
+  ),
   primary-outline: (
     light: $primary,
     dark: $contrast,
@@ -160,73 +172,89 @@ $themes: (
     light: linear-gradient(90deg, color.scale($primary, $lightness: -12%, $saturation: 20%) 0, color.scale($primary, $lightness: 4%, $saturation: 20%) 100%),
     dark: linear-gradient(90deg, color.scale($primary, $lightness: -13%, $saturation: 20%) 0, color.scale($primary, $lightness: 3%, $saturation: 20%) 100%),
   ),
-  secondary: (
-    light: $secondary,
-    dark: $phantom,
-  ),
-  secondary-hover: (
-    light: mix($secondary, #fff, 80%),
-    dark: mix($secondary, #fff, 20%),
-  ),
-  secondary-background: (
-    light: $secondary,
-    dark: $secondary,
-  ),
-  secondary-foreground: (
+  primary-gradient-on: (
     light: $contrast,
     dark: $contrast,
   ),
-  secondary-ghost: (
-    light: rgba($secondary, 0.1),
-    dark: rgba($phantom, 0.1),
-  ),
-  neutral-content: (
-    light: $neutral,
-    dark: $contrast,
-  ),
-  neutral-content-hover: (
-    light: $accent,
-    dark: $accent,
-  ),
-  neutral-background: (
-    light: $neutral,
+  primary-gradient-soft: (
+    light: linear-gradient(90deg, color.scale($neutral, $lightness: -4%) 0, color.scale($neutral, $lightness: 2%) 100%),
     dark: linear-gradient(90deg, color.scale($primary, $lightness: -13%, $saturation: 20%) 0, color.scale($primary, $lightness: 3%, $saturation: 20%) 100%),
   ),
-  neutral-background-on: (
+  primary-gradient-soft-on: (
     light: $primary,
     dark: $contrast,
   ),
-  neutral-background-on-hover: (
-    light: $phantom,
-    dark: $phantom,
-  ),
-  neutral-fill: (
-    light: $neutral,
+  secondary-content: (
+    light: $secondary,
     dark: $contrast,
   ),
-  neutral-fill-on: (
-    light: $contrast,
-    dark: $neutral,
-  ),
-  neutral-fill-hover: (
+  secondary-content-hover: (
     light: $accent,
-    dark: $accent,
+    dark: color.scale($accent, $lightness: 20%),
   ),
-  neutral-fill-soft: (
-    light: rgba($neutral, 0.05),
+  secondary-surface: (
+    light: $secondary,
+    dark: $secondary,
+  ),
+  secondary-surface-on: (
+    light: $contrast,
+    dark: $contrast,
+  ),
+  secondary-surface-soft: (
+    light: $neutral,
+    dark: color.scale($secondary, $lightness: 5%),
+  ),
+  secondary-surface-soft-on: (
+    light: $secondary,
+    dark: $contrast,
+  ),
+  secondary-fill: (
+    light: $secondary,
+    dark: $contrast,
+  ),
+  secondary-fill-hover: (
+    light: $accent,
+    dark: color.scale($accent, $lightness: 20%),
+  ),
+  secondary-fill-on: (
+    light: $contrast,
+    dark: $secondary,
+  ),
+  secondary-fill-soft: (
+    light: rgba($secondary, 0.05),
     dark: rgba($contrast, 0.05),
   ),
-  neutral-outline: (
-    light: $neutral,
+  secondary-fill-soft-hover: (
+    light: rgba($secondary, 0.1),
+    dark: rgba($contrast, 0.1),
+  ),
+  secondary-fill-soft-on: (
+    light: $secondary,
     dark: $contrast,
   ),
-  neutral-outline-soft: (
-    light: rgba($neutral, 0.15),
+  secondary-outline: (
+    light: $secondary,
+    dark: $contrast,
+  ),
+  secondary-outline-soft: (
+    light: rgba($secondary, 0.15),
     dark: rgba($contrast, 0.15),
   ),
-  neutral-gradient: (
-    light: linear-gradient(90deg, color.scale($neutral, $lightness: -5%) 0, color.scale($neutral, $lightness: 2%) 100%),
-    dark: linear-gradient(90deg, color.scale($primary, $lightness: -13%, $saturation: 20%) 0, color.scale($primary, $lightness: 3%, $saturation: 20%) 100%),
+  secondary-gradient: (
+    light: linear-gradient(90deg, color.scale($secondary, $lightness: -12%, $saturation: 20%) 0, color.scale($secondary, $lightness: 4%, $saturation: 20%) 100%),
+    dark: linear-gradient(90deg, color.scale($secondary, $lightness: -13%, $saturation: 20%) 0, color.scale($secondary, $lightness: 3%, $saturation: 20%) 100%),
+  ),
+  secondary-gradient-on: (
+    light: $contrast,
+    dark: $contrast,
+  ),
+  secondary-gradient-soft: (
+    light: linear-gradient(90deg, color.scale($neutral, $lightness: -4%) 0, color.scale($neutral, $lightness: 2%) 100%),
+    dark: linear-gradient(90deg, color.scale($secondary, $lightness: -13%, $saturation: 20%) 0, color.scale($secondary, $lightness: 3%, $saturation: 20%) 100%),
+  ),
+  secondary-gradient-soft-on: (
+    light: $secondary,
+    dark: $contrast,
   ),
   brand-content: (
     light: $brand,
@@ -236,15 +264,15 @@ $themes: (
     light: $accent,
     dark: $accent,
   ),
-  brand-background: (
+  brand-surface: (
     light: $brand,
     dark: $brand,
   ),
-  brand-background-on: (
+  brand-surface-on: (
     light: $primary,
     dark: $contrast,
   ),
-  brand-background-on-hover: (
+  brand-surface-on-hover: (
     light: $phantom,
     dark: $phantom,
   ),
@@ -276,6 +304,10 @@ $themes: (
     light: linear-gradient(90deg, color.scale($brand, $lightness: -25%) 0, color.scale($brand, $lightness: 5%) 100%),
     dark: linear-gradient(90deg, color.scale($primary, $lightness: -13%, $saturation: 20%) 0, color.scale($primary, $lightness: 3%, $saturation: 20%) 100%),
   ),
+  brand-gradient-on: (
+    light: $primary,
+    dark: $contrast,
+  ),
   accent-content: (
     light: $accent,
     dark: $accent,
@@ -284,15 +316,15 @@ $themes: (
     light: $accent,
     dark: $accent,
   ),
-  accent-background: (
+  accent-surface: (
     light: $accent,
     dark: color.scale($accent, $lightness: -15%),
   ),
-  accent-background-on: (
+  accent-surface-on: (
     light: $contrast,
     dark: $contrast,
   ),
-  accent-background-on-hover: (
+  accent-surface-on-hover: (
     light: $phantom,
     dark: $phantom,
   ),
@@ -324,6 +356,10 @@ $themes: (
     light: linear-gradient(90deg, color.scale($accent, $lightness: -10%) 0, color.scale($accent, $lightness: 10%) 100%),
     dark: linear-gradient(90deg, color.scale($primary, $lightness: -35%, $saturation: 20%) 0, color.scale($primary, $lightness: -5%, $saturation: 20%) 100%),
   ),
+  accent-gradient-on: (
+    light: $contrast,
+    dark: $contrast,
+  ),
   contrast-content: (
     light: $contrast,
     dark: $contrast,
@@ -332,15 +368,15 @@ $themes: (
     light: $phantom,
     dark: $phantom,
   ),
-  contrast-background: (
+  contrast-surface: (
     light: $contrast,
     dark: linear-gradient(90deg, color.scale($primary, $lightness: 3%, $saturation: 10%) 0, color.scale($primary, $lightness: 8%, $saturation: 10%) 100%),
   ),
-  contrast-background-on: (
+  contrast-surface-on: (
     light: $primary,
     dark: $contrast,
   ),
-  contrast-background-on-hover: (
+  contrast-surface-on-hover: (
     light: $phantom,
     dark: $phantom,
   ),
@@ -376,7 +412,7 @@ $themes: (
     light: mix($phantom, #fff, 80%),
     dark: mix($phantom, #fff, 20%),
   ),
-  phantom-background: (
+  phantom-surface: (
     light: $phantom,
     dark: $primary,
   ),
@@ -396,15 +432,15 @@ $themes: (
     light: $info,
     dark: $info,
   ),
-  info-background: (
+  info-surface: (
     light: $info,
     dark: $info,
   ),
-  info-background-on: (
+  info-surface-on: (
     light: $contrast,
     dark: $contrast,
   ),
-  info-background-on-hover: (
+  info-surface-on-hover: (
     light: $phantom,
     dark: $phantom,
   ),
@@ -436,6 +472,10 @@ $themes: (
     light: linear-gradient(90deg, color.scale($info, $lightness: -15%) 0, color.scale($info, $lightness: 5%) 100%),
     dark: linear-gradient(90deg, color.scale($primary, $lightness: -13%, $saturation: 20%) 0, color.scale($primary, $lightness: 3%, $saturation: 20%) 100%),
   ),
+  info-gradient-on: (
+    light: $contrast,
+    dark: $contrast,
+  ),
   success: (
     light: $success,
     dark: $contrast,
@@ -444,7 +484,7 @@ $themes: (
     light: mix($success, #fff, 80%),
     dark: mix($success, #fff, 20%),
   ),
-  success-background: (
+  success-surface: (
     light: $success,
     dark: $success,
   ),
@@ -464,7 +504,7 @@ $themes: (
     light: mix($warning, #fff, 80%),
     dark: mix($warning, #fff, 20%),
   ),
-  warning-background: (
+  warning-surface: (
     light: $warning,
     dark: $warning,
   ),
@@ -484,7 +524,7 @@ $themes: (
     light: mix($danger, #fff, 80%),
     dark: mix($danger, #fff, 20%),
   ),
-  danger-background: (
+  danger-surface: (
     light: $danger,
     dark: $danger,
   ),

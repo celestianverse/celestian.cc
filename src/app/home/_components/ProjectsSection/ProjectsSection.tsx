@@ -19,9 +19,9 @@ export const ProjectsSection = () => {
       color="contrast"
       justify="center"
       align="center"
-      gap="xl"
-      radiusTop="m"
-      overlapBottom="m"
+      radiusTop={96}
+      overlapBottom={96}
+      mobileRadiusTop={64}
     >
       <Title>{projects.title}</Title>
       <Grid columns={2}>
@@ -32,7 +32,10 @@ export const ProjectsSection = () => {
             href={item.url}
             target="_blank"
             color="primary"
-            variant="dash-soft"
+            variant="outline"
+            tone="soft"
+            borderStyle="dashed"
+            borderWidth={2}
             justify="space-between"
             hoverable
             className={styles.box}
@@ -43,7 +46,10 @@ export const ProjectsSection = () => {
                 alt={item.subtitle}
               />
               <Hidden on="mobile-only">
-                <Tag size="s">
+                <Tag
+                  size="s"
+                  tone="soft"
+                >
                   {item.tag}
                 </Tag>
               </Hidden>
@@ -55,7 +61,7 @@ export const ProjectsSection = () => {
               </Hidden>
             </Row>
             <Row
-              align="end"
+              align="flex-end"
               justify="space-between"
             >
               <Title

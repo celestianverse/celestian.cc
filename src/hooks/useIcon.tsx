@@ -1,4 +1,4 @@
-import React from "react";
+import type { ReactNode } from "react";
 import { Icon } from "@/components/uikit/Icon/Icon";
 import type { Keys } from "@/components/uikit/Icon/Icon.types";
 
@@ -15,7 +15,7 @@ export type IconProps = {
 
 type Props = IconProps & {
   styles?: Styles;
-  children?: React.ReactNode;
+  children?: ReactNode;
 };
 
 export const useIcon = ({

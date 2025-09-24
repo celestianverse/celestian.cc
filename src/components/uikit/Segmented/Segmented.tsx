@@ -5,7 +5,7 @@ import styles from "./Segmented.module.scss";
 export const Segmented = (
   {
     color = "primary",
-    radius = "m",
+    radius = 12,
     fullwidth,
     className,
     children,
@@ -16,9 +16,9 @@ export const Segmented = (
       className={classNames(
         styles.segmented,
         styles[`color-${color}`],
-        styles[`radius-${radius}`],
         {
-          [styles.fullwidth]: fullwidth,
+          ["fullwidth"]: fullwidth,
+          [`border-radius-${radius}`]: radius != null,
         },
         className,
       )}

@@ -9,8 +9,8 @@ export const IntroSection = ({title, className}: Props) => {
       variant="gradient"
       align="center"
       height="m"
-      paddingY="none"
-      overlapBottom="m"
+      paddingY={0}
+      overlapBottom={96}
       offsetHeader
       className={className}
     >

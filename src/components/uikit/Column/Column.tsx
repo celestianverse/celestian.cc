@@ -6,7 +6,7 @@ export const Column = (props: Props) => {
   return (
     <Flex
       direction="column"
-      align="start"
+      align="flex-start"
       {...props}
     />
   );

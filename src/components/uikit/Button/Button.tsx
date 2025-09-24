@@ -2,7 +2,7 @@ import React from "react";
 import classNames from "classnames";
 import { useIcon } from "@/hooks/useIcon";
 import type { Polymorphic } from "@/types/Polymorphic";
-import type { Props, Element } from "./Button.types";
+import type { ButtonProps, Element } from "./Button.types";
 import styles from "./Button.module.scss";
 
 const DEFAULT_ELEMENT = "button";
@@ -10,10 +10,14 @@ const DEFAULT_ELEMENT = "button";
 export const Button = <E extends React.ElementType<any, Element> = typeof DEFAULT_ELEMENT>(
   {
     as,
+    variant = "flat",
     color = "primary",
-    variant = "fill",
+    tone = "base",
     size = "m",
+    justify = "center",
     radius,
+    borderStyle,
+    borderWidth,
     fullwidth,
     active,
     loading,
@@ -24,7 +28,7 @@ export const Button = <E extends React.ElementType<any, Element> = typeof DEFAUL
     className,
     children,
     ...rest
-  }: Polymorphic<E, Props>) => {
+  }: Polymorphic<E, ButtonProps>) => {
   const Component = as || DEFAULT_ELEMENT;
 
   const Content = useIcon({
@@ -38,17 +42,21 @@ export const Button = <E extends React.ElementType<any, Element> = typeof DEFAUL
         styles.button,
         styles[`variant-${variant}`],
         styles[`color-${color}`],
+        styles[`tone-${tone}`],
         styles[`size-${size}`],
-        styles[`radius-${radius}`],
         {
-          [styles.fullwidth]: fullwidth,
+          [`justify-content-${justify}`]: justify,
+          [`border-radius-${radius}`]: radius != null,
+          [`border-style-${borderStyle}`]: borderStyle,
+          ["fullwidth"]: fullwidth,
           [styles.active]: active,
           [styles.loading]: loading,
-          [styles.disabled]: disabled,
+          ["disabled"]: disabled,
           [styles["icon-only"]]: iconOnly,
         },
         className,
       )}
+      style={{ borderWidth: borderWidth }}
       {...rest}
     >
       {Content}

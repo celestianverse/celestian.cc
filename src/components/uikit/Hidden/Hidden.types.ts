@@ -1,4 +1,4 @@
-import React from "react";
+import type { ReactNode } from "react";
 
 type On =
   | "all"
@@ -15,5 +15,5 @@ type On =
 
 export type Props = {
   on: On;
-  children: React.ReactNode;
+  children: ReactNode;
 };

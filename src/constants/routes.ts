@@ -10,7 +10,7 @@ export const ROUTES = {
     },
     uikit: {
       title: "UI kit library",
-      path: "/uikit",
+      path: "/uikit/button",
     },
     contacts: {
       title: "Contacts",

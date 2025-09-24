@@ -1,4 +1,4 @@
-import React from "react";
+import type { ElementType } from "react";
 import classNames from "classnames";
 import type { Polymorphic } from "@/types/Polymorphic";
 import type { Element, Props } from "./Text.types";
@@ -6,7 +6,7 @@ import styles from "./Text.module.scss";
 
 const DEFAULT_ELEMENT = "p";
 
-export const Text = <E extends React.ElementType<any, Element> = typeof DEFAULT_ELEMENT>
+export const Text = <E extends ElementType<any, Element> = typeof DEFAULT_ELEMENT>
 ({
    as,
    color = "inherit",

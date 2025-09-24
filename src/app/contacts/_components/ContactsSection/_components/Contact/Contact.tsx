@@ -15,13 +15,16 @@ export const Contact = ({ data, className, ...rest }: Props) => {
     <Box
       as="article"
       color="primary"
-      variant="dash-soft"
+      variant="outline"
+      tone="soft"
+      borderStyle="dashed"
+      borderWidth={2}
       justify="space-between"
-      gap="xxs"
+      gap={8}
       className={classNames(styles.box, className)}
       {...rest}
     >
-      <Column gap="xxs">
+      <Column gap={8}>
         <Title
           as="h4"
           size="xs"
@@ -31,7 +34,7 @@ export const Contact = ({ data, className, ...rest }: Props) => {
         <Text>{data.subtitle}</Text>
       </Column>
       <Row
-        align="end"
+        align="flex-end"
         justify="space-between"
       >
         {data.link && (
@@ -39,8 +42,8 @@ export const Contact = ({ data, className, ...rest }: Props) => {
             as="a"
             href={data.link.url}
             target="_blank"
+            variant="flat"
             color="info"
-            variant="fill"
             iconStart="arrowUpRight"
             className={styles.button}
           >

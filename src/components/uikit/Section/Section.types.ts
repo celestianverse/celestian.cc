@@ -1,61 +1,23 @@
-import type React from "react";
+import type { ComponentProps } from "react";
 import type { Color } from "@/types/Color";
 import { Flex } from "@/components/uikit/Flex/Flex";
-import type { Align } from "@/types/Styles";
+import type { AlignItems, BorderRadius, Padding, Tone } from "@/types/Styles";
 
 export type Element = "div" | "section" | "article" | "header" | "footer" | "button" | "a";
 
-type Variant = "fill" | "gradient";
-
-type Padding = "l" | "m" | "s" | "xs" | "none";
+type Variant = "flat" | "gradient";
 
 type Height = "fullscreen" | "l" | "m" | "auto";
-
-type Radius = "l" | "m" | "s" | "none";
 
 type SectionProps = {
   variant?: Variant;
   color?: Color | "transparent";
-  alignSection?: Align;
-  /**
-   * <pre>
-   *      l - 128px
-   *      m - 96px (default)
-   *      s - 64px
-   *     xs - 48px
-   *   none - 0
-   * </pre>
-   */
-  paddingY?: Padding;
-  /**
-   * <pre>
-   *      l - 128px
-   *      m - 96px (default)
-   *      s - 64px
-   *     xs - 48px
-   *   none - 0
-   * </pre>
-   */
-  paddingTop?: Padding;
-  /**
-   * <pre>
-   *      l - 128px
-   *      m - 96px (default)
-   *      s - 64px
-   *     xs - 48px
-   *   none - 0
-   * </pre>
-   */
-  paddingBottom?: Padding;
-  /**
-   * <pre>
-   *      l - 128px
-   *      m - 96px
-   *      s - 64px
-   *   none - 0 (default)
-   * </pre>
-   */
-  overlapBottom?: Radius;
+  tone?: Tone;
+  alignSection?: AlignItems;
+  paddingY?: Extract<Padding, 0 | 32 | 48 | 64 | 96 | 128>;
+  paddingTop?: Extract<Padding, 0 | 32 | 48 | 64 | 96 | 128>;
+  paddingBottom?: Extract<Padding, 0 | 32 | 48 | 64 | 96 | 128>;
+  overlapBottom?: Extract<BorderRadius, 0 | 64 | 96 | 128>;
   /**
    * <pre>
    *    fullscreen - 100vh
@@ -65,37 +27,20 @@ type SectionProps = {
    * </pre>
    */
   height?: Height;
-  /**
-   * <pre>
-   *      l - 128px
-   *      m - 96px
-   *      s - 64px
-   *   none - 0 (default)
-   * </pre>
-   */
-  radius?: Radius;
-  /**
-   * <pre>
-   *      l - 128px
-   *      m - 96px
-   *      s - 64px
-   *   none - 0 (default)
-   * </pre>
-   */
-  radiusTop?: Radius;
-  /**
-   * <pre>
-   *      l - 128px
-   *      m - 96px
-   *      s - 64px
-   *   none - 0 (default)
-   * </pre>
-   */
-  radiusBottom?: Radius;
+  radius?: Extract<BorderRadius, 0 | 64 | 96 | 128>;
+  laptopRadius?: Extract<BorderRadius, 0 | 64 | 96 | 128>;
+  tabletRadius?: Extract<BorderRadius, 0 | 64 | 96 | 128>;
+  mobileRadius?: Extract<BorderRadius, 0 | 64 | 96 | 128>;
+  radiusTop?: Extract<BorderRadius, 0 | 64 | 96 | 128>;
+  laptopRadiusTop?: Extract<BorderRadius, 0 | 64 | 96 | 128>;
+  tabletRadiusTop?: Extract<BorderRadius, 0 | 64 | 96 | 128>;
+  mobileRadiusTop?: Extract<BorderRadius, 0 | 64 | 96 | 128>;
+  radiusBottom?: Extract<BorderRadius, 0 | 64 | 96 | 128>;
+  laptopRadiusBottom?: Extract<BorderRadius, 0 | 64 | 96 | 128>;
+  tabletRadiusBottom?: Extract<BorderRadius, 0 | 64 | 96 | 128>;
+  mobileRadiusBottom?: Extract<BorderRadius, 0 | 64 | 96 | 128>;
   offsetHeader?: boolean;
-  className?: string;
   classNameContainer?: string;
-  children: React.ReactNode;
 };
 
-export type Props = SectionProps & React.ComponentProps<typeof Flex>;
+export type Props = SectionProps & ComponentProps<typeof Flex>;

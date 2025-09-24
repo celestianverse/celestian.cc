@@ -8,7 +8,6 @@ import { ThemeSwitcher } from "@/components/custom/ThemeSwitcher/ThemeSwitcher";
 import { FontSwitcher } from "@/components/custom/FontSwitcher/FontSwitcher";
 import { contacts } from "@/data/contacts";
 import { app } from "@/data/app";
-import styles from "./Footer.module.scss";
 
 export const Footer = () => {
   const year = new Date().getFullYear();
@@ -18,33 +17,38 @@ export const Footer = () => {
       as="footer"
       variant="gradient"
       color="accent"
-      gap="l"
-      paddingTop="m"
-      paddingBottom="xs"
-      radiusTop="m"
+      gap={48}
+      paddingBottom={48}
+      radiusTop={96}
+      mobileRadiusTop={64}
     >
       <Row
+        gap={64}
         justify="space-between"
-        gap="xl"
-        className={styles.main}
+        mobileDirection="column"
       >
         <Logo color="contrast" />
-        <Row gap="xs">
+        <Row gap={16}>
           <ThemeSwitcher color="contrast" />
           <FontSwitcher color="contrast" />
         </Row>
       </Row>
       <Divider
-        variant="dash-soft"
         color="contrast"
+        tone="soft"
+        borderStyle="dashed"
+        borderWidth={2}
       />
       <Row
+        gap={64}
         justify="space-between"
-        gap="xl"
-        className={styles.info}
+        mobileDirection="column-reverse"
       >
         <Text>{app.name} © {year}</Text>
-        <Row className={styles.tags}>
+        <Row
+          mobileDirection="column"
+          mobileAlign="flex-start"
+        >
           <Tag
             variant="ghost"
             color="contrast"

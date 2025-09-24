@@ -5,7 +5,6 @@ import { Column } from "@/components/uikit/Column/Column";
 import { Title } from "@/components/uikit/Title/Title";
 import { Button } from "@/components/uikit/Button/Button";
 import { contacts } from "@/data/contacts";
-import styles from "./MeSection.module.scss";
 
 export const MeSection = () => {
   return (
@@ -13,14 +12,15 @@ export const MeSection = () => {
       color="contrast"
       direction="row"
       align="center"
-      gap="l"
-      radiusTop="m"
-      overlapBottom="m"
-      classNameContainer={styles.container}
+      gap={48}
+      radiusTop={96}
+      overlapBottom={96}
+      mobileDirection="column-reverse"
+      mobileRadiusTop={64}
     >
       <Box
-        radius="l"
-        padding="none"
+        radius={32}
+        padding={0}
         overflow="hidden"
       >
         <Image
@@ -29,20 +29,19 @@ export const MeSection = () => {
           src={contacts.me.photo}
           alt={contacts.me.name}
           quality={100}
-          className={styles.image}
         />
       </Box>
       <Column
-        gap="l"
-        className={styles.content}
+        gap={48}
+        mobileAlign="center"
       >
         <Column
-          gap="s"
-          className={styles.info}
+          gap={24}
+          mobileAlign="center"
         >
           <Column
-            gap="none"
-            className={styles.titles}
+            gap={0}
+            mobileAlign="center"
           >
             <Title
               as="h3"

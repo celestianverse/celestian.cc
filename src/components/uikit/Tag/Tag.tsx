@@ -10,10 +10,13 @@ const DEFAULT_ELEMENT = "span";
 export const Tag = <E extends React.ElementType<any, Element> = typeof DEFAULT_ELEMENT>(
   {
     as,
+    variant = "flat",
     color = "primary",
-    variant = "fill-soft",
+    tone = "base",
     size = "m",
-    radius = "m",
+    radius = 8,
+    borderStyle,
+    borderWidth,
     iconStart,
     iconEnd,
     iconOnly,
@@ -33,10 +36,16 @@ export const Tag = <E extends React.ElementType<any, Element> = typeof DEFAULT_E
         styles.button,
         styles[`variant-${variant}`],
         styles[`color-${color}`],
+        styles[`tone-${tone}`],
         styles[`size-${size}`],
-        styles[`radius-${radius}`],
+        {
+          [`border-radius-${radius}`]: radius != null,
+          [`border-style-${borderStyle}`]: borderStyle,
+          [styles["icon-only"]]: iconOnly,
+        },
         className,
       )}
+      style={{ borderWidth: borderWidth }}
       {...rest}
     >
       {Content}

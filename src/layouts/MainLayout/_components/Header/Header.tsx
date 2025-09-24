@@ -11,7 +11,7 @@ export const Header = () => {
   return (
     <Section
       as="header"
-      paddingY="none"
+      paddingY={0}
       direction="row"
       align="center"
       justify="space-between"
@@ -20,7 +20,7 @@ export const Header = () => {
       <Logo />
       <Row
         align="center"
-        gap="s"
+        gap={24}
       >
         <Hidden on="tablet-max">
           <Navigation />
@@ -29,7 +29,7 @@ export const Header = () => {
         <Hidden on="laptop-min">
           <Burger />
         </Hidden>
-      </Row >
-    </Section >
+      </Row>
+    </Section>
   );
 };

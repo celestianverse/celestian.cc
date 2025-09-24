@@ -4,9 +4,10 @@ import { IntroSection } from "@/components/custom/IntroSection/IntroSection";
 import { ContactsSection } from "./_components/ContactsSection/ContactsSection";
 import { MeSection } from "./_components/MeSection/MeSection";
 import { contacts } from "@/data/contacts";
+import { app } from "@/data/app";
 
 export const metadata: Metadata = {
-  title: `${contacts.title} — Celestian`,
+  title: `${contacts.title} — ${app.name}`,
 };
 
 const ContactsPage = () => {
