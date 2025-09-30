@@ -13,18 +13,16 @@ import type { IconKeys } from "@/components/uikit/Icon/Icon.types";
 import type { BorderStyle, BorderWidth } from "@/types/Styles";
 import type { Color } from "@/types/Color";
 import { ANCHOR_PADDING, ANCHOR_SIZE, ANCHOR_VARIANT } from "@/components/uikit/Anchor/Anchor.constants";
+import { INPUT_WIDTH, LABEL_WIDTH } from "@/constants/playground";
 import { BORDER_STYLE } from "@/constants/styles";
 import { COLORS } from "@/constants/colors";
 import { ICONS } from "@/components/uikit/Icon/Icon.constants";
 import { uikit } from "@/data/uikit";
 
-const INPUT_WIDTH = 160;
-const LABEL_WIDTH = 96;
-
 export const AnchorPlayground = () => {
   const [props, setProps] = useState<AnchorProps>({
     variant: "base",
-    color: "primary",
+    color: "info",
     size: "m",
     padding: "none",
     borderStyle: "none",
@@ -270,14 +268,20 @@ export const AnchorPlayground = () => {
             labelPosition="left"
             labelWidth={LABEL_WIDTH}
           >
-            <Switch onCheckedChange={(value) => setProps(prev => ({...prev, fullwidth: value}))}/>
+            <Switch
+              size="s"
+              onCheckedChange={(value) => setProps(prev => ({...prev, fullwidth: value}))}
+            />
           </Field>
           <Field
             label="disabled"
             labelPosition="left"
             labelWidth={LABEL_WIDTH}
           >
-            <Switch onCheckedChange={(value) => setProps(prev => ({...prev, disabled: value}))}/>
+            <Switch
+              size="s"
+              onCheckedChange={(value) => setProps(prev => ({...prev, disabled: value}))}
+            />
           </Field>
         </Column>
       </Box>

@@ -102,7 +102,7 @@
 
 $primary: #1A0A2E;
 $secondary: #7B7487;
-$neutral: #F2F4F8;
+$neutral: #F1F3F7;
 $brand: #F0FF48;
 $accent: #AD1875;
 $utility: #12d1c5;
@@ -119,7 +119,7 @@ $themes: (
     light: $primary,
     dark: $contrast,
   ),
-  primary-content-hover: (
+  primary-content-action: (
     light: $accent,
     dark: color.scale($accent, $lightness: 20%),
   ),
@@ -147,7 +147,7 @@ $themes: (
     light: $contrast,
     dark: $primary,
   ),
-  primary-fill-hover: (
+  primary-fill-action: (
     light: $accent,
     dark: color.scale($accent, $lightness: 20%),
   ),
@@ -155,7 +155,7 @@ $themes: (
     light: rgba($primary, 0.05),
     dark: rgba($contrast, 0.06),
   ),
-  primary-fill-soft-hover: (
+  primary-fill-soft-action: (
     light: rgba($primary, 0.1),
     dark: rgba($contrast, 0.11),
   ),
@@ -167,7 +167,7 @@ $themes: (
     light: $primary,
     dark: $contrast,
   ),
-  primary-outline-hover: (
+  primary-outline-action: (
     light: $accent,
     dark: $accent,
   ),
@@ -175,7 +175,7 @@ $themes: (
     light: rgba($primary, 0.15),
     dark: rgba($contrast, 0.15),
   ),
-  primary-outline-soft-hover: (
+  primary-outline-soft-action: (
     light: $accent,
     dark: $accent,
   ),
@@ -199,13 +199,13 @@ $themes: (
     light: $secondary,
     dark: $phantom,
   ),
-  secondary-content-hover: (
+  secondary-content-action: (
     light: $accent,
     dark: color.scale($accent, $lightness: 20%),
   ),
   secondary-surface: (
     light: $secondary,
-    dark: $secondary,
+    dark: $primary,
   ),
   secondary-surface-on: (
     light: $contrast,
@@ -223,7 +223,7 @@ $themes: (
     light: $secondary,
     dark: color.scale($contrast, $lightness: -30%),
   ),
-  secondary-fill-hover: (
+  secondary-fill-action: (
     light: $accent,
     dark: color.scale($accent, $lightness: 20%),
   ),
@@ -235,7 +235,7 @@ $themes: (
     light: rgba($secondary, 0.05),
     dark: rgba($contrast, 0.06),
   ),
-  secondary-fill-soft-hover: (
+  secondary-fill-soft-action: (
     light: rgba($secondary, 0.1),
     dark: rgba($contrast, 0.11),
   ),
@@ -247,7 +247,7 @@ $themes: (
     light: $secondary,
     dark: $contrast,
   ),
-  secondary-outline-hover: (
+  secondary-outline-action: (
     light: $accent,
     dark: $accent,
   ),
@@ -255,7 +255,7 @@ $themes: (
     light: rgba($secondary, 0.15),
     dark: rgba($contrast, 0.15),
   ),
-  secondary-outline-soft-hover: (
+  secondary-outline-soft-action: (
     light: $accent,
     dark: $accent,
   ),
@@ -279,7 +279,7 @@ $themes: (
     light: $brand,
     dark: color.mix($brand, #000, 94%),
   ),
-  brand-content-hover: (
+  brand-content-action: (
     light: $accent,
     dark: $accent,
   ),
@@ -291,7 +291,7 @@ $themes: (
     light: $primary,
     dark: $primary,
   ),
-  brand-surface-on-hover: (
+  brand-surface-on-action: (
     light: $accent,
     dark: $accent,
   ),
@@ -303,7 +303,7 @@ $themes: (
     light: $primary,
     dark: $primary,
   ),
-  brand-fill-hover: (
+  brand-fill-action: (
     light: color.mix($brand, #000, 94%),
     dark: $accent,
   ),
@@ -311,7 +311,7 @@ $themes: (
     light: rgba($brand, 0.05),
     dark: rgba($brand, 0.07),
   ),
-  brand-fill-soft-hover: (
+  brand-fill-soft-action: (
     light: rgba($brand, 0.1),
     dark: rgba($brand, 0.13),
   ),
@@ -323,7 +323,7 @@ $themes: (
     light: $brand,
     dark: color.mix($brand, #000, 85%),
   ),
-  brand-outline-hover: (
+  brand-outline-action: (
     light: $accent,
     dark: $accent,
   ),
@@ -331,7 +331,7 @@ $themes: (
     light: rgba($brand, 0.15),
     dark: rgba($brand, 0.15),
   ),
-  brand-outline-soft-hover: (
+  brand-outline-soft-action: (
     light: $accent,
     dark: $accent,
   ),
@@ -347,7 +347,7 @@ $themes: (
     light: $accent,
     dark: $accent,
   ),
-  accent-content-hover: (
+  accent-content-action: (
     light: $primary,
     dark: $contrast,
   ),
@@ -359,7 +359,7 @@ $themes: (
     light: $contrast,
     dark: $contrast,
   ),
-  accent-surface-on-hover: (
+  accent-surface-on-action: (
     light: $phantom,
     dark: $phantom,
   ),
@@ -371,7 +371,7 @@ $themes: (
     light: $contrast,
     dark: $contrast,
   ),
-  accent-fill-hover: (
+  accent-fill-action: (
     light: color.scale($accent, $lightness: 13%),
     dark: color.scale($accent, $lightness: -30%),
   ),
@@ -379,7 +379,7 @@ $themes: (
     light: rgba($accent, 0.05),
     dark: rgba($accent, 0.08),
   ),
-  accent-fill-soft-hover: (
+  accent-fill-soft-action: (
     light: rgba($accent, 0.1),
     dark: rgba($accent, 0.14),
   ),
@@ -391,7 +391,7 @@ $themes: (
     light: $accent,
     dark: $accent,
   ),
-  accent-outline-hover: (
+  accent-outline-action: (
     light: $primary,
     dark: $contrast,
   ),
@@ -399,7 +399,7 @@ $themes: (
     light: rgba($accent, 0.2),
     dark: rgba($accent, 0.2),
   ),
-  accent-outline-soft-hover: (
+  accent-outline-soft-action: (
     light: $primary,
     dark: $contrast,
   ),
@@ -415,7 +415,7 @@ $themes: (
     light: $utility,
     dark: $utility,
   ),
-  utility-content-hover: (
+  utility-content-action: (
     light: $accent,
     dark: $accent,
   ),
@@ -427,7 +427,7 @@ $themes: (
     light: $contrast,
     dark: $contrast,
   ),
-  utility-surface-on-hover: (
+  utility-surface-on-action: (
     light: $phantom,
     dark: $phantom,
   ),
@@ -439,7 +439,7 @@ $themes: (
     light: $contrast,
     dark: $contrast,
   ),
-  utility-fill-hover: (
+  utility-fill-action: (
     light: color.scale($utility, $lightness: -12%),
     dark: color.scale($utility, $lightness: -45%),
   ),
@@ -447,7 +447,7 @@ $themes: (
     light: rgba($utility, 0.05),
     dark: rgba($utility, 0.07),
   ),
-  utility-fill-soft-hover: (
+  utility-fill-soft-action: (
     light: rgba($utility, 0.1),
     dark: rgba($utility, 0.13),
   ),
@@ -459,7 +459,7 @@ $themes: (
     light: $utility,
     dark: color.mix($utility, #000, 90%),
   ),
-  utility-outline-hover: (
+  utility-outline-action: (
     light: $accent,
     dark: $accent,
   ),
@@ -467,7 +467,7 @@ $themes: (
     light: rgba($utility, 0.2),
     dark: rgba($utility, 0.2),
   ),
-  utility-outline-soft-hover: (
+  utility-outline-soft-action: (
     light: $accent,
     dark: $accent,
   ),
@@ -483,7 +483,7 @@ $themes: (
     light: $contrast,
     dark: $contrast,
   ),
-  contrast-content-hover: (
+  contrast-content-action: (
     light: $phantom,
     dark: $phantom,
   ),
@@ -495,7 +495,7 @@ $themes: (
     light: $primary,
     dark: $contrast,
   ),
-  contrast-surface-on-hover: (
+  contrast-surface-on-action: (
     light: $phantom,
     dark: $phantom,
   ),
@@ -507,7 +507,7 @@ $themes: (
     light: $primary,
     dark: $primary,
   ),
-  contrast-fill-hover: (
+  contrast-fill-action: (
     light: rgba($contrast, 0.7),
     dark: $phantom,
   ),
@@ -515,7 +515,7 @@ $themes: (
     light: rgba($contrast, 0.1),
     dark: rgba($contrast, 0.1),
   ),
-  contrast-fill-soft-hover: (
+  contrast-fill-soft-action: (
     light: rgba($contrast, 0.15),
     dark: rgba($contrast, 0.16),
   ),
@@ -527,7 +527,7 @@ $themes: (
     light: $contrast,
     dark: $contrast,
   ),
-  contrast-outline-hover: (
+  contrast-outline-action: (
     light: rgba($contrast, 0.7),
     dark: rgba($contrast, 0.5),
   ),
@@ -535,7 +535,7 @@ $themes: (
     light: rgba($contrast, 0.15),
     dark: rgba($contrast, 0.2),
   ),
-  contrast-outline-soft-hover: (
+  contrast-outline-soft-action: (
     light: $contrast,
     dark: $contrast,
   ),
@@ -551,19 +551,19 @@ $themes: (
     light: $phantom,
     dark: $phantom,
   ),
-  phantom-content-hover: (
+  phantom-content-action: (
     light: $contrast,
     dark: $contrast,
   ),
   phantom-surface: (
     light: $phantom,
-    dark: linear-gradient(90deg, color.scale($primary, $lightness: 3%, $saturation: 10%) 0, color.scale($primary, $lightness: 8%, $saturation: 10%) 100%),
+    dark: rgba($phantom, 0.1),
   ),
   phantom-surface-on: (
     light: $primary,
     dark: $phantom,
   ),
-  phantom-surface-on-hover: (
+  phantom-surface-on-action: (
     light: $phantom,
     dark: $phantom,
   ),
@@ -575,7 +575,7 @@ $themes: (
     light: $primary,
     dark: $primary,
   ),
-  phantom-fill-hover: (
+  phantom-fill-action: (
     light: rgba($phantom, 0.8),
     dark: rgba($phantom, 0.9),
   ),
@@ -583,7 +583,7 @@ $themes: (
     light: rgba($phantom, 0.1),
     dark: rgba($phantom, 0.1),
   ),
-  phantom-fill-soft-hover: (
+  phantom-fill-soft-action: (
     light: rgba($phantom, 0.15),
     dark: rgba($phantom, 0.15),
   ),
@@ -595,7 +595,7 @@ $themes: (
     light: $phantom,
     dark: $phantom,
   ),
-  phantom-outline-hover: (
+  phantom-outline-action: (
     light: rgba($phantom, 0.7),
     dark: rgba($phantom, 1),
   ),
@@ -603,7 +603,7 @@ $themes: (
     light: rgba($phantom, 0.2),
     dark: rgba($phantom, 0.2),
   ),
-  phantom-outline-soft-hover: (
+  phantom-outline-soft-action: (
     light: $contrast,
     dark: $contrast,
   ),
@@ -615,19 +615,19 @@ $themes: (
     light: $info,
     dark: $info,
   ),
-  info-content-hover: (
+  info-content-action: (
     light: $accent,
     dark: $accent,
   ),
   info-surface: (
     light: $info,
-    dark: $info,
+    dark: color.scale($info, $lightness: -10%),
   ),
   info-surface-on: (
     light: $contrast,
     dark: $contrast,
   ),
-  info-surface-on-hover: (
+  info-surface-on-action: (
     light: $phantom,
     dark: $phantom,
   ),
@@ -639,15 +639,15 @@ $themes: (
     light: $contrast,
     dark: $contrast,
   ),
-  info-fill-hover: (
-    light: color.scale($info, $lightness: 15%),
+  info-fill-action: (
+    light: color.scale($info, $lightness: 16%),
     dark: color.scale($info, $lightness: -35%),
   ),
   info-fill-soft: (
     light: rgba($info, 0.06),
     dark: rgba($info, 0.08),
   ),
-  info-fill-soft-hover: (
+  info-fill-soft-action: (
     light: rgba($info, 0.12),
     dark: rgba($info, 0.15),
   ),
@@ -659,7 +659,7 @@ $themes: (
     light: $info,
     dark: $info,
   ),
-  info-outline-hover: (
+  info-outline-action: (
     light: $accent,
     dark: $accent,
   ),
@@ -667,7 +667,7 @@ $themes: (
     light: rgba($info, 0.2),
     dark: rgba($info, 0.2),
   ),
-  info-outline-soft-hover: (
+  info-outline-soft-action: (
     light: $accent,
     dark: $accent,
   ),
@@ -683,7 +683,7 @@ $themes: (
     light: $success,
     dark: $success,
   ),
-  success-content-hover: (
+  success-content-action: (
     light: $accent,
     dark: $accent,
   ),
@@ -695,7 +695,7 @@ $themes: (
     light: $contrast,
     dark: $contrast,
   ),
-  success-surface-on-hover: (
+  success-surface-on-action: (
     light: $phantom,
     dark: $phantom,
   ),
@@ -707,7 +707,7 @@ $themes: (
     light: $contrast,
     dark: $contrast,
   ),
-  success-fill-hover: (
+  success-fill-action: (
     light: color.scale($success, $lightness: 10%),
     dark: color.scale($success, $lightness: -35%),
   ),
@@ -715,7 +715,7 @@ $themes: (
     light: rgba($success, 0.07),
     dark: rgba($success, 0.1),
   ),
-  success-fill-soft-hover: (
+  success-fill-soft-action: (
     light: rgba($success, 0.13),
     dark: rgba($success, 0.16),
   ),
@@ -727,7 +727,7 @@ $themes: (
     light: $success,
     dark: $success,
   ),
-  success-outline-hover: (
+  success-outline-action: (
     light: $accent,
     dark: $accent,
   ),
@@ -735,7 +735,7 @@ $themes: (
     light: rgba($success, 0.2),
     dark: rgba($success, 0.2),
   ),
-  success-outline-soft-hover: (
+  success-outline-soft-action: (
     light: $accent,
     dark: $accent,
   ),
@@ -751,7 +751,7 @@ $themes: (
     light: $warning,
     dark: $warning,
   ),
-  warning-content-hover: (
+  warning-content-action: (
     light: $accent,
     dark: $accent,
   ),
@@ -763,7 +763,7 @@ $themes: (
     light: $contrast,
     dark: $contrast,
   ),
-  warning-surface-on-hover: (
+  warning-surface-on-action: (
     light: $phantom,
     dark: $phantom,
   ),
@@ -775,7 +775,7 @@ $themes: (
     light: $contrast,
     dark: $contrast,
   ),
-  warning-fill-hover: (
+  warning-fill-action: (
     light: color.scale($warning, $lightness: 17%),
     dark: color.scale($warning, $lightness: -35%),
   ),
@@ -783,7 +783,7 @@ $themes: (
     light: rgba($warning, 0.07),
     dark: rgba($warning, 0.07),
   ),
-  warning-fill-soft-hover: (
+  warning-fill-soft-action: (
     light: rgba($warning, 0.13),
     dark: rgba($warning, 0.14),
   ),
@@ -795,7 +795,7 @@ $themes: (
     light: $warning,
     dark: $warning,
   ),
-  warning-outline-hover: (
+  warning-outline-action: (
     light: $accent,
     dark: $accent,
   ),
@@ -803,7 +803,7 @@ $themes: (
     light: rgba($warning, 0.2),
     dark: rgba($warning, 0.2),
   ),
-  warning-outline-soft-hover: (
+  warning-outline-soft-action: (
     light: $accent,
     dark: $accent,
   ),
@@ -819,7 +819,7 @@ $themes: (
     light: $danger,
     dark: $danger,
   ),
-  danger-content-hover: (
+  danger-content-action: (
     light: $accent,
     dark: $accent,
   ),
@@ -831,7 +831,7 @@ $themes: (
     light: $contrast,
     dark: $contrast,
   ),
-  danger-surface-on-hover: (
+  danger-surface-on-action: (
     light: $phantom,
     dark: $phantom,
   ),
@@ -843,7 +843,7 @@ $themes: (
     light: $contrast,
     dark: $contrast,
   ),
-  danger-fill-hover: (
+  danger-fill-action: (
     light: color.scale($danger, $lightness: 17%),
     dark: color.scale($danger, $lightness: -35%),
   ),
@@ -851,7 +851,7 @@ $themes: (
     light: rgba($danger, 0.06),
     dark: rgba($danger, 0.08),
   ),
-  danger-fill-soft-hover: (
+  danger-fill-soft-action: (
     light: rgba($danger, 0.12),
     dark: rgba($danger, 0.14),
   ),
@@ -863,7 +863,7 @@ $themes: (
     light: $danger,
     dark: $danger,
   ),
-  danger-outline-hover: (
+  danger-outline-action: (
     light: $accent,
     dark: $accent,
   ),
@@ -871,7 +871,7 @@ $themes: (
     light: rgba($danger, 0.2),
     dark: rgba($danger, 0.2),
   ),
-  danger-outline-soft-hover: (
+  danger-outline-soft-action: (
     light: $accent,
     dark: $accent,
   ),
@@ -887,7 +887,7 @@ $themes: (
     light: $rating,
     dark: $rating,
   ),
-  rating-content-hover: (
+  rating-content-action: (
     light: $accent,
     dark: $accent,
   ),
@@ -899,7 +899,7 @@ $themes: (
     light: $contrast,
     dark: $contrast,
   ),
-  rating-surface-on-hover: (
+  rating-surface-on-action: (
     light: $phantom,
     dark: $phantom,
   ),
@@ -911,7 +911,7 @@ $themes: (
     light: $primary,
     dark: $primary,
   ),
-  rating-fill-hover: (
+  rating-fill-action: (
     light: color.scale($rating, $lightness: 25%),
     dark: color.scale($rating, $lightness: -35%),
   ),
@@ -919,7 +919,7 @@ $themes: (
     light: rgba($rating, 0.09),
     dark: rgba($rating, 0.09),
   ),
-  rating-fill-soft-hover: (
+  rating-fill-soft-action: (
     light: rgba($rating, 0.16),
     dark: rgba($rating, 0.16),
   ),
@@ -931,7 +931,7 @@ $themes: (
     light: $rating,
     dark: $rating,
   ),
-  rating-outline-hover: (
+  rating-outline-action: (
     light: $accent,
     dark: $accent,
   ),
@@ -939,7 +939,7 @@ $themes: (
     light: rgba($rating, 0.2),
     dark: rgba($rating, 0.2),
   ),
-  rating-outline-soft-hover: (
+  rating-outline-soft-action: (
     light: $accent,
     dark: $accent,
   ),
@@ -955,6 +955,14 @@ $themes: (
     light: 0 4px 24px rgba($primary, 0.07),
     dark: 0 4px 24px rgba($contrast, 0.08),
   ),
+  shadow-xs: (
+    light: 0 0 4px rgba($primary, 0.05),
+    dark: 0 0 4px rgba($contrast, 0.05),
+  ),
+  shadow-inset-xs: (
+    light: inset 0 0 4px rgba($primary, 0.05),
+    dark: inset 0 0 4px rgba($contrast, 0.05),
+  ),
   "transparent": (
     light: rgba($contrast, 0),
     dark: rgba($primary, 0),
@@ -962,6 +970,10 @@ $themes: (
   overlay: (
     light: rgba($primary, 0.2),
     dark: rgba($contrast, 0.2),
+  ),
+  overlay-switch: (
+    light: rgba($contrast, 0.25),
+    dark: rgba($contrast, 0.05),
   ),
 );
 

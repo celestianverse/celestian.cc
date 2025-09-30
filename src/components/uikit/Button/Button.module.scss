@@ -127,12 +127,12 @@
 
         &:hover {
           &:not(.active):not(:global(.disabled)) {
-            background: var(--#{$color}-fill-hover);
+            background: var(--#{$color}-fill-action);
           }
         }
 
         &.active {
-          background: var(--#{$color}-fill-hover);
+          background: var(--#{$color}-fill-action);
         }
 
         &.tone-soft {
@@ -141,12 +141,12 @@
 
           &:hover {
             &:not(.active):not(:global(.disabled)) {
-              background: var(--#{$color}-fill-soft-hover);
+              background: var(--#{$color}-fill-soft-action);
             }
           }
 
           &.active {
-            background: var(--#{$color}-fill-soft-hover);
+            background: var(--#{$color}-fill-soft-action);
           }
         }
       }
@@ -162,7 +162,7 @@
         }
 
         &.active {
-          background: var(--#{$color}-fill-hover);
+          background: var(--#{$color}-fill-action);
         }
 
         &.tone-soft {
@@ -171,12 +171,12 @@
 
           &:hover {
             &:not(.active):not(:global(.disabled)) {
-              background: var(--#{$color}-fill-soft-hover);
+              background: var(--#{$color}-fill-soft-action);
             }
           }
 
           &.active {
-            background: var(--#{$color}-fill-soft-hover);
+            background: var(--#{$color}-fill-soft-action);
           }
         }
       }
@@ -188,8 +188,8 @@
 
         &:hover {
           &:not(.active):not(:global(.disabled)) {
-            border-color: var(--#{$color}-outline-hover);
-            color: var(--#{$color}-outline-hover);
+            border-color: var(--#{$color}-outline-action);
+            color: var(--#{$color}-outline-action);
           }
         }
 
@@ -204,8 +204,8 @@
 
           &:hover {
             &:not(.active):not(:global(.disabled)) {
-              border-color: var(--#{$color}-outline-soft-hover);
-              color: var(--#{$color}-outline-soft-hover);
+              border-color: var(--#{$color}-outline-soft-action);
+              color: var(--#{$color}-outline-soft-action);
             }
           }
 
@@ -226,7 +226,7 @@
 
         &:hover {
           &:not(.active):not(:global(.disabled)) {
-            background: var(--#{$color}-fill-soft-hover);
+            background: var(--#{$color}-fill-soft);
           }
         }
 
@@ -241,10 +241,6 @@
         }
       }
     }
-  }
-
-  &:global(.disabled) {
-    cursor: not-allowed;
   }
 }
 

@@ -27,7 +27,11 @@ body {
 .disabled {
   opacity: 0.25;
   filter: grayscale(1);
-  cursor: not-allowed;
+  cursor: not-allowed !important;
+
+  * {
+    cursor: not-allowed !important;
+  }
 }
 
 .fullwidth {

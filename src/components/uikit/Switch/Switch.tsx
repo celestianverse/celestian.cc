@@ -1,11 +1,13 @@
 import { forwardRef } from "react";
 import classNames from "classnames";
-import type { Props } from "./Switch.types";
+import type { SwitchProps } from "./Switch.types";
 import styles from "./Switch.module.scss";
 
-export const Switch = forwardRef<HTMLInputElement, Props>((
+export const Switch = forwardRef<HTMLInputElement, SwitchProps>((
   {
     id,
+    color = "success",
+    size = "m",
     checked,
     disabled,
     onCheckedChange,
@@ -15,6 +17,11 @@ export const Switch = forwardRef<HTMLInputElement, Props>((
     <label
       className={classNames(
         styles.switch,
+        styles[`color-${color}`],
+        styles[`size-${size}`],
+        {
+          ["disabled"]: disabled,
+        },
         className,
       )}
     >

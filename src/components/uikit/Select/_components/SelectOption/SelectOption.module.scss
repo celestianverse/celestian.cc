@@ -10,7 +10,11 @@
   @include transition;
 
   &:hover {
-    background-color: var(--primary-surface-soft);
+    background-color: var(--primary-fill-soft);
+  }
+
+  &.active {
+    background-color: var(--primary-fill-soft);
   }
 
   &.selected {
