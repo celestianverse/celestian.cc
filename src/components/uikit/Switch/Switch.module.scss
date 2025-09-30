@@ -4,14 +4,71 @@
   display: inline-flex;
   align-items: center;
   flex-shrink: 0;
+  background: var(--overlay-switch);
+  border-radius: var(--radius-999);
+
+  &.size-m {
+    .control {
+      width: var(--size-56);
+      height: var(--size-32);
+    }
+
+    .handle {
+      width: var(--size-24);
+      height: var(--size-24);
+    }
+
+    .input {
+      &:checked + .control {
+        .handle {
+          margin-left: var(--spacing-24);
+        }
+      }
+    }
+  }
+
+  &.size-s {
+    .control {
+      width: var(--size-40);
+      height: var(--size-24);
+    }
+
+    .handle {
+      width: var(--size-16);
+      height: var(--size-16);
+    }
+
+    .input {
+      &:checked + .control {
+        .handle {
+          margin-left: var(--spacing-16);
+        }
+      }
+    }
+  }
+
+  @each $color in $colors {
+    &.color-#{$color} {
+      .control {
+        background: var(--primary-fill-soft-action);
+      }
+
+      .input {
+        &:checked + .control {
+          background: var(--#{$color}-fill);
+        }
+      }
+
+      .handle {
+        background: var(--#{$color}-fill-on);
+      }
+    }
+  }
 }
 
 .control {
   display: inline-flex;
-  width: var(--size-48);
-  height: var(--size-24);
   padding: var(--size-4);
-  background: var(--primary-surface-soft);
   border-radius: var(--radius-999);
   cursor: pointer;
 
@@ -21,8 +78,6 @@
 .handle {
   flex-shrink: 0;
   margin-left: 0;
-  width: var(--size-16);
-  height: var(--size-16);
   background: var(--contrast-fill);
   border-radius: var(--radius-999);
 
@@ -34,12 +89,4 @@
   position: absolute;
   width: 0;
   height: 0;
-
-  &:checked + .control {
-    background: var(--success-surface);
-
-    .handle {
-      margin-left: var(--spacing-24);
-    }
-  }
 }

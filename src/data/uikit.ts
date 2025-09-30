@@ -16,6 +16,13 @@ export const uikit = {
           title: "Button component",
         },
       },
+      switch: {
+        title: "Switch",
+        path: "/uikit/switch",
+        seo: {
+          title: "Switch component",
+        },
+      },
     },
   },
 };

@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { Children, isValidElement, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   autoUpdate,
   flip,
@@ -71,16 +71,23 @@ export const Select = (
     }
   }, [onChange]);
 
+  const optionLabels = useMemo<string[]>(() => {
+    return Children.toArray(children)
+      .map((child) => (isValidElement(child) ? (child.props as any).label : null))
+      .filter((v): v is string => typeof v === "string");
+  }, [children]);
+
   useEffect(() => {
     if (isOpen) {
       const target = (value ?? selectedLabel) ?? null;
       if (target != null) {
-        const i = labelsRef.current.findIndex(l => l === target);
-        setSelectedIndex(i >= 0 ? i : null);
-        setActiveIndex(i >= 0 ? i : null);
+        const i = optionLabels.findIndex(l => l === target);
+        const idx = i >= 0 ? i : null;
+        setSelectedIndex(idx);
+        setActiveIndex(idx);
       }
     }
-  }, [isOpen, value, selectedLabel]);
+  }, [isOpen, value, selectedLabel, optionLabels]);
 
   const handleTypeaheadMatch = (index: number | null) => {
     if (isOpen) {
@@ -129,6 +136,8 @@ export const Select = (
       <div
         ref={refs.setReference}
         tabIndex={0}
+        aria-expanded={isOpen}
+        aria-haspopup="listbox"
         className={classNames(
           styles.select,
           className,

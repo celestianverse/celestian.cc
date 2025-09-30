@@ -19,17 +19,15 @@ import type { IconKeys } from "@/components/uikit/Icon/Icon.types";
 import type { BorderStyle, BorderWidth, JustifyContent, Tone } from "@/types/Styles";
 import { BUTTON_BORDER_RADIUS, BUTTON_SIZE, BUTTON_VARIANT } from "@/components/uikit/Button/Button.constants";
 import { BORDER_STYLE, JUSTIFY_CONTENT, TONE } from "@/constants/styles";
+import { INPUT_WIDTH, LABEL_WIDTH } from "@/constants/playground";
 import { COLORS } from "@/constants/colors";
 import { ICONS } from "@/components/uikit/Icon/Icon.constants";
 import { uikit } from "@/data/uikit";
 
-const INPUT_WIDTH = 160;
-const LABEL_WIDTH = 96;
-
 export const ButtonPlayground = () => {
   const [props, setProps] = useState<ButtonProps>({
     variant: "flat",
-    color: "primary",
+    color: "info",
     tone: "base",
     size: "m",
     justify: "center",
@@ -315,21 +313,30 @@ export const ButtonPlayground = () => {
             labelPosition="left"
             labelWidth={LABEL_WIDTH}
           >
-            <Switch onCheckedChange={(value) => setProps(prev => ({...prev, fullwidth: value}))}/>
+            <Switch
+              size="s"
+              onCheckedChange={(value) => setProps(prev => ({...prev, fullwidth: value}))}
+            />
           </Field>
           <Field
             label="square"
             labelPosition="left"
             labelWidth={LABEL_WIDTH}
           >
-            <Switch onCheckedChange={(value) => setProps(prev => ({...prev, square: value}))}/>
+            <Switch
+              size="s"
+              onCheckedChange={(value) => setProps(prev => ({...prev, square: value}))}
+            />
           </Field>
           <Field
             label="disabled"
             labelPosition="left"
             labelWidth={LABEL_WIDTH}
           >
-            <Switch onCheckedChange={(value) => setProps(prev => ({...prev, disabled: value}))}/>
+            <Switch
+              size="s"
+              onCheckedChange={(value) => setProps(prev => ({...prev, disabled: value}))}
+            />
           </Field>
         </Column>
       </Box>

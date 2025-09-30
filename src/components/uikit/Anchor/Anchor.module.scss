@@ -40,7 +40,7 @@
       color: var(--#{$color}-content);
 
       &:hover {
-        color: var(--#{$color}-content-hover);
+        color: var(--#{$color}-content-action);
       }
 
       &.variant-outline {
@@ -50,7 +50,7 @@
 
         &:hover {
           .content {
-            border-bottom-color: var(--#{$color}-content-hover);
+            border-bottom-color: var(--#{$color}-content-action);
           }
         }
       }
