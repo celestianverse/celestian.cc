@@ -16,6 +16,7 @@ export const ProjectsSection = () => {
 
   return (
     <Section
+      variant="gradient"
       color="contrast"
       justify="center"
       align="center"

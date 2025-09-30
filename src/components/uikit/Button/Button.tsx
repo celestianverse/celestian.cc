@@ -2,12 +2,12 @@ import React from "react";
 import classNames from "classnames";
 import { useIcon } from "@/hooks/useIcon";
 import type { Polymorphic } from "@/types/Polymorphic";
-import type { ButtonProps, Element } from "./Button.types";
+import type { ButtonProps, ButtonElement } from "./Button.types";
 import styles from "./Button.module.scss";
 
 const DEFAULT_ELEMENT = "button";
 
-export const Button = <E extends React.ElementType<any, Element> = typeof DEFAULT_ELEMENT>(
+export const Button = <E extends React.ElementType<any, ButtonElement> = typeof DEFAULT_ELEMENT>(
   {
     as,
     variant = "flat",
@@ -19,12 +19,13 @@ export const Button = <E extends React.ElementType<any, Element> = typeof DEFAUL
     borderStyle,
     borderWidth,
     fullwidth,
+    square,
     active,
     loading,
     disabled,
-    iconStart,
-    iconEnd,
-    iconOnly,
+    iconStart = "none",
+    iconEnd = "none",
+    iconOnly = "none",
     className,
     children,
     ...rest
@@ -38,6 +39,10 @@ export const Button = <E extends React.ElementType<any, Element> = typeof DEFAUL
   return (
     <Component
       rel={as === "a" ? "noopener noreferrer" : undefined}
+      role="button"
+      tabIndex={disabled ? -1 : 0}
+      disabled={disabled}
+      aria-disabled={disabled}
       className={classNames(
         styles.button,
         styles[`variant-${variant}`],
@@ -49,17 +54,28 @@ export const Button = <E extends React.ElementType<any, Element> = typeof DEFAUL
           [`border-radius-${radius}`]: radius != null,
           [`border-style-${borderStyle}`]: borderStyle,
           ["fullwidth"]: fullwidth,
+          [styles.square]: square,
           [styles.active]: active,
           [styles.loading]: loading,
           ["disabled"]: disabled,
-          [styles["icon-only"]]: iconOnly,
+          [styles["icon-only"]]: iconOnly !== "none",
         },
         className,
       )}
       style={{ borderWidth: borderWidth }}
       {...rest}
     >
-      {Content}
+      <span
+        className={classNames(
+          styles.content,
+          {
+            [`justify-content-${justify}`]: justify,
+            [`border-radius-${radius}`]: radius != null,
+          },
+        )}
+      >
+        {Content}
+      </span>
     </Component>
   );
 };

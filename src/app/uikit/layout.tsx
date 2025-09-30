@@ -15,6 +15,7 @@ const UikitLayout = ({children}: Props) => {
     <Page>
       <IntroSection title={uikit.title} />
       <Section
+        variant="gradient"
         color="contrast"
         direction="row"
         gap={24}

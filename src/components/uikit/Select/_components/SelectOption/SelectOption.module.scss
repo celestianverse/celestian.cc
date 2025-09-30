@@ -1,0 +1,19 @@
+@use "@/styles/mixins" as *;
+
+.option {
+  min-height: var(--size-32);
+  padding: var(--size-4) var(--size-16);
+  border-radius: var(--radius-8);
+  text-align: left;
+  font-size: var(--font-size-text-s);
+  font-weight: var(--font-weight-medium);
+  @include transition;
+
+  &:hover {
+    background-color: var(--primary-surface-soft);
+  }
+
+  &.selected {
+    font-weight: var(--font-weight-bold);
+  }
+}

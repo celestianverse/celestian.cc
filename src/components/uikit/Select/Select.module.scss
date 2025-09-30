@@ -1,0 +1,27 @@
+@use "@/styles/mixins" as *;
+
+.select {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-12);
+  flex-shrink: 0;
+  height: var(--size-32);
+  padding: 0 var(--size-12);
+  background: var(--primary-surface-soft);
+  border-radius: var(--radius-8);
+  line-height: 1;
+  font-size: var(--font-size-text-s);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  @include transition;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  padding: var(--size-4);
+  background: var(--contrast-surface);
+  border-radius: var(--radius-8);
+  box-shadow: var(--shadow-m);
+}

@@ -8,7 +8,7 @@ export const Box = (
   {
     variant = "flat",
     color = "primary",
-    tone = "soft",
+    tone,
     padding = 32,
     laptopPadding,
     tabletPadding,

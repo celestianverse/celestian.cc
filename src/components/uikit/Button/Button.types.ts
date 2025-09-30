@@ -1,16 +1,19 @@
 import type { ReactNode } from "react";
 import type { Color } from "@/types/Color";
 import type { IconProps } from "@/hooks/useIcon";
-import type { BorderRadius, BorderStyle, BorderWidth, JustifyContent, Tone } from "@/types/Styles";
+import type { BorderStyle, BorderWidth, JustifyContent, Tone } from "@/types/Styles";
+import { BORDER_RADIUS, SIZE, VARIANT } from "./Button.constants";
 
-export type Element = "button" | "a" | "div";
+export type ButtonElement = "button" | "a" | "div";
 
-export type Variant = "flat" | "gradient" | "outline" | "ghost";
+export type ButtonVariant = typeof VARIANT[number];
 
-export type Size = "l" | "m" | "s";
+export type ButtonSize = typeof SIZE[number];
+
+export type ButtonBorderRadius = typeof BORDER_RADIUS[number];
 
 export type ButtonProps = {
-  variant?: Variant;
+  variant?: ButtonVariant;
   color?: Color;
   tone?: Tone;
   /**
@@ -20,12 +23,13 @@ export type ButtonProps = {
    *   s - 32px
    * </pre>
    */
-  size?: Size;
+  size?: ButtonSize;
   justify?: JustifyContent;
-  radius?: Extract<BorderRadius, 0 | 4 | 8 | 12 | 16 | 24 | 999>;
+  radius?: ButtonBorderRadius;
   borderStyle?: BorderStyle;
   borderWidth?: BorderWidth;
   fullwidth?: boolean;
+  square?: boolean;
   active?: boolean;
   loading?: boolean;
   disabled?: boolean;

@@ -1,16 +1,16 @@
 import type { ReactNode } from "react";
 import { Icon } from "@/components/uikit/Icon/Icon";
-import type { Keys } from "@/components/uikit/Icon/Icon.types";
+import type { IconKeys } from "@/components/uikit/Icon/Icon.types";
 
 type Styles = {
   icon?: string;
-  content?: string;
+  label?: string;
 };
 
 export type IconProps = {
-  iconStart?: Keys;
-  iconEnd?: Keys;
-  iconOnly?: Keys | "none";
+  iconStart?: IconKeys;
+  iconEnd?: IconKeys;
+  iconOnly?: IconKeys;
 };
 
 type Props = IconProps & {
@@ -25,7 +25,7 @@ export const useIcon = ({
   children,
   styles = {},
 }: Props) => {
-  if (iconOnly && iconOnly !== "none") {
+  if (iconOnly && (iconOnly !== "none")) {
     return (
       <Icon
         name={iconOnly}
@@ -34,26 +34,18 @@ export const useIcon = ({
     );
   }
 
-  if (iconOnly && iconOnly === "none") {
-    return (
-      <span className={styles.content}>
-        {children}
-      </span>
-    );
-  }
-
   return (
     <>
-      {iconStart && (
+      {iconStart && (iconStart !== "none") && (
         <Icon
           name={iconStart}
           className={styles.icon}
         />
       )}
-      <span className={styles.content}>
+      <span className={styles.label}>
         {children}
       </span>
-      {iconEnd && (
+      {iconEnd && (iconEnd !== "none") && (
         <Icon
           name={iconEnd}
           className={styles.icon}

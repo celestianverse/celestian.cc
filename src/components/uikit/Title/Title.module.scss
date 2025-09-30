@@ -1,7 +1,7 @@
 @use "@/styles/mixins" as *;
 
 $sizes: "xl", "l", "m", "s", "xs";
-$weights: "bold", "regular";
+$weights: "bold", "medium", "regular";
 $line-heights: "l", "m", "s";
 
 .title {

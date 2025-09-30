@@ -9,6 +9,7 @@ import { contacts } from "@/data/contacts";
 export const MeSection = () => {
   return (
     <Section
+      variant="gradient"
       color="contrast"
       direction="row"
       align="center"

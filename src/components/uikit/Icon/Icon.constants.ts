@@ -1,3 +1,4 @@
+import None from "@public/images/icons/none.svg";
 import User from "@public/images/icons/user.svg";
 import Notification from "@public/images/icons/notification.svg";
 import Tick from "@public/images/icons/tick.svg";
@@ -60,6 +61,7 @@ import Youtube from "@public/images/icons/youtube.svg";
 import Odnoklassniki from "@public/images/icons/odnoklassniki.svg";
 
 export const ICONS = {
+  none: None,
   user: User,
   notification: Notification,
   tick: Tick,

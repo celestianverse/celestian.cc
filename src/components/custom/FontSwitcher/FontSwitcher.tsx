@@ -26,8 +26,8 @@ export const FontSwitcher = ({color = "primary"}: Props) => {
         variant="ghost"
         color={color}
         size="s"
-        iconOnly="none"
         active={font === FONT.m}
+        square
         onClick={() => handleChooseFont(FONT.m)}
       >
         a
@@ -36,8 +36,8 @@ export const FontSwitcher = ({color = "primary"}: Props) => {
         variant="ghost"
         color={color}
         size="s"
-        iconOnly="none"
         active={font === FONT.l}
+        square
         onClick={() => handleChooseFont(FONT.l)}
       >
         A

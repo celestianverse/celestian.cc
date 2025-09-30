@@ -10,10 +10,17 @@
   cursor: pointer;
   @include transition;
 
+  .content {
+    display: inline-flex;
+    align-items: center;
+  }
+
   &.size-l {
-    gap: var(--spacing-12);
-    height: var(--size-64);
-    padding: 0 var(--spacing-32);
+    .content {
+      gap: var(--spacing-12);
+      height: var(--size-64);
+      padding: 0 var(--spacing-32);
+    }
 
     .icon {
       width: var(--size-24);
@@ -21,12 +28,21 @@
     }
 
     &.icon-only {
-      width: var(--size-64);
-      padding: 0;
+      .content {
+        width: var(--size-64);
+        padding: 0;
+      }
 
       .icon {
         width: var(--size-28);
         height: var(--size-28);
+      }
+    }
+
+    &.square {
+      .content {
+        width: var(--size-64);
+        padding: 0;
       }
     }
 
@@ -36,9 +52,11 @@
   }
 
   &.size-m {
-    gap: var(--spacing-8);
-    height: var(--size-48);
-    padding: 0 var(--spacing-24);
+    .content {
+      gap: var(--spacing-8);
+      height: var(--size-48);
+      padding: 0 var(--spacing-24);
+    }
 
     .icon {
       width: var(--size-20);
@@ -46,12 +64,21 @@
     }
 
     &.icon-only {
-      width: var(--size-48);
-      padding: 0;
+      .content {
+        width: var(--size-48);
+        padding: 0;
+      }
 
       .icon {
         width: var(--size-24);
         height: var(--size-24);
+      }
+    }
+
+    &.square {
+      .content {
+        width: var(--size-48);
+        padding: 0;
       }
     }
 
@@ -61,10 +88,12 @@
   }
 
   &.size-s {
-    gap: var(--spacing-8);
-    height: var(--size-32);
-    padding: 0 var(--spacing-16);
-    font-size: var(--font-size-text-s);
+    .content {
+      gap: var(--spacing-8);
+      height: var(--size-32);
+      padding: 0 var(--spacing-16);
+      font-size: var(--font-size-text-s);
+    }
 
     .icon {
       width: var(--size-16);
@@ -72,12 +101,21 @@
     }
 
     &.icon-only {
-      width: var(--size-32);
-      padding: 0;
+      .content {
+        width: var(--size-32);
+        padding: 0;
+      }
 
       .icon {
         width: var(--size-20);
         height: var(--size-20);
+      }
+    }
+
+    &.square {
+      .content {
+        width: var(--size-32);
+        padding: 0;
       }
     }
 
@@ -93,7 +131,9 @@
         color: var(--#{$color}-fill-on);
 
         &:hover {
-          background: var(--#{$color}-fill-hover);
+          &:not(.active):not(:global(.disabled)) {
+            background: var(--#{$color}-fill-hover);
+          }
         }
 
         &.active {
@@ -105,7 +145,39 @@
           color: var(--#{$color}-fill-soft-on);
 
           &:hover {
+            &:not(.active):not(:global(.disabled)) {
+              background: var(--#{$color}-fill-soft-hover);
+            }
+          }
+
+          &.active {
             background: var(--#{$color}-fill-soft-hover);
+          }
+        }
+      }
+
+      &.variant-gradient {
+        background: var(--#{$color}-gradient);
+        color: var(--#{$color}-gradient-on);
+
+        &:hover {
+          &:not(.active):not(:global(.disabled)) {
+            background: var(--#{$color}-gradient);
+          }
+        }
+
+        &.active {
+          background: var(--#{$color}-fill-hover);
+        }
+
+        &.tone-soft {
+          background: var(--#{$color}-fill-soft);
+          color: var(--#{$color}-fill-soft-on);
+
+          &:hover {
+            &:not(.active):not(:global(.disabled)) {
+              background: var(--#{$color}-fill-soft-hover);
+            }
           }
 
           &.active {
@@ -117,11 +189,13 @@
       &.variant-outline {
         border-color: var(--#{$color}-outline);
         border-width: 1px;
-        color: var(--#{$color}-content);
+        color: var(--#{$color}-outline);
 
         &:hover {
-          border-color: var(--#{$color}-outline-hover);
-          color: var(--#{$color}-content-hover);
+          &:not(.active):not(:global(.disabled)) {
+            border-color: var(--#{$color}-outline-hover);
+            color: var(--#{$color}-outline-hover);
+          }
         }
 
         &.active {
@@ -132,11 +206,12 @@
 
         &.tone-soft {
           border-color: var(--#{$color}-outline-soft);
-          color: var(--#{$color}-content);
 
           &:hover {
-            border-color: var(--#{$color}-outline-soft-hover);
-            color: var(--#{$color}-content-hover);
+            &:not(.active):not(:global(.disabled)) {
+              border-color: var(--#{$color}-outline-soft-hover);
+              color: var(--#{$color}-outline-soft-hover);
+            }
           }
 
           &.active {
@@ -155,7 +230,9 @@
         color: var(--#{$color}-content);
 
         &:hover {
-          background: var(--#{$color}-fill-soft);
+          &:not(.active):not(:global(.disabled)) {
+            background: var(--#{$color}-fill-soft-hover);
+          }
         }
 
         &.active {
@@ -169,5 +246,9 @@
         }
       }
     }
+  }
+
+  &:global(.disabled) {
+    cursor: not-allowed;
   }
 }

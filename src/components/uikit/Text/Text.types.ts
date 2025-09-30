@@ -2,7 +2,15 @@ import type { ReactNode } from "react";
 import type { Color } from "@/types/Color";
 import type { LineHeight, FontWeight, WhiteSpace } from "@/types/Styles";
 
-export type Element = "div" | "p" | "span" | "small" | "address" | "time";
+export type Element =
+  | "div"
+  | "p"
+  | "span"
+  | "small"
+  | "address"
+  | "time"
+  | "label"
+;
 
 type Size = "m" | "s";
 
