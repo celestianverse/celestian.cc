@@ -1,27 +1,45 @@
-export type Overflow = "auto" | "hidden" | "visible" | "scroll";
+import {
+  ALIGN_ITEMS,
+  BORDER_RADIUS,
+  BORDER_STYLE,
+  FLEX_DIRECTION,
+  FLEX_WRAP,
+  FONT_WEIGHT,
+  GAP,
+  JUSTIFY_CONTENT,
+  LINE_HEIGHT,
+  OVERFLOW,
+  PADDING,
+  TONE,
+  WHITE_SPACE
+} from "@/constants/styles";
 
-export type FlexDirection = "row" | "row-reverse" | "column" | "column-reverse";
+export type Overflow = typeof OVERFLOW[number];
 
-export type AlignItems = "flex-start" | "center" | "flex-end" | "stretch";
+export type FlexDirection = typeof FLEX_DIRECTION[number];
 
-export type JustifyContent = "flex-start" | "center" | "flex-end" | "space-between";
+export type AlignItems = typeof ALIGN_ITEMS[number];
 
-export type FlexWrap = "wrap" | "nowrap";
+export type JustifyContent = typeof JUSTIFY_CONTENT[number];
 
-export type Gap = 0 | 4 | 8 | 16 | 24 | 32 | 48 | 64 | 96 | 128;
+export type FlexWrap = typeof FLEX_WRAP[number];
 
-export type Padding = 0 | 4 | 8 | 16 | 24 | 32 | 48 | 64 | 96 | 128;
+export type FlexGrow = number;
 
-export type FontWeight = "bold" | "regular";
+export type Gap = typeof GAP[number];
 
-export type LineHeight = "s" | "m" | "l";
+export type Padding = typeof PADDING[number];
 
-export type WhiteSpace = "nowrap" | "pre-line";
+export type FontWeight = typeof FONT_WEIGHT[number];
 
-export type BorderStyle = "solid" | "dashed" | "dotted" | "none";
+export type LineHeight = typeof LINE_HEIGHT[number];
+
+export type WhiteSpace = typeof WHITE_SPACE[number];
+
+export type BorderStyle = typeof BORDER_STYLE[number];
 
 export type BorderWidth = number;
 
-export type BorderRadius = 0 | 4 | 8 | 12 | 16 | 24 | 32 | 48 | 64 | 96 | 128 | 999;
+export type BorderRadius = typeof BORDER_RADIUS[number];
 
-export type Tone = "base" | "soft";
+export type Tone = typeof TONE[number];

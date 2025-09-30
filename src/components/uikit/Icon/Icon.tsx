@@ -1,7 +1,7 @@
 import React from "react";
 import classNames from "classnames";
 import { ICONS } from "./Icon.constants";
-import type { Props } from "./Icon.types";
+import type { IconProps } from "./Icon.types";
 import styles from "./Icon.module.scss";
 
 export const Icon = ({
@@ -9,7 +9,7 @@ export const Icon = ({
   className,
   color,
   size = "m",
-}: Props) => {
+}: IconProps) => {
   const Component = ICONS[name];
 
   return (

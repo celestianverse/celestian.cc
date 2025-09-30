@@ -7,6 +7,7 @@ import { stack } from "@/data/stack";
 export const StackSection = () => {
   return (
     <Section
+      variant="gradient"
       color="contrast"
       align="center"
       radiusTop={96}

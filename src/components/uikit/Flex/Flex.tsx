@@ -22,13 +22,15 @@ export const Flex = <E extends React.ElementType<any, Element> = typeof DEFAULT_
    tabletJustify,
    mobileJustify,
    wrap,
+   grow,
    gap = 32,
    laptopGap,
    tabletGap,
    mobileGap,
    fullwidth,
-   children,
+   style,
    className,
+   children,
    ...rest
  }: Polymorphic<E, Props>) => {
   const Component = as ?? DEFAULT_ELEMENT;
@@ -60,6 +62,7 @@ export const Flex = <E extends React.ElementType<any, Element> = typeof DEFAULT_
         },
         className,
       )}
+      style={{ ...style, flexGrow: grow }}
       {...rest}
     >
       {children}

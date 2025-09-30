@@ -11,6 +11,7 @@
     "build:styles": "sass src/styles/tokens.scss src/styles/tokens.css --no-source-map"
   },
   "dependencies": {
+    "@floating-ui/react": "^0.27.16",
     "classnames": "^2.5.1",
     "js-cookie": "^3.0.5",
     "next": "15.5.3",

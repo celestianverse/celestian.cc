@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Playground } from "@/components/custom/Playground/Playground";
+import { ButtonPlayground } from "@/app/uikit/(pages)/button/_components/ButtonPlayground/ButtonPlayground";
 import { app } from "@/data/app";
 import { uikit } from "@/data/uikit";
 
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 const ButtonPage = () => {
 
   return (
-    <Playground />
+    <ButtonPlayground />
   );
 };
 

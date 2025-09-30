@@ -10,4 +10,5 @@ export const COLORS = [
   "success",
   "warning",
   "danger",
+  "rating",
 ] as const;

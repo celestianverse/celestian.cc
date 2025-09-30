@@ -1,7 +1,20 @@
-import type { ReactNode } from "react";
-import type { AlignItems, FlexDirection, Gap, JustifyContent, FlexWrap, Overflow } from "@/types/Styles";
+import type { CSSProperties, ReactNode } from "react";
+import type { AlignItems, FlexDirection, Gap, JustifyContent, FlexWrap, Overflow, FlexGrow } from "@/types/Styles";
 
-export type Element = "div" | "section" | "article" | "header" | "footer" | "aside" | "nav" | "ul" | "ol" | "button" | "a";
+export type Element =
+  | "div"
+  | "section"
+  | "article"
+  | "header"
+  | "footer"
+  | "aside"
+  | "nav"
+  | "ul"
+  | "ol"
+  | "button"
+  | "a"
+  | "label"
+;
 
 export type Props = {
   overflow?: Overflow;
@@ -42,7 +55,9 @@ export type Props = {
   tabletJustify?: JustifyContent;
   mobileJustify?: JustifyContent;
   wrap?: FlexWrap;
+  grow?: FlexGrow;
   fullwidth?: boolean;
+  style?: CSSProperties;
   className?: string;
   children?: ReactNode;
 };

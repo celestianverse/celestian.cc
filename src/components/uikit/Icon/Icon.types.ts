@@ -1,12 +1,12 @@
 import type { ICONS } from "./Icon.constants";
 import type { Color } from "@/types/Color";
 
-export type Keys = keyof typeof ICONS;
+export type IconKeys = keyof typeof ICONS;
 
-type Size = "xxl" | "xl" | "l" | "m" | "s" | "xs";
+type IconSize = "xxl" | "xl" | "l" | "m" | "s" | "xs";
 
-export type Props = {
-  name: Keys | "none";
+export type IconProps = {
+  name: IconKeys;
   color?: Color;
   /**
    * <pre>
@@ -18,6 +18,6 @@ export type Props = {
    *      xs - 16px
    * </pre>
    */
-  size?: Size;
+  size?: IconSize;
   className?: string;
 };

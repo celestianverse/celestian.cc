@@ -13,7 +13,7 @@ export const ProjectsSection = () => {
       {projects.items.map((item, index) => (
         <Section
           key={item.title}
-          variant={index % 2 === 0 ? "flat" : "gradient"}
+          variant="gradient"
           color={index % 2 === 0 ? "contrast" : "primary"}
           tone={index % 2 === 0 ? "base" : "soft"}
           direction="row"

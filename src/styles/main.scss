@@ -25,9 +25,9 @@ body {
 }
 
 .disabled {
-  pointer-events: none;
   opacity: 0.25;
   filter: grayscale(1);
+  cursor: not-allowed;
 }
 
 .fullwidth {
@@ -177,5 +177,39 @@ $border-radius-axes: (
         }
       }
     }
+  }
+}
+
+.scroll {
+  overflow: auto;
+  scrollbar-gutter: stable;
+
+  scrollbar-width: thin;
+  scrollbar-color: var(--secondary-fill) transparent;
+
+  &::-webkit-scrollbar {
+    width: var(--size-8);
+    height: var(--size-8);
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--secondary-fill);
+    border-radius: var(--radius-8);
+    border: 2px solid transparent;
+  }
+}
+
+@media (forced-colors: active) {
+  .scroll {
+    scrollbar-color: ButtonText Canvas;
+  }
+
+  .scroll::-webkit-scrollbar-thumb {
+    background-color: CanvasText;
+    border-color: Canvas;
   }
 }
