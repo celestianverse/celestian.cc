@@ -348,8 +348,8 @@ $themes: (
     dark: $accent,
   ),
   accent-content-hover: (
-    light: $accent,
-    dark: $accent,
+    light: $primary,
+    dark: $contrast,
   ),
   accent-surface: (
     light: $accent,
@@ -416,8 +416,8 @@ $themes: (
     dark: $utility,
   ),
   utility-content-hover: (
-    light: $utility,
-    dark: $utility,
+    light: $accent,
+    dark: $accent,
   ),
   utility-surface: (
     light: $utility,
@@ -552,8 +552,8 @@ $themes: (
     dark: $phantom,
   ),
   phantom-content-hover: (
-    light: $phantom,
-    dark: $phantom,
+    light: $contrast,
+    dark: $contrast,
   ),
   phantom-surface: (
     light: $phantom,
@@ -616,8 +616,8 @@ $themes: (
     dark: $info,
   ),
   info-content-hover: (
-    light: $info,
-    dark: $info,
+    light: $accent,
+    dark: $accent,
   ),
   info-surface: (
     light: $info,
@@ -684,8 +684,8 @@ $themes: (
     dark: $success,
   ),
   success-content-hover: (
-    light: $success,
-    dark: $success,
+    light: $accent,
+    dark: $accent,
   ),
   success-surface: (
     light: $success,
@@ -752,8 +752,8 @@ $themes: (
     dark: $warning,
   ),
   warning-content-hover: (
-    light: $warning,
-    dark: $warning,
+    light: $accent,
+    dark: $accent,
   ),
   warning-surface: (
     light: $warning,
@@ -820,8 +820,8 @@ $themes: (
     dark: $danger,
   ),
   danger-content-hover: (
-    light: $danger,
-    dark: $danger,
+    light: $accent,
+    dark: $accent,
   ),
   danger-surface: (
     light: $danger,
@@ -888,8 +888,8 @@ $themes: (
     dark: $rating,
   ),
   rating-content-hover: (
-    light: $rating,
-    dark: $rating,
+    light: $accent,
+    dark: $accent,
   ),
   rating-surface: (
     light: $rating,

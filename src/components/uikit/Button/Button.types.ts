@@ -2,15 +2,15 @@ import type { ReactNode } from "react";
 import type { Color } from "@/types/Color";
 import type { IconProps } from "@/hooks/useIcon";
 import type { BorderStyle, BorderWidth, JustifyContent, Tone } from "@/types/Styles";
-import { BORDER_RADIUS, SIZE, VARIANT } from "./Button.constants";
+import { BUTTON_BORDER_RADIUS, BUTTON_SIZE, BUTTON_VARIANT } from "./Button.constants";
 
 export type ButtonElement = "button" | "a" | "div";
 
-export type ButtonVariant = typeof VARIANT[number];
+export type ButtonVariant = typeof BUTTON_VARIANT[number];
 
-export type ButtonSize = typeof SIZE[number];
+export type ButtonSize = typeof BUTTON_SIZE[number];
 
-export type ButtonBorderRadius = typeof BORDER_RADIUS[number];
+export type ButtonBorderRadius = typeof BUTTON_BORDER_RADIUS[number];
 
 export type ButtonProps = {
   variant?: ButtonVariant;

@@ -1,12 +1,13 @@
 import React from "react";
 import classNames from "classnames";
 import type { Polymorphic } from "@/types/Polymorphic";
-import type { Props, Element } from "./Anchor.types";
+import type { AnchorProps, AnchorElement } from "./Anchor.types";
 import styles from "./Anchor.module.scss";
+import { useIcon } from "@/hooks/useIcon";
 
 export const DEFAULT_ELEMENT = "a";
 
-export const Anchor = <E extends React.ElementType<any, Element> = typeof DEFAULT_ELEMENT>(
+export const Anchor = <E extends React.ElementType<any, AnchorElement> = typeof DEFAULT_ELEMENT>(
   {
     as,
     variant = "base",
@@ -18,11 +19,18 @@ export const Anchor = <E extends React.ElementType<any, Element> = typeof DEFAUL
     borderWidth,
     active,
     disabled,
+    iconStart = "none",
+    iconEnd = "none",
+    iconOnly = "none",
     className,
     children,
     ...rest
-  }: Polymorphic<E, Props>) => {
+  }: Polymorphic<E, AnchorProps>) => {
   const Component = as || DEFAULT_ELEMENT;
+
+  const Content = useIcon({
+    iconStart, iconEnd, iconOnly, styles, children,
+  });
 
   return (
     <Component
@@ -51,7 +59,7 @@ export const Anchor = <E extends React.ElementType<any, Element> = typeof DEFAUL
         )}
         style={{ borderBottomWidth: borderWidth }}
       >
-        {children}
+        {Content}
       </span>
     </Component>
   );

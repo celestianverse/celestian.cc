@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ButtonPlayground } from "@/app/uikit/(pages)/button/_components/ButtonPlayground/ButtonPlayground";
+import { ButtonPlayground } from "./_components/ButtonPlayground/ButtonPlayground";
 import { app } from "@/data/app";
 import { uikit } from "@/data/uikit";
 

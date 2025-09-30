@@ -3,22 +3,17 @@ import { useState } from "react";
 import { Box } from "@/components/uikit/Box/Box";
 import { Column } from "@/components/uikit/Column/Column";
 import { Title } from "@/components/uikit/Title/Title";
-import { Button } from "@/components/uikit/Button/Button";
 import { Select } from "@/components/uikit/Select/Select";
 import { SelectOption } from "@/components/uikit/Select/_components/SelectOption/SelectOption";
 import { Field } from "@/components/uikit/Field/Field";
 import { Switch } from "@/components/uikit/Switch/Switch";
-import type {
-  ButtonBorderRadius,
-  ButtonProps,
-  ButtonSize,
-  ButtonVariant
-} from "@/components/uikit/Button/Button.types";
-import type { Color } from "@/types/Color";
+import { Anchor } from "@/components/uikit/Anchor/Anchor";
+import type { AnchorPadding, AnchorProps, AnchorSize, AnchorVariant } from "@/components/uikit/Anchor/Anchor.types";
 import type { IconKeys } from "@/components/uikit/Icon/Icon.types";
-import type { BorderStyle, BorderWidth, JustifyContent, Tone } from "@/types/Styles";
-import { BUTTON_BORDER_RADIUS, BUTTON_SIZE, BUTTON_VARIANT } from "@/components/uikit/Button/Button.constants";
-import { BORDER_STYLE, JUSTIFY_CONTENT, TONE } from "@/constants/styles";
+import type { BorderStyle, BorderWidth } from "@/types/Styles";
+import type { Color } from "@/types/Color";
+import { ANCHOR_PADDING, ANCHOR_SIZE, ANCHOR_VARIANT } from "@/components/uikit/Anchor/Anchor.constants";
+import { BORDER_STYLE } from "@/constants/styles";
 import { COLORS } from "@/constants/colors";
 import { ICONS } from "@/components/uikit/Icon/Icon.constants";
 import { uikit } from "@/data/uikit";
@@ -26,41 +21,37 @@ import { uikit } from "@/data/uikit";
 const INPUT_WIDTH = 160;
 const LABEL_WIDTH = 96;
 
-export const ButtonPlayground = () => {
-  const [props, setProps] = useState<ButtonProps>({
-    variant: "flat",
+export const AnchorPlayground = () => {
+  const [props, setProps] = useState<AnchorProps>({
+    variant: "base",
     color: "primary",
-    tone: "base",
     size: "m",
-    justify: "center",
-    radius: 12,
+    padding: "none",
     borderStyle: "none",
     borderWidth: 0,
     iconStart: "none",
     iconEnd: "none",
     iconOnly: "none",
     fullwidth: false,
-    square: false,
     active: false,
-    loading: false,
     disabled: false,
     className: "",
   });
 
-  const ButtonComponent = (
-    <Button
+  const AnchorComponent = (
+    <Anchor
       {...props}
     >
-      Button
-    </Button>
+      Anchor
+    </Anchor>
   );
 
-  const handleButtonVariant = (value) => {
+  const handleAnchorVariant = (value) => {
     const isOutline = value === "outline";
 
     setProps(prev => ({
       ...prev,
-      variant: value as ButtonVariant,
+      variant: value as AnchorVariant,
       borderStyle: isOutline ? "solid" : "none",
       borderWidth: isOutline ? 1 : 0,
     }));
@@ -81,7 +72,7 @@ export const ButtonPlayground = () => {
       >
         <Column fullwidth>
           <Title size="s">
-            {uikit.pages.controls.button.title}
+            {uikit.pages.controls.anchor.title}
           </Title>
           <Column
             gap={16}
@@ -96,7 +87,7 @@ export const ButtonPlayground = () => {
               justify="center"
               grow={1}
             >
-              {ButtonComponent}
+              {AnchorComponent}
             </Box>
             <Box
               color="primary"
@@ -107,7 +98,7 @@ export const ButtonPlayground = () => {
               justify="center"
               grow={1}
             >
-              {ButtonComponent}
+              {AnchorComponent}
             </Box>
           </Column>
         </Column>
@@ -120,9 +111,9 @@ export const ButtonPlayground = () => {
             <Select
               value={props.variant}
               width={INPUT_WIDTH}
-              onChange={handleButtonVariant}
+              onChange={handleAnchorVariant}
             >
-              {BUTTON_VARIANT.map(variant => (
+              {ANCHOR_VARIANT.map(variant => (
                 <SelectOption
                   key={variant}
                   label={variant}
@@ -149,24 +140,6 @@ export const ButtonPlayground = () => {
             </Select>
           </Field>
           <Field
-            label="tone"
-            labelPosition="left"
-            labelWidth={LABEL_WIDTH}
-          >
-            <Select
-              value={props.tone}
-              width={INPUT_WIDTH}
-              onChange={(value) => setProps(prev => ({...prev, tone: value as Tone}))}
-            >
-              {TONE.map(tone => (
-                <SelectOption
-                  key={tone}
-                  label={tone}
-                />
-              ))}
-            </Select>
-          </Field>
-          <Field
             label="size"
             labelPosition="left"
             labelWidth={LABEL_WIDTH}
@@ -174,9 +147,9 @@ export const ButtonPlayground = () => {
             <Select
               value={props.size}
               width={INPUT_WIDTH}
-              onChange={(value) => setProps(prev => ({...prev, size: value as ButtonSize}))}
+              onChange={(value) => setProps(prev => ({...prev, size: value as AnchorSize}))}
             >
-              {BUTTON_SIZE.map(size => (
+              {ANCHOR_SIZE.map(size => (
                 <SelectOption
                   key={size}
                   label={size}
@@ -185,37 +158,19 @@ export const ButtonPlayground = () => {
             </Select>
           </Field>
           <Field
-            label="justify"
+            label="padding"
             labelPosition="left"
             labelWidth={LABEL_WIDTH}
           >
             <Select
-              value={props.justify}
+              value={props.padding}
               width={INPUT_WIDTH}
-              onChange={(value) => setProps(prev => ({...prev, justify: value as JustifyContent}))}
+              onChange={(value) => setProps(prev => ({...prev, padding: value as AnchorPadding}))}
             >
-              {JUSTIFY_CONTENT.map(justify => (
+              {ANCHOR_PADDING.map(padding => (
                 <SelectOption
-                  key={justify}
-                  label={justify}
-                />
-              ))}
-            </Select>
-          </Field>
-          <Field
-            label="radius"
-            labelPosition="left"
-            labelWidth={LABEL_WIDTH}
-          >
-            <Select
-              value={String(props.radius)}
-              width={INPUT_WIDTH}
-              onChange={(value) => setProps(prev => ({...prev, radius: Number(value) as ButtonBorderRadius}))}
-            >
-              {BUTTON_BORDER_RADIUS.map(radius => (
-                <SelectOption
-                  key={radius}
-                  label={String(radius)}
+                  key={padding}
+                  label={padding}
                 />
               ))}
             </Select>
@@ -316,13 +271,6 @@ export const ButtonPlayground = () => {
             labelWidth={LABEL_WIDTH}
           >
             <Switch onCheckedChange={(value) => setProps(prev => ({...prev, fullwidth: value}))}/>
-          </Field>
-          <Field
-            label="square"
-            labelPosition="left"
-            labelWidth={LABEL_WIDTH}
-          >
-            <Switch onCheckedChange={(value) => setProps(prev => ({...prev, square: value}))}/>
           </Field>
           <Field
             label="disabled"
