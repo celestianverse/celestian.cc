@@ -9,6 +9,6 @@ export type SwitchProps = {
   size?: SwitchSize;
   checked?: boolean;
   disabled?: boolean;
-  onCheckedChange?: (checked: boolean) => void;
+  onChange?: (checked: boolean) => void;
   className?: string;
 };

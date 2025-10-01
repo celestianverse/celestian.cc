@@ -8,13 +8,13 @@ import { SelectOption } from "@/components/uikit/Select/_components/SelectOption
 import { Field } from "@/components/uikit/Field/Field";
 import { Switch } from "@/components/uikit/Switch/Switch";
 import { Anchor } from "@/components/uikit/Anchor/Anchor";
-import type { AnchorPadding, AnchorProps, AnchorSize, AnchorVariant } from "@/components/uikit/Anchor/Anchor.types";
+import type { AnchorProps, AnchorSize, AnchorVariant } from "@/components/uikit/Anchor/Anchor.types";
 import type { IconKeys } from "@/components/uikit/Icon/Icon.types";
-import type { BorderStyle, BorderWidth } from "@/types/Styles";
+import type { BorderStyle, BorderWidth, Padding } from "@/types/Styles";
 import type { Color } from "@/types/Color";
-import { ANCHOR_PADDING, ANCHOR_SIZE, ANCHOR_VARIANT } from "@/components/uikit/Anchor/Anchor.constants";
+import { ANCHOR_SIZE, ANCHOR_VARIANT } from "@/components/uikit/Anchor/Anchor.constants";
 import { INPUT_WIDTH, LABEL_WIDTH } from "@/constants/playground";
-import { BORDER_STYLE } from "@/constants/styles";
+import { BORDER_STYLE, PADDING } from "@/constants/styles";
 import { COLORS } from "@/constants/colors";
 import { ICONS } from "@/components/uikit/Icon/Icon.constants";
 import { uikit } from "@/data/uikit";
@@ -24,7 +24,6 @@ export const AnchorPlayground = () => {
     variant: "base",
     color: "info",
     size: "m",
-    padding: "none",
     borderStyle: "none",
     borderWidth: 0,
     iconStart: "none",
@@ -44,7 +43,7 @@ export const AnchorPlayground = () => {
     </Anchor>
   );
 
-  const handleAnchorVariant = (value) => {
+  const setVariant = (value) => {
     const isOutline = value === "outline";
 
     setProps(prev => ({
@@ -52,6 +51,31 @@ export const AnchorPlayground = () => {
       variant: value as AnchorVariant,
       borderStyle: isOutline ? "solid" : "none",
       borderWidth: isOutline ? 1 : 0,
+    }));
+  };
+
+  const setPadding = (value) => {
+    setProps(prev => ({
+      ...prev,
+      padding: Number(value) as Padding,
+      paddingY: undefined,
+      paddingX: undefined,
+    }));
+  };
+
+  const setPaddingY = (value) => {
+    setProps(prev => ({
+      ...prev,
+      padding: undefined,
+      paddingY: Number(value) as Padding,
+    }));
+  };
+
+  const setPaddingX = (value) => {
+    setProps(prev => ({
+      ...prev,
+      padding: undefined,
+      paddingX: Number(value) as Padding,
     }));
   };
 
@@ -67,10 +91,14 @@ export const AnchorPlayground = () => {
         borderStyle="dashed"
         direction="row"
         fullwidth
+        mobileDirection="column"
       >
-        <Column fullwidth>
+        <Column
+          gap={0}
+          fullwidth
+        >
           <Title size="s">
-            {uikit.pages.controls.anchor.title}
+            {uikit.controls.anchor.title}
           </Title>
           <Column
             gap={16}
@@ -100,7 +128,10 @@ export const AnchorPlayground = () => {
             </Box>
           </Column>
         </Column>
-        <Column gap={16}>
+        <Column
+          align="stretch"
+          gap={16}
+        >
           <Field
             label="variant"
             labelPosition="left"
@@ -109,7 +140,7 @@ export const AnchorPlayground = () => {
             <Select
               value={props.variant}
               width={INPUT_WIDTH}
-              onChange={handleAnchorVariant}
+              onChange={setVariant}
             >
               {ANCHOR_VARIANT.map(variant => (
                 <SelectOption
@@ -161,14 +192,50 @@ export const AnchorPlayground = () => {
             labelWidth={LABEL_WIDTH}
           >
             <Select
-              value={props.padding}
+              value={props.padding ? String(props.padding) : "Select..."}
               width={INPUT_WIDTH}
-              onChange={(value) => setProps(prev => ({...prev, padding: value as AnchorPadding}))}
+              onChange={setPadding}
             >
-              {ANCHOR_PADDING.map(padding => (
+              {PADDING.map(padding => (
                 <SelectOption
                   key={padding}
-                  label={padding}
+                  label={String(padding)}
+                />
+              ))}
+            </Select>
+          </Field>
+          <Field
+            label="paddingY"
+            labelPosition="left"
+            labelWidth={LABEL_WIDTH}
+          >
+            <Select
+              value={props.paddingY ? String(props.paddingY) : "Select..."}
+              width={INPUT_WIDTH}
+              onChange={setPaddingY}
+            >
+              {PADDING.map(padding => (
+                <SelectOption
+                  key={padding}
+                  label={String(padding)}
+                />
+              ))}
+            </Select>
+          </Field>
+          <Field
+            label="paddingX"
+            labelPosition="left"
+            labelWidth={LABEL_WIDTH}
+          >
+            <Select
+              value={props.paddingX ? String(props.paddingX) : "Select..."}
+              width={INPUT_WIDTH}
+              onChange={setPaddingX}
+            >
+              {PADDING.map(padding => (
+                <SelectOption
+                  key={padding}
+                  label={String(padding)}
                 />
               ))}
             </Select>
@@ -270,7 +337,7 @@ export const AnchorPlayground = () => {
           >
             <Switch
               size="s"
-              onCheckedChange={(value) => setProps(prev => ({...prev, fullwidth: value}))}
+              onChange={(value) => setProps(prev => ({...prev, fullwidth: value}))}
             />
           </Field>
           <Field
@@ -280,7 +347,7 @@ export const AnchorPlayground = () => {
           >
             <Switch
               size="s"
-              onCheckedChange={(value) => setProps(prev => ({...prev, disabled: value}))}
+              onChange={(value) => setProps(prev => ({...prev, disabled: value}))}
             />
           </Field>
         </Column>

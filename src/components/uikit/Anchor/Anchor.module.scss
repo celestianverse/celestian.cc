@@ -7,18 +7,6 @@
   font-weight: var(--font-weight-medium);
   @include transition;
 
-  &.padding-l {
-    padding: var(--spacing-8) var(--spacing-24);
-  }
-
-  &.padding-m {
-    padding: var(--spacing-8) var(--spacing-16);
-  }
-
-  &.padding-s {
-    padding: var(--spacing-4) var(--spacing-8);
-  }
-
   &.size-m {
     .icon {
       width: var(--size-20);

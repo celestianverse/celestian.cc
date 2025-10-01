@@ -1,7 +1,7 @@
 import type { HTMLAttributes, ReactNode } from "react";
 import type { AlignItems, Gap } from "@/types/Styles";
 
-type Columns = 2 | 3 | 4;
+type Columns = 2 | 3 | 4 | 5;
 
 export type Props = {
   /**

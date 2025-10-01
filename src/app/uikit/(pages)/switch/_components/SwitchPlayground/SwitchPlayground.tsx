@@ -26,7 +26,7 @@ export const SwitchPlayground = () => {
   const SwitchComponent = (
     <Switch
       {...props}
-      onCheckedChange={(value) => setProps(prev => ({...prev, checked: value}))}
+      onChange={(value) => setProps(prev => ({...prev, checked: value}))}
     />
   );
 
@@ -42,10 +42,14 @@ export const SwitchPlayground = () => {
         borderStyle="dashed"
         direction="row"
         fullwidth
+        mobileDirection="column"
       >
-        <Column fullwidth>
+        <Column
+          gap={0}
+          fullwidth
+        >
           <Title size="s">
-            {uikit.pages.controls.switch.title}
+            {uikit.controls.switch.title}
           </Title>
           <Column
             gap={16}
@@ -75,7 +79,10 @@ export const SwitchPlayground = () => {
             </Box>
           </Column>
         </Column>
-        <Column gap={16}>
+        <Column
+          align="stretch"
+          gap={16}
+        >
           <Field
             label="color"
             labelPosition="left"
@@ -120,7 +127,7 @@ export const SwitchPlayground = () => {
             <Switch
               size="s"
               checked={props.checked}
-              onCheckedChange={(value) => setProps(prev => ({...prev, checked: value}))}
+              onChange={(value) => setProps(prev => ({...prev, checked: value}))}
             />
           </Field>
           <Field
@@ -130,7 +137,7 @@ export const SwitchPlayground = () => {
           >
             <Switch
               size="s"
-              onCheckedChange={(value) => setProps(prev => ({...prev, disabled: value}))}
+              onChange={(value) => setProps(prev => ({...prev, disabled: value}))}
             />
           </Field>
         </Column>

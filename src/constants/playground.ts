@@ -1,3 +1,3 @@
-export const INPUT_WIDTH = 160;
+export const INPUT_WIDTH = 164;
 
-export const LABEL_WIDTH = 96;
+export const LABEL_WIDTH = 100;

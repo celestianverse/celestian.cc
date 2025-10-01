@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import { app } from "@/data/app";
-import { uikit } from "@/data/uikit";
 import { AnchorPlayground } from "./_components/AnchorPlayground/AnchorPlayground";
+import { seo } from "@/configs/seo";
 
 export const metadata: Metadata = {
-  title: `${uikit.pages.controls.anchor.seo.title} — ${app.name}`,
+  title: seo.uikit.controls.anchor.title,
 };
 
 const AnchorPage = () => {

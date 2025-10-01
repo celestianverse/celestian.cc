@@ -3,10 +3,10 @@ import { Page } from "@/components/uikit/Page/Page";
 import { IntroSection } from "@/components/custom/IntroSection/IntroSection";
 import { ProjectsSection } from "./_components/ProjectsSection/ProjectsSection";
 import { projects } from "@/data/projects";
-import { app } from "@/data/app";
+import { seo } from "@/configs/seo";
 
 export const metadata: Metadata = {
-  title: `${projects.title} — ${app.name}`,
+  title: seo.projects.title,
 };
 
 const ProjectsPage = () => {

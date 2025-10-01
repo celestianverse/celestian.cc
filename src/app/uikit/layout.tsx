@@ -3,6 +3,7 @@ import { Page } from "@/components/uikit/Page/Page";
 import { IntroSection } from "@/components/custom/IntroSection/IntroSection";
 import { Section } from "@/components/uikit/Section/Section";
 import { Sidebar } from "@/app/uikit/_components/Sidebar/Sidebar";
+import { Hidden } from "@/components/uikit/Hidden/Hidden";
 import { uikit } from "@/data/uikit";
 
 type Props = {
@@ -23,7 +24,9 @@ const UikitLayout = ({children}: Props) => {
         overlapBottom={96}
         mobileRadiusTop={64}
       >
-        <Sidebar />
+        <Hidden on="tablet-max">
+          <Sidebar />
+        </Hidden>
         {children}
       </Section>
     </Page>

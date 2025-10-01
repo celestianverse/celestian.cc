@@ -7,7 +7,7 @@ import { Tag } from "@/components/uikit/Tag/Tag";
 import { ThemeSwitcher } from "@/components/custom/ThemeSwitcher/ThemeSwitcher";
 import { FontSwitcher } from "@/components/custom/FontSwitcher/FontSwitcher";
 import { contacts } from "@/data/contacts";
-import { app } from "@/data/app";
+import { app } from "@/configs/app";
 
 export const Footer = () => {
   const year = new Date().getFullYear();

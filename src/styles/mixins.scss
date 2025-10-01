@@ -1,6 +1,20 @@
 @use "sass:color";
 @use "sass:math";
 
+$primary: #1A0A2E;
+$secondary: #7B7487;
+$neutral: #F1F3F7;
+$brand: #F0FF48;
+$accent: #AD1875;
+$utility: #12d1c5;
+$contrast: #FFFFFF;
+$phantom: rgba(255, 255, 255, 0.6);
+$info: #0B95D6;
+$success: #1CB474;
+$warning: #F17400;
+$danger: #C21B1B;
+$rating: #FFB800;
+
 $colors: (
   primary,
   secondary,

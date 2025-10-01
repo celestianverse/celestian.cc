@@ -10,7 +10,7 @@ export const Switch = forwardRef<HTMLInputElement, SwitchProps>((
     size = "m",
     checked,
     disabled,
-    onCheckedChange,
+    onChange,
     className,
   }, ref) => {
   return (
@@ -31,7 +31,7 @@ export const Switch = forwardRef<HTMLInputElement, SwitchProps>((
         type="checkbox"
         checked={checked}
         disabled={disabled}
-        onChange={(e) => onCheckedChange?.(e.target.checked)}
+        onChange={(e) => onChange?.(e.target.checked)}
         className={styles.input}
       />
       <span className={styles.control}>

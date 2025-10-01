@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import { SwitchPlayground } from "@/app/uikit/(pages)/switch/_components/SwitchPlayground/SwitchPlayground";
-import { app } from "@/data/app";
-import { uikit } from "@/data/uikit";
+import { seo } from "@/configs/seo";
 
 export const metadata: Metadata = {
-  title: `${uikit.pages.controls.switch.seo.title} — ${app.name}`,
+  title: seo.uikit.controls.switch.title,
 };
 
 const ButtonPage = () => {

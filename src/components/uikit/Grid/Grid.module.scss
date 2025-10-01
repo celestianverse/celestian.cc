@@ -4,6 +4,22 @@
   display: grid;
   width: 100%;
 
+  &.columns-5 {
+    grid-template-columns: repeat(5, max(1fr));
+
+    @include laptop-only {
+      grid-template-columns: repeat(4, max(1fr));
+    }
+
+    @include tablet-only {
+      grid-template-columns: repeat(3, max(1fr));
+    }
+
+    @include mobile-only {
+      grid-template-columns: repeat(2, max(1fr));
+    }
+  }
+
   &.columns-4 {
     grid-template-columns: repeat(4, max(1fr));
 
@@ -16,7 +32,7 @@
     }
 
     @include mobile-only {
-      grid-template-columns: max(1fr);
+      grid-template-columns: repeat(1, max(1fr));
     }
   }
 
@@ -28,7 +44,7 @@
     }
 
     @include mobile-only {
-      grid-template-columns: max(1fr);
+      grid-template-columns: repeat(1, max(1fr));
     }
   }
 
@@ -36,7 +52,7 @@
     grid-template-columns: repeat(2, max(1fr));
 
     @include tablet-max {
-      grid-template-columns: max(1fr);
+      grid-template-columns: repeat(1, max(1fr));
     }
   }
 }

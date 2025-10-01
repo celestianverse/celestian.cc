@@ -4,8 +4,9 @@
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--spacing-12);
+  flex-grow: 1;
   flex-shrink: 0;
+  gap: var(--spacing-12);
   height: var(--size-32);
   padding: 0 var(--size-12);
   background: var(--primary-fill-soft);
