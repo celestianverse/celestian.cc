@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import { ButtonPlayground } from "./_components/ButtonPlayground/ButtonPlayground";
-import { app } from "@/data/app";
-import { uikit } from "@/data/uikit";
+import { seo } from "@/configs/seo";
 
 export const metadata: Metadata = {
-  title: `${uikit.pages.controls.button.seo.title} — ${app.name}`,
+  title: seo.uikit.controls.button.title,
 };
 
 const ButtonPage = () => {

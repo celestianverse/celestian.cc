@@ -1,15 +1,15 @@
-import { ROUTES } from "@/constants/routes";
+import { routes } from "@/configs/routes";
 
 export const hero = {
   title: "Design & Frontend",
   subtitle: "For your project",
   image: "/images/hero/compressed/home--x2.png",
   projects: {
-    path: ROUTES.main.projects.path,
+    path: routes.projects.path,
     label: "Latest projects",
   },
   contacts: {
-    path: ROUTES.main.contacts.path,
+    path: routes.contacts.path,
     label: "Work together",
   },
 };

@@ -53,7 +53,7 @@ export const ButtonPlayground = () => {
     </Button>
   );
 
-  const handleButtonVariant = (value) => {
+  const setVariant = (value) => {
     const isOutline = value === "outline";
 
     setProps(prev => ({
@@ -76,13 +76,17 @@ export const ButtonPlayground = () => {
         borderStyle="dashed"
         direction="row"
         fullwidth
+        mobileDirection="column"
       >
-        <Column fullwidth>
+        <Column
+          gap={0}
+          fullwidth
+        >
           <Title size="s">
-            {uikit.pages.controls.button.title}
+            {uikit.controls.button.title}
           </Title>
           <Column
-            gap={16}
+            gap={0}
             grow={1}
             fullwidth
           >
@@ -109,7 +113,10 @@ export const ButtonPlayground = () => {
             </Box>
           </Column>
         </Column>
-        <Column gap={16}>
+        <Column
+          align="stretch"
+          gap={16}
+        >
           <Field
             label="variant"
             labelPosition="left"
@@ -118,7 +125,7 @@ export const ButtonPlayground = () => {
             <Select
               value={props.variant}
               width={INPUT_WIDTH}
-              onChange={handleButtonVariant}
+              onChange={setVariant}
             >
               {BUTTON_VARIANT.map(variant => (
                 <SelectOption
@@ -315,7 +322,7 @@ export const ButtonPlayground = () => {
           >
             <Switch
               size="s"
-              onCheckedChange={(value) => setProps(prev => ({...prev, fullwidth: value}))}
+              onChange={(value) => setProps(prev => ({...prev, fullwidth: value}))}
             />
           </Field>
           <Field
@@ -325,7 +332,7 @@ export const ButtonPlayground = () => {
           >
             <Switch
               size="s"
-              onCheckedChange={(value) => setProps(prev => ({...prev, square: value}))}
+              onChange={(value) => setProps(prev => ({...prev, square: value}))}
             />
           </Field>
           <Field
@@ -335,7 +342,7 @@ export const ButtonPlayground = () => {
           >
             <Switch
               size="s"
-              onCheckedChange={(value) => setProps(prev => ({...prev, disabled: value}))}
+              onChange={(value) => setProps(prev => ({...prev, disabled: value}))}
             />
           </Field>
         </Column>

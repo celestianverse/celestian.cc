@@ -12,7 +12,8 @@ import {
   useRole,
   FloatingFocusManager,
   FloatingList,
-  offset, size,
+  offset,
+  size,
 } from "@floating-ui/react";
 import { Icon } from "@/components/uikit/Icon/Icon";
 import { Text } from "@/components/uikit/Text/Text";

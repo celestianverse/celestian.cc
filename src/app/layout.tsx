@@ -7,12 +7,12 @@ import { getCookieFont } from "@/services/FontService";
 import { getCookieTheme } from "@/services/ThemeService";
 import type { Theme } from "@/types/Theme";
 import type { Font } from "@/types/Font";
-import { app } from "@/data/app";
+import { seo } from "@/configs/seo";
 import "@/styles/tokens.scss";
 import "@/styles/main.scss";
 
 export const metadata: Metadata = {
-  title: app.title,
+  title: seo.home.title,
 };
 
 export const viewport: Viewport = {

@@ -17,6 +17,10 @@ body {
   font-family: var(--font-family), sans-serif;
   color: var(--primary-content);
   @include transition($property: background);
+
+  &.modal-mode {
+    overflow: hidden;
+  }
 }
 
 ::selection {

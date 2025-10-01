@@ -2,8 +2,8 @@
 import Link from "next/link";
 import { Row } from "@/components/uikit/Row/Row";
 import { Anchor } from "@/components/uikit/Anchor/Anchor";
-import { ROUTES } from "@/constants/routes";
 import { useIsActivePath } from "@/hooks/useActivePage";
+import { navigation } from "@/configs/navigation";
 
 export const Navigation = () => {
   const isActivePath = useIsActivePath();
@@ -14,12 +14,13 @@ export const Navigation = () => {
         as="ul"
         gap={0}
       >
-        {Object.values(ROUTES.main).map((page) => (
+        {Object.values(navigation).map((page) => (
           <li key={page.path}>
             <Anchor
               as={Link}
               href={page.path}
-              padding="l"
+              paddingY={16}
+              paddingX={24}
               variant={isActivePath(page.path) ? "outline" : "base"}
               borderWidth={isActivePath(page.path) ? 2 : 0}
               borderStyle={isActivePath(page.path) ? "dashed" : "none"}
