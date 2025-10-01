@@ -3,8 +3,8 @@ import { Row } from "@/components/uikit/Row/Row";
 import { Logo } from "@/components/uikit/Logo/Logo";
 import { Navigation } from "./_components/Navigation/Navigation";
 import { ThemeSwitcher } from "@/components/custom/ThemeSwitcher/ThemeSwitcher";
-import { Burger } from "@/layouts/MainLayout/_components/Header/_components/Burger/Burger";
 import { Hidden } from "@/components/uikit/Hidden/Hidden";
+import { Burger } from "./_components/Burger/Burger";
 import styles from "./Header.module.scss";
 
 export const Header = () => {

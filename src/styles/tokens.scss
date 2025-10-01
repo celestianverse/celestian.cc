@@ -263,7 +263,7 @@ $themes: (
   ),
   brand-content: (
     light: $brand,
-    dark: color.mix($brand, #000, 94%),
+    dark: color.mix($brand, #000, 92%),
   ),
   brand-content-action: (
     light: $accent,
@@ -630,11 +630,11 @@ $themes: (
     dark: color.scale($info, $lightness: -35%),
   ),
   info-fill-soft: (
-    light: rgba($info, 0.06),
+    light: rgba($info, 0.07),
     dark: rgba($info, 0.08),
   ),
   info-fill-soft-action: (
-    light: rgba($info, 0.12),
+    light: rgba($info, 0.14),
     dark: rgba($info, 0.15),
   ),
   info-fill-soft-on: (
@@ -698,11 +698,11 @@ $themes: (
     dark: color.scale($success, $lightness: -35%),
   ),
   success-fill-soft: (
-    light: rgba($success, 0.07),
+    light: rgba($success, 0.08),
     dark: rgba($success, 0.1),
   ),
   success-fill-soft-action: (
-    light: rgba($success, 0.13),
+    light: rgba($success, 0.14),
     dark: rgba($success, 0.16),
   ),
   success-fill-soft-on: (
@@ -834,11 +834,11 @@ $themes: (
     dark: color.scale($danger, $lightness: -35%),
   ),
   danger-fill-soft: (
-    light: rgba($danger, 0.06),
+    light: rgba($danger, 0.07),
     dark: rgba($danger, 0.08),
   ),
   danger-fill-soft-action: (
-    light: rgba($danger, 0.12),
+    light: rgba($danger, 0.13),
     dark: rgba($danger, 0.14),
   ),
   danger-fill-soft-on: (

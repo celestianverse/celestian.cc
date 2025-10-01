@@ -27,27 +27,7 @@ $line-heights: "l", "m", "s";
 
   @each $color in $colors {
     &.color-#{$color} {
-      color: var(--#{$color});
+      color: var(--#{$color}-content);
     }
-  }
-
-  &.uppercase {
-    text-transform: uppercase;
-  }
-
-  &.lowercase {
-    text-transform: lowercase;
-  }
-
-  &.white-space-nowrap {
-    white-space: nowrap;
-  }
-
-  &.white-space-pre-line {
-    white-space: pre-line;
-  }
-
-  &.ellipsis {
-    @include ellipsis;
   }
 }

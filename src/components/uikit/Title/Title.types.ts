@@ -1,14 +1,15 @@
 import type { ReactNode } from "react";
 import type { Color } from "@/types/Color";
 import type { LineHeight, FontWeight, WhiteSpace } from "@/types/Styles";
+import { TITLE_SIZE } from "@/components/uikit/Title/Title.constants";
 
-export type Element = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+export type TitleElement = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 
-type Size = "xl" | "l" | "m" | "s" | "xs";
+export type TitleSize = typeof TITLE_SIZE[number];
 
-export type Props = {
+export type TitleProps = {
   color?: Color | "inherit";
-  size?: Size;
+  size?: TitleSize;
   weight?: FontWeight;
   lineHeight?: LineHeight;
   uppercase?: boolean;

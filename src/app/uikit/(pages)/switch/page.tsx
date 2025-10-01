@@ -6,11 +6,11 @@ export const metadata: Metadata = {
   title: seo.uikit.controls.switch.title,
 };
 
-const ButtonPage = () => {
+const SwitchPage = () => {
 
   return (
     <SwitchPlayground />
   );
 };
 
-export default ButtonPage;
+export default SwitchPage;

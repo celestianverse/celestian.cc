@@ -36,9 +36,9 @@ export const GAP = [0, 4, 8, 16, 24, 32, 48, 64, 96, 128] as const;
 export const PADDING = [0, 4, 8, 16, 24, 32, 48, 64, 96, 128] as const;
 
 export const FONT_WEIGHT = [
-  "bold",
-  "medium",
   "regular",
+  "medium",
+  "bold",
 ] as const;
 
 export const LINE_HEIGHT = [
@@ -48,6 +48,7 @@ export const LINE_HEIGHT = [
 ] as const;
 
 export const WHITE_SPACE = [
+  "normal",
   "nowrap",
   "pre-line",
 ] as const;

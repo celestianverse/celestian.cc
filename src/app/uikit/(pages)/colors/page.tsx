@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ColorsPlayground } from "@/app/uikit/(pages)/colors/_components/ColorsPlayground/ColorsPlayground";
+import { ColorsPlayground } from "./_components/ColorsPlayground/ColorsPlayground";
 import { seo } from "@/configs/seo";
 
 export const metadata: Metadata = {

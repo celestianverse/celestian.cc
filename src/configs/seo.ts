@@ -25,6 +25,14 @@ export const seo = {
         title: `Switch component for UI kit library — ${app.name}`,
       },
     },
+    typography: {
+      title: {
+        title: `Title component for UI kit library — ${app.name}`,
+      },
+      text: {
+        title: `Text component for UI kit library — ${app.name}`,
+      },
+    },
   },
   contacts: {
     title: `Contacts — ${app.name}`,
