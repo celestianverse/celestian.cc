@@ -76,6 +76,7 @@ $styles: (
   flex-wrap: ("wrap", "nowrap"),
   border-style: ("solid", "dashed", "dotted"),
   border-bottom-style: ("solid", "dashed", "dotted"),
+  white-space: ("normal", "nowrap", "pre-line"),
 );
 
 @each $property, $values in $styles {
@@ -220,4 +221,16 @@ $border-radius-axes: (
     background-color: CanvasText;
     border-color: Canvas;
   }
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+.ellipsis {
+  @include ellipsis;
 }

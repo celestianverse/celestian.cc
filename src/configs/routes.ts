@@ -1,39 +1,50 @@
 export const routes = {
   home: {
-    title: "Design & Frontend",
+    name: "Design & Frontend",
     path: "/",
   },
   projects: {
-    title: "Latest projects",
+    name: "Latest projects",
     path: "/projects",
   },
   uikit: {
-    title: "UI kit library",
+    name: "UI kit library",
     path: "/uikit",
     general: {
-      title: "General",
+      name: "General",
       colors: {
-        title: "Colors",
+        name: "Colors",
         path: "/uikit/colors",
       },
     },
     controls: {
       anchor: {
-        title: "Anchor",
+        name: "Anchor",
         path: "/uikit/anchor",
       },
       button: {
-        title: "Button",
+        name: "Button",
         path: "/uikit/button",
       },
       switch: {
-        title: "Switch",
+        name: "Switch",
         path: "/uikit/switch",
+      },
+    },
+    typography: {
+      name: "Typography",
+      title: {
+        name: "Title",
+        path: "/uikit/title",
+      },
+      text: {
+        name: "Text",
+        path: "/uikit/text",
       },
     },
   },
   contacts: {
-    title: "Contacts",
+    name: "Contacts",
     path: "/contacts",
   },
 };

@@ -40,7 +40,7 @@ export const Box = (
         styles[`color-${color}`],
         styles[`tone-${tone}`],
         {
-          [`padding-${padding}`]: padding != null,
+          [`padding-${padding}`]: padding != null && !paddingY && !paddingX,
           [`laptop-padding-${laptopPadding}`]: laptopPadding != null,
           [`tablet-padding-${tabletPadding}`]: tabletPadding != null,
           [`mobile-padding-${mobilePadding}`]: mobilePadding != null,

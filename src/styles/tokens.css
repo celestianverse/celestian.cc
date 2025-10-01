@@ -221,8 +221,8 @@
   --info-fill: #0B95D6;
   --info-fill-on: #FFFFFF;
   --info-fill-action: rgb(27.304, 174.136, 243.296);
-  --info-fill-soft: rgba(11, 149, 214, 0.06);
-  --info-fill-soft-action: rgba(11, 149, 214, 0.12);
+  --info-fill-soft: rgba(11, 149, 214, 0.07);
+  --info-fill-soft-action: rgba(11, 149, 214, 0.14);
   --info-fill-soft-on: #0B95D6;
   --info-outline: #0B95D6;
   --info-outline-action: #AD1875;
@@ -238,8 +238,8 @@
   --success-fill: #1CB474;
   --success-fill-on: #FFFFFF;
   --success-fill-action: rgb(32.0653846154, 206.1346153846, 132.8423076923);
-  --success-fill-soft: rgba(28, 180, 116, 0.07);
-  --success-fill-soft-action: rgba(28, 180, 116, 0.13);
+  --success-fill-soft: rgba(28, 180, 116, 0.08);
+  --success-fill-soft-action: rgba(28, 180, 116, 0.14);
   --success-fill-soft-on: #1CB474;
   --success-outline: #1CB474;
   --success-outline-action: #AD1875;
@@ -272,8 +272,8 @@
   --danger-fill: #C21B1B;
   --danger-fill-on: #FFFFFF;
   --danger-fill-action: rgb(225.6946153846, 44.4353846154, 44.4353846154);
-  --danger-fill-soft: rgba(194, 27, 27, 0.06);
-  --danger-fill-soft-action: rgba(194, 27, 27, 0.12);
+  --danger-fill-soft: rgba(194, 27, 27, 0.07);
+  --danger-fill-soft-action: rgba(194, 27, 27, 0.13);
   --danger-fill-soft-on: #C21B1B;
   --danger-outline: #C21B1B;
   --danger-outline-action: #AD1875;
@@ -348,7 +348,7 @@
   --secondary-gradient-on: #FFFFFF;
   --secondary-gradient-soft: linear-gradient(90deg, rgb(101.6984210526, 80.736, 137.634) 0, rgb(120.7718515412, 96.6550358566, 162.1149641434) 100%);
   --secondary-gradient-soft-on: #FFFFFF;
-  --brand-content: rgb(225.6, 239.7, 67.68);
+  --brand-content: rgb(220.8, 234.6, 66.24);
   --brand-content-action: #AD1875;
   --brand-surface: #F0FF48;
   --brand-surface-on: #1A0A2E;

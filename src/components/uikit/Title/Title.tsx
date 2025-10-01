@@ -1,12 +1,12 @@
 import type { ElementType } from "react";
 import classNames from "classnames";
 import type { Polymorphic } from "@/types/Polymorphic";
-import type { Element, Props } from "./Title.types";
+import type { TitleElement, TitleProps } from "./Title.types";
 import styles from "./Title.module.scss";
 
 const DEFAULT_ELEMENT = "h3";
 
-export const Title = <E extends ElementType<any, Element> = typeof DEFAULT_ELEMENT>
+export const Title = <E extends ElementType<any, TitleElement> = typeof DEFAULT_ELEMENT>
 ({
    as,
    color = "inherit",
@@ -20,7 +20,7 @@ export const Title = <E extends ElementType<any, Element> = typeof DEFAULT_ELEME
    className,
    children,
    ...rest
- }: Polymorphic<E, Props>) => {
+ }: Polymorphic<E, TitleProps>) => {
   const Component = as || DEFAULT_ELEMENT;
 
   return (
@@ -33,9 +33,10 @@ export const Title = <E extends ElementType<any, Element> = typeof DEFAULT_ELEME
         styles[`line-height-${lineHeight}`],
         styles[`white-space-${whiteSpace}`],
         {
-          [styles.uppercase]: uppercase,
-          [styles.lowercase]: lowercase,
-          [styles.ellipsis]: ellipsis,
+          ["uppercase"]: uppercase,
+          ["lowercase"]: lowercase,
+          ["ellipsis"]: ellipsis,
+          [`white-space-${whiteSpace}`]: whiteSpace,
         },
         className,
       )}

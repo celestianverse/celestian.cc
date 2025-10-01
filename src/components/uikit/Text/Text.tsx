@@ -1,12 +1,12 @@
 import type { ElementType } from "react";
 import classNames from "classnames";
 import type { Polymorphic } from "@/types/Polymorphic";
-import type { Element, Props } from "./Text.types";
+import type { TextElement, TextProps } from "./Text.types";
 import styles from "./Text.module.scss";
 
 const DEFAULT_ELEMENT = "p";
 
-export const Text = <E extends ElementType<any, Element> = typeof DEFAULT_ELEMENT>
+export const Text = <E extends ElementType<any, TextElement> = typeof DEFAULT_ELEMENT>
 ({
    as,
    color = "inherit",
@@ -20,7 +20,7 @@ export const Text = <E extends ElementType<any, Element> = typeof DEFAULT_ELEMEN
    className,
    children,
    ...rest
- }: Polymorphic<E, Props>) => {
+ }: Polymorphic<E, TextProps>) => {
   const Component = as || DEFAULT_ELEMENT;
 
   return (
@@ -31,11 +31,11 @@ export const Text = <E extends ElementType<any, Element> = typeof DEFAULT_ELEMEN
         styles[`size-${size}`],
         styles[`weight-${weight}`],
         styles[`line-height-${lineHeight}`],
-        styles[`white-space-${whiteSpace}`],
         {
-          [styles.uppercase]: uppercase,
-          [styles.lowercase]: lowercase,
-          [styles.ellipsis]: ellipsis,
+          ["uppercase"]: uppercase,
+          ["lowercase"]: lowercase,
+          ["ellipsis"]: ellipsis,
+          [`white-space-${whiteSpace}`]: whiteSpace,
         },
         className,
       )}

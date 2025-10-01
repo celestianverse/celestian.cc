@@ -17,4 +17,12 @@ export const uikit = {
       title: "Switch",
     },
   },
+  typography: {
+    title: {
+      title: "Title",
+    },
+    text: {
+      title: "Text",
+    },
+  },
 };

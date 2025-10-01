@@ -43,38 +43,41 @@ export const Burger = () => {
       />
       <Box
         color="contrast"
-        padding={24}
+        paddingY={48}
+        paddingX={32}
         radius={0}
         className={classNames(styles.drawer, "scroll")}
       >
         <nav>
           <Column
-            gap={16}
+            gap={32}
           >
-            <Title
-              as="h5"
-              size="s"
-            >
-              Navigation
-            </Title>
-            <Column gap={0}>
-              {Object.values(routes).map((page) => (
-                <Anchor
-                  key={page.path}
-                  as={Link}
-                  href={page.path}
-                  paddingY={16}
-                  variant={isActivePath(page.path) ? "outline" : "base"}
-                  borderWidth={isActivePath(page.path) ? 2 : 0}
-                  borderStyle={isActivePath(page.path) ? "dashed" : "none"}
-                  onClick={handleClose}
-                >
-                  {page.title}
-                </Anchor>
-              ))}
+            <Column gap={16}>
+              <Title
+                as="h5"
+                size="s"
+              >
+                Navigation
+              </Title>
+              <Column gap={0}>
+                {Object.values(routes).map((page) => (
+                  <Anchor
+                    key={page.path}
+                    as={Link}
+                    href={page.path}
+                    paddingY={16}
+                    variant={isActivePath(page.path) ? "outline" : "base"}
+                    borderWidth={isActivePath(page.path) ? 2 : 0}
+                    borderStyle={isActivePath(page.path) ? "dashed" : "none"}
+                    onClick={handleClose}
+                  >
+                    {page.name}
+                  </Anchor>
+                ))}
+              </Column>
             </Column>
             {isActivePath(routes.uikit.path) && (
-              <>
+              <Column gap={16}>
                 <Title
                   as="h5"
                   size="s"
@@ -108,7 +111,7 @@ export const Burger = () => {
                     )
                   })}
                 </Column>
-              </>
+              </Column>
             )}
           </Column>
         </nav>

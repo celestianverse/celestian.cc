@@ -2,19 +2,19 @@ import { routes } from "@/configs/routes";
 
 export const navigation = {
   home: {
-    title: routes.home.title,
+    title: routes.home.name,
     path: routes.home.path,
   },
   projects: {
-    title: routes.projects.title,
+    title: routes.projects.name,
     path: routes.projects.path,
   },
   uikit: {
-    title: routes.uikit.title,
+    title: routes.uikit.name,
     path: routes.uikit.path,
   },
   contacts: {
-    title: routes.contacts.title,
+    title: routes.contacts.name,
     path: routes.contacts.path,
   },
 };
