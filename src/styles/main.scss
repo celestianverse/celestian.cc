@@ -52,18 +52,15 @@ $breakpoints: (
 @mixin respond($breakpoint) {
   @if $breakpoint == null {
     @content;
-  }
-  @else if $breakpoint == laptop-max {
+  } @else if $breakpoint == laptop-max {
     @include laptop-max {
       @content;
     }
-  }
-  @else if $breakpoint == tablet-max {
+  } @else if $breakpoint == tablet-max {
     @include tablet-max {
       @content;
     }
-  }
-  @else if $breakpoint == mobile-only {
+  } @else if $breakpoint == mobile-only {
     @include mobile-only {
       @content;
     }
@@ -89,8 +86,8 @@ $styles: (
 
 $flex-direction: ("row", "row-reverse", "column", "column-reverse");
 
-@each $style in $flex-direction {
-  @each $prefix, $breakpoint in $breakpoints {
+@each $prefix, $breakpoint in $breakpoints {
+  @each $style in $flex-direction {
     .#{$prefix}flex-direction-#{$style} {
       @include respond($breakpoint) {
         flex-direction: #{$style};
@@ -101,8 +98,8 @@ $flex-direction: ("row", "row-reverse", "column", "column-reverse");
 
 $align-items: ("flex-start", "center", "flex-end", "stretch");
 
-@each $style in $align-items {
-  @each $prefix, $breakpoint in $breakpoints {
+@each $prefix, $breakpoint in $breakpoints {
+  @each $style in $align-items {
     .#{$prefix}align-items-#{$style} {
       @include respond($breakpoint) {
         align-items: #{$style};
@@ -113,8 +110,8 @@ $align-items: ("flex-start", "center", "flex-end", "stretch");
 
 $justify-content: ("flex-start", "center", "flex-end", "space-between");
 
-@each $style in $justify-content {
-  @each $prefix, $breakpoint in $breakpoints {
+@each $prefix, $breakpoint in $breakpoints {
+  @each $style in $justify-content {
     .#{$prefix}justify-content-#{$style} {
       @include respond($breakpoint) {
         justify-content: #{$style};
@@ -125,8 +122,8 @@ $justify-content: ("flex-start", "center", "flex-end", "space-between");
 
 $gap: (128, 96, 64, 48, 32, 24, 16, 8, 4, 0);
 
-@each $size in $gap {
-  @each $prefix, $breakpoint in $breakpoints {
+@each $prefix, $breakpoint in $breakpoints {
+  @each $size in $gap {
     .#{$prefix}gap-#{$size} {
       @include respond($breakpoint) {
         gap: var(--spacing-#{$size});
@@ -151,8 +148,8 @@ $padding-axes: (
   }
 }
 
-@each $size in $padding {
-  @each $prefix, $breakpoint in $breakpoints {
+@each $prefix, $breakpoint in $breakpoints {
+  @each $size in $padding {
     @each $axis, $props in $padding-axes {
       .#{$prefix}padding#{if($axis == "", "", "-#{$axis}")}-#{$size} {
         @include respond($breakpoint) {
@@ -177,11 +174,11 @@ $border-radius-axes: (
   }
 }
 
-@each $size in $border-radius {
-  @each $prefix, $bp in $breakpoints {
+@each $prefix, $breakpoint in $breakpoints {
+  @each $size in $border-radius {
     @each $axis, $props in $border-radius-axes {
       .#{$prefix}border-radius#{if($axis == "", "", "-#{$axis}")}-#{$size} {
-        @include respond($bp) {
+        @include respond($breakpoint) {
           @include emit-border-radius($props, $size);
         }
       }

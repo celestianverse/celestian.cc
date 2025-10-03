@@ -362,11 +362,11 @@ $themes: (
     dark: color.scale($accent, $lightness: -30%),
   ),
   accent-fill-soft: (
-    light: rgba($accent, 0.05),
+    light: rgba($accent, 0.06),
     dark: rgba($accent, 0.08),
   ),
   accent-fill-soft-action: (
-    light: rgba($accent, 0.1),
+    light: rgba($accent, 0.11),
     dark: rgba($accent, 0.14),
   ),
   accent-fill-soft-on: (
@@ -626,7 +626,7 @@ $themes: (
     dark: $contrast,
   ),
   info-fill-action: (
-    light: color.scale($info, $lightness: 16%),
+    light: color.scale($info, $lightness: 17%),
     dark: color.scale($info, $lightness: -35%),
   ),
   info-fill-soft: (

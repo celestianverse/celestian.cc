@@ -1,28 +1,33 @@
 export const uikit = {
   title: "UI kit library",
-  general: {
-    colors: {
-      title: "Main colors",
-      subtitle: "Contrast colors",
+  typography: {
+    title: {
+      title: "Title",
+      longTitle: "Title component",
+    },
+    text: {
+      title: "Text",
+      longTitle: "Text component",
     },
   },
   controls: {
     anchor: {
       title: "Anchor",
+      longTitle: "Anchor component",
     },
     button: {
       title: "Button",
+      longTitle: "Button component",
     },
     switch: {
       title: "Switch",
+      longTitle: "Switch component",
     },
   },
-  typography: {
-    title: {
-      title: "Title",
-    },
-    text: {
-      title: "Text",
+  meta: {
+    colors: {
+      title: "Main colors",
+      subtitle: "Contrast colors",
     },
   },
 };

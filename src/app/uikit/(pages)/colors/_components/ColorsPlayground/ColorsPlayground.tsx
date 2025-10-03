@@ -44,7 +44,7 @@ export const ColorsPlayground = () => {
           fullwidth
         >
           <Title size="s">
-            {uikit.general.colors.title}
+            {uikit.meta.colors.title}
           </Title>
           <Grid
             columns={5}
@@ -75,7 +75,7 @@ export const ColorsPlayground = () => {
           fullwidth
         >
           <Title size="s">
-            {uikit.general.colors.subtitle}
+            {uikit.meta.colors.subtitle}
           </Title>
           <Grid
             columns={5}

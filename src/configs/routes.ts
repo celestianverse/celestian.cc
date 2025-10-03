@@ -10,11 +10,15 @@ export const routes = {
   uikit: {
     name: "UI kit library",
     path: "/uikit",
-    general: {
-      name: "General",
-      colors: {
-        name: "Colors",
-        path: "/uikit/colors",
+    typography: {
+      name: "Typography",
+      title: {
+        name: "Title",
+        path: "/uikit/title",
+      },
+      text: {
+        name: "Text",
+        path: "/uikit/text",
       },
     },
     controls: {
@@ -31,15 +35,11 @@ export const routes = {
         path: "/uikit/switch",
       },
     },
-    typography: {
-      name: "Typography",
-      title: {
-        name: "Title",
-        path: "/uikit/title",
-      },
-      text: {
-        name: "Text",
-        path: "/uikit/text",
+    meta: {
+      name: "Meta",
+      colors: {
+        name: "Colors",
+        path: "/uikit/colors",
       },
     },
   },
