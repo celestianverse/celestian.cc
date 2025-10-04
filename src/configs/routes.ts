@@ -20,6 +20,10 @@ export const routes = {
         name: "Text",
         path: "/uikit/text",
       },
+      tag: {
+        name: "Tag",
+        path: "/uikit/tag",
+      },
     },
     controls: {
       anchor: {

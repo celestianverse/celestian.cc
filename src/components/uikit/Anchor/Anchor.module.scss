@@ -5,6 +5,7 @@
   align-items: center;
   gap: var(--spacing-8);
   font-weight: var(--font-weight-medium);
+  cursor: pointer;
   @include transition;
 
   &.size-m {

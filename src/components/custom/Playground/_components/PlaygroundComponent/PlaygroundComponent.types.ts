@@ -2,7 +2,7 @@ import type { ReactElement } from "react";
 
 export type Props = {
   name: string;
-  title: string;
+  title?: string;
   component: ReactElement;
   props: object;
   setProps: (prev: object) => void;

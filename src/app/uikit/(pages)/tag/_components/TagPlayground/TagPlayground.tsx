@@ -1,45 +1,42 @@
 "use client";
 import { useState } from "react";
-import { Anchor } from "@/components/uikit/Anchor/Anchor";
-import type { AnchorProps } from "@/components/uikit/Anchor/Anchor.types";
-import { ANCHOR_ELEMENT, ANCHOR_SIZE, ANCHOR_VARIANT } from "@/components/uikit/Anchor/Anchor.constants";
-import { BORDER_STYLE, PADDING } from "@/constants/styles";
+import { BORDER_STYLE, TONE } from "@/constants/styles";
 import { COLORS } from "@/constants/colors";
 import { ICONS } from "@/components/uikit/Icon/Icon.constants";
 import { uikit } from "@/data/uikit";
 import { buildComponentCode } from "@/helpers/buildComponentCode";
 import { Playground } from "@/components/custom/Playground/Playground";
-import { DEFAULT_CHOSEN_PROPS, DEFAULT_PROPS, NAME } from "./AnchorPlayground.constants";
+import { DEFAULT_CHOSEN_PROPS, DEFAULT_PROPS, NAME } from "./TagPlayground.constants";
+import type { TagProps } from "@/components/uikit/Tag/Tag.types";
+import { Tag } from "@/components/uikit/Tag/Tag";
+import { TAG_BORDER_RADIUS, TAG_ELEMENT, TAG_SIZE, TAG_VARIANT } from "@/components/uikit/Tag/Tag.constants";
 
-export const AnchorPlayground = () => {
-  const [props, setProps] = useState<AnchorProps>(DEFAULT_CHOSEN_PROPS);
+export const TagPlayground = () => {
+  const [props, setProps] = useState<TagProps>(DEFAULT_CHOSEN_PROPS);
 
-  const AnchorComponent = (
-    <Anchor {...props}>
+  const TagComponent = (
+    <Tag {...props}>
       {NAME}
-    </Anchor>
+    </Tag>
   );
 
   const settings = {
-    as: ANCHOR_ELEMENT,
-    variant: ANCHOR_VARIANT,
+    as: TAG_ELEMENT,
+    variant: TAG_VARIANT,
     color: COLORS,
-    size: ANCHOR_SIZE,
-    padding: PADDING,
-    paddingY: PADDING,
-    paddingX: PADDING,
+    tone: TONE,
+    size: TAG_SIZE,
+    radius: TAG_BORDER_RADIUS,
     borderStyle: BORDER_STYLE,
     borderWidth: [...Array(11).keys()],
     iconStart: Object.keys(ICONS),
     iconEnd: Object.keys(ICONS),
     iconOnly: Object.keys(ICONS),
-    fullwidth: props.fullwidth,
-    disabled: props.disabled,
   };
 
   const childrenContent = props.iconOnly === "none" ? NAME : null;
 
-  const code = buildComponentCode<AnchorProps>({
+  const code = buildComponentCode<TagProps>({
     name: NAME,
     props,
     defaults: DEFAULT_PROPS,
@@ -47,11 +44,11 @@ export const AnchorPlayground = () => {
   });
 
   return (
-    <Playground.Root title={uikit.controls.anchor.longTitle}>
+    <Playground.Root title={uikit.typography.tag.longTitle}>
       <Playground.Component
         name={NAME}
-        title={uikit.controls.anchor.longTitle}
-        component={AnchorComponent}
+        title={uikit.typography.tag.longTitle}
+        component={TagComponent}
         props={props}
         setProps={setProps}
         settings={settings}

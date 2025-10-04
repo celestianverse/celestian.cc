@@ -1,35 +1,55 @@
-import { useCallback, useState } from 'react';
-import { copyToClipboard } from "@/helpers/copyToClipboard";
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { copyToClipboard } from '@/helpers/copyToClipboard';
 
-type Options = { timeout?: number; onSuccess?: (text: string) => void; onError?: (e: unknown) => void };
+type Options = {
+  timeout?: number;
+  onSuccess?: (text: string) => void;
+  onError?: (e: unknown) => void;
+};
 
 export const useCopyToClipboard = (options?: Options) => {
   const [isCopied, setIsCopied] = useState(false);
   const [error, setError] = useState<unknown>(null);
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const { timeout = 2000, onSuccess, onError } = options ?? {};
 
   const getCopy = useCallback(async (text: string) => {
+    setError(null);
+
+    let ok = false;
+
     try {
-      const ok = await copyToClipboard(text);
-
-      if (!ok) throw new Error('Copy failed');
-
-      setIsCopied(true);
-
-      options?.onSuccess?.(text);
-
-      const t = options?.timeout ?? 2000;
-
-      if (t > 0) setTimeout(() => setIsCopied(false), t);
-
-      return true;
+      ok = await copyToClipboard(text);
     } catch (e) {
       setError(e);
-
-      options?.onError?.(e);
-
+      onError?.(e);
       return false;
     }
-  }, [options]);
+
+    if (!ok) {
+      const err = new Error('Copy failed');
+      setError(err);
+      onError?.(err);
+      return false;
+    }
+
+    setIsCopied(true);
+    onSuccess?.(text);
+
+    if (timeout > 0) {
+      if (timerRef.current) clearTimeout(timerRef.current);
+      timerRef.current = setTimeout(() => setIsCopied(false), timeout);
+    }
+
+    return true;
+  }, [onSuccess, onError, timeout]);
+
+  useEffect(() => {
+    return () => {
+      if (timerRef.current) clearTimeout(timerRef.current);
+    };
+  }, []);
 
   return { getCopy, isCopied, error };
 };

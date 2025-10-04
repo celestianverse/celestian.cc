@@ -7,7 +7,7 @@ import { buildComponentCode } from "@/helpers/buildComponentCode";
 import { DEFAULT_PROPS, NAME } from "./TitlePlayground.constants";
 import { Playground } from "@/components/custom/Playground/Playground";
 import { COLORS } from "@/constants/colors";
-import { TITLE_SIZE } from "@/components/uikit/Title/Title.constants";
+import { TITLE_ELEMENT, TITLE_SIZE } from "@/components/uikit/Title/Title.constants";
 import { FONT_WEIGHT, LINE_HEIGHT, WHITE_SPACE } from "@/constants/styles";
 
 export const TitlePlayground = () => {
@@ -15,11 +15,12 @@ export const TitlePlayground = () => {
 
   const TitleComponent = (
     <Title {...props}>
-      Title
+      {NAME}
     </Title>
   );
 
   const settings = {
+    as: TITLE_ELEMENT,
     color: ["inherit", ...COLORS],
     size: TITLE_SIZE,
     weight: FONT_WEIGHT,

@@ -6,20 +6,21 @@ import { FONT_WEIGHT, LINE_HEIGHT, WHITE_SPACE } from "@/constants/styles";
 import { COLORS } from "@/constants/colors";
 import { uikit } from "@/data/uikit";
 import { buildComponentCode } from "@/helpers/buildComponentCode";
-import { DEFAULT_PROPS, NAME } from "@/app/uikit/(pages)/text/_components/TextPlayground/TextPlayground.constants";
+import { DEFAULT_PROPS, NAME } from "./TextPlayground.constants";
 import { Playground } from "@/components/custom/Playground/Playground";
-import { TEXT_SIZE } from "@/components/uikit/Text/Text.constants";
+import { TEXT_ELEMENT, TEXT_SIZE } from "@/components/uikit/Text/Text.constants";
 
 export const TextPlayground = () => {
   const [props, setProps] = useState<TextProps>(DEFAULT_PROPS);
 
   const TextComponent = (
     <Text {...props}>
-      Text
+      {NAME}
     </Text>
   );
 
   const settings = {
+    as: TEXT_ELEMENT,
     color: ["inherit", ...COLORS],
     size: TEXT_SIZE,
     weight: FONT_WEIGHT,

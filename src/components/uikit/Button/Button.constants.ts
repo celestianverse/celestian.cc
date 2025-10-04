@@ -1,3 +1,11 @@
+export const BUTTON_ELEMENT = [
+  "button",
+  "a",
+  "div",
+] as const;
+
+export const BUTTON_DEFAULT_ELEMENT = "button";
+
 export const BUTTON_VARIANT = [
   "flat",
   "outline",

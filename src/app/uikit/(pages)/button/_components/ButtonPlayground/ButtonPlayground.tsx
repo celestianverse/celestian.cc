@@ -2,7 +2,12 @@
 import { useState } from "react";
 import { Button } from "@/components/uikit/Button/Button";
 import type { ButtonProps } from "@/components/uikit/Button/Button.types";
-import { BUTTON_BORDER_RADIUS, BUTTON_SIZE, BUTTON_VARIANT } from "@/components/uikit/Button/Button.constants";
+import {
+  BUTTON_BORDER_RADIUS,
+  BUTTON_ELEMENT,
+  BUTTON_SIZE,
+  BUTTON_VARIANT
+} from "@/components/uikit/Button/Button.constants";
 import { BORDER_STYLE, JUSTIFY_CONTENT, TONE } from "@/constants/styles";
 import { COLORS } from "@/constants/colors";
 import { ICONS } from "@/components/uikit/Icon/Icon.constants";
@@ -18,11 +23,12 @@ export const ButtonPlayground = () => {
     <Button
       {...props}
     >
-      Button
+      {NAME}
     </Button>
   );
 
   const settings = {
+    as: BUTTON_ELEMENT,
     variant: BUTTON_VARIANT,
     color: COLORS,
     tone: TONE,

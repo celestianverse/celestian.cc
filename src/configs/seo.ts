@@ -16,6 +16,9 @@ export const seo = {
       text: {
         title: `Text component for UI kit library — ${app.name}`,
       },
+      tag: {
+        title: `Tag component for UI kit library — ${app.name}`,
+      },
     },
     controls: {
       anchor: {

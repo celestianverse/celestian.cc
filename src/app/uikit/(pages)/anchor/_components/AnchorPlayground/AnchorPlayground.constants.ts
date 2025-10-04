@@ -1,8 +1,9 @@
-import type { AnchorProps } from "@/components/uikit/Anchor/Anchor.types";
+import type { AnchorAs, AnchorProps } from "@/components/uikit/Anchor/Anchor.types";
 
 export const NAME = "Anchor";
 
-export const DEFAULT_PROPS: AnchorProps = {
+export const DEFAULT_PROPS: AnchorProps & AnchorAs = {
+  as: "a",
   variant: "base",
   color: "primary",
   size: "m",

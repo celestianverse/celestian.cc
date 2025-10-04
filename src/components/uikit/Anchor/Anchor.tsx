@@ -2,12 +2,11 @@ import React from "react";
 import classNames from "classnames";
 import type { Polymorphic } from "@/types/Polymorphic";
 import type { AnchorProps, AnchorElement } from "./Anchor.types";
-import styles from "./Anchor.module.scss";
 import { useIcon } from "@/hooks/useIcon";
+import { ANCHOR_DEFAULT_ELEMENT } from "@/components/uikit/Anchor/Anchor.constants";
+import styles from "./Anchor.module.scss";
 
-export const DEFAULT_ELEMENT = "a";
-
-export const Anchor = <E extends React.ElementType<any, AnchorElement> = typeof DEFAULT_ELEMENT>(
+export const Anchor = <E extends React.ElementType<any, AnchorElement> = typeof ANCHOR_DEFAULT_ELEMENT>(
   {
     as,
     variant = "base",
@@ -28,7 +27,7 @@ export const Anchor = <E extends React.ElementType<any, AnchorElement> = typeof 
     children,
     ...rest
   }: Polymorphic<E, AnchorProps>) => {
-  const Component = as || DEFAULT_ELEMENT;
+  const Component = as || ANCHOR_DEFAULT_ELEMENT;
 
   const Content = useIcon({
     iconStart, iconEnd, iconOnly, styles, children,
