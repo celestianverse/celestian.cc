@@ -47,6 +47,7 @@
   --spacing-32: 32px;
   --spacing-28: 28px;
   --spacing-24: 24px;
+  --spacing-20: 20px;
   --spacing-16: 16px;
   --spacing-12: 12px;
   --spacing-8: 8px;
@@ -56,6 +57,7 @@
   --spacing-minus-8: -8px;
   --spacing-minus-12: -12px;
   --spacing-minus-16: -16px;
+  --spacing-minus-20: -20px;
   --spacing-minus-24: -24px;
   --spacing-minus-28: -28px;
   --spacing-minus-32: -32px;
@@ -119,6 +121,8 @@ $themes: (
   ),
   primary-surface-soft: (
     light: $neutral,
+    //light: color.mix($primary, #fff, 5%),
+    //light: color.scale($primary, $lightness: 95%, $saturation: -80%),
     dark: $primary,
   ),
   primary-surface-soft-on: (

@@ -4,26 +4,195 @@
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
-  flex-grow: 1;
   flex-shrink: 0;
-  gap: var(--spacing-12);
-  height: var(--size-32);
-  padding: 0 var(--size-12);
-  background: var(--primary-fill-soft);
-  border-radius: var(--radius-8);
+  gap: var(--spacing-8);
   line-height: 1;
-  font-size: var(--font-size-text-s);
   font-weight: var(--font-weight-medium);
   cursor: pointer;
   @include transition;
+
+  @include mobile-only {
+    flex-grow: 1;
+  }
+
+  &.size-l {
+    height: var(--size-64);
+    padding: 0 var(--spacing-24);
+
+    &:not([class*="border-radius"]) {
+      border-radius: var(--radius-16);
+    }
+
+    &:global(.border-radius-999) {
+      padding: 0 var(--spacing-28);
+    }
+  }
+
+  &.size-m {
+    height: var(--size-48);
+    padding: 0 var(--spacing-16);
+
+    &:not([class*="border-radius"]) {
+      border-radius: var(--radius-12);
+    }
+
+    &:global(.border-radius-999) {
+      padding: 0 var(--spacing-20);
+    }
+  }
+
+  &.size-s {
+    height: var(--size-32);
+    padding: 0 var(--spacing-12);
+    font-size: var(--font-size-text-s);
+
+    &:not([class*="border-radius"]) {
+      border-radius: var(--radius-8);
+    }
+
+    &:global(.border-radius-999) {
+      padding: 0 var(--spacing-16);
+    }
+  }
+
+  &.color-primary {
+    &.variant-flat {
+      background: var(--primary-fill-soft);
+      color: var(--primary-fill-soft-on);
+    }
+
+    &.variant-outline {
+      border-color: var(--primary-outline-soft);
+      border-width: 1px;
+      color: var(--primary-outline);
+
+      &:not([class*="border-style"]) {
+        border-style: solid;
+      }
+    }
+
+    &.variant-ghost {
+      color: var(--primary-content);
+    }
+  }
+
+  &.color-contrast {
+    &.variant-flat {
+      background: var(--contrast-fill);
+      color: var(--contrast-fill-on);
+    }
+
+    &.variant-outline {
+      border-color: var(--contrast-outline);
+      border-width: 1px;
+      color: var(--contrast-outline);
+
+      &:not([class*="border-style"]) {
+        border-style: solid;
+      }
+    }
+
+    &.variant-ghost {
+      color: var(--contrast-content);
+    }
+  }
+
+  &.color-phantom {
+    &.variant-flat {
+      background: var(--phantom-fill);
+      color: var(--phantom-fill-on);
+    }
+
+    &.variant-outline {
+      border-color: var(--phantom-outline);
+      border-width: 1px;
+      color: var(--phantom-outline);
+
+      &:not([class*="border-style"]) {
+        border-style: solid;
+      }
+    }
+
+    &.variant-ghost {
+      color: var(--phantom-content);
+    }
+  }
+
+  &.color-success {
+    &.variant-flat {
+      background: var(--success-fill-soft);
+      color: var(--success-fill-soft-on);
+    }
+
+    &.variant-outline {
+      border-color: var(--success-outline);
+      border-width: 1px;
+      color: var(--success-outline);
+
+      &:not([class*="border-style"]) {
+        border-style: solid;
+      }
+    }
+
+    &.variant-ghost {
+      color: var(--success-content);
+    }
+  }
+
+  &.color-danger {
+    &.variant-flat {
+      background: var(--danger-fill-soft);
+      color: var(--danger-fill-soft-on);
+    }
+
+    &.variant-outline {
+      border-color: var(--danger-outline);
+      border-width: 1px;
+      color: var(--danger-outline);
+
+      &:not([class*="border-style"]) {
+        border-style: solid;
+      }
+    }
+
+    &.variant-ghost {
+      color: var(--danger-content);
+    }
+  }
+
+  &.variant-ghost {
+    height: auto;
+    padding: 0;
+    border-radius: 0;
+  }
 }
 
-.content {
+.list {
   z-index: 100;
   display: flex;
   flex-direction: column;
   padding: var(--size-4);
   background: var(--contrast-surface);
-  border-radius: var(--radius-8);
   box-shadow: var(--shadow-m);
+  font-weight: var(--font-weight-medium);
+
+  &.size-l {
+    &:not([class*="border-radius"]) {
+      border-radius: var(--radius-16);
+    }
+  }
+
+  &.size-m {
+    &:not([class*="border-radius"]) {
+      border-radius: var(--radius-12);
+    }
+  }
+
+  &.size-s {
+    font-size: var(--font-size-text-s);
+
+    &:not([class*="border-radius"]) {
+      border-radius: var(--radius-8);
+    }
+  }
 }

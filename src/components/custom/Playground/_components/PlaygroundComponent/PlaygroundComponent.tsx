@@ -52,6 +52,7 @@ export const PlaygroundComponent = (
         >
           <Box
             color="transparent"
+            direction="row"
             padding={32}
             fullwidth
             align="center"
@@ -63,6 +64,7 @@ export const PlaygroundComponent = (
           <Box
             color="primary"
             tone="base"
+            direction="row"
             padding={32}
             fullwidth
             align="center"
@@ -81,7 +83,7 @@ export const PlaygroundComponent = (
           if (getType(settings[key]) === "array") {
             const setProp = (value) => {
               const isVariant = key === "variant";
-              const isButtonSize = name === "Button" && key === "size";
+              const isControlSize = (name === "Button" || name === "Select") && key === "size";
               const isPadding = key === "padding";
               const isPaddingY = key === "paddingY";
               const isPaddingX = key === "paddingX";
@@ -95,7 +97,7 @@ export const PlaygroundComponent = (
                   borderStyle: isOutline ? "solid" : "none",
                   borderWidth: isOutline ? 1 : 0,
                 }));
-              } else if (isButtonSize) {
+              } else if (isControlSize) {
                 const getRadius = () => {
                   if (value === "s") return 8;
                   if (value === "m") return 12;
@@ -143,6 +145,7 @@ export const PlaygroundComponent = (
               >
                 <Select
                   value={props[key] ? props[key] : 0}
+                  size="s"
                   width={INPUT_WIDTH}
                   onChange={setProp}
                 >

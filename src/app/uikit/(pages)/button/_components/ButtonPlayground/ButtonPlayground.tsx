@@ -3,12 +3,11 @@ import { useState } from "react";
 import { Button } from "@/components/uikit/Button/Button";
 import type { ButtonProps } from "@/components/uikit/Button/Button.types";
 import {
-  BUTTON_BORDER_RADIUS,
   BUTTON_ELEMENT,
   BUTTON_SIZE,
   BUTTON_VARIANT
 } from "@/components/uikit/Button/Button.constants";
-import { BORDER_STYLE, JUSTIFY_CONTENT, TONE } from "@/constants/styles";
+import { BORDER_STYLE, CONTROL_BORDER_RADIUS, JUSTIFY_CONTENT, TONE } from "@/constants/styles";
 import { COLORS } from "@/constants/colors";
 import { ICONS } from "@/components/uikit/Icon/Icon.constants";
 import { uikit } from "@/data/uikit";
@@ -34,9 +33,9 @@ export const ButtonPlayground = () => {
     tone: TONE,
     size: BUTTON_SIZE,
     justify: JUSTIFY_CONTENT,
-    radius: BUTTON_BORDER_RADIUS,
+    radius: CONTROL_BORDER_RADIUS,
     borderStyle: BORDER_STYLE,
-    borderWidth: [...Array(11).keys()],
+    borderWidth: [...Array(5).keys()],
     iconStart: Object.keys(ICONS),
     iconEnd: Object.keys(ICONS),
     iconOnly: Object.keys(ICONS),

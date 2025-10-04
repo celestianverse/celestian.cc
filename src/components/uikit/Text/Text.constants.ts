@@ -11,6 +11,7 @@ export const TEXT_ELEMENT = [
 export const TEXT_DEFAULT_ELEMENT = "p";
 
 export const TEXT_SIZE = [
+  "inherit",
   "m",
   "s",
 ] as const;

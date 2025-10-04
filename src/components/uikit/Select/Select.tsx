@@ -13,23 +13,31 @@ import {
   FloatingFocusManager,
   FloatingList,
   offset,
-  size,
+  size as sizeMiddleware,
 } from "@floating-ui/react";
 import { Icon } from "@/components/uikit/Icon/Icon";
 import { Text } from "@/components/uikit/Text/Text";
 import { SelectContext } from "@/contexts/SelectContext/SelectContext";
-import type { Props } from "./Select.types";
+import type { SelectProps } from "./Select.types";
 import styles from "./Select.module.scss";
 
 export const Select = (
   {
     value,
     placeholder = "Select...",
+    variant = "flat",
+    color = "primary",
+    size = "m",
     width,
+    radius,
+    borderStyle,
+    borderWidth,
+    fullwidth,
+    disabled,
     onChange,
     className,
     children
-  }: Props) => {
+  }: SelectProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
@@ -43,7 +51,7 @@ export const Select = (
     middleware: [
       flip(),
       offset(4),
-      size({
+      sizeMiddleware({
         apply({ rects, elements, availableHeight }) {
           Object.assign(elements.floating.style, {
             maxHeight: `${availableHeight}px`,
@@ -141,13 +149,20 @@ export const Select = (
         aria-haspopup="listbox"
         className={classNames(
           styles.select,
+          styles[`variant-${variant}`],
+          styles[`color-${color}`],
+          styles[`size-${size}`],
+          {
+            [`border-radius-${radius}`]: radius != null,
+            [`border-style-${borderStyle}`]: borderStyle,
+            ["disabled"]: disabled,
+          },
           className,
         )}
-        style={{ width: width }}
+        style={{ width: width, borderWidth: borderWidth }}
         {...getReferenceProps()}
       >
         <Text
-          size="s"
           weight="medium"
           ellipsis
         >
@@ -165,7 +180,12 @@ export const Select = (
               ref={refs.setFloating}
               className={classNames(
                 "scroll",
-                styles.content,
+                styles.list,
+                styles[`size-${size}`],
+                {
+                  [`border-radius-${radius}`]: radius != null,
+                  ["fullwidth"]: fullwidth,
+                },
               )}
               style={{...floatingStyles, overflowY: "auto", width: width}}
               {...getFloatingProps()}

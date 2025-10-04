@@ -33,6 +33,10 @@ export const uikitNavigation = {
         title: routes.uikit.controls.switch.name,
         path: routes.uikit.controls.switch.path,
       },
+      select: {
+        title: routes.uikit.controls.select.name,
+        path: routes.uikit.controls.select.path,
+      },
     },
   },
   meta: {

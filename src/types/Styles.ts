@@ -1,7 +1,7 @@
 import {
   ALIGN_ITEMS,
   BORDER_RADIUS,
-  BORDER_STYLE,
+  BORDER_STYLE, CONTROL_BORDER_RADIUS,
   FLEX_DIRECTION,
   FLEX_WRAP,
   FONT_WEIGHT,
@@ -41,5 +41,7 @@ export type BorderStyle = typeof BORDER_STYLE[number];
 export type BorderWidth = number;
 
 export type BorderRadius = typeof BORDER_RADIUS[number];
+
+export type ControlBorderRadius = typeof CONTROL_BORDER_RADIUS[number];
 
 export type Tone = typeof TONE[number];
