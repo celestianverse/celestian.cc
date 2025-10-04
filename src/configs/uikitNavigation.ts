@@ -31,12 +31,12 @@ export const uikitNavigation = {
       },
     },
   },
-  general: {
-    title: "General",
+  meta: {
+    title: "Meta",
     pages: {
       colors: {
-        title: routes.uikit.general.colors.name,
-        path: routes.uikit.general.colors.path,
+        title: routes.uikit.meta.colors.name,
+        path: routes.uikit.meta.colors.path,
       },
     },
   },

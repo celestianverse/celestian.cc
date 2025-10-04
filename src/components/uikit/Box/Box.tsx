@@ -7,7 +7,7 @@ import styles from "./Box.module.scss";
 export const Box = (
   {
     variant = "flat",
-    color = "primary",
+    color = "transparent",
     tone,
     padding = 32,
     laptopPadding,

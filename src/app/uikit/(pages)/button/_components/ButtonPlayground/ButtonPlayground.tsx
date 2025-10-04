@@ -1,49 +1,18 @@
 "use client";
 import { useState } from "react";
-import { Box } from "@/components/uikit/Box/Box";
-import { Column } from "@/components/uikit/Column/Column";
-import { Title } from "@/components/uikit/Title/Title";
 import { Button } from "@/components/uikit/Button/Button";
-import { Select } from "@/components/uikit/Select/Select";
-import { SelectOption } from "@/components/uikit/Select/_components/SelectOption/SelectOption";
-import { Field } from "@/components/uikit/Field/Field";
-import { Switch } from "@/components/uikit/Switch/Switch";
-import type {
-  ButtonBorderRadius,
-  ButtonProps,
-  ButtonSize,
-  ButtonVariant
-} from "@/components/uikit/Button/Button.types";
-import type { Color } from "@/types/Color";
-import type { IconKeys } from "@/components/uikit/Icon/Icon.types";
-import type { BorderStyle, BorderWidth, JustifyContent, Tone } from "@/types/Styles";
+import type { ButtonProps } from "@/components/uikit/Button/Button.types";
 import { BUTTON_BORDER_RADIUS, BUTTON_SIZE, BUTTON_VARIANT } from "@/components/uikit/Button/Button.constants";
 import { BORDER_STYLE, JUSTIFY_CONTENT, TONE } from "@/constants/styles";
-import { INPUT_WIDTH, LABEL_WIDTH } from "@/constants/playground";
 import { COLORS } from "@/constants/colors";
 import { ICONS } from "@/components/uikit/Icon/Icon.constants";
 import { uikit } from "@/data/uikit";
+import { buildComponentCode } from "@/helpers/buildComponentCode";
+import { Playground } from "@/components/custom/Playground/Playground";
+import { DEFAULT_CHOSEN_PROPS, DEFAULT_PROPS, NAME } from "./ButtonPlayground.constants";
 
 export const ButtonPlayground = () => {
-  const [props, setProps] = useState<ButtonProps>({
-    variant: "flat",
-    color: "info",
-    tone: "base",
-    size: "m",
-    justify: "center",
-    radius: 12,
-    borderStyle: "none",
-    borderWidth: 0,
-    iconStart: "none",
-    iconEnd: "none",
-    iconOnly: "none",
-    fullwidth: false,
-    square: false,
-    active: false,
-    loading: false,
-    disabled: false,
-    className: "",
-  });
+  const [props, setProps] = useState<ButtonProps>(DEFAULT_CHOSEN_PROPS);
 
   const ButtonComponent = (
     <Button
@@ -53,300 +22,52 @@ export const ButtonPlayground = () => {
     </Button>
   );
 
-  const setVariant = (value) => {
-    const isOutline = value === "outline";
-
-    setProps(prev => ({
-      ...prev,
-      variant: value as ButtonVariant,
-      borderStyle: isOutline ? "solid" : "none",
-      borderWidth: isOutline ? 1 : 0,
-    }));
+  const settings = {
+    variant: BUTTON_VARIANT,
+    color: COLORS,
+    tone: TONE,
+    size: BUTTON_SIZE,
+    justify: JUSTIFY_CONTENT,
+    radius: BUTTON_BORDER_RADIUS,
+    borderStyle: BORDER_STYLE,
+    borderWidth: [...Array(11).keys()],
+    iconStart: Object.keys(ICONS),
+    iconEnd: Object.keys(ICONS),
+    iconOnly: Object.keys(ICONS),
+    fullwidth: props.fullwidth,
+    square: props.square,
+    disabled: props.disabled,
   };
 
+  const getDefaultRadius = () => {
+    if (props.size === "s") return 8;
+
+    if (props.size === "l") return 16;
+
+    return 12;
+  };
+
+  const childrenContent = props.iconOnly === "none" ? NAME : null;
+
+  const code = buildComponentCode<ButtonProps>({
+    name: NAME,
+    props,
+    defaults: {...DEFAULT_PROPS, radius: getDefaultRadius()},
+    children: childrenContent,
+  });
+
   return (
-    <Column
-      gap={24}
-      fullwidth
-    >
-      <Box
-        variant="outline"
-        tone="soft"
-        borderWidth={2}
-        borderStyle="dashed"
-        direction="row"
-        fullwidth
-        mobileDirection="column"
-      >
-        <Column
-          gap={0}
-          fullwidth
-        >
-          <Title size="s">
-            {uikit.controls.button.title}
-          </Title>
-          <Column
-            gap={0}
-            grow={1}
-            fullwidth
-          >
-            <Box
-              color="transparent"
-              padding={32}
-              fullwidth
-              align="center"
-              justify="center"
-              grow={1}
-            >
-              {ButtonComponent}
-            </Box>
-            <Box
-              color="primary"
-              tone="base"
-              padding={32}
-              fullwidth
-              align="center"
-              justify="center"
-              grow={1}
-            >
-              {ButtonComponent}
-            </Box>
-          </Column>
-        </Column>
-        <Column
-          align="stretch"
-          gap={16}
-        >
-          <Field
-            label="variant"
-            labelPosition="left"
-            labelWidth={LABEL_WIDTH}
-          >
-            <Select
-              value={props.variant}
-              width={INPUT_WIDTH}
-              onChange={setVariant}
-            >
-              {BUTTON_VARIANT.map(variant => (
-                <SelectOption
-                  key={variant}
-                  label={variant}
-                />
-              ))}
-            </Select>
-          </Field>
-          <Field
-            label="color"
-            labelPosition="left"
-            labelWidth={LABEL_WIDTH}
-          >
-            <Select
-              value={props.color}
-              width={INPUT_WIDTH}
-              onChange={(value) => setProps(prev => ({...prev, color: value as Color}))}
-            >
-              {COLORS.map(color => (
-                <SelectOption
-                  key={color}
-                  label={color}
-                />
-              ))}
-            </Select>
-          </Field>
-          <Field
-            label="tone"
-            labelPosition="left"
-            labelWidth={LABEL_WIDTH}
-          >
-            <Select
-              value={props.tone}
-              width={INPUT_WIDTH}
-              onChange={(value) => setProps(prev => ({...prev, tone: value as Tone}))}
-            >
-              {TONE.map(tone => (
-                <SelectOption
-                  key={tone}
-                  label={tone}
-                />
-              ))}
-            </Select>
-          </Field>
-          <Field
-            label="size"
-            labelPosition="left"
-            labelWidth={LABEL_WIDTH}
-          >
-            <Select
-              value={props.size}
-              width={INPUT_WIDTH}
-              onChange={(value) => setProps(prev => ({...prev, size: value as ButtonSize}))}
-            >
-              {BUTTON_SIZE.map(size => (
-                <SelectOption
-                  key={size}
-                  label={size}
-                />
-              ))}
-            </Select>
-          </Field>
-          <Field
-            label="justify"
-            labelPosition="left"
-            labelWidth={LABEL_WIDTH}
-          >
-            <Select
-              value={props.justify}
-              width={INPUT_WIDTH}
-              onChange={(value) => setProps(prev => ({...prev, justify: value as JustifyContent}))}
-            >
-              {JUSTIFY_CONTENT.map(justify => (
-                <SelectOption
-                  key={justify}
-                  label={justify}
-                />
-              ))}
-            </Select>
-          </Field>
-          <Field
-            label="radius"
-            labelPosition="left"
-            labelWidth={LABEL_WIDTH}
-          >
-            <Select
-              value={String(props.radius)}
-              width={INPUT_WIDTH}
-              onChange={(value) => setProps(prev => ({...prev, radius: Number(value) as ButtonBorderRadius}))}
-            >
-              {BUTTON_BORDER_RADIUS.map(radius => (
-                <SelectOption
-                  key={radius}
-                  label={String(radius)}
-                />
-              ))}
-            </Select>
-          </Field>
-          <Field
-            label="borderStyle"
-            labelPosition="left"
-            labelWidth={LABEL_WIDTH}
-          >
-            <Select
-              value={props.borderStyle}
-              width={INPUT_WIDTH}
-              onChange={(value) => setProps(prev => ({...prev, borderStyle: value as BorderStyle}))}
-            >
-              {BORDER_STYLE.map(borderStyle => (
-                <SelectOption
-                  key={borderStyle}
-                  label={borderStyle}
-                />
-              ))}
-            </Select>
-          </Field>
-          <Field
-            label="borderWidth"
-            labelPosition="left"
-            labelWidth={LABEL_WIDTH}
-          >
-            <Select
-              value={String(props.borderWidth)}
-              width={INPUT_WIDTH}
-              onChange={(value) => setProps(prev => ({...prev, borderWidth: Number(value) as BorderWidth}))}
-            >
-              {[...Array(11).keys()].map(borderWidth => (
-                <SelectOption
-                  key={borderWidth}
-                  label={String(borderWidth)}
-                />
-              ))}
-            </Select>
-          </Field>
-          <Field
-            label="iconStart"
-            labelPosition="left"
-            labelWidth={LABEL_WIDTH}
-          >
-            <Select
-              value={props.iconStart}
-              width={INPUT_WIDTH}
-              onChange={(value) => setProps(prev => ({...prev, iconStart: value as IconKeys}))}
-            >
-              {Object.keys(ICONS).map(icon => (
-                <SelectOption
-                  key={icon}
-                  label={icon}
-                />
-              ))}
-            </Select>
-          </Field>
-          <Field
-            label="iconEnd"
-            labelPosition="left"
-            labelWidth={LABEL_WIDTH}
-          >
-            <Select
-              value={props.iconEnd}
-              width={INPUT_WIDTH}
-              onChange={(value) => setProps(prev => ({...prev, iconEnd: value as IconKeys}))}
-            >
-              {Object.keys(ICONS).map(icon => (
-                <SelectOption
-                  key={icon}
-                  label={icon}
-                />
-              ))}
-            </Select>
-          </Field>
-          <Field
-            label="iconOnly"
-            labelPosition="left"
-            labelWidth={LABEL_WIDTH}
-          >
-            <Select
-              value={props.iconOnly}
-              width={INPUT_WIDTH}
-              onChange={(value) => setProps(prev => ({...prev, iconOnly: value as IconKeys}))}
-            >
-              {Object.keys(ICONS).map(icon => (
-                <SelectOption
-                  key={icon}
-                  label={icon}
-                />
-              ))}
-            </Select>
-          </Field>
-          <Field
-            label="fullwidth"
-            labelPosition="left"
-            labelWidth={LABEL_WIDTH}
-          >
-            <Switch
-              size="s"
-              onChange={(value) => setProps(prev => ({...prev, fullwidth: value}))}
-            />
-          </Field>
-          <Field
-            label="square"
-            labelPosition="left"
-            labelWidth={LABEL_WIDTH}
-          >
-            <Switch
-              size="s"
-              onChange={(value) => setProps(prev => ({...prev, square: value}))}
-            />
-          </Field>
-          <Field
-            label="disabled"
-            labelPosition="left"
-            labelWidth={LABEL_WIDTH}
-          >
-            <Switch
-              size="s"
-              onChange={(value) => setProps(prev => ({...prev, disabled: value}))}
-            />
-          </Field>
-        </Column>
-      </Box>
-    </Column>
+    <Playground.Root title={uikit.controls.button.longTitle}>
+      <Playground.Component
+        name={NAME}
+        title={uikit.controls.button.longTitle}
+        component={ButtonComponent}
+        props={props}
+        setProps={setProps}
+        settings={settings}
+        defaultChosenProps={DEFAULT_CHOSEN_PROPS}
+      />
+      <Playground.Code code={code} />
+    </Playground.Root>
   );
 };

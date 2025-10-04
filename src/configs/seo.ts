@@ -9,9 +9,12 @@ export const seo = {
   },
   uikit: {
     title: `UI kit library — ${app.name}`,
-    general: {
-      colors: {
-        title: `Colors for UI kit library — ${app.name}`,
+    typography: {
+      title: {
+        title: `Title component for UI kit library — ${app.name}`,
+      },
+      text: {
+        title: `Text component for UI kit library — ${app.name}`,
       },
     },
     controls: {
@@ -25,12 +28,9 @@ export const seo = {
         title: `Switch component for UI kit library — ${app.name}`,
       },
     },
-    typography: {
-      title: {
-        title: `Title component for UI kit library — ${app.name}`,
-      },
-      text: {
-        title: `Text component for UI kit library — ${app.name}`,
+    meta: {
+      colors: {
+        title: `Colors for UI kit library — ${app.name}`,
       },
     },
   },

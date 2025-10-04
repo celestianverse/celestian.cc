@@ -1,33 +1,17 @@
 "use client";
 import { useState } from "react";
-import { Box } from "@/components/uikit/Box/Box";
-import { Column } from "@/components/uikit/Column/Column";
 import { Title } from "@/components/uikit/Title/Title";
-import { Select } from "@/components/uikit/Select/Select";
-import { SelectOption } from "@/components/uikit/Select/_components/SelectOption/SelectOption";
-import { Field } from "@/components/uikit/Field/Field";
-import { Switch } from "@/components/uikit/Switch/Switch";
-import type { Color } from "@/types/Color";
-import type { TitleProps, TitleSize } from "@/components/uikit/Title/Title.types";
-import type { FontWeight, LineHeight, WhiteSpace } from "@/types/Styles";
-import { INPUT_WIDTH, LABEL_WIDTH } from "@/constants/playground";
+import type { TitleProps } from "@/components/uikit/Title/Title.types";
+import { uikit } from "@/data/uikit";
+import { buildComponentCode } from "@/helpers/buildComponentCode";
+import { DEFAULT_PROPS, NAME } from "./TitlePlayground.constants";
+import { Playground } from "@/components/custom/Playground/Playground";
+import { COLORS } from "@/constants/colors";
 import { TITLE_SIZE } from "@/components/uikit/Title/Title.constants";
 import { FONT_WEIGHT, LINE_HEIGHT, WHITE_SPACE } from "@/constants/styles";
-import { COLORS } from "@/constants/colors";
-import { uikit } from "@/data/uikit";
 
 export const TitlePlayground = () => {
-  const [props, setProps] = useState<TitleProps>({
-    color: "inherit",
-    size: "m",
-    weight: "bold",
-    lineHeight: "m",
-    whiteSpace: "normal",
-    uppercase: false,
-    lowercase: false,
-    ellipsis: false,
-    className: "",
-  });
+  const [props, setProps] = useState<TitleProps>(DEFAULT_PROPS);
 
   const TitleComponent = (
     <Title {...props}>
@@ -35,181 +19,36 @@ export const TitlePlayground = () => {
     </Title>
   );
 
+  const settings = {
+    color: ["inherit", ...COLORS],
+    size: TITLE_SIZE,
+    weight: FONT_WEIGHT,
+    lineHeight: LINE_HEIGHT,
+    whiteSpace: WHITE_SPACE,
+    uppercase: props.uppercase,
+    lowercase: props.lowercase,
+    ellipsis: props.ellipsis,
+  };
+
+  const code = buildComponentCode<TitleProps>({
+    name: NAME,
+    props,
+    defaults: DEFAULT_PROPS,
+    children: NAME,
+  });
+
   return (
-    <Column
-      gap={24}
-      fullwidth
-    >
-      <Box
-        variant="outline"
-        tone="soft"
-        borderWidth={2}
-        borderStyle="dashed"
-        direction="row"
-        fullwidth
-        mobileDirection="column"
-      >
-        <Column
-          gap={0}
-          fullwidth
-        >
-          <Title size="s">
-            {uikit.typography.title.title}
-          </Title>
-          <Column
-            gap={16}
-            grow={1}
-            fullwidth
-          >
-            <Box
-              color="transparent"
-              padding={32}
-              fullwidth
-              align="center"
-              justify="center"
-              grow={1}
-            >
-              {TitleComponent}
-            </Box>
-            <Box
-              color="primary"
-              tone="base"
-              padding={32}
-              fullwidth
-              align="center"
-              justify="center"
-              grow={1}
-            >
-              {TitleComponent}
-            </Box>
-          </Column>
-        </Column>
-        <Column
-          align="stretch"
-          gap={16}
-        >
-          <Field
-            label="color"
-            labelPosition="left"
-            labelWidth={LABEL_WIDTH}
-          >
-            <Select
-              value={props.color}
-              width={INPUT_WIDTH}
-              onChange={(value) => setProps(prev => ({...prev, color: value as Color}))}
-            >
-              {["inherit", ...COLORS].map(color => (
-                <SelectOption
-                  key={color}
-                  label={color}
-                />
-              ))}
-            </Select>
-          </Field>
-          <Field
-            label="size"
-            labelPosition="left"
-            labelWidth={LABEL_WIDTH}
-          >
-            <Select
-              value={props.size}
-              width={INPUT_WIDTH}
-              onChange={(value) => setProps(prev => ({...prev, size: value as TitleSize}))}
-            >
-              {TITLE_SIZE.map(size => (
-                <SelectOption
-                  key={size}
-                  label={size}
-                />
-              ))}
-            </Select>
-          </Field>
-          <Field
-            label="weight"
-            labelPosition="left"
-            labelWidth={LABEL_WIDTH}
-          >
-            <Select
-              value={props.weight}
-              width={INPUT_WIDTH}
-              onChange={(value) => setProps(prev => ({...prev, weight: value as FontWeight}))}
-            >
-              {FONT_WEIGHT.map(weight => (
-                <SelectOption
-                  key={weight}
-                  label={weight}
-                />
-              ))}
-            </Select>
-          </Field>
-          <Field
-            label="lineHeight"
-            labelPosition="left"
-            labelWidth={LABEL_WIDTH}
-          >
-            <Select
-              value={props.lineHeight}
-              width={INPUT_WIDTH}
-              onChange={(value) => setProps(prev => ({...prev, lineHeight: value as LineHeight}))}
-            >
-              {LINE_HEIGHT.map(lineHeight => (
-                <SelectOption
-                  key={lineHeight}
-                  label={lineHeight}
-                />
-              ))}
-            </Select>
-          </Field>
-          <Field
-            label="whiteSpace"
-            labelPosition="left"
-            labelWidth={LABEL_WIDTH}
-          >
-            <Select
-              value={props.whiteSpace}
-              width={INPUT_WIDTH}
-              onChange={(value) => setProps(prev => ({...prev, whiteSpace: value as WhiteSpace}))}
-            >
-              {WHITE_SPACE.map(whiteSpace => (
-                <SelectOption
-                  key={whiteSpace}
-                  label={whiteSpace}
-                />
-              ))}
-            </Select>
-          </Field>
-          <Field
-            label="uppercase"
-            labelPosition="left"
-            labelWidth={LABEL_WIDTH}
-          >
-            <Switch
-              size="s"
-              onChange={(value) => setProps(prev => ({...prev, uppercase: value}))}
-            />
-          </Field>
-          <Field
-            label="lowercase"
-            labelPosition="left"
-            labelWidth={LABEL_WIDTH}
-          >
-            <Switch
-              size="s"
-              onChange={(value) => setProps(prev => ({...prev, lowercase: value}))}
-            />
-          </Field>
-          <Field
-            label="ellipsis"
-            labelPosition="left"
-            labelWidth={LABEL_WIDTH}
-          >
-            <Switch
-              size="s"
-              onChange={(value) => setProps(prev => ({...prev, ellipsis: value}))}
-            />
-          </Field>
-        </Column>
-      </Box>
-    </Column>
+    <Playground.Root title={uikit.typography.title.longTitle}>
+      <Playground.Component
+        name={NAME}
+        title={uikit.typography.title.longTitle}
+        component={TitleComponent}
+        props={props}
+        setProps={setProps}
+        settings={settings}
+        defaultChosenProps={DEFAULT_PROPS}
+      />
+      <Playground.Code code={code}/>
+    </Playground.Root>
   );
 };

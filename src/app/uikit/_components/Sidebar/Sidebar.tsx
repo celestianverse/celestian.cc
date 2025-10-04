@@ -15,6 +15,7 @@ export const Sidebar = () => {
     <Box
       as="aside"
       variant="outline"
+      color="primary"
       tone="soft"
       borderStyle="dashed"
       borderWidth={2}

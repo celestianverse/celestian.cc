@@ -3,7 +3,7 @@ import { ColorsPlayground } from "./_components/ColorsPlayground/ColorsPlaygroun
 import { seo } from "@/configs/seo";
 
 export const metadata: Metadata = {
-  title: seo.uikit.general.colors.title,
+  title: seo.uikit.meta.colors.title,
 };
 
 const ColorsPage = () => {

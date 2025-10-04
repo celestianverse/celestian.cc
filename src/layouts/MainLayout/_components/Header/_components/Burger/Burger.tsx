@@ -10,6 +10,7 @@ import { Title } from "@/components/uikit/Title/Title";
 import { useIsActivePath } from "@/hooks/useActivePage";
 import { uikitNavigation } from "@/configs/uikitNavigation";
 import { routes } from "@/configs/routes";
+import { burger } from "@/data/burger";
 import styles from "./Burger.module.scss";
 
 export const Burger = () => {
@@ -57,7 +58,7 @@ export const Burger = () => {
                 as="h5"
                 size="s"
               >
-                Navigation
+                {burger.title}
               </Title>
               <Column gap={0}>
                 {Object.values(routes).map((page) => (
@@ -82,7 +83,7 @@ export const Burger = () => {
                   as="h5"
                   size="s"
                 >
-                  UI kit
+                  {burger.subtitle}
                 </Title>
                 <Column gap={0}>
                   {Object.values(uikitNavigation).map((section) => {
