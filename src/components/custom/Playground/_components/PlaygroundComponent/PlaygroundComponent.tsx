@@ -31,20 +31,24 @@ export const PlaygroundComponent = (
       direction="row"
       fullwidth
       mobileDirection="column"
+      mobileGap={64}
     >
       <Column
-        gap={0}
+        gap={16}
         fullwidth
       >
-        <Hidden on="tablet-max">
-          <Title size="xs">
-            {title}
-          </Title>
-        </Hidden>
+        {title && (
+          <Hidden on="tablet-max">
+            <Title size="s">
+              {title}
+            </Title>
+          </Hidden>
+        )}
         <Column
-          gap={0}
+          gap={16}
           grow={1}
           fullwidth
+          mobileGap={0}
         >
           <Box
             color="transparent"

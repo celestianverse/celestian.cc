@@ -1,101 +1,55 @@
 "use client";
 import { Box } from "@/components/uikit/Box/Box";
-import { Column } from "@/components/uikit/Column/Column";
-import { Title } from "@/components/uikit/Title/Title";
 import { Grid } from "@/components/uikit/Grid/Grid";
+import { Playground } from "@/components/custom/Playground/Playground";
+import { CONTRAST_COLORS, MAIN_COLORS } from "./ColorsPlayground.constants";
 import type { Color } from "@/types/Color";
 import { uikit } from "@/data/uikit";
 
-const MAIN_COLORS = [
-  "primary",
-  "secondary",
-  "brand",
-  "accent",
-  "utility",
-  "info",
-  "success",
-  "warning",
-  "danger",
-  "rating",
-];
-
-const CONTRAST_COLORS = [
-  "contrast",
-  "phantom",
-];
-
 export const ColorsPlayground = () => {
   return (
-    <Column
-      gap={24}
-      fullwidth
-    >
-      <Box
-        variant="outline"
-        tone="soft"
-        borderWidth={2}
-        borderStyle="dashed"
-        direction="row"
-        fullwidth
-        mobileDirection="column"
-      >
-        <Column
-          gap={24}
-          fullwidth
+    <Playground.Root title={uikit.meta.colors.title}>
+      <Playground.Content title={uikit.meta.colors.titleMain}>
+        <Grid
+          columns={5}
+          gap={16}
         >
-          <Title size="s">
-            {uikit.meta.colors.title}
-          </Title>
-          <Grid
-            columns={5}
-            gap={16}
-          >
-            {MAIN_COLORS.map(color => (
-              <Box
-                key={color}
-                color={color as Color}
-                align="center"
-                justify="center"
-                paddingX={0}
-                radius={16}
-              >
-                {color}
-              </Box>
-            ))}
-          </Grid>
-        </Column>
-      </Box>
-      <Box
-        direction="row"
-        fullwidth
-        mobileDirection="column"
+          {MAIN_COLORS.map(color => (
+            <Box
+              key={color}
+              color={color as Color}
+              align="center"
+              justify="center"
+              paddingX={0}
+              radius={16}
+            >
+              {color}
+            </Box>
+          ))}
+        </Grid>
+      </Playground.Content>
+      <Playground.Content
+        dark
+        title={uikit.meta.colors.titleContrast}
       >
-        <Column
-          gap={24}
-          fullwidth
+        <Grid
+          columns={5}
+          gap={16}
         >
-          <Title size="s">
-            {uikit.meta.colors.subtitle}
-          </Title>
-          <Grid
-            columns={5}
-            gap={16}
-          >
-            {CONTRAST_COLORS.map(color => (
-              <Box
-                key={color}
-                color={color as Color}
-                align="center"
-                justify="center"
-                paddingX={0}
-                radius={16}
-              >
-                {color}
-              </Box>
-            ))}
-          </Grid>
-        </Column>
-      </Box>
-    </Column>
+          {CONTRAST_COLORS.map(color => (
+            <Box
+              key={color}
+              color={color as Color}
+              align="center"
+              justify="center"
+              paddingX={0}
+              radius={16}
+            >
+              {color}
+            </Box>
+          ))}
+        </Grid>
+      </Playground.Content>
+    </Playground.Root>
   );
 };

@@ -2,11 +2,10 @@ import type { ElementType } from "react";
 import classNames from "classnames";
 import type { Polymorphic } from "@/types/Polymorphic";
 import type { TitleElement, TitleProps } from "./Title.types";
+import { TITLE_DEFAULT_ELEMENT } from "@/components/uikit/Title/Title.constants";
 import styles from "./Title.module.scss";
 
-const DEFAULT_ELEMENT = "h3";
-
-export const Title = <E extends ElementType<any, TitleElement> = typeof DEFAULT_ELEMENT>
+export const Title = <E extends ElementType<any, TitleElement> = typeof TITLE_DEFAULT_ELEMENT>
 ({
    as,
    color = "inherit",
@@ -21,7 +20,7 @@ export const Title = <E extends ElementType<any, TitleElement> = typeof DEFAULT_
    children,
    ...rest
  }: Polymorphic<E, TitleProps>) => {
-  const Component = as || DEFAULT_ELEMENT;
+  const Component = as || TITLE_DEFAULT_ELEMENT;
 
   return (
     <Component

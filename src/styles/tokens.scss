@@ -281,6 +281,14 @@ $themes: (
     light: $accent,
     dark: $accent,
   ),
+  brand-surface-soft: (
+    light: color.mix($brand, #fff, 10%),
+    dark: color.mix($brand, #fff, 10%),
+  ),
+  brand-surface-soft-on: (
+    light: color.mix($brand, #000, 70%),
+    dark: color.mix($brand, #000, 70%),
+  ),
   brand-fill: (
     light: $brand,
     dark: color.scale($brand, $lightness: -35%),
@@ -348,6 +356,14 @@ $themes: (
   accent-surface-on-action: (
     light: $phantom,
     dark: $phantom,
+  ),
+  accent-surface-soft: (
+    light: color.mix($accent, #fff, 10%),
+    dark: color.mix($accent, #fff, 10%),
+  ),
+  accent-surface-soft-on: (
+    light: $accent,
+    dark: $accent,
   ),
   accent-fill: (
     light: $accent,
@@ -417,6 +433,14 @@ $themes: (
     light: $phantom,
     dark: $phantom,
   ),
+  utility-surface-soft: (
+    light: color.mix($utility, #fff, 10%),
+    dark: color.mix($utility, #fff, 10%),
+  ),
+  utility-surface-soft-on: (
+    light: color.mix($utility, #000, 90%),
+    dark: color.mix($utility, #000, 90%),
+  ),
   utility-fill: (
     light: $utility,
     dark: color.scale($utility, $lightness: -30%),
@@ -484,6 +508,14 @@ $themes: (
   contrast-surface-on-action: (
     light: $phantom,
     dark: $phantom,
+  ),
+  contrast-surface-soft: (
+    light: rgba($contrast, 0.15),
+    dark: rgba($contrast, 0.15),
+  ),
+  contrast-surface-soft-on: (
+    light: $contrast,
+    dark: $contrast,
   ),
   contrast-fill: (
     light: $contrast,
@@ -553,6 +585,14 @@ $themes: (
     light: $phantom,
     dark: $phantom,
   ),
+  phantom-surface-soft: (
+    light: rgba($phantom, 0.1),
+    dark: rgba($phantom, 0.1),
+  ),
+  phantom-surface-soft-on: (
+    light: $phantom,
+    dark: $phantom,
+  ),
   phantom-fill: (
     light: $phantom,
     dark: $phantom,
@@ -616,6 +656,14 @@ $themes: (
   info-surface-on-action: (
     light: $phantom,
     dark: $phantom,
+  ),
+  info-surface-soft: (
+    light: color.mix($info, #fff, 10%),
+    dark: color.mix($info, #fff, 10%),
+  ),
+  info-surface-soft-on: (
+    light: $info,
+    dark: $info,
   ),
   info-fill: (
     light: $info,
@@ -685,6 +733,14 @@ $themes: (
     light: $phantom,
     dark: $phantom,
   ),
+  success-surface-soft: (
+    light: color.mix($success, #fff, 10%),
+    dark: color.mix($success, #fff, 10%),
+  ),
+  success-surface-soft-on: (
+    light: $success,
+    dark: $success,
+  ),
   success-fill: (
     light: $success,
     dark: color.scale($success, $lightness: -20%),
@@ -752,6 +808,14 @@ $themes: (
   warning-surface-on-action: (
     light: $phantom,
     dark: $phantom,
+  ),
+  warning-surface-soft: (
+    light: color.mix($warning, #fff, 10%),
+    dark: color.mix($warning, #fff, 10%),
+  ),
+  warning-surface-soft-on: (
+    light: $warning,
+    dark: $warning,
   ),
   warning-fill: (
     light: $warning,
@@ -821,6 +885,14 @@ $themes: (
     light: $phantom,
     dark: $phantom,
   ),
+  danger-surface-soft: (
+    light: color.mix($danger, #fff, 10%),
+    dark: color.mix($danger, #fff, 10%),
+  ),
+  danger-surface-soft-on: (
+    light: $danger,
+    dark: $danger,
+  ),
   danger-fill: (
     light: $danger,
     dark: color.scale($danger, $lightness: -20%),
@@ -888,6 +960,14 @@ $themes: (
   rating-surface-on-action: (
     light: $phantom,
     dark: $phantom,
+  ),
+  rating-surface-soft: (
+    light: color.mix($rating, #fff, 10%),
+    dark: color.mix($rating, #fff, 10%),
+  ),
+  rating-surface-soft-on: (
+    light: color.mix($rating, #000, 85%),
+    dark: color.mix($rating, #000, 85%),
   ),
   rating-fill: (
     light: $rating,

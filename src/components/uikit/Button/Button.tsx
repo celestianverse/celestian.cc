@@ -4,10 +4,9 @@ import { useIcon } from "@/hooks/useIcon";
 import type { Polymorphic } from "@/types/Polymorphic";
 import type { ButtonProps, ButtonElement } from "./Button.types";
 import styles from "./Button.module.scss";
+import { BUTTON_DEFAULT_ELEMENT } from "./Button.constants";
 
-const DEFAULT_ELEMENT = "button";
-
-export const Button = <E extends React.ElementType<any, ButtonElement> = typeof DEFAULT_ELEMENT>(
+export const Button = <E extends React.ElementType<any, ButtonElement> = typeof BUTTON_DEFAULT_ELEMENT>(
   {
     as,
     variant = "flat",
@@ -30,7 +29,7 @@ export const Button = <E extends React.ElementType<any, ButtonElement> = typeof 
     children,
     ...rest
   }: Polymorphic<E, ButtonProps>) => {
-  const Component = as || DEFAULT_ELEMENT;
+  const Component = as || BUTTON_DEFAULT_ELEMENT;
 
   const Content = useIcon({
     iconStart, iconEnd, iconOnly, styles, children,

@@ -1,5 +1,10 @@
 export const uikit = {
   title: "UI kit library",
+  playground: {
+    code: {
+      title: "Usage",
+    }
+  },
   typography: {
     title: {
       title: "Title",
@@ -8,6 +13,10 @@ export const uikit = {
     text: {
       title: "Text",
       longTitle: "Text component",
+    },
+    tag: {
+      title: "Tag",
+      longTitle: "Tag component",
     },
   },
   controls: {
@@ -26,8 +35,9 @@ export const uikit = {
   },
   meta: {
     colors: {
-      title: "Main colors",
-      subtitle: "Contrast colors",
+      title: "Colors",
+      titleMain: "Main colors",
+      titleContrast: "Contrast colors",
     },
   },
 };

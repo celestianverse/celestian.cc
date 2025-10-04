@@ -10,11 +10,13 @@ export const PlaygroundRoot = ({title, children}: Props) => {
       fullwidth
       tabletAlign="center"
     >
-      <Hidden on="laptop-min">
-        <Title size="m">
-          {title}
-        </Title>
-      </Hidden>
+      {title && (
+        <Hidden on="laptop-min">
+          <Title size="m">
+            {title}
+          </Title>
+        </Hidden>
+      )}
       <Column
         gap={24}
         fullwidth

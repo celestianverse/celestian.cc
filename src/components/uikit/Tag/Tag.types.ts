@@ -1,20 +1,27 @@
 import type { ReactNode } from "react";
 import type { Color } from "@/types/Color";
 import type { IconProps } from "@/hooks/useIcon";
-import type { BorderRadius, BorderStyle, BorderWidth, Tone } from "@/types/Styles";
+import type { BorderStyle, BorderWidth, Tone } from "@/types/Styles";
+import { TAG_BORDER_RADIUS, TAG_ELEMENT, TAG_SIZE, TAG_VARIANT } from "@/components/uikit/Tag/Tag.constants";
 
-export type Element = "p" | "address" | "time" | "span";
+export type TagElement = typeof TAG_ELEMENT[number];
 
-export type Variant = "flat" | "gradient" | "outline" | "ghost";
+export type TagVariant = typeof TAG_VARIANT[number];
 
-type Size = "m" | "s";
+export type TagSize = typeof TAG_SIZE[number];
 
-export type Props = {
-  variant?: Variant;
+export type TagRadius = typeof TAG_BORDER_RADIUS[number];
+
+export type TagAs = {
+  as?: TagElement;
+};
+
+export type TagProps = {
+  variant?: TagVariant;
   color?: Color;
   tone?: Tone;
-  size?: Size;
-  radius?: Extract<BorderRadius, 0 | 4 | 8 | 12 | 16 | 999>;
+  size?: TagSize;
+  radius?: TagRadius;
   borderStyle?: BorderStyle;
   borderWidth?: BorderWidth;
   className?: string;

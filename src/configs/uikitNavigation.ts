@@ -12,6 +12,10 @@ export const uikitNavigation = {
         title: routes.uikit.typography.text.name,
         path: routes.uikit.typography.text.path,
       },
+      tag: {
+        title: routes.uikit.typography.tag.name,
+        path: routes.uikit.typography.tag.path,
+      },
     },
   },
   controls: {

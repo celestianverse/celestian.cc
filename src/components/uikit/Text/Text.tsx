@@ -3,10 +3,9 @@ import classNames from "classnames";
 import type { Polymorphic } from "@/types/Polymorphic";
 import type { TextElement, TextProps } from "./Text.types";
 import styles from "./Text.module.scss";
+import { TEXT_DEFAULT_ELEMENT } from "@/components/uikit/Text/Text.constants";
 
-const DEFAULT_ELEMENT = "p";
-
-export const Text = <E extends ElementType<any, TextElement> = typeof DEFAULT_ELEMENT>
+export const Text = <E extends ElementType<any, TextElement> = typeof TEXT_DEFAULT_ELEMENT>
 ({
    as,
    color = "inherit",
@@ -21,7 +20,7 @@ export const Text = <E extends ElementType<any, TextElement> = typeof DEFAULT_EL
    children,
    ...rest
  }: Polymorphic<E, TextProps>) => {
-  const Component = as || DEFAULT_ELEMENT;
+  const Component = as || TEXT_DEFAULT_ELEMENT;
 
   return (
     <Component

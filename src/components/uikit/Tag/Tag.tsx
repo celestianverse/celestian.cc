@@ -2,12 +2,11 @@ import React from "react";
 import classNames from "classnames";
 import { useIcon } from "@/hooks/useIcon";
 import type { Polymorphic } from "@/types/Polymorphic";
-import type { Props, Element } from "./Tag.types";
+import type { TagProps, TagElement } from "./Tag.types";
+import { TAG_DEFAULT_ELEMENT } from "@/components/uikit/Tag/Tag.constants";
 import styles from "./Tag.module.scss";
 
-const DEFAULT_ELEMENT = "span";
-
-export const Tag = <E extends React.ElementType<any, Element> = typeof DEFAULT_ELEMENT>(
+export const Tag = <E extends React.ElementType<any, TagElement> = typeof TAG_DEFAULT_ELEMENT>(
   {
     as,
     variant = "flat",
@@ -23,8 +22,8 @@ export const Tag = <E extends React.ElementType<any, Element> = typeof DEFAULT_E
     className,
     children,
     ...rest
-  }: Polymorphic<E, Props>) => {
-  const Component = as || DEFAULT_ELEMENT;
+  }: Polymorphic<E, TagProps>) => {
+  const Component = as || TAG_DEFAULT_ELEMENT;
 
   const Content = useIcon({
     iconStart, iconEnd, iconOnly, styles, children,
@@ -33,7 +32,7 @@ export const Tag = <E extends React.ElementType<any, Element> = typeof DEFAULT_E
   return (
     <Component
       className={classNames(
-        styles.button,
+        styles.tag,
         styles[`variant-${variant}`],
         styles[`color-${color}`],
         styles[`tone-${tone}`],

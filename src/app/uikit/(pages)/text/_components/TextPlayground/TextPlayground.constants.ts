@@ -1,8 +1,9 @@
-import type { TextProps } from "@/components/uikit/Text/Text.types";
+import type { TextAs, TextProps } from "@/components/uikit/Text/Text.types";
 
 export const NAME = "Text";
 
-export const DEFAULT_PROPS: TextProps = {
+export const DEFAULT_PROPS: TextProps & TextAs = {
+  as: "p",
   color: "inherit",
   size: "m",
   weight: "regular",

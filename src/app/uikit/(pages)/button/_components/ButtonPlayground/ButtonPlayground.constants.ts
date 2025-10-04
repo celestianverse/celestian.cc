@@ -1,8 +1,9 @@
-import type { ButtonProps } from "@/components/uikit/Button/Button.types";
+import type { ButtonAs, ButtonProps } from "@/components/uikit/Button/Button.types";
 
 export const NAME = "Button";
 
-export const DEFAULT_PROPS: ButtonProps = {
+export const DEFAULT_PROPS: ButtonProps & ButtonAs = {
+  as: "button",
   variant: "flat",
   color: "primary",
   tone: "base",
