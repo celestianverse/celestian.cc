@@ -10,8 +10,8 @@ export const Stack = ({ data }: Props) => {
   return (
     <Box
       as="article"
-      color="primary"
       variant="outline"
+      color="primary"
       tone="soft"
       borderStyle="dashed"
       borderWidth={2}

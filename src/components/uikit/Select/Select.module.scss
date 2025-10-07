@@ -4,26 +4,208 @@
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
-  flex-grow: 1;
   flex-shrink: 0;
-  gap: var(--spacing-12);
-  height: var(--size-32);
-  padding: 0 var(--size-12);
-  background: var(--primary-fill-soft);
-  border-radius: var(--radius-8);
+  gap: var(--spacing-8);
   line-height: 1;
-  font-size: var(--font-size-text-s);
   font-weight: var(--font-weight-medium);
+  user-select: none;
   cursor: pointer;
   @include transition;
+
+  @include mobile-only {
+    flex-grow: 1;
+  }
+
+  &.size-l {
+    height: var(--size-64);
+    padding: 0 var(--spacing-24);
+
+    &:not([class*="border-radius"]) {
+      border-radius: var(--radius-16);
+    }
+
+    &:global(.border-radius-999) {
+      padding: 0 var(--spacing-28);
+    }
+  }
+
+  &.size-m {
+    height: var(--size-48);
+    padding: 0 var(--spacing-16);
+
+    &:not([class*="border-radius"]) {
+      border-radius: var(--radius-12);
+    }
+
+    &:global(.border-radius-999) {
+      padding: 0 var(--spacing-20);
+    }
+  }
+
+  &.size-s {
+    height: var(--size-32);
+    padding: 0 var(--spacing-12);
+    font-size: var(--font-size-text-s);
+
+    &:not([class*="border-radius"]) {
+      border-radius: var(--radius-8);
+    }
+
+    &:global(.border-radius-999) {
+      padding: 0 var(--spacing-16);
+    }
+  }
+
+  @each $color in $colors {
+    &.color-#{$color} {
+      &.variant-flat {
+        background: var(--#{$color}-fill);
+        color: var(--#{$color}-fill-on);
+
+        &.tone-soft {
+          background: var(--#{$color}-fill-soft);
+          color: var(--#{$color}-fill-soft-on);
+        }
+      }
+
+      &.variant-outline {
+        border-color: var(--#{$color}-outline);
+        border-width: 1px;
+        color: var(--#{$color}-outline);
+
+        &.tone-soft {
+          border-color: var(--#{$color}-outline-soft);
+        }
+
+        &:not([class*="border-style"]) {
+          border-style: solid;
+        }
+      }
+
+      &.variant-ghost {
+        color: var(--#{$color}-content);
+      }
+    }
+  }
+
+  &.variant-ghost {
+    height: auto;
+    padding: var(--spacing-4) 0;
+    border-radius: 0;
+  }
 }
 
-.content {
+.list {
   z-index: 100;
   display: flex;
   flex-direction: column;
-  padding: var(--size-4);
+  padding: var(--spacing-4);
   background: var(--contrast-surface);
-  border-radius: var(--radius-8);
   box-shadow: var(--shadow-m);
+  font-weight: var(--font-weight-medium);
+  color: var(--contrast-surface-on);
+
+  &.size-l {
+    :global(.option) {
+      min-height: var(--size-32);
+      padding: var(--spacing-8) var(--spacing-24);
+    }
+
+    &:not([class*="border-radius"]) {
+      border-radius: var(--radius-16);
+
+      :global(.option) {
+        border-radius: var(--radius-12);
+      }
+    }
+
+    &:global(.border-radius-999) {
+      border-radius: var(--radius-24);
+
+      :global(.option) {
+        padding: var(--spacing-8) var(--spacing-28);
+        border-radius: var(--radius-999);
+      }
+    }
+  }
+
+  &.size-m {
+    :global(.option) {
+      min-height: var(--size-40);
+      padding: var(--spacing-8) var(--spacing-16);
+    }
+
+    &:not([class*="border-radius"]) {
+      border-radius: var(--radius-12);
+
+      :global(.option) {
+        border-radius: var(--radius-8);
+      }
+    }
+
+    &:global(.border-radius-999) {
+      border-radius: var(--radius-24);
+
+      :global(.option) {
+        padding: var(--spacing-8) var(--spacing-20);
+        border-radius: var(--radius-999);
+      }
+    }
+  }
+
+  &.size-s {
+    font-size: var(--font-size-text-s);
+
+    :global(.option) {
+      min-height: var(--size-32);
+      padding: var(--spacing-4) var(--spacing-12);
+    }
+
+    &:not([class*="border-radius"]) {
+      border-radius: var(--radius-8);
+
+      :global(.option) {
+        border-radius: var(--radius-4);
+      }
+    }
+
+    &:global(.border-radius-999) {
+      border-radius: var(--radius-16);
+
+      :global(.option) {
+        padding: var(--spacing-4) var(--spacing-16);
+        border-radius: var(--radius-999);
+      }
+    }
+  }
+
+  &:global(.border-radius-24) {
+    :global(.option) {
+      border-radius: var(--radius-16);
+    }
+  }
+
+  &:global(.border-radius-16) {
+    :global(.option) {
+      border-radius: var(--radius-12);
+    }
+  }
+
+  &:global(.border-radius-12) {
+    :global(.option) {
+      border-radius: var(--radius-8);
+    }
+  }
+
+  &:global(.border-radius-8) {
+    :global(.option) {
+      border-radius: var(--radius-4);
+    }
+  }
+
+  &:global(.border-radius-4) {
+    :global(.option) {
+      border-radius: var(--radius-4);
+    }
+  }
 }

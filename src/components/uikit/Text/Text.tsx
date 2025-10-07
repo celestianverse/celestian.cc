@@ -9,7 +9,7 @@ export const Text = <E extends ElementType<any, TextElement> = typeof TEXT_DEFAU
 ({
    as,
    color = "inherit",
-   size = "m",
+   size = "inherit",
    weight = "regular",
    lineHeight = "m",
    uppercase = false,

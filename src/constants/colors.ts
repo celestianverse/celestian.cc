@@ -12,3 +12,4 @@ export const COLORS = [
   "danger",
   "rating",
 ] as const;
+

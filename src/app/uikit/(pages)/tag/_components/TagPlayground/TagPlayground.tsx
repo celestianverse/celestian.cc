@@ -28,7 +28,7 @@ export const TagPlayground = () => {
     size: TAG_SIZE,
     radius: TAG_BORDER_RADIUS,
     borderStyle: BORDER_STYLE,
-    borderWidth: [...Array(11).keys()],
+    borderWidth: [...Array(5).keys()],
     iconStart: Object.keys(ICONS),
     iconEnd: Object.keys(ICONS),
     iconOnly: Object.keys(ICONS),

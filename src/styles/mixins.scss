@@ -95,7 +95,7 @@ $colors: (
   transition: $property $duration ease-in-out $delay;
 }
 
-@mixin backdrop($color, $blur) {
+@mixin backdrop($color, $blur: 8px) {
   background: $color;
 
   @supports (backdrop-filter: none) {

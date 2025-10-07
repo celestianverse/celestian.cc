@@ -29,7 +29,7 @@ export const AnchorPlayground = () => {
     paddingY: PADDING,
     paddingX: PADDING,
     borderStyle: BORDER_STYLE,
-    borderWidth: [...Array(11).keys()],
+    borderWidth: [...Array(5).keys()],
     iconStart: Object.keys(ICONS),
     iconEnd: Object.keys(ICONS),
     iconOnly: Object.keys(ICONS),

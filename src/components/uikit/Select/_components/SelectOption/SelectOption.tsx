@@ -26,6 +26,7 @@ export const SelectOption = ({ label }: Props) => {
       tabIndex={isActive ? 0 : -1}
       className={classNames(
         styles.option,
+        "option",
         {
           [styles.active]: isActive,
           [styles.selected]: isSelected,

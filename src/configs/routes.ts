@@ -38,6 +38,10 @@ export const routes = {
         name: "Switch",
         path: "/uikit/switch",
       },
+      select: {
+        name: "Select",
+        path: "/uikit/select",
+      },
     },
     meta: {
       name: "Meta",

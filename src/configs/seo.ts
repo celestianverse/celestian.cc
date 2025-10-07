@@ -30,6 +30,9 @@ export const seo = {
       switch: {
         title: `Switch component for UI kit library — ${app.name}`,
       },
+      select: {
+        title: `Select component for UI kit library — ${app.name}`,
+      },
     },
     meta: {
       colors: {

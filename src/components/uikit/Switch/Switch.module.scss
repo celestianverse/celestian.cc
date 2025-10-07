@@ -49,10 +49,6 @@
 
   @each $color in $colors {
     &.color-#{$color} {
-      .control {
-        background: var(--primary-fill-soft-action);
-      }
-
       .input {
         &:checked + .control {
           background: var(--#{$color}-fill);
@@ -69,9 +65,9 @@
 .control {
   display: inline-flex;
   padding: var(--size-4);
+  background: var(--primary-fill-soft-action);
   border-radius: var(--radius-999);
   cursor: pointer;
-
   @include transition;
 }
 
@@ -80,7 +76,6 @@
   margin-left: 0;
   background: var(--contrast-fill);
   border-radius: var(--radius-999);
-
   @include transition;
 }
 

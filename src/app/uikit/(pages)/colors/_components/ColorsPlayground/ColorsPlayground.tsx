@@ -3,7 +3,6 @@ import { Box } from "@/components/uikit/Box/Box";
 import { Grid } from "@/components/uikit/Grid/Grid";
 import { Playground } from "@/components/custom/Playground/Playground";
 import { CONTRAST_COLORS, MAIN_COLORS } from "./ColorsPlayground.constants";
-import type { Color } from "@/types/Color";
 import { uikit } from "@/data/uikit";
 
 export const ColorsPlayground = () => {
@@ -14,14 +13,14 @@ export const ColorsPlayground = () => {
           columns={5}
           gap={16}
         >
-          {MAIN_COLORS.map(color => (
+          {Object.keys(MAIN_COLORS).map(color => (
             <Box
               key={color}
-              color={color as Color}
               align="center"
               justify="center"
               paddingX={0}
               radius={16}
+              style={{background: MAIN_COLORS[color].surface, color: MAIN_COLORS[color].on}}
             >
               {color}
             </Box>
@@ -36,14 +35,14 @@ export const ColorsPlayground = () => {
           columns={5}
           gap={16}
         >
-          {CONTRAST_COLORS.map(color => (
+          {Object.keys(CONTRAST_COLORS).map(color => (
             <Box
               key={color}
-              color={color as Color}
               align="center"
               justify="center"
               paddingX={0}
               radius={16}
+              style={{background: CONTRAST_COLORS[color].surface, color: CONTRAST_COLORS[color].on}}
             >
               {color}
             </Box>

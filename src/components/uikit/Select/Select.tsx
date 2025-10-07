@@ -13,29 +13,37 @@ import {
   FloatingFocusManager,
   FloatingList,
   offset,
-  size,
+  size as sizeMiddleware,
 } from "@floating-ui/react";
 import { Icon } from "@/components/uikit/Icon/Icon";
 import { Text } from "@/components/uikit/Text/Text";
 import { SelectContext } from "@/contexts/SelectContext/SelectContext";
-import type { Props } from "./Select.types";
+import type { SelectProps } from "./Select.types";
 import styles from "./Select.module.scss";
 
 export const Select = (
   {
     value,
     placeholder = "Select...",
+    variant = "flat",
+    color = "primary",
+    tone = "soft",
+    size = "m",
     width,
+    radius,
+    borderStyle,
+    borderWidth,
+    disabled,
     onChange,
     className,
     children
-  }: Props) => {
+  }: SelectProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [selectedLabel, setSelectedLabel] = useState<string | null>(null);
 
-  const { refs, floatingStyles, context } = useFloating({
+  const {refs, floatingStyles, context} = useFloating({
     placement: "bottom-start",
     open: isOpen,
     onOpenChange: setIsOpen,
@@ -43,8 +51,8 @@ export const Select = (
     middleware: [
       flip(),
       offset(4),
-      size({
-        apply({ rects, elements, availableHeight }) {
+      sizeMiddleware({
+        apply({rects, elements, availableHeight}) {
           Object.assign(elements.floating.style, {
             maxHeight: `${availableHeight}px`,
             minWidth: `${rects.reference.width}px`,
@@ -114,7 +122,7 @@ export const Select = (
 
   const click = useClick(context);
   const dismiss = useDismiss(context);
-  const role = useRole(context, { role: "listbox" });
+  const role = useRole(context, {role: "listbox"});
 
   const {
     getReferenceProps,
@@ -132,6 +140,12 @@ export const Select = (
     [activeIndex, selectedIndex, getItemProps, handleSelect]
   );
 
+  const getInteraction = () => {
+    if (disabled) return {};
+
+    return getReferenceProps();
+  };
+
   return (
     <>
       <div
@@ -141,13 +155,21 @@ export const Select = (
         aria-haspopup="listbox"
         className={classNames(
           styles.select,
+          styles[`variant-${variant}`],
+          styles[`color-${color}`],
+          styles[`tone-${tone}`],
+          styles[`size-${size}`],
+          {
+            [`border-radius-${radius}`]: radius != null,
+            [`border-style-${borderStyle}`]: borderStyle,
+            ["disabled"]: disabled,
+          },
           className,
         )}
-        style={{ width: width }}
-        {...getReferenceProps()}
+        style={{width: width, borderWidth: borderWidth}}
+        {...getInteraction()}
       >
         <Text
-          size="s"
           weight="medium"
           ellipsis
         >
@@ -165,12 +187,21 @@ export const Select = (
               ref={refs.setFloating}
               className={classNames(
                 "scroll",
-                styles.content,
+                styles.list,
+                styles[`color-${color}`],
+                styles[`tone-${tone}`],
+                styles[`size-${size}`],
+                {
+                  [`border-radius-${radius}`]: radius != null,
+                },
               )}
-              style={{...floatingStyles, overflowY: "auto", width: width}}
+              style={{...floatingStyles, overflowY: "auto"}}
               {...getFloatingProps()}
             >
-              <FloatingList elementsRef={elementsRef} labelsRef={labelsRef}>
+              <FloatingList
+                elementsRef={elementsRef}
+                labelsRef={labelsRef}
+              >
                 {children}
               </FloatingList>
             </div>

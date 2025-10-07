@@ -32,6 +32,10 @@ export const uikit = {
       title: "Switch",
       longTitle: "Switch component",
     },
+    select: {
+      title: "Select",
+      longTitle: "Select component",
+    },
   },
   meta: {
     colors: {

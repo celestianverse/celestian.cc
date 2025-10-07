@@ -55,6 +55,7 @@ import Edit from "@public/images/icons/edit.svg";
 import Copy from "@public/images/icons/copy.svg";
 import ZoomOut from "@public/images/icons/zoom-out.svg";
 import ZoomIn from "@public/images/icons/zoom-in.svg";
+import Reload from "@public/images/icons/reload.svg";
 import Vkontakte from "@public/images/icons/vkontakte.svg";
 import Telegram from "@public/images/icons/telegram.svg";
 import Youtube from "@public/images/icons/youtube.svg";
@@ -118,6 +119,7 @@ export const ICONS = {
   copy: Copy,
   zoomOut: ZoomOut,
   zoomIn: ZoomIn,
+  reload: Reload,
   vkontakte: Vkontakte,
   telegram: Telegram,
   youtube: Youtube,

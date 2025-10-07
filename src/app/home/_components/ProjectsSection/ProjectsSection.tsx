@@ -32,8 +32,8 @@ export const ProjectsSection = () => {
             as="a"
             href={item.url}
             target="_blank"
-            color="primary"
             variant="outline"
+            color="primary"
             tone="soft"
             borderStyle="dashed"
             borderWidth={2}
