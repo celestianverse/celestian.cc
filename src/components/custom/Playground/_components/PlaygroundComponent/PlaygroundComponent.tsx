@@ -180,6 +180,7 @@ export const PlaygroundComponent = (
         <Button
           tone="soft"
           size="s"
+          iconStart="reload"
           fullwidth
           onClick={() => setProps((prev) => ({...prev, ...defaultChosenProps}))}
         >

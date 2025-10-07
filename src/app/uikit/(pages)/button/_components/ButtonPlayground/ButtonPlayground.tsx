@@ -4,10 +4,9 @@ import { Button } from "@/components/uikit/Button/Button";
 import type { ButtonProps } from "@/components/uikit/Button/Button.types";
 import {
   BUTTON_ELEMENT,
-  BUTTON_SIZE,
   BUTTON_VARIANT
 } from "@/components/uikit/Button/Button.constants";
-import { BORDER_STYLE, CONTROL_BORDER_RADIUS, JUSTIFY_CONTENT, TONE } from "@/constants/styles";
+import { BORDER_STYLE, CONTROL_BORDER_RADIUS, CONTROL_SIZE, JUSTIFY_CONTENT, TONE } from "@/constants/styles";
 import { COLORS } from "@/constants/colors";
 import { ICONS } from "@/components/uikit/Icon/Icon.constants";
 import { uikit } from "@/data/uikit";
@@ -31,7 +30,7 @@ export const ButtonPlayground = () => {
     variant: BUTTON_VARIANT,
     color: COLORS,
     tone: TONE,
-    size: BUTTON_SIZE,
+    size: CONTROL_SIZE,
     justify: JUSTIFY_CONTENT,
     radius: CONTROL_BORDER_RADIUS,
     borderStyle: BORDER_STYLE,

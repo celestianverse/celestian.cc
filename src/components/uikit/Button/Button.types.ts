@@ -1,14 +1,12 @@
 import type { ReactNode } from "react";
 import type { Color } from "@/types/Color";
 import type { IconProps } from "@/hooks/useIcon";
-import type { BorderStyle, BorderWidth, ControlBorderRadius, JustifyContent, Tone } from "@/types/Styles";
-import { BUTTON_ELEMENT, BUTTON_SIZE, BUTTON_VARIANT } from "./Button.constants";
+import type { BorderStyle, BorderWidth, ControlBorderRadius, ControlSize, JustifyContent, Tone } from "@/types/Styles";
+import { BUTTON_ELEMENT, BUTTON_VARIANT } from "./Button.constants";
 
 export type ButtonElement = typeof BUTTON_ELEMENT[number];
 
 export type ButtonVariant = typeof BUTTON_VARIANT[number];
-
-export type ButtonSize = typeof BUTTON_SIZE[number];
 
 export type ButtonAs = {
   as?: ButtonElement;
@@ -25,7 +23,7 @@ export type ButtonProps = {
    *   s - 32px
    * </pre>
    */
-  size?: ButtonSize;
+  size?: ControlSize;
   justify?: JustifyContent;
   radius?: ControlBorderRadius;
   borderStyle?: BorderStyle;

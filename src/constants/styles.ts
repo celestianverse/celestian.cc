@@ -62,9 +62,16 @@ export const BORDER_STYLE = [
 
 export const BORDER_RADIUS = [0, 4, 8, 12, 16, 24, 32, 48, 64, 96, 128, 999] as const;
 
-export const CONTROL_BORDER_RADIUS = [0, 4, 8, 12, 16, 24, 999] as const;
-
 export const TONE = [
   "base",
   "soft",
+  // "alpha",
 ] as const;
+
+export const CONTROL_SIZE = [
+  "l",
+  "m",
+  "s",
+] as const;
+
+export const CONTROL_BORDER_RADIUS = [0, 4, 8, 12, 16, 24, 999] as const;

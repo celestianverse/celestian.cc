@@ -1,4 +1,5 @@
 @use "@/styles/mixins" as *;
+@use "sass:color";
 
 .button {
   display: inline-flex;
@@ -131,10 +132,6 @@
           }
         }
 
-        &.active {
-          background: var(--#{$color}-fill-action);
-        }
-
         &.tone-soft {
           background: var(--#{$color}-fill-soft);
           color: var(--#{$color}-fill-soft-on);
@@ -143,40 +140,6 @@
             &:not(.active):not(:global(.disabled)) {
               background: var(--#{$color}-fill-soft-action);
             }
-          }
-
-          &.active {
-            background: var(--#{$color}-fill-soft-action);
-          }
-        }
-      }
-
-      &.variant-gradient {
-        background: var(--#{$color}-gradient);
-        color: var(--#{$color}-gradient-on);
-
-        &:hover {
-          &:not(.active):not(:global(.disabled)) {
-            background: var(--#{$color}-gradient);
-          }
-        }
-
-        &.active {
-          background: var(--#{$color}-fill-action);
-        }
-
-        &.tone-soft {
-          background: var(--#{$color}-fill-soft);
-          color: var(--#{$color}-fill-soft-on);
-
-          &:hover {
-            &:not(.active):not(:global(.disabled)) {
-              background: var(--#{$color}-fill-soft-action);
-            }
-          }
-
-          &.active {
-            background: var(--#{$color}-fill-soft-action);
           }
         }
       }
@@ -193,26 +156,14 @@
           }
         }
 
-        &.active {
-          background: var(--#{$color}-fill);
-          border-color: var(--#{$color}-fill);
-          color: var(--#{$color}-fill-on);
-        }
-
         &.tone-soft {
           border-color: var(--#{$color}-outline-soft);
 
           &:hover {
             &:not(.active):not(:global(.disabled)) {
-              border-color: var(--#{$color}-outline-soft-action);
-              color: var(--#{$color}-outline-soft-action);
+              border-color: var(--#{$color}-outline);
+              color: var(--#{$color}-outline);
             }
-          }
-
-          &.active {
-            background: var(--#{$color}-fill-soft);
-            border-color: var(--#{$color}-fill-soft);
-            color: var(--#{$color}-fill-soft-on);
           }
         }
 

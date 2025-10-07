@@ -27,12 +27,12 @@ export const Select = (
     placeholder = "Select...",
     variant = "flat",
     color = "primary",
+    tone = "soft",
     size = "m",
     width,
     radius,
     borderStyle,
     borderWidth,
-    fullwidth,
     disabled,
     onChange,
     className,
@@ -43,7 +43,7 @@ export const Select = (
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [selectedLabel, setSelectedLabel] = useState<string | null>(null);
 
-  const { refs, floatingStyles, context } = useFloating({
+  const {refs, floatingStyles, context} = useFloating({
     placement: "bottom-start",
     open: isOpen,
     onOpenChange: setIsOpen,
@@ -52,7 +52,7 @@ export const Select = (
       flip(),
       offset(4),
       sizeMiddleware({
-        apply({ rects, elements, availableHeight }) {
+        apply({rects, elements, availableHeight}) {
           Object.assign(elements.floating.style, {
             maxHeight: `${availableHeight}px`,
             minWidth: `${rects.reference.width}px`,
@@ -122,7 +122,7 @@ export const Select = (
 
   const click = useClick(context);
   const dismiss = useDismiss(context);
-  const role = useRole(context, { role: "listbox" });
+  const role = useRole(context, {role: "listbox"});
 
   const {
     getReferenceProps,
@@ -140,6 +140,12 @@ export const Select = (
     [activeIndex, selectedIndex, getItemProps, handleSelect]
   );
 
+  const getInteraction = () => {
+    if (disabled) return {};
+
+    return getReferenceProps();
+  };
+
   return (
     <>
       <div
@@ -151,6 +157,7 @@ export const Select = (
           styles.select,
           styles[`variant-${variant}`],
           styles[`color-${color}`],
+          styles[`tone-${tone}`],
           styles[`size-${size}`],
           {
             [`border-radius-${radius}`]: radius != null,
@@ -159,8 +166,8 @@ export const Select = (
           },
           className,
         )}
-        style={{ width: width, borderWidth: borderWidth }}
-        {...getReferenceProps()}
+        style={{width: width, borderWidth: borderWidth}}
+        {...getInteraction()}
       >
         <Text
           weight="medium"
@@ -181,16 +188,20 @@ export const Select = (
               className={classNames(
                 "scroll",
                 styles.list,
+                styles[`color-${color}`],
+                styles[`tone-${tone}`],
                 styles[`size-${size}`],
                 {
                   [`border-radius-${radius}`]: radius != null,
-                  ["fullwidth"]: fullwidth,
                 },
               )}
-              style={{...floatingStyles, overflowY: "auto", width: width}}
+              style={{...floatingStyles, overflowY: "auto"}}
               {...getFloatingProps()}
             >
-              <FloatingList elementsRef={elementsRef} labelsRef={labelsRef}>
+              <FloatingList
+                elementsRef={elementsRef}
+                labelsRef={labelsRef}
+              >
                 {children}
               </FloatingList>
             </div>

@@ -11,9 +11,3 @@ export const SELECT_COLOR = [
   "success",
   "danger",
 ] as const;
-
-export const SELECT_SIZE = [
-  "l",
-  "m",
-  "s",
-] as const;

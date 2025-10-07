@@ -29,7 +29,7 @@ body {
 }
 
 .disabled {
-  opacity: 0.25;
+  opacity: 0.3;
   filter: grayscale(1);
   cursor: not-allowed !important;
 
@@ -188,7 +188,6 @@ $border-radius-axes: (
 
 .scroll {
   overflow: auto;
-  scrollbar-gutter: stable;
 
   scrollbar-width: thin;
   scrollbar-color: var(--secondary-fill) transparent;

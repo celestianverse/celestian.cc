@@ -46,11 +46,10 @@
       &.variant-outline {
         border-color: var(--#{$color}-outline);
         border-width: 1px;
-        color: var(--#{$color}-content);
+        color: var(--#{$color}-outline);
 
         &.tone-soft {
           border-color: var(--#{$color}-outline-soft);
-          color: var(--#{$color}-content);
         }
 
         &:not([class*="border-style"]) {

@@ -5,11 +5,11 @@ export const NAME = "Select";
 export const DEFAULT_PROPS: SelectProps & {width: string} = {
   variant: "flat",
   color: "primary",
+  tone: "soft",
   size: "m",
   width: "auto",
   radius: 12,
   borderStyle: "none",
   borderWidth: 0,
-  fullwidth: false,
   disabled: false,
 } as const;

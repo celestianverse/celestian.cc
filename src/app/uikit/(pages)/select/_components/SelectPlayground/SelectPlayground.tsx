@@ -7,8 +7,9 @@ import { DEFAULT_PROPS, NAME } from "./SelectPlayground.constants";
 import type { SelectProps } from "@/components/uikit/Select/Select.types";
 import { Select } from "@/components/uikit/Select/Select";
 import { SelectOption } from "@/components/uikit/Select/_components/SelectOption/SelectOption";
-import { SELECT_COLOR, SELECT_SIZE, SELECT_VARIANT } from "@/components/uikit/Select/Select.constants";
-import { BORDER_STYLE, CONTROL_BORDER_RADIUS } from "@/constants/styles";
+import { SELECT_VARIANT } from "@/components/uikit/Select/Select.constants";
+import { BORDER_STYLE, CONTROL_BORDER_RADIUS, CONTROL_SIZE, TONE } from "@/constants/styles";
+import { COLORS } from "@/constants/colors";
 
 export const SelectPlayground = () => {
   const [props, setProps] = useState<SelectProps>(DEFAULT_PROPS);
@@ -21,7 +22,7 @@ export const SelectPlayground = () => {
       {[...Array(5).keys()].map(item => (
         <SelectOption
           key={item+1}
-          label={`Option ${item+1}`}
+          label={`Select option ${item+1}`}
         />
       ))}
     </Select>
@@ -29,13 +30,13 @@ export const SelectPlayground = () => {
 
   const settings = {
     variant: SELECT_VARIANT,
-    color: SELECT_COLOR,
-    size: SELECT_SIZE,
-    width: ["auto", 200, 300, 400, "100%"],
+    color: COLORS,
+    tone: TONE,
+    size: CONTROL_SIZE,
+    width: ["auto", 240, "100%"],
     radius: CONTROL_BORDER_RADIUS,
     borderStyle: BORDER_STYLE,
     borderWidth: [...Array(5).keys()],
-    fullwidth: props.fullwidth,
     disabled: props.disabled,
   };
 

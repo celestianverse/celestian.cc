@@ -1,9 +1,6 @@
 @use "@/styles/mixins" as *;
 
 .option {
-  min-height: var(--size-32);
-  padding: var(--size-4) var(--size-16);
-  border-radius: var(--radius-8);
   text-align: left;
   @include transition;
 

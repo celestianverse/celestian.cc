@@ -11,9 +11,3 @@ export const BUTTON_VARIANT = [
   "outline",
   "ghost",
 ] as const;
-
-export const BUTTON_SIZE = [
-  "l",
-  "m",
-  "s",
-] as const;
