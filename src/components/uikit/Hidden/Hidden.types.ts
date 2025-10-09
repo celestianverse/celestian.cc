@@ -1,19 +1,9 @@
 import type { ReactNode } from "react";
+import type { HIDDEN_ON } from "@/components/uikit/Hidden/Hidden.constants";
 
-type On =
-  | "all"
-  | "desktop-only"
-  | "desktop-max"
-  | "desktop-min"
-  | "laptop-only"
-  | "laptop-max"
-  | "laptop-min"
-  | "tablet-only"
-  | "tablet-max"
-  | "tablet-min"
-  | "mobile-only";
+export type HiddenOn = typeof HIDDEN_ON[number];
 
-export type Props = {
-  on: On;
-  children: ReactNode;
+export type HiddenProps = {
+  on: HiddenOn;
+  children?: ReactNode;
 };

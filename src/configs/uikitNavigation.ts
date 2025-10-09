@@ -54,6 +54,10 @@ export const uikitNavigation = {
         name: routes.uikit.utilities.divider.name,
         path: routes.uikit.utilities.divider.path,
       },
+      hidden: {
+        name: routes.uikit.utilities.hidden.name,
+        path: routes.uikit.utilities.hidden.path,
+      },
     },
   },
   meta: {

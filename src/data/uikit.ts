@@ -50,6 +50,10 @@ export const uikit = {
       title: "Divider",
       longTitle: "Divider component",
     },
+    hidden: {
+      title: "Hidden",
+      longTitle: "Hidden component",
+    },
   },
   meta: {
     colors: {

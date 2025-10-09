@@ -44,19 +44,19 @@ $colors: (
 }
 
 @mixin desktop-min {
-  @media (min-width: 1367px) {
+  @media (min-width: 1381px) {
     @content;
   }
 }
 
 @mixin laptop-only {
-  @media (min-width: 1220px) and (max-width: 1366px) {
+  @media (min-width: 1220px) and (max-width: 1380px) {
     @content;
   }
 }
 
 @mixin laptop-max {
-  @media (max-width: 1366px) {
+  @media (max-width: 1380px) {
     @content;
   }
 }

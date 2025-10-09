@@ -44,6 +44,9 @@ export const seo = {
       divider: {
         title: `Divider component for UI kit library — ${app.name}`,
       },
+      hidden: {
+        title: `Hidden component for UI kit library — ${app.name}`,
+      },
     },
     meta: {
       colors: {
