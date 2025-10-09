@@ -28,13 +28,17 @@ export const uikit = {
       title: "Button",
       longTitle: "Button component",
     },
-    switch: {
-      title: "Switch",
-      longTitle: "Switch component",
+    segments: {
+      title: "Segments",
+      longTitle: "Segments component",
     },
     select: {
       title: "Select",
       longTitle: "Select component",
+    },
+    switch: {
+      title: "Switch",
+      longTitle: "Switch component",
     },
   },
   meta: {

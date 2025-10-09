@@ -1,10 +1,10 @@
 import type { ReactNode } from "react";
 import type { Color } from "@/types/Color";
-import type { BorderRadius } from "@/types/Styles";
+import type { ControlBorderRadius } from "@/types/Styles";
 
-export type Props = {
+export type SegmentsProps = {
   color?: Color;
-  radius?: Extract<BorderRadius, 0 | 4 | 8 | 12 | 16 | 24 | 999>;
+  radius?: ControlBorderRadius;
   fullwidth?: boolean;
   className?: string;
   children: ReactNode;

@@ -281,11 +281,11 @@ $themes: (
   ),
   brand-fill: (
     light: $brand,
-    dark: color.scale($brand, $lightness: -35%),
+    dark: color.scale($brand, $lightness: -30%),
   ),
   brand-fill-action: (
     light: color.scale($brand, $lightness: -30%),
-    dark: color.scale($brand, $lightness: -55%),
+    dark: color.scale($brand, $lightness: -50%),
   ),
   brand-fill-on: (
     light: $primary,
@@ -905,11 +905,11 @@ $themes: (
   ),
   rating-fill: (
     light: $rating,
-    dark: color.scale($rating, $lightness: -20%),
+    dark: color.scale($rating, $lightness: -15%),
   ),
   rating-fill-action: (
     light: color.scale($rating, $lightness: 33%),
-    dark: color.scale($rating, $lightness: -40%),
+    dark: color.scale($rating, $lightness: -35%),
   ),
   rating-fill-on: (
     light: $primary,

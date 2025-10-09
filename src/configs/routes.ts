@@ -34,13 +34,17 @@ export const routes = {
         name: "Button",
         path: "/uikit/button",
       },
-      switch: {
-        name: "Switch",
-        path: "/uikit/switch",
+      segments: {
+        name: "Segments",
+        path: "/uikit/segments",
       },
       select: {
         name: "Select",
         path: "/uikit/select",
+      },
+      switch: {
+        name: "Switch",
+        path: "/uikit/switch",
       },
     },
     meta: {

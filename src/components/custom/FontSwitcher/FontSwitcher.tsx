@@ -3,7 +3,7 @@ import Cookies from "js-cookie";
 import { useShallow } from "zustand/react/shallow";
 import { useUserContext } from "@/contexts/UserContext/UserContext";
 import { Button } from "@/components/uikit/Button/Button";
-import { Segmented } from "@/components/uikit/Segmented/Segmented";
+import { Segments } from "@/components/uikit/Segments/Segments";
 import { FONT } from "@/constants/font";
 import type { Props } from "./FontSwitcher.types";
 
@@ -21,7 +21,7 @@ export const FontSwitcher = ({color = "primary"}: Props) => {
   };
 
   return (
-    <Segmented color={color}>
+    <Segments color={color}>
       <Button
         variant="ghost"
         color={color}
@@ -42,6 +42,6 @@ export const FontSwitcher = ({color = "primary"}: Props) => {
       >
         A
       </Button>
-    </Segmented>
+    </Segments>
   );
 };

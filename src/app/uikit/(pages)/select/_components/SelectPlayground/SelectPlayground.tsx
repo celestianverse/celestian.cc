@@ -48,7 +48,7 @@ export const SelectPlayground = () => {
     return 12;
   };
 
-  const childrenContent = `<SelectOption label="Option 1" />\n<SelectOption label="Option 2" />\n...`;
+  const childrenContent = `<SelectOption label="Option 1" />\n<SelectOption label="Option 2" />\n<SelectOption label="Option 3" />`;
 
   const code = buildComponentCode<SelectProps>({
     name: NAME,

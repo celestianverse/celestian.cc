@@ -1,6 +1,6 @@
 @use "@/styles/mixins" as *;
 
-.segmented {
+.segments {
   display: flex;
   align-self: center;
   flex-shrink: 0;
@@ -9,7 +9,11 @@
 
   @each $color in $colors {
     &.color-#{$color} {
-      background: var(--#{$color}-fill-soft);
+      @if $color == contrast or $color == phantom {
+        background: var(--contrast-fill-soft);
+      } @else {
+        background: var(--primary-fill-soft);
+      }
     }
   }
 }

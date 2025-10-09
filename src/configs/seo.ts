@@ -27,11 +27,14 @@ export const seo = {
       button: {
         title: `Button component for UI kit library — ${app.name}`,
       },
-      switch: {
-        title: `Switch component for UI kit library — ${app.name}`,
+      segments: {
+        title: `Segments component for UI kit library — ${app.name}`,
       },
       select: {
         title: `Select component for UI kit library — ${app.name}`,
+      },
+      switch: {
+        title: `Switch component for UI kit library — ${app.name}`,
       },
     },
     meta: {

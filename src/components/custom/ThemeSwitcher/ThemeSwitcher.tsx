@@ -3,7 +3,7 @@ import Cookies from "js-cookie";
 import { useShallow } from "zustand/react/shallow";
 import { useUserContext } from "@/contexts/UserContext/UserContext";
 import { Button } from "@/components/uikit/Button/Button";
-import { Segmented } from "@/components/uikit/Segmented/Segmented";
+import { Segments } from "@/components/uikit/Segments/Segments";
 import { THEME } from "@/constants/theme";
 import type { Props } from "./ThemeSwitcher.types";
 
@@ -21,7 +21,7 @@ export const ThemeSwitcher = ({ color = "primary" }: Props) => {
   };
 
   return (
-    <Segmented color={color}>
+    <Segments color={color}>
       <Button
         variant="ghost"
         color={color}
@@ -38,6 +38,6 @@ export const ThemeSwitcher = ({ color = "primary" }: Props) => {
         active={theme === THEME.dark}
         onClick={() => handleChooseTheme(THEME.dark)}
       />
-    </Segmented>
+    </Segments>
   );
 };

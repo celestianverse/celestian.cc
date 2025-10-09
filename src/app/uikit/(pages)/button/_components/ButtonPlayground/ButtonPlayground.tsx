@@ -18,9 +18,7 @@ export const ButtonPlayground = () => {
   const [props, setProps] = useState<ButtonProps>(DEFAULT_CHOSEN_PROPS);
 
   const ButtonComponent = (
-    <Button
-      {...props}
-    >
+    <Button {...props}>
       {NAME}
     </Button>
   );
