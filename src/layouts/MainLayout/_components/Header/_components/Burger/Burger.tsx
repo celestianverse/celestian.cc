@@ -89,7 +89,7 @@ export const Burger = () => {
                   {Object.values(uikitNavigation).map((section) => {
                     return (
                       <Column
-                        key={section.title}
+                        key={section.name}
                         gap={0}
                       >
                         {Object.values(section.pages).map((page) => {
@@ -104,7 +104,7 @@ export const Burger = () => {
                               borderStyle={isActivePath(page.path) ? "dashed" : "none"}
                               onClick={handleClose}
                             >
-                              {page.title}
+                              {page.name}
                             </Anchor>
                           )
                         })}

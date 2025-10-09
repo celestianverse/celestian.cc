@@ -19,7 +19,7 @@ export const SelectPlayground = () => {
       {...props}
       onChange={(value) => setProps(prev => ({...prev, value: value}))}
     >
-      {[...Array(5).keys()].map(item => (
+      {[...Array(6).keys()].map(item => (
         <SelectOption
           key={item+1}
           label={`Select option ${item+1}`}
@@ -36,7 +36,7 @@ export const SelectPlayground = () => {
     width: ["auto", 240, "100%"],
     radius: CONTROL_BORDER_RADIUS,
     borderStyle: BORDER_STYLE,
-    borderWidth: [...Array(5).keys()],
+    borderWidth: [...Array(6).keys()],
     disabled: props.disabled,
   };
 

@@ -32,7 +32,7 @@ export const ButtonPlayground = () => {
     justify: JUSTIFY_CONTENT,
     radius: CONTROL_BORDER_RADIUS,
     borderStyle: BORDER_STYLE,
-    borderWidth: [...Array(5).keys()],
+    borderWidth: [...Array(6).keys()],
     iconStart: Object.keys(ICONS),
     iconEnd: Object.keys(ICONS),
     iconOnly: Object.keys(ICONS),

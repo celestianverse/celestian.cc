@@ -24,7 +24,7 @@ export const Sidebar = () => {
       {Object.values(uikitNavigation).map((section) => {
         return (
           <Column
-            key={section.title}
+            key={section.name}
             align="stretch"
             gap={16}
             fullwidth
@@ -33,7 +33,7 @@ export const Sidebar = () => {
               as="h4"
               size="xs"
             >
-              {section.title}
+              {section.name}
             </Title>
             <Column
               as="ul"
@@ -43,7 +43,7 @@ export const Sidebar = () => {
             >
               {Object.values(section.pages).map((page) => {
                 return (
-                  <li key={page.title}>
+                  <li key={page.name}>
                     <Button
                       as={Link}
                       href={page.path}
@@ -53,7 +53,7 @@ export const Sidebar = () => {
                       fullwidth
                       active={isActivePath(page.path)}
                     >
-                      {page.title}
+                      {page.name}
                     </Button>
                   </li>
                 )

@@ -11,7 +11,7 @@ export const routes = {
     name: "UI kit library",
     path: "/uikit",
     dataDisplay: {
-      name: "Typography",
+      name: "Data display",
       title: {
         name: "Title",
         path: "/uikit/title",
@@ -30,6 +30,7 @@ export const routes = {
       },
     },
     controls: {
+      name: "Controls",
       anchor: {
         name: "Anchor",
         path: "/uikit/anchor",
@@ -49,6 +50,13 @@ export const routes = {
       switch: {
         name: "Switch",
         path: "/uikit/switch",
+      },
+    },
+    utilities: {
+      name: "Utilities",
+      divider: {
+        name: "Divider",
+        path: "/uikit/divider",
       },
     },
     meta: {
