@@ -356,8 +356,8 @@
   --brand-surface-on: #1A0A2E;
   --brand-surface-soft: rgb(253.5, 255, 236.7);
   --brand-surface-soft-on: rgb(175.8, 181.5, 64.2);
-  --brand-fill: rgb(195.1278688525, 212.55, 0);
-  --brand-fill-action: rgb(135.0885245902, 147.15, 0);
+  --brand-fill: rgb(210.137704918, 228.9, 0);
+  --brand-fill-action: rgb(150.0983606557, 163.5, 0);
   --brand-fill-on: #1A0A2E;
   --brand-fill-soft: rgba(240, 255, 72, 0.08);
   --brand-fill-soft-action: rgba(240, 255, 72, 0.14);
@@ -512,8 +512,8 @@
   --rating-surface-on-action: rgba(255, 255, 255, 0.6);
   --rating-surface-soft: rgb(255, 247.9, 229.5);
   --rating-surface-soft-on: rgb(216.75, 156.4, 0);
-  --rating-fill: rgb(204, 147.2, 0);
-  --rating-fill-action: rgb(153, 110.4, 0);
+  --rating-fill: rgb(216.75, 156.4, 0);
+  --rating-fill-action: rgb(165.75, 119.6, 0);
   --rating-fill-on: #1A0A2E;
   --rating-fill-soft: rgba(255, 184, 0, 0.08);
   --rating-fill-soft-action: rgba(255, 184, 0, 0.16);

@@ -65,7 +65,6 @@ export const BORDER_RADIUS = [0, 4, 8, 12, 16, 24, 32, 48, 64, 96, 128, 999] as 
 export const TONE = [
   "base",
   "soft",
-  // "alpha",
 ] as const;
 
 export const CONTROL_SIZE = [

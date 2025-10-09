@@ -16,6 +16,8 @@ export const PlaygroundComponent = (
     name,
     title,
     component,
+    componentLight,
+    componentDark,
     props,
     setProps,
     settings,
@@ -59,7 +61,7 @@ export const PlaygroundComponent = (
             justify="center"
             grow={1}
           >
-            {component}
+            {componentLight ? componentLight : component}
           </Box>
           <Box
             color="primary"
@@ -71,7 +73,7 @@ export const PlaygroundComponent = (
             justify="center"
             grow={1}
           >
-            {component}
+            {componentDark ? componentDark : component}
           </Box>
         </Column>
       </Column>

@@ -29,13 +29,17 @@ export const uikitNavigation = {
         title: routes.uikit.controls.button.name,
         path: routes.uikit.controls.button.path,
       },
-      switch: {
-        title: routes.uikit.controls.switch.name,
-        path: routes.uikit.controls.switch.path,
+      segments: {
+        title: routes.uikit.controls.segments.name,
+        path: routes.uikit.controls.segments.path,
       },
       select: {
         title: routes.uikit.controls.select.name,
         path: routes.uikit.controls.select.path,
+      },
+      switch: {
+        title: routes.uikit.controls.switch.name,
+        path: routes.uikit.controls.switch.path,
       },
     },
   },

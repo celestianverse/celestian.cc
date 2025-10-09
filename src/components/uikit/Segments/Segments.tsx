@@ -1,8 +1,8 @@
 import classNames from "classnames";
-import type { Props } from "./Segmented.types";
-import styles from "./Segmented.module.scss";
+import type { SegmentsProps } from "./Segments.types";
+import styles from "./Segments.module.scss";
 
-export const Segmented = (
+export const Segments = (
   {
     color = "primary",
     radius = 12,
@@ -10,11 +10,11 @@ export const Segmented = (
     className,
     children,
     ...rest
-  }: Props) => {
+  }: SegmentsProps) => {
   return (
     <div
       className={classNames(
-        styles.segmented,
+        styles.segments,
         styles[`color-${color}`],
         {
           ["fullwidth"]: fullwidth,
