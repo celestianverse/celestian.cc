@@ -4,12 +4,13 @@ import { ICONS } from "./Icon.constants";
 import type { IconProps } from "./Icon.types";
 import styles from "./Icon.module.scss";
 
-export const Icon = ({
-  name,
-  className,
-  color,
-  size = "m",
-}: IconProps) => {
+export const Icon = (
+  {
+    name = "none",
+    color = "inherit",
+    size = "m",
+    className,
+  }: IconProps) => {
   const Component = ICONS[name];
 
   return (
@@ -22,7 +23,7 @@ export const Icon = ({
         className,
       )}
     >
-      <Component />
+      <Component/>
     </span>
   );
 };

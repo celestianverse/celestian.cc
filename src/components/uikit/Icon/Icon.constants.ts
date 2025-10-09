@@ -125,3 +125,12 @@ export const ICONS = {
   youtube: Youtube,
   odnoklassniki: Odnoklassniki,
 } as const;
+
+export const ICON_SIZE = [
+  "xxl",
+  "xl",
+  "l",
+  "m",
+  "s",
+  "xs",
+] as const;

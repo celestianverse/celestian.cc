@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import type { Color } from "@/types/Color";
+import type { ColorWithInherit } from "@/types/Color";
 import type { LineHeight, FontWeight, WhiteSpace } from "@/types/Styles";
 import { TEXT_ELEMENT, TEXT_SIZE } from "@/components/uikit/Text/Text.constants";
 
@@ -12,7 +12,7 @@ export type TextAs = {
 };
 
 export type TextProps = {
-  color?: Color | "inherit";
+  color?: ColorWithInherit;
   size?: TextSize;
   weight?: FontWeight;
   lineHeight?: LineHeight;

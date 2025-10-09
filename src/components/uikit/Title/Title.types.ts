@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import type { Color } from "@/types/Color";
+import type { ColorWithInherit } from "@/types/Color";
 import type { LineHeight, FontWeight, WhiteSpace } from "@/types/Styles";
 import { TITLE_ELEMENT, TITLE_SIZE } from "@/components/uikit/Title/Title.constants";
 
@@ -12,7 +12,7 @@ export type TitleAs = {
 };
 
 export type TitleProps = {
-  color?: Color | "inherit";
+  color?: ColorWithInherit;
   size?: TitleSize;
   weight?: FontWeight;
   lineHeight?: LineHeight;

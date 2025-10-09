@@ -1,13 +1,13 @@
-import type { ICONS } from "./Icon.constants";
-import type { Color } from "@/types/Color";
+import { ICON_SIZE, ICONS } from "./Icon.constants";
+import type { ColorWithInherit } from "@/types/Color";
 
 export type IconKeys = keyof typeof ICONS;
 
-type IconSize = "xxl" | "xl" | "l" | "m" | "s" | "xs";
+export type IconSize = typeof ICON_SIZE[number];
 
 export type IconProps = {
   name: IconKeys;
-  color?: Color;
+  color?: ColorWithInherit;
   /**
    * <pre>
    *     xxl - 64px
