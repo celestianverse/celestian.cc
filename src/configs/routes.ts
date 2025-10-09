@@ -58,6 +58,10 @@ export const routes = {
         name: "Divider",
         path: "/uikit/divider",
       },
+      hidden: {
+        name: "Hidden",
+        path: "/uikit/hidden",
+      },
     },
     meta: {
       name: "Meta",

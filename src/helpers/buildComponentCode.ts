@@ -25,33 +25,33 @@ const propPriority = (key: string): number => {
 
   if (idx !== -1) return idx;
 
-  if (key.startsWith('aria-')) return PROPS_ORDER.indexOf('aria-*' as any);
+  if (key.startsWith("aria-")) return PROPS_ORDER.indexOf("aria-*" as any);
 
-  if (key.startsWith('data-')) return PROPS_ORDER.indexOf('data-*' as any);
+  if (key.startsWith("data-")) return PROPS_ORDER.indexOf("data-*" as any);
 
   return Number.MAX_SAFE_INTEGER;
 };
 
-const escapeAttr = (s: string): string =>
-  s.replace(/\\/g, '\\\\').replace(/"/g, '\\"');
+const escapeAttr = (string: string): string =>
+  string.replace(/\\/g, "\\\\").replace(/"/g, '\\"');
 
-const indent2 = (s: string): string =>
-  s.split('\n').map(l => (l ? `  ${l}` : l)).join('\n');
+const indent2 = (string: string): string =>
+  string.split("\n").map(line => (line ? `  ${line}` : line)).join("\n");
 
 const serialize = (key: string, value: any): string | null => {
   if (value == null) return null;
 
   switch (typeof value) {
-    case 'string':
+    case "string":
       if (value.length === 0) return null;
       return `${key}="${escapeAttr(value)}"`;
-    case 'number':
+    case "number":
       return `${key}={${value}}`;
-    case 'boolean':
+    case "boolean":
       return value ? key : `${key}={false}`;
-    case 'function': {
-      const n = value.name || 'fn';
-      return `${key}={${n}}`;
+    case "function": {
+      const functionName = value.name || "() => {}";
+      return `${key}={${functionName}}`;
     }
     default: {
       try {
@@ -74,21 +74,30 @@ export const buildComponentCode = <P extends Record<string, any>>(options: {
 
   const keys = Object.keys(props) as Array<keyof P>;
 
-  const differs = (k: keyof P) => !Object.is(props[k], defaults[k]);
+  const differs = (key: keyof P) => !Object.is(props[key], defaults[key]);
 
   const kept = keys
-    .filter(k => differs(k) && serialize(String(k), props[k]) !== null)
-    .sort((a, b) => {
-      const pa = propPriority(String(a));
-      const pb = propPriority(String(b));
-      return pa === pb
-        ? String(a).localeCompare(String(b))
-        : pa - pb;
+    .filter(key => differs(key) && serialize(String(key), props[key]) !== null)
+    .sort((keyA, keyB) => {
+      const priorityA = propPriority(String(keyA));
+      const priorityB = propPriority(String(keyB));
+      return priorityA === priorityB
+        ? String(keyA).localeCompare(String(keyB))
+        : priorityA - priorityB;
     });
 
+  if (kept.length === 1) {
+    const single = serialize(String(kept[0]), props[kept[0]])!;
+    if (!children) {
+      return `<${name} ${single} />`;
+    }
+    const body = indent2(children);
+    return `<${name} ${single}>\n${body}\n</${name}>`;
+  }
+
   const attrsBlock = kept
-    .map(k => serialize(String(k), props[k])!)
-    .join('\n');
+    .map(key => serialize(String(key), props[key])!)
+    .join("\n");
 
   if (!children) {
     if (!attrsBlock) return `<${name} />`;
@@ -104,4 +113,3 @@ export const buildComponentCode = <P extends Record<string, any>>(options: {
 
   return `${open}\n${body}\n</${name}>`;
 };
-
