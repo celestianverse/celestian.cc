@@ -5,7 +5,7 @@ export const uikit = {
       title: "Usage",
     }
   },
-  typography: {
+  dataDisplay: {
     title: {
       title: "Title",
       longTitle: "Title component",
@@ -17,6 +17,10 @@ export const uikit = {
     tag: {
       title: "Tag",
       longTitle: "Tag component",
+    },
+    icon: {
+      title: "Icon",
+      longTitle: "Icon component",
     },
   },
   controls: {

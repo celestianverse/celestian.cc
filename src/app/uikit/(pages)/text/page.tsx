@@ -3,7 +3,7 @@ import { TextPlayground } from "@/app/uikit/(pages)/text/_components/TextPlaygro
 import { seo } from "@/configs/seo";
 
 export const metadata: Metadata = {
-  title: seo.uikit.typography.text.title,
+  title: seo.uikit.dataDisplay.text.title,
 };
 
 const TextPage = () => {

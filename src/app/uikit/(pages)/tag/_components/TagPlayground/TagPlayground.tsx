@@ -44,10 +44,10 @@ export const TagPlayground = () => {
   });
 
   return (
-    <Playground.Root title={uikit.typography.tag.longTitle}>
+    <Playground.Root title={uikit.dataDisplay.tag.longTitle}>
       <Playground.Component
         name={NAME}
-        title={uikit.typography.tag.longTitle}
+        title={uikit.dataDisplay.tag.longTitle}
         component={TagComponent}
         props={props}
         setProps={setProps}

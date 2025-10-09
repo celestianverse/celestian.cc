@@ -1,13 +1,13 @@
-import type { ReactElement } from "react";
+import type { Dispatch, ReactNode, SetStateAction } from "react";
 
-export type Props = {
+export type Props<T> = {
   name: string;
   title?: string;
-  component: ReactElement;
-  componentLight?: ReactElement;
-  componentDark?: ReactElement;
-  props: object;
-  setProps: (prev: object) => void;
+  component: ReactNode;
+  componentLight?: ReactNode;
+  componentDark?: ReactNode;
+  props: T;
+  setProps: Dispatch<SetStateAction<T>>;
   settings: object;
-  defaultChosenProps: object;
+  defaultChosenProps: T;
 };

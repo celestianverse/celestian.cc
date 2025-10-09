@@ -44,7 +44,7 @@
   @each $color in $colors {
     &.color-#{$color} {
       * {
-        fill: var(--#{$color});
+        fill: var(--#{$color}-content);
       }
     }
   }

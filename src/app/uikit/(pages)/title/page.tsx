@@ -3,7 +3,7 @@ import { TitlePlayground } from "./_components/TitlePlayground/TitlePlayground";
 import { seo } from "@/configs/seo";
 
 export const metadata: Metadata = {
-  title: seo.uikit.typography.title.title,
+  title: seo.uikit.dataDisplay.title.title,
 };
 
 const TitlePage = () => {

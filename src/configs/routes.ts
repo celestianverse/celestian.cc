@@ -10,7 +10,7 @@ export const routes = {
   uikit: {
     name: "UI kit library",
     path: "/uikit",
-    typography: {
+    dataDisplay: {
       name: "Typography",
       title: {
         name: "Title",
@@ -23,6 +23,10 @@ export const routes = {
       tag: {
         name: "Tag",
         path: "/uikit/tag",
+      },
+      icon: {
+        name: "Icon",
+        path: "/uikit/icon",
       },
     },
     controls: {

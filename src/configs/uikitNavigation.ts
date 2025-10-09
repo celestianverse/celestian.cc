@@ -1,20 +1,24 @@
 import { routes } from "@/configs/routes";
 
 export const uikitNavigation = {
-  typography: {
-    title: "Typography",
+  dataDisplay: {
+    title: "Data display",
     pages: {
       title: {
-        title: routes.uikit.typography.title.name,
-        path: routes.uikit.typography.title.path,
+        title: routes.uikit.dataDisplay.title.name,
+        path: routes.uikit.dataDisplay.title.path,
       },
       text: {
-        title: routes.uikit.typography.text.name,
-        path: routes.uikit.typography.text.path,
+        title: routes.uikit.dataDisplay.text.name,
+        path: routes.uikit.dataDisplay.text.path,
       },
       tag: {
-        title: routes.uikit.typography.tag.name,
-        path: routes.uikit.typography.tag.path,
+        title: routes.uikit.dataDisplay.tag.name,
+        path: routes.uikit.dataDisplay.tag.path,
+      },
+      icon: {
+        title: routes.uikit.dataDisplay.icon.name,
+        path: routes.uikit.dataDisplay.icon.path,
       },
     },
   },

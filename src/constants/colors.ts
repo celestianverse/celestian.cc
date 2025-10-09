@@ -13,3 +13,4 @@ export const COLORS = [
   "rating",
 ] as const;
 
+export const COLORS_WITH_INHERIT = ["inherit", ...COLORS] as const;

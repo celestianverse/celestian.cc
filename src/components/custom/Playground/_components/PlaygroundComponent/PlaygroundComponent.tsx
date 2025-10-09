@@ -11,7 +11,7 @@ import { Button } from "@/components/uikit/Button/Button";
 import { INPUT_WIDTH, LABEL_WIDTH } from "./PlaygroundComponent.constants";
 import { Hidden } from "@/components/uikit/Hidden/Hidden";
 
-export const PlaygroundComponent = (
+export const PlaygroundComponent = <T,>(
   {
     name,
     title,
@@ -22,7 +22,7 @@ export const PlaygroundComponent = (
     setProps,
     settings,
     defaultChosenProps,
-  }: Props) => {
+  }: Props<T>) => {
   return (
     <Box
       variant="outline"

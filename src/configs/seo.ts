@@ -9,7 +9,7 @@ export const seo = {
   },
   uikit: {
     title: `UI kit library — ${app.name}`,
-    typography: {
+    dataDisplay: {
       title: {
         title: `Title component for UI kit library — ${app.name}`,
       },
@@ -18,6 +18,9 @@ export const seo = {
       },
       tag: {
         title: `Tag component for UI kit library — ${app.name}`,
+      },
+      icon: {
+        title: `Icon component for UI kit library — ${app.name}`,
       },
     },
     controls: {
