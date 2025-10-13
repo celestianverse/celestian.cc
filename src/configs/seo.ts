@@ -44,6 +44,9 @@ export const seo = {
       box: {
         title: `Box component for UI kit library — ${app.name}`,
       },
+      row: {
+        title: `Row component for UI kit library — ${app.name}`,
+      },
     },
     utilities: {
       divider: {

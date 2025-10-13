@@ -3,7 +3,8 @@ import { useState } from "react";
 import {
   ALIGN_ITEMS,
   BORDER_STYLE,
-  FLEX_DIRECTION, FLEX_WRAP,
+  FLEX_DIRECTION,
+  FLEX_WRAP,
   GAP,
   JUSTIFY_CONTENT,
   OVERFLOW,
@@ -27,6 +28,7 @@ export const BoxPlayground = () => {
     <Box {...props}>
       <p>Content 1...</p>
       <p>Content 2...</p>
+      <p>Content 3...</p>
     </Box>
   );
 
