@@ -20,6 +20,7 @@ export const Header = () => {
       <Logo />
       <Row
         align="center"
+        justify="flex-end"
         gap={24}
       >
         <Hidden on="tablet-max">

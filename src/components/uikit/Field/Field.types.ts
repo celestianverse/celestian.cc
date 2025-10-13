@@ -1,8 +1,8 @@
 import type { ReactElement } from "react";
-import type { Element } from "@/components/uikit/Flex/Flex.types";
+import type { FlexElement } from "@/components/uikit/Flex/Flex.types";
 
 export type Props = {
-  as?: Extract<Element, "div" | "label">;
+  as?: Extract<FlexElement, "div" | "label">;
   label?: string | number;
   labelPosition?: "top" | "left" | "right";
   labelWidth?: number;

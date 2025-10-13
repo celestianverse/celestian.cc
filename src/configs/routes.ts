@@ -52,6 +52,13 @@ export const routes = {
         path: "/uikit/switch",
       },
     },
+    layout: {
+      name: "Layout",
+      box: {
+        name: "Box",
+        path: "/uikit/box",
+      },
+    },
     utilities: {
       name: "Utilities",
       divider: {

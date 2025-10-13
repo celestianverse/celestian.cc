@@ -58,19 +58,17 @@ export const SelectPlayground = () => {
   });
 
   return (
-    <>
-      <Playground.Root title={uikit.controls.select.longTitle}>
-        <Playground.Component
-          name={NAME}
-          title={uikit.controls.select.longTitle}
-          component={SelectComponent}
-          props={props}
-          setProps={setProps}
-          settings={settings}
-          defaultChosenProps={DEFAULT_PROPS}
-        />
-        <Playground.Code code={code} />
-      </Playground.Root>
-    </>
+    <Playground.Root title={uikit.controls.select.longTitle}>
+      <Playground.Component
+        name={NAME}
+        title={uikit.controls.select.longTitle}
+        component={SelectComponent}
+        props={props}
+        setProps={setProps}
+        settings={settings}
+        defaultChosenProps={DEFAULT_PROPS}
+      />
+      <Playground.Code code={code} />
+    </Playground.Root>
   );
 };

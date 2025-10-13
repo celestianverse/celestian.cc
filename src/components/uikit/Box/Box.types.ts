@@ -1,13 +1,16 @@
 import type React from "react";
 import { Flex } from "@/components/uikit/Flex/Flex";
-import type { Color } from "@/types/Color";
-import type { BorderRadius, BorderStyle, BorderWidth, Padding, Tone } from "@/types/Styles";
+import type { ColorWithTransparent } from "@/types/Color";
+import type { BorderStyle, BorderWidth, Padding, Tone } from "@/types/Styles";
+import { BOX_BORDER_RADIUS, BOX_VARIANT } from "@/components/uikit/Box/Box.constants";
 
-type Variant = "flat" | "gradient" | "outline";
+export type BoxVariant = typeof BOX_VARIANT[number];
 
-type BoxProps = {
-  variant?: Variant;
-  color?: Color | "transparent";
+export type BoxBorderRadius = typeof BOX_BORDER_RADIUS[number];
+
+type Props = {
+  variant?: BoxVariant;
+  color?: ColorWithTransparent;
   tone?: Tone;
   /**
    * <pre>
@@ -81,13 +84,13 @@ type BoxProps = {
    * </pre>
    */
   mobilePaddingX?: Padding;
-  radius?: Extract<BorderRadius, 0 | 8 | 16 | 24 | 32 | 48 | 64 | 999>;
-  laptopRadius?: Extract<BorderRadius, 0 | 8 | 16 | 24 | 32 | 48 | 64 | 999>;
-  tabletRadius?: Extract<BorderRadius, 0 | 8 | 16 | 24 | 32 | 48 | 64 | 999>;
-  mobileRadius?: Extract<BorderRadius, 0 | 8 | 16 | 24 | 32 | 48 | 64 | 999>;
+  radius?: BoxBorderRadius;
+  laptopRadius?: BoxBorderRadius;
+  tabletRadius?: BoxBorderRadius;
+  mobileRadius?: BoxBorderRadius;
   borderStyle?: BorderStyle;
   borderWidth?: BorderWidth;
   hoverable?: boolean;
 };
 
-export type Props = BoxProps & React.ComponentProps<typeof Flex>;
+export type BoxProps = Props & React.ComponentProps<typeof Flex>;

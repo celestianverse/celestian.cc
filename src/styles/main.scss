@@ -24,8 +24,8 @@ body {
 }
 
 ::selection {
-  background: var(--accent-surface);
-  color: var(--accent-surface-on);
+  background: var(--accent-fill);
+  color: var(--accent-fill-on);
 }
 
 .disabled {
@@ -188,7 +188,9 @@ $border-radius-axes: (
 
 .scroll {
   overflow: auto;
+}
 
+.scroll, .overflow-scroll {
   scrollbar-width: thin;
   scrollbar-color: var(--secondary-fill) transparent;
 
@@ -209,13 +211,15 @@ $border-radius-axes: (
 }
 
 @media (forced-colors: active) {
-  .scroll {
+  .scroll, .overflow-scroll {
     scrollbar-color: ButtonText Canvas;
   }
 
-  .scroll::-webkit-scrollbar-thumb {
-    background-color: CanvasText;
-    border-color: Canvas;
+  .scroll, .overflow-scroll {
+    &::-webkit-scrollbar-thumb {
+      background-color: CanvasText;
+      border-color: Canvas;
+    }
   }
 }
 

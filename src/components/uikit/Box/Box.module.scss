@@ -43,6 +43,8 @@
   }
 
   &.hoverable {
+    cursor: pointer;
+
     &:hover {
       top: var(--spacing-minus-8);
       box-shadow: var(--shadow-m);

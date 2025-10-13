@@ -1,7 +1,7 @@
 import React from "react";
 import classNames from "classnames";
 import { Flex } from "@/components/uikit/Flex/Flex";
-import type { Props } from "./Box.types";
+import type { BoxProps } from "./Box.types";
 import styles from "./Box.module.scss";
 
 export const Box = (
@@ -30,7 +30,7 @@ export const Box = (
     hoverable,
     className,
     ...rest
-  }: Props) => {
+  }: BoxProps) => {
   return (
     <Flex
       direction={rest.direction ? rest.direction : "column"}

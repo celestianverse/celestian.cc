@@ -47,6 +47,15 @@ export const uikitNavigation = {
       },
     },
   },
+  layout: {
+    name: routes.uikit.layout.name,
+    pages: {
+      box: {
+        name: routes.uikit.layout.box.name,
+        path: routes.uikit.layout.box.path,
+      },
+    },
+  },
   utilities: {
     name: routes.uikit.utilities.name,
     pages: {

@@ -33,19 +33,17 @@ export const SwitchPlayground = () => {
   });
 
   return (
-    <>
-      <Playground.Root title={uikit.controls.switch.longTitle}>
-        <Playground.Component
-          name={NAME}
-          title={uikit.controls.switch.longTitle}
-          component={SwitchComponent}
-          props={props}
-          setProps={setProps}
-          settings={settings}
-          defaultChosenProps={DEFAULT_CHOSEN_PROPS}
-        />
-        <Playground.Code code={code} />
-      </Playground.Root>
-    </>
+    <Playground.Root title={uikit.controls.switch.longTitle}>
+      <Playground.Component
+        name={NAME}
+        title={uikit.controls.switch.longTitle}
+        component={SwitchComponent}
+        props={props}
+        setProps={setProps}
+        settings={settings}
+        defaultChosenProps={DEFAULT_CHOSEN_PROPS}
+      />
+      <Playground.Code code={code} />
+    </Playground.Root>
   );
 };

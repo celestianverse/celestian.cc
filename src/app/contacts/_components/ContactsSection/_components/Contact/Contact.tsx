@@ -6,7 +6,6 @@ import { Title } from "@/components/uikit/Title/Title";
 import { Button } from "@/components/uikit/Button/Button";
 import { Text } from "@/components/uikit/Text/Text";
 import { Row } from "@/components/uikit/Row/Row";
-import { Empty } from "@/components/uikit/Empty/Empty";
 import type { Props } from "./Contact.types";
 import styles from "./Contact.module.scss";
 
@@ -35,7 +34,7 @@ export const Contact = ({ data, className, ...rest }: Props) => {
       </Column>
       <Row
         align="flex-end"
-        justify="space-between"
+        justify={data.link ? "space-between" : "flex-end"}
       >
         {data.link && (
           <Button
@@ -50,7 +49,6 @@ export const Contact = ({ data, className, ...rest }: Props) => {
             {data.link.label}
           </Button>
         )}
-        <Empty />
         {data.image && (
           <Image
             width={72}

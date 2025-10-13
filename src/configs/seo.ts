@@ -40,6 +40,11 @@ export const seo = {
         title: `Switch component for UI kit library — ${app.name}`,
       },
     },
+    layout: {
+      box: {
+        title: `Box component for UI kit library — ${app.name}`,
+      },
+    },
     utilities: {
       divider: {
         title: `Divider component for UI kit library — ${app.name}`,
