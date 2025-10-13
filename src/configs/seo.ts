@@ -47,6 +47,9 @@ export const seo = {
       row: {
         title: `Row component for UI kit library — ${app.name}`,
       },
+      column: {
+        title: `Column component for UI kit library — ${app.name}`,
+      },
     },
     utilities: {
       divider: {

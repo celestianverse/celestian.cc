@@ -58,6 +58,10 @@ export const uikitNavigation = {
         name: routes.uikit.layout.row.name,
         path: routes.uikit.layout.row.path,
       },
+      column: {
+        name: routes.uikit.layout.column.name,
+        path: routes.uikit.layout.column.path,
+      },
     },
   },
   utilities: {

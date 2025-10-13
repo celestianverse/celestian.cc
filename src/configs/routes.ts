@@ -62,6 +62,10 @@ export const routes = {
         name: "Row",
         path: "/uikit/row",
       },
+      column: {
+        name: "Column",
+        path: "/uikit/column",
+      },
     },
     utilities: {
       name: "Utilities",
