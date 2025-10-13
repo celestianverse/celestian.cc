@@ -102,6 +102,10 @@
   }
 }
 
+$dark-gradient: linear-gradient(90deg, color.scale($primary, $lightness: -26%, $saturation: 20%) 0, color.scale($primary, $lightness: 3%, $saturation: 20%) 100%);
+$dark-gradient-soft: linear-gradient(90deg, color.scale($primary, $lightness: -6%, $saturation: 15%) 0, color.scale($primary, $lightness: 8%, $saturation: 15%) 100%);
+$dark-surface-soft: color.scale($primary, $lightness: 6%, $saturation: 15%);
+
 $themes: (
   primary-content: (
     light: $primary,
@@ -121,7 +125,7 @@ $themes: (
   ),
   primary-surface-soft: (
     light: color.mix($primary, $contrast, 5%),
-    dark: color.scale($primary, $lightness: 13%),
+    dark: $dark-surface-soft,
   ),
   primary-surface-soft-on: (
     light: $primary,
@@ -165,15 +169,15 @@ $themes: (
   ),
   primary-gradient: (
     light: linear-gradient(90deg, color.scale($primary, $lightness: -12%, $saturation: 20%) 0, color.scale($primary, $lightness: 4%, $saturation: 20%) 100%),
-    dark: linear-gradient(90deg, color.scale($primary, $lightness: -13%, $saturation: 20%) 0, color.scale($primary, $lightness: 3%, $saturation: 20%) 100%),
+    dark: $dark-gradient,
   ),
   primary-gradient-on: (
     light: $contrast,
     dark: $contrast,
   ),
   primary-gradient-soft: (
-    light: linear-gradient(90deg, color.scale($neutral, $lightness: -4%) 0, color.scale($neutral, $lightness: 2%) 100%),
-    dark: linear-gradient(90deg, color.scale($primary, $lightness: -15%, $saturation: 20%) 0, color.scale($primary, $lightness: 3%, $saturation: 20%) 100%),
+    light: linear-gradient(90deg, color.scale($neutral, $lightness: -5%) 0, color.scale($neutral, $lightness: 6%) 100%),
+    dark: $dark-gradient-soft,
   ),
   primary-gradient-soft-on: (
     light: $primary,
@@ -197,10 +201,10 @@ $themes: (
   ),
   secondary-surface-soft: (
     light: color.mix($secondary, $contrast, 5%),
-    dark: color.scale($secondary, $lightness: 13%),
+    dark: $dark-surface-soft,
   ),
   secondary-surface-soft-on: (
-    light: $secondary,
+    light: $primary,
     dark: $contrast,
   ),
   secondary-fill: (
@@ -240,19 +244,19 @@ $themes: (
     dark: rgba($contrast, 0.15),
   ),
   secondary-gradient: (
-    light: linear-gradient(90deg, color.scale($secondary, $lightness: -12%, $saturation: 20%) 0, color.scale($secondary, $lightness: 4%, $saturation: 20%) 100%),
-    dark: linear-gradient(90deg, color.scale($secondary, $lightness: -13%, $saturation: 20%) 0, color.scale($secondary, $lightness: 3%, $saturation: 20%) 100%),
+    light: linear-gradient(90deg, color.scale($secondary, $lightness: -16%, $saturation: 3%) 0, color.scale($secondary, $lightness: 5%, $saturation: 3%) 100%),
+    dark: $dark-gradient,
   ),
   secondary-gradient-on: (
     light: $contrast,
     dark: $contrast,
   ),
   secondary-gradient-soft: (
-    light: linear-gradient(90deg, color.scale($neutral, $lightness: -4%) 0, color.scale($neutral, $lightness: 2%) 100%),
-    dark: linear-gradient(90deg, color.scale($secondary, $lightness: -13%, $saturation: 20%) 0, color.scale($secondary, $lightness: 3%, $saturation: 20%) 100%),
+    light: linear-gradient(90deg, color.scale($neutral, $lightness: -1%) 0, color.scale($neutral, $lightness: 30%) 100%),
+    dark: $dark-gradient-soft,
   ),
   secondary-gradient-soft-on: (
-    light: $secondary,
+    light: $primary,
     dark: $contrast,
   ),
   brand-content: (
@@ -265,19 +269,19 @@ $themes: (
   ),
   brand-surface: (
     light: $brand,
-    dark: $brand,
+    dark: $primary,
   ),
   brand-surface-on: (
     light: $primary,
-    dark: $primary,
+    dark: $contrast,
   ),
   brand-surface-soft: (
     light: color.mix($brand, $contrast, 10%),
-    dark: color.mix($brand, $contrast, 10%),
+    dark: $dark-surface-soft,
   ),
   brand-surface-soft-on: (
-    light: color.mix($brand, $primary, 70%),
-    dark: color.mix($brand, $primary, 70%),
+    light: $primary,
+    dark: $contrast,
   ),
   brand-fill: (
     light: $brand,
@@ -316,10 +320,18 @@ $themes: (
     dark: rgba($brand, 0.15),
   ),
   brand-gradient: (
-    light: linear-gradient(90deg, color.scale($brand, $lightness: -25%) 0, color.scale($brand, $lightness: 5%) 100%),
-    dark: linear-gradient(90deg, color.scale($primary, $lightness: -13%, $saturation: 20%) 0, color.scale($primary, $lightness: 3%, $saturation: 20%) 100%),
+    light: linear-gradient(90deg, color.scale($brand, $lightness: -28%) 0, color.scale($brand, $lightness: 8%) 100%),
+    dark: $dark-gradient,
   ),
   brand-gradient-on: (
+    light: $primary,
+    dark: $contrast,
+  ),
+  brand-gradient-soft: (
+    light: linear-gradient(90deg, color.mix($brand, $contrast, 22%) 0, color.mix($brand, $contrast, 10%) 100%),
+    dark: linear-gradient(90deg, color.scale($primary, $lightness: -5%, $saturation: 15%) 0, $dark-surface-soft 100%),
+  ),
+  brand-gradient-soft-on: (
     light: $primary,
     dark: $contrast,
   ),
@@ -333,7 +345,7 @@ $themes: (
   ),
   accent-surface: (
     light: $accent,
-    dark: color.scale($accent, $lightness: -15%),
+    dark: $primary,
   ),
   accent-surface-on: (
     light: $contrast,
@@ -341,11 +353,11 @@ $themes: (
   ),
   accent-surface-soft: (
     light: color.mix($accent, $contrast, 10%),
-    dark: color.mix($accent, $contrast, 10%),
+    dark: $dark-surface-soft,
   ),
   accent-surface-soft-on: (
-    light: $accent,
-    dark: $accent,
+    light: $primary,
+    dark: $contrast,
   ),
   accent-fill: (
     light: $accent,
@@ -384,11 +396,19 @@ $themes: (
     dark: rgba($accent, 0.25),
   ),
   accent-gradient: (
-    light: linear-gradient(90deg, color.scale($accent, $lightness: -10%) 0, color.scale($accent, $lightness: 10%) 100%),
-    dark: linear-gradient(90deg, color.scale($primary, $lightness: -37%, $saturation: 20%) 0, color.scale($primary, $lightness: -8%, $saturation: 20%) 100%),
+    light: linear-gradient(90deg, color.scale($accent, $lightness: -11%) 0, color.scale($accent, $lightness: 10%) 100%),
+    dark: $dark-gradient,
   ),
   accent-gradient-on: (
     light: $contrast,
+    dark: $contrast,
+  ),
+  accent-gradient-soft: (
+    light: linear-gradient(90deg, color.mix($accent, $contrast, 19%) 0, color.mix($accent, $contrast, 10%) 100%),
+    dark: linear-gradient(90deg, color.scale($primary, $lightness: -5%, $saturation: 15%) 0, $dark-surface-soft 100%),
+  ),
+  accent-gradient-soft-on: (
+    light: $primary,
     dark: $contrast,
   ),
   utility-content: (
@@ -401,7 +421,7 @@ $themes: (
   ),
   utility-surface: (
     light: $utility,
-    dark: color.scale($utility, $lightness: -15%),
+    dark: $primary,
   ),
   utility-surface-on: (
     light: $contrast,
@@ -409,11 +429,11 @@ $themes: (
   ),
   utility-surface-soft: (
     light: color.mix($utility, $contrast, 10%),
-    dark: color.mix($utility, $contrast, 10%),
+    dark: $dark-surface-soft,
   ),
   utility-surface-soft-on: (
-    light: color.mix($utility, $primary, 90%),
-    dark: color.mix($utility, $primary, 90%),
+    light: $primary,
+    dark: $contrast,
   ),
   utility-fill: (
     light: $utility,
@@ -453,10 +473,18 @@ $themes: (
   ),
   utility-gradient: (
     light: linear-gradient(90deg, color.scale($utility, $lightness: -10%) 0, color.scale($utility, $lightness: 10%) 100%),
-    dark: linear-gradient(90deg, color.scale($primary, $lightness: -35%, $saturation: 20%) 0, color.scale($primary, $lightness: -5%, $saturation: 20%) 100%),
+    dark: $dark-gradient,
   ),
   utility-gradient-on: (
     light: $contrast,
+    dark: $contrast,
+  ),
+  utility-gradient-soft: (
+    light: linear-gradient(90deg, color.mix($utility, $contrast, 19%) 0, color.mix($utility, $contrast, 10%) 100%),
+    dark: linear-gradient(90deg, color.scale($primary, $lightness: -5%, $saturation: 15%) 0, $dark-surface-soft 100%),
+  ),
+  utility-gradient-soft-on: (
+    light: $primary,
     dark: $contrast,
   ),
   contrast-content: (
@@ -469,7 +497,7 @@ $themes: (
   ),
   contrast-surface: (
     light: $contrast,
-    dark: color.scale($primary, $lightness: 8%),
+    dark: color.scale($primary, $lightness: 11%, $saturation: 10%),
   ),
   contrast-surface-on: (
     light: $primary,
@@ -477,7 +505,7 @@ $themes: (
   ),
   contrast-surface-soft: (
     light: rgba($contrast, 0.15),
-    dark: rgba($contrast, 0.15),
+    dark: color.scale($primary, $lightness: 11%, $saturation: 10%),
   ),
   contrast-surface-soft-on: (
     light: $contrast,
@@ -521,10 +549,18 @@ $themes: (
   ),
   contrast-gradient: (
     light: $contrast,
-    dark: linear-gradient(90deg, color.scale($primary, $lightness: 3%, $saturation: 10%) 0, color.scale($primary, $lightness: 9%, $saturation: 10%) 100%),
+    dark: linear-gradient(90deg, color.scale($primary, $lightness: 2%, $saturation: 10%) 0, color.scale($primary, $lightness: 14%, $saturation: 10%) 100%),
   ),
   contrast-gradient-on: (
     light: $primary,
+    dark: $contrast,
+  ),
+  contrast-gradient-soft: (
+    light: linear-gradient(90deg, rgba($contrast, 0.3) 0, rgba($contrast, 0.15) 100%),
+    dark: linear-gradient(90deg, color.scale($primary, $lightness: 2%, $saturation: 10%) 0, color.scale($primary, $lightness: 14%, $saturation: 10%) 100%),
+  ),
+  contrast-gradient-soft-on: (
+    light: $contrast,
     dark: $contrast,
   ),
   phantom-content: (
@@ -537,7 +573,7 @@ $themes: (
   ),
   phantom-surface: (
     light: $phantom,
-    dark: rgba($phantom, 0.1),
+    dark: rgba($phantom, 0.05),
   ),
   phantom-surface-on: (
     light: $primary,
@@ -545,10 +581,10 @@ $themes: (
   ),
   phantom-surface-soft: (
     light: rgba($phantom, 0.1),
-    dark: rgba($phantom, 0.1),
+    dark: rgba($phantom, 0.05),
   ),
   phantom-surface-soft-on: (
-    light: $phantom,
+    light: $contrast,
     dark: $phantom,
   ),
   phantom-fill: (
@@ -587,9 +623,21 @@ $themes: (
     light: rgba($phantom, 0.15),
     dark: rgba($phantom, 0.2),
   ),
-  phantom-ghost: (
-    light: rgba($phantom, 0.1),
-    dark: rgba($phantom, 0.1),
+  phantom-gradient: (
+    light: linear-gradient(90deg, $phantom 0, rgba($phantom, 0.4) 100%),
+    dark: linear-gradient(90deg, color.scale($primary, $lightness: 5%, $saturation: 10%) 0, color.scale($primary, $lightness: 11%, $saturation: 10%) 100%),
+  ),
+  phantom-gradient-on: (
+    light: $primary,
+    dark: $contrast,
+  ),
+  phantom-gradient-soft: (
+    light: linear-gradient(90deg, rgba($contrast, 0.2) 0, rgba($contrast, 0.08) 100%),
+    dark: linear-gradient(90deg, color.scale($primary, $lightness: 5%, $saturation: 10%) 0, color.scale($primary, $lightness: 11%, $saturation: 10%) 100%),
+  ),
+  phantom-gradient-soft-on: (
+    light: $contrast,
+    dark: $contrast,
   ),
   info-content: (
     light: $info,
@@ -601,19 +649,19 @@ $themes: (
   ),
   info-surface: (
     light: $info,
-    dark: color.scale($info, $lightness: -10%),
+    dark: $primary,
   ),
   info-surface-on: (
     light: $contrast,
     dark: $contrast,
   ),
   info-surface-soft: (
-    light: color.mix($info, #fff, 10%),
-    dark: color.mix($info, #fff, 10%),
+    light: color.mix($info, $contrast, 10%),
+    dark: $dark-surface-soft,
   ),
   info-surface-soft-on: (
-    light: $info,
-    dark: $info,
+    light: $primary,
+    dark: $contrast,
   ),
   info-fill: (
     light: $info,
@@ -652,11 +700,19 @@ $themes: (
     dark: rgba($info, 0.2),
   ),
   info-gradient: (
-    light: linear-gradient(90deg, color.scale($info, $lightness: -15%) 0, color.scale($info, $lightness: 5%) 100%),
-    dark: linear-gradient(90deg, color.scale($primary, $lightness: -13%, $saturation: 20%) 0, color.scale($primary, $lightness: 3%, $saturation: 20%) 100%),
+    light: linear-gradient(90deg, color.scale($info, $lightness: -17%) 0, color.scale($info, $lightness: 6%) 100%),
+    dark: $dark-gradient,
   ),
   info-gradient-on: (
     light: $contrast,
+    dark: $contrast,
+  ),
+  info-gradient-soft: (
+    light: linear-gradient(90deg, color.mix($info, $contrast, 19%) 0, color.mix($info, $contrast, 10%) 100%),
+    dark: linear-gradient(90deg, color.scale($primary, $lightness: -5%, $saturation: 15%) 0, $dark-surface-soft 100%),
+  ),
+  info-gradient-soft-on: (
+    light: $primary,
     dark: $contrast,
   ),
   success-content: (
@@ -669,7 +725,7 @@ $themes: (
   ),
   success-surface: (
     light: $success,
-    dark: color.scale($success, $lightness: -15%),
+    dark: $primary,
   ),
   success-surface-on: (
     light: $contrast,
@@ -680,12 +736,12 @@ $themes: (
     dark: $phantom,
   ),
   success-surface-soft: (
-    light: color.mix($success, #fff, 10%),
-    dark: color.mix($success, #fff, 10%),
+    light: color.mix($success, $contrast, 10%),
+    dark: $dark-surface-soft,
   ),
   success-surface-soft-on: (
-    light: $success,
-    dark: $success,
+    light: $primary,
+    dark: $contrast,
   ),
   success-fill: (
     light: $success,
@@ -725,10 +781,18 @@ $themes: (
   ),
   success-gradient: (
     light: linear-gradient(90deg, color.scale($success, $lightness: -15%) 0, color.scale($success, $lightness: 5%) 100%),
-    dark: linear-gradient(90deg, color.scale($primary, $lightness: -13%, $saturation: 20%) 0, color.scale($primary, $lightness: 3%, $saturation: 20%) 100%),
+    dark: $dark-gradient,
   ),
   success-gradient-on: (
     light: $contrast,
+    dark: $contrast,
+  ),
+  success-gradient-soft: (
+    light: linear-gradient(90deg, color.mix($success, $contrast, 19%) 0, color.mix($success, $contrast, 10%) 100%),
+    dark: linear-gradient(90deg, color.scale($primary, $lightness: -5%, $saturation: 15%) 0, $dark-surface-soft 100%),
+  ),
+  success-gradient-soft-on: (
+    light: $primary,
     dark: $contrast,
   ),
   warning-content: (
@@ -741,7 +805,7 @@ $themes: (
   ),
   warning-surface: (
     light: $warning,
-    dark: $warning,
+    dark: $primary,
   ),
   warning-surface-on: (
     light: $contrast,
@@ -752,12 +816,12 @@ $themes: (
     dark: $phantom,
   ),
   warning-surface-soft: (
-    light: color.mix($warning, #fff, 10%),
-    dark: color.mix($warning, #fff, 10%),
+    light: color.mix($warning, $contrast, 10%),
+    dark: $dark-surface-soft,
   ),
   warning-surface-soft-on: (
-    light: $warning,
-    dark: $warning,
+    light: $primary,
+    dark: $contrast,
   ),
   warning-fill: (
     light: $warning,
@@ -797,10 +861,18 @@ $themes: (
   ),
   warning-gradient: (
     light: linear-gradient(90deg, color.scale($warning, $lightness: -15%) 0, color.scale($warning, $lightness: 5%) 100%),
-    dark: linear-gradient(90deg, color.scale($primary, $lightness: -13%, $saturation: 20%) 0, color.scale($primary, $lightness: 3%, $saturation: 20%) 100%),
+    dark: $dark-gradient,
   ),
   warning-gradient-on: (
     light: $contrast,
+    dark: $contrast,
+  ),
+  warning-gradient-soft: (
+    light: linear-gradient(90deg, color.mix($warning, $contrast, 19%) 0, color.mix($warning, $contrast, 10%) 100%),
+    dark: linear-gradient(90deg, color.scale($primary, $lightness: -5%, $saturation: 15%) 0, $dark-surface-soft 100%),
+  ),
+  warning-gradient-soft-on: (
+    light: $primary,
     dark: $contrast,
   ),
   danger-content: (
@@ -813,7 +885,7 @@ $themes: (
   ),
   danger-surface: (
     light: $danger,
-    dark: $danger,
+    dark: $primary,
   ),
   danger-surface-on: (
     light: $contrast,
@@ -824,12 +896,12 @@ $themes: (
     dark: $phantom,
   ),
   danger-surface-soft: (
-    light: color.mix($danger, #fff, 10%),
-    dark: color.mix($danger, #fff, 10%),
+    light: color.mix($danger, $contrast, 10%),
+    dark: $dark-surface-soft,
   ),
   danger-surface-soft-on: (
-    light: $danger,
-    dark: $danger,
+    light: $primary,
+    dark: $contrast,
   ),
   danger-fill: (
     light: $danger,
@@ -869,10 +941,18 @@ $themes: (
   ),
   danger-gradient: (
     light: linear-gradient(90deg, color.scale($danger, $lightness: -15%) 0, color.scale($danger, $lightness: 5%) 100%),
-    dark: linear-gradient(90deg, color.scale($primary, $lightness: -13%, $saturation: 20%) 0, color.scale($primary, $lightness: 3%, $saturation: 20%) 100%),
+    dark: $dark-gradient,
   ),
   danger-gradient-on: (
     light: $contrast,
+    dark: $contrast,
+  ),
+  danger-gradient-soft: (
+    light: linear-gradient(90deg, color.mix($danger, $contrast, 19%) 0, color.mix($danger, $contrast, 10%) 100%),
+    dark: linear-gradient(90deg, color.scale($primary, $lightness: -5%, $saturation: 15%) 0, $dark-surface-soft 100%),
+  ),
+  danger-gradient-soft-on: (
+    light: $primary,
     dark: $contrast,
   ),
   rating-content: (
@@ -885,23 +965,23 @@ $themes: (
   ),
   rating-surface: (
     light: $rating,
-    dark: $rating,
+    dark: $primary,
   ),
   rating-surface-on: (
     light: $primary,
-    dark: $primary,
+    dark: $contrast,
   ),
   rating-surface-on-action: (
     light: $phantom,
     dark: $phantom,
   ),
   rating-surface-soft: (
-    light: color.mix($rating, #fff, 10%),
-    dark: color.mix($rating, #fff, 10%),
+    light: color.mix($rating, $contrast, 10%),
+    dark: $dark-surface-soft,
   ),
   rating-surface-soft-on: (
-    light: color.mix($rating, #000, 85%),
-    dark: color.mix($rating, #000, 85%),
+    light: $primary,
+    dark: $contrast,
   ),
   rating-fill: (
     light: $rating,
@@ -941,10 +1021,18 @@ $themes: (
   ),
   rating-gradient: (
     light: linear-gradient(90deg, color.scale($rating, $lightness: -15%) 0, color.scale($rating, $lightness: 5%) 100%),
-    dark: linear-gradient(90deg, color.scale($primary, $lightness: -13%, $saturation: 20%) 0, color.scale($primary, $lightness: 3%, $saturation: 20%) 100%),
+    dark: $dark-gradient,
   ),
   rating-gradient-on: (
     light: $contrast,
+    dark: $contrast,
+  ),
+  rating-gradient-soft: (
+    light: linear-gradient(90deg, color.mix($rating, $contrast, 19%) 0, color.mix($rating, $contrast, 10%) 100%),
+    dark: linear-gradient(90deg, color.scale($primary, $lightness: -5%, $saturation: 15%) 0, $dark-surface-soft 100%),
+  ),
+  rating-gradient-soft-on: (
+    light: $primary,
     dark: $contrast,
   ),
   shadow-m: (

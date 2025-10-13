@@ -45,6 +45,12 @@ export const uikit = {
       longTitle: "Switch component",
     },
   },
+  layout: {
+    box: {
+      title: "Box",
+      longTitle: "Box component",
+    },
+  },
   utilities: {
     divider: {
       title: "Divider",

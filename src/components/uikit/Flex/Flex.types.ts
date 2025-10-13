@@ -1,22 +1,14 @@
 import type { CSSProperties, ReactNode } from "react";
 import type { AlignItems, FlexDirection, Gap, JustifyContent, FlexWrap, Overflow, FlexGrow } from "@/types/Styles";
+import { FLEX_ELEMENT } from "@/components/uikit/Flex/Flex.constants";
 
-export type Element =
-  | "div"
-  | "section"
-  | "article"
-  | "header"
-  | "footer"
-  | "aside"
-  | "nav"
-  | "ul"
-  | "ol"
-  | "button"
-  | "a"
-  | "label"
-;
+export type FlexElement = typeof FLEX_ELEMENT[number];
 
-export type Props = {
+export type FlexAs = {
+  as?: FlexElement;
+};
+
+export type FlexProps = {
   overflow?: Overflow;
   direction?: FlexDirection;
   laptopDirection?: FlexDirection;

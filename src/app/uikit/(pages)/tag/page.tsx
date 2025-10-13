@@ -6,11 +6,10 @@ export const metadata: Metadata = {
   title: seo.uikit.dataDisplay.tag.title,
 };
 
-const ButtonPage = () => {
-
+const TagPage = () => {
   return (
     <TagPlayground />
   );
 };
 
-export default ButtonPage;
+export default TagPage;

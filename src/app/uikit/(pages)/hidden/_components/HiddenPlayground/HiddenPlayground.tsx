@@ -24,7 +24,7 @@ export const HiddenPlayground = () => {
   const code = buildComponentCode<HiddenProps>({
     name: NAME,
     props,
-    children: "Content",
+    children: "Content...",
   });
 
   return (

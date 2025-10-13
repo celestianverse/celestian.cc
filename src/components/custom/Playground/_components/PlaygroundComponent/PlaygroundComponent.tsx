@@ -54,7 +54,6 @@ export const PlaygroundComponent = <T,>(
         >
           <Box
             color="transparent"
-            direction="row"
             padding={32}
             fullwidth
             align="center"
@@ -66,7 +65,6 @@ export const PlaygroundComponent = <T,>(
           <Box
             color="primary"
             tone="base"
-            direction="row"
             padding={32}
             fullwidth
             align="center"

@@ -14,3 +14,5 @@ export const COLORS = [
 ] as const;
 
 export const COLORS_WITH_INHERIT = ["inherit", ...COLORS] as const;
+
+export const COLORS_WITH_TRANSPARENT = ["transparent", ...COLORS] as const;

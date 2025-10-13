@@ -47,10 +47,10 @@ export const PlaygroundCode = ({code}: Props) => {
         )}
       </Row>
       <pre>
-          <code>
-            {code}
-          </code>
-        </pre>
+        <code>
+          {code}
+        </code>
+      </pre>
     </Box>
   );
 };
