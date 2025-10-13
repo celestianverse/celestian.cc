@@ -50,6 +50,10 @@ export const uikit = {
       title: "Box",
       longTitle: "Box component",
     },
+    row: {
+      title: "Row",
+      longTitle: "Row component",
+    },
   },
   utilities: {
     divider: {
