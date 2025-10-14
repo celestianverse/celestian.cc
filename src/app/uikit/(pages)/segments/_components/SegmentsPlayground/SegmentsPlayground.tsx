@@ -2,16 +2,17 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/uikit/Button/Button";
 import type { ButtonProps } from "@/components/uikit/Button/Button.types";
-import { CONTROL_BORDER_RADIUS, CONTROL_SIZE, TONE } from "@/constants/styles";
+import { CONTROL_BORDER_RADIUS, CONTROL_SIZE, FLEX_DIRECTION, TONE } from "@/constants/styles";
 import { buildComponentCode } from "@/helpers/buildComponentCode";
 import { Playground } from "@/components/custom/Playground/Playground";
 import { DEFAULT_CHOSEN_PROPS, DEFAULT_PROPS, NAME } from "./SegmentsPlayground.constants";
 import { Segments } from "@/components/uikit/Segments/Segments";
 import { COLORS } from "@/constants/colors";
 import { uikit } from "@/data/uikit";
+import type { SegmentsDirection } from "@/components/uikit/Segments/Segments.types";
 
 export const SegmentsPlayground = () => {
-  const [props, setProps] = useState<ButtonProps>(DEFAULT_CHOSEN_PROPS);
+  const [props, setProps] = useState<ButtonProps & SegmentsDirection>(DEFAULT_CHOSEN_PROPS);
 
   const [isActive, setIsActive] = useState(1);
 
@@ -23,9 +24,11 @@ export const SegmentsPlayground = () => {
 
   const SegmentsComponentLight = (
     <Segments
+      direction={props.direction}
       color={getSegmentsColor()}
       radius={props.radius}
       fullwidth={props.fullwidth}
+      laptopDirection="column"
     >
       {[...Array(3).keys()].map(item => {
         item += 1;
@@ -57,9 +60,11 @@ export const SegmentsPlayground = () => {
 
   const SegmentsComponentDark = (
     <Segments
+      direction={props.direction}
       color="contrast"
       radius={props.radius}
       fullwidth={props.fullwidth}
+      laptopDirection="column"
     >
       {[...Array(3).keys()].map(item => {
         item += 1;
@@ -88,6 +93,7 @@ export const SegmentsPlayground = () => {
   );
 
   const settings = {
+    direction: FLEX_DIRECTION,
     color: COLORS,
     tone: TONE,
     size: CONTROL_SIZE,
@@ -129,9 +135,9 @@ export const SegmentsPlayground = () => {
     children: "Segment 2",
   });
 
-  const code = buildComponentCode<ButtonProps>({
+  const code = buildComponentCode<ButtonProps & SegmentsDirection>({
     name: NAME,
-    props: {color: getSegmentsColor(), radius: props.radius, fullwidth: props.fullwidth},
+    props: {direction: props.direction, color: getSegmentsColor(), radius: props.radius, fullwidth: props.fullwidth},
     defaults: {...DEFAULT_PROPS, radius: getDefaultRadius()},
     children: `${codeSegment1}\n${codeSegment2}`,
   });

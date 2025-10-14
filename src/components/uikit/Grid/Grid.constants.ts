@@ -1,0 +1,1 @@
+export const GRID_COLUMNS = [2, 3, 4, 5] as const;

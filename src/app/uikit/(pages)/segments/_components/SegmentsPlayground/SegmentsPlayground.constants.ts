@@ -1,8 +1,10 @@
 import type { ButtonAs, ButtonProps } from "@/components/uikit/Button/Button.types";
+import type { SegmentsDirection } from "@/components/uikit/Segments/Segments.types";
 
 export const NAME = "Segments";
 
-export const DEFAULT_PROPS: ButtonProps & ButtonAs = {
+export const DEFAULT_PROPS: ButtonProps & ButtonAs & SegmentsDirection = {
+  direction: "row",
   color: "primary",
   tone: "base",
   size: "m",

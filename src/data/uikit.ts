@@ -50,6 +50,10 @@ export const uikit = {
       title: "Box",
       longTitle: "Box component",
     },
+    grid: {
+      title: "Grid",
+      longTitle: "Grid component",
+    },
     row: {
       title: "Row",
       longTitle: "Row component",

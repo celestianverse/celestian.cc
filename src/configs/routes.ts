@@ -58,6 +58,10 @@ export const routes = {
         name: "Box",
         path: "/uikit/box",
       },
+      grid: {
+        name: "Grid",
+        path: "/uikit/grid",
+      },
       row: {
         name: "Row",
         path: "/uikit/row",

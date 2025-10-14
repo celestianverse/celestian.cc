@@ -7,6 +7,12 @@
   gap: var(--spacing-4);
   padding: var(--spacing-4);
 
+  &:global([class*="flex-direction-column"]) {
+    &:global(.border-radius-999) {
+      border-radius: var(--radius-24);
+    }
+  }
+
   @each $color in $colors {
     &.color-#{$color} {
       @if $color == contrast or $color == phantom {
