@@ -14,15 +14,28 @@ import { DEFAULT_PROPS, NAME } from "./RowPlayground.constants";
 import type { RowProps } from "@/components/uikit/Row/Row.types";
 import { Row } from "@/components/uikit/Row/Row";
 import { FLEX_ELEMENT } from "@/components/uikit/Flex/Flex.constants";
+import { Box } from "@/components/uikit/Box/Box";
 
 export const RowPlayground = () => {
   const [props, setProps] = useState<RowProps>(DEFAULT_PROPS);
 
   const RowComponent = (
     <Row {...props}>
-      <p>Content 1...</p>
-      <p>Content 2...</p>
-      <p>Content 3...</p>
+      <Box
+        color="primary"
+        tone="soft"
+        radius={8}
+      />
+      <Box
+        color="primary"
+        tone="soft"
+        radius={8}
+      />
+      <Box
+        color="primary"
+        tone="soft"
+        radius={8}
+      />
     </Row>
   );
 

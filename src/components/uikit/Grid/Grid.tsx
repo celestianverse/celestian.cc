@@ -1,6 +1,6 @@
 import React from "react";
 import classNames from "classnames";
-import type { Props } from "./Grid.types";
+import type { GridProps } from "./Grid.types";
 import styles from "./Grid.module.scss";
 
 export const Grid = (
@@ -14,10 +14,11 @@ export const Grid = (
     laptopGap,
     tabletGap,
     mobileGap,
+    fullwidth,
     children,
     className,
     ...rest
-  }: Props) => {
+  }: GridProps) => {
   return (
     <div
       className={classNames(
@@ -32,6 +33,7 @@ export const Grid = (
           [`laptop-gap-${laptopGap}`]: laptopGap != null,
           [`tablet-gap-${tabletGap}`]: tabletGap != null,
           [`mobile-gap-${mobileGap}`]: mobileGap != null,
+          ["fullwidth"]: fullwidth,
         },
         className,
       )}

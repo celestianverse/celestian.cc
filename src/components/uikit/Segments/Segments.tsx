@@ -5,6 +5,10 @@ import styles from "./Segments.module.scss";
 export const Segments = (
   {
     color = "primary",
+    direction,
+    laptopDirection,
+    tabletDirection,
+    mobileDirection,
     radius = 12,
     fullwidth,
     className,
@@ -17,6 +21,10 @@ export const Segments = (
         styles.segments,
         styles[`color-${color}`],
         {
+          [`flex-direction-${direction}`]: direction,
+          [`laptop-flex-direction-${laptopDirection}`]: laptopDirection,
+          [`tablet-flex-direction-${tabletDirection}`]: tabletDirection,
+          [`mobile-flex-direction-${mobileDirection}`]: mobileDirection,
           ["fullwidth"]: fullwidth,
           [`border-radius-${radius}`]: radius != null,
         },

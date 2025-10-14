@@ -1,9 +1,10 @@
 import type { HTMLAttributes, ReactNode } from "react";
 import type { AlignItems, Gap } from "@/types/Styles";
+import { GRID_COLUMNS } from "@/components/uikit/Grid/Grid.constants";
 
-type Columns = 2 | 3 | 4 | 5;
+type GridColumns = typeof GRID_COLUMNS[number];
 
-export type Props = {
+export type GridProps = {
   /**
    * <pre>
    *    4
@@ -11,7 +12,7 @@ export type Props = {
    *    2
    * </pre>
    */
-  columns?: Columns;
+  columns?: GridColumns;
   /**
    * <pre>
    *   0 | 4 | 8 | 16 | 24 | 32 | 48 | 64 | 96 | 128
@@ -40,6 +41,7 @@ export type Props = {
   laptopAlign?: AlignItems;
   tabletAlign?: AlignItems;
   mobileAlign?: AlignItems;
+  fullwidth?: boolean;
   children?: ReactNode;
   className?: string;
 } & HTMLAttributes<HTMLDivElement>;

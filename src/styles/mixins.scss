@@ -32,7 +32,7 @@ $colors: (
 );
 
 @mixin desktop-only {
-  @media (min-width: 1367px) and (max-width: 1920px) {
+  @media (min-width: 1360px) and (max-width: 1920px) {
     @content;
   }
 }
@@ -44,19 +44,19 @@ $colors: (
 }
 
 @mixin desktop-min {
-  @media (min-width: 1381px) {
+  @media (min-width: 1341px) {
     @content;
   }
 }
 
 @mixin laptop-only {
-  @media (min-width: 1220px) and (max-width: 1380px) {
+  @media (min-width: 1220px) and (max-width: 1340px) {
     @content;
   }
 }
 
 @mixin laptop-max {
-  @media (max-width: 1380px) {
+  @media (max-width: 1340px) {
     @content;
   }
 }

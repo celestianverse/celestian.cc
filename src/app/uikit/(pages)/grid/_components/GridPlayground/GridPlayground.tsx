@@ -10,17 +10,17 @@ import {
 import { uikit } from "@/data/uikit";
 import { buildComponentCode } from "@/helpers/buildComponentCode";
 import { Playground } from "@/components/custom/Playground/Playground";
-import { DEFAULT_PROPS, NAME } from "./ColumnPlayground.constants";
-import type { ColumnProps } from "@/components/uikit/Column/Column.types";
-import { Column } from "@/components/uikit/Column/Column";
-import { FLEX_ELEMENT } from "@/components/uikit/Flex/Flex.constants";
+import { DEFAULT_PROPS, NAME } from "./GridPlayground.constants";
+import type { GridProps } from "@/components/uikit/Grid/Grid.types";
+import { Grid } from "@/components/uikit/Grid/Grid";
 import { Box } from "@/components/uikit/Box/Box";
+import { GRID_COLUMNS } from "@/components/uikit/Grid/Grid.constants";
 
-export const ColumnPlayground = () => {
-  const [props, setProps] = useState<ColumnProps>(DEFAULT_PROPS);
+export const GridPlayground = () => {
+  const [props, setProps] = useState<GridProps>(DEFAULT_PROPS);
 
-  const ColumnComponent = (
-    <Column {...props}>
+  const GridComponent = (
+    <Grid {...props}>
       <Box
         color="primary"
         tone="soft"
@@ -36,21 +36,32 @@ export const ColumnPlayground = () => {
         tone="soft"
         radius={8}
       />
-    </Column>
+      <Box
+        color="primary"
+        tone="soft"
+        radius={8}
+      />
+      <Box
+        color="primary"
+        tone="soft"
+        radius={8}
+      />
+      <Box
+        color="primary"
+        tone="soft"
+        radius={8}
+      />
+    </Grid>
   );
 
   const settings = {
-    as: FLEX_ELEMENT,
-    overflow: OVERFLOW,
+    columns: GRID_COLUMNS,
     align: ALIGN_ITEMS,
-    justify: JUSTIFY_CONTENT,
-    wrap: FLEX_WRAP,
-    grow: [...Array(2).keys()],
     gap: GAP,
     fullwidth: props.fullwidth,
   };
 
-  const code = buildComponentCode<ColumnProps>({
+  const code = buildComponentCode<GridProps>({
     name: NAME,
     props,
     defaults: DEFAULT_PROPS,
@@ -58,11 +69,11 @@ export const ColumnPlayground = () => {
   });
 
   return (
-    <Playground.Root title={uikit.layout.column.longTitle}>
+    <Playground.Root title={uikit.layout.grid.longTitle}>
       <Playground.Component
         name={NAME}
-        title={uikit.layout.column.longTitle}
-        component={ColumnComponent}
+        title={uikit.layout.grid.longTitle}
+        component={GridComponent}
         props={props}
         setProps={setProps}
         settings={settings}
