@@ -1,12 +1,6 @@
 "use client";
 import { useState } from "react";
-import {
-  ALIGN_ITEMS,
-  FLEX_WRAP,
-  GAP,
-  JUSTIFY_CONTENT,
-  OVERFLOW,
-} from "@/constants/styles";
+import { ALIGN_ITEMS, GAP } from "@/constants/styles";
 import { uikit } from "@/data/uikit";
 import { buildComponentCode } from "@/helpers/buildComponentCode";
 import { Playground } from "@/components/custom/Playground/Playground";
