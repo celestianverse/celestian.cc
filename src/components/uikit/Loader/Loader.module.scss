@@ -1,0 +1,78 @@
+@use "@/styles/mixins" as *;
+
+.loader {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+  svg {
+    animation: animation-rotate 1.4s linear infinite;
+  }
+
+  &.size-xl {
+    width: var(--size-64);
+    height: var(--size-64);
+  }
+
+  &.size-l {
+    width: var(--size-48);
+    height: var(--size-48);
+  }
+
+  &.size-m {
+    width: var(--size-32);
+    height: var(--size-32);
+  }
+
+  &.size-s {
+    width: var(--size-24);
+    height: var(--size-24);
+  }
+
+  &.size-xs {
+    width: var(--size-16);
+    height: var(--size-16);
+  }
+
+  @each $color in $colors {
+    &.color-#{$color} {
+      .item {
+        stroke: var(--#{$color}-fill);
+      }
+    }
+  }
+}
+
+.item {
+  stroke-dashoffset: 0;
+  stroke-dasharray: 80px, 200px;
+  animation: animation 1.4s ease-in-out infinite;
+}
+
+@keyframes animation {
+  0% {
+    stroke-dasharray: 1px, 200px;
+    stroke-dashoffset: 0;
+  }
+
+  50% {
+    stroke-dasharray: 100px, 200px;
+    stroke-dashoffset: -15px;
+  }
+
+  100% {
+    stroke-dasharray: 100px, 200px;
+    stroke-dashoffset: -125px;
+  }
+}
+
+@keyframes animation-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

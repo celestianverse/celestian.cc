@@ -88,6 +88,10 @@ export const uikit = {
       title: "Divider",
       longTitle: "Divider component",
     },
+    loader: {
+      title: "Loader",
+      longTitle: "Loader component",
+    },
   },
   meta: {
     colors: {

@@ -6,7 +6,7 @@ import { uikit } from "@/data/uikit";
 import { buildComponentCode } from "@/helpers/buildComponentCode";
 import { DEFAULT_PROPS, NAME } from "./TitlePlayground.constants";
 import { Playground } from "@/components/custom/Playground/Playground";
-import { COLORS_WITH_INHERIT } from "@/constants/colors";
+import { COLOR_WITH_INHERIT } from "@/constants/color";
 import { TITLE_ELEMENT, TITLE_SIZE } from "@/components/uikit/Title/Title.constants";
 import { FONT_WEIGHT, LINE_HEIGHT, WHITE_SPACE } from "@/constants/styles";
 
@@ -21,7 +21,7 @@ export const TitlePlayground = () => {
 
   const settings = {
     as: TITLE_ELEMENT,
-    color: COLORS_WITH_INHERIT,
+    color: COLOR_WITH_INHERIT,
     size: TITLE_SIZE,
     weight: FONT_WEIGHT,
     lineHeight: LINE_HEIGHT,

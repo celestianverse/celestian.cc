@@ -12,7 +12,7 @@ export type BadgeProps = {
   tone?: Tone;
   size?: BadgeSize;
   radius?: BadgeRadius;
-  dot?: false;
+  dot?: boolean;
   className?: string;
   children?: ReactNode;
 };

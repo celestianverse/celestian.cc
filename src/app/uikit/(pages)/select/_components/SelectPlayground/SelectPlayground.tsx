@@ -9,7 +9,7 @@ import { Select } from "@/components/uikit/Select/Select";
 import { SelectOption } from "@/components/uikit/Select/_components/SelectOption/SelectOption";
 import { SELECT_VARIANT } from "@/components/uikit/Select/Select.constants";
 import { BORDER_STYLE, CONTROL_BORDER_RADIUS, CONTROL_SIZE, TONE } from "@/constants/styles";
-import { COLORS } from "@/constants/colors";
+import { COLOR } from "@/constants/color";
 
 export const SelectPlayground = () => {
   const [props, setProps] = useState<SelectProps>(DEFAULT_PROPS);
@@ -30,7 +30,7 @@ export const SelectPlayground = () => {
 
   const settings = {
     variant: SELECT_VARIANT,
-    color: COLORS,
+    color: COLOR,
     tone: TONE,
     size: CONTROL_SIZE,
     width: ["auto", 240, "100%"],

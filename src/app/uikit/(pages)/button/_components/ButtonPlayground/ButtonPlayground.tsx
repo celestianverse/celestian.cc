@@ -7,7 +7,7 @@ import {
   BUTTON_VARIANT
 } from "@/components/uikit/Button/Button.constants";
 import { BORDER_STYLE, CONTROL_BORDER_RADIUS, CONTROL_SIZE, JUSTIFY_CONTENT, TONE } from "@/constants/styles";
-import { COLORS } from "@/constants/colors";
+import { COLOR } from "@/constants/color";
 import { ICONS } from "@/components/uikit/Icon/Icon.constants";
 import { uikit } from "@/data/uikit";
 import { buildComponentCode } from "@/helpers/buildComponentCode";
@@ -26,7 +26,7 @@ export const ButtonPlayground = () => {
   const settings = {
     as: BUTTON_ELEMENT,
     variant: BUTTON_VARIANT,
-    color: COLORS,
+    color: COLOR,
     tone: TONE,
     size: CONTROL_SIZE,
     justify: JUSTIFY_CONTENT,

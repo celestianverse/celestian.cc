@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { BORDER_STYLE, TONE } from "@/constants/styles";
-import { COLORS } from "@/constants/colors";
+import { COLOR } from "@/constants/color";
 import { ICONS } from "@/components/uikit/Icon/Icon.constants";
 import { uikit } from "@/data/uikit";
 import { buildComponentCode } from "@/helpers/buildComponentCode";
@@ -23,7 +23,7 @@ export const TagPlayground = () => {
   const settings = {
     as: TAG_ELEMENT,
     variant: TAG_VARIANT,
-    color: COLORS,
+    color: COLOR,
     tone: TONE,
     size: TAG_SIZE,
     radius: TAG_BORDER_RADIUS,

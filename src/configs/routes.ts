@@ -97,6 +97,10 @@ export const routes = {
         name: "Divider",
         path: "/uikit/divider",
       },
+      loader: {
+        name: "Loader",
+        path: "/uikit/loader",
+      },
     },
     meta: {
       name: "Meta",

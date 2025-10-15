@@ -388,7 +388,7 @@
   --brand-outline-soft: rgba(240, 255, 72, 0.15);
   --brand-gradient: linear-gradient(90deg, rgb(19.0755555556, 5.92, 35.52) 0, rgb(32.0473015873, 9.9457142857, 59.6742857143) 100%);
   --brand-gradient-on: #FFFFFF;
-  --brand-gradient-soft: linear-gradient(90deg, rgb(24.5416666667, 8.075, 45.125) 0, rgb(38.3994047619, 12.6346428571, 70.6053571429) 100%);
+  --brand-gradient-soft: linear-gradient(90deg, rgb(24.2833333333, 7.99, 44.65) 0, rgb(42.5880952381, 14.0128571429, 78.3071428571) 100%);
   --brand-gradient-soft-on: #FFFFFF;
   --accent-content: #AD1875;
   --accent-content-action: rgb(121.1, 16.8, 81.9);
@@ -407,7 +407,7 @@
   --accent-outline-soft: rgba(173, 24, 117, 0.25);
   --accent-gradient: linear-gradient(90deg, rgb(19.0755555556, 5.92, 35.52) 0, rgb(32.0473015873, 9.9457142857, 59.6742857143) 100%);
   --accent-gradient-on: #FFFFFF;
-  --accent-gradient-soft: linear-gradient(90deg, rgb(24.5416666667, 8.075, 45.125) 0, rgb(38.3994047619, 12.6346428571, 70.6053571429) 100%);
+  --accent-gradient-soft: linear-gradient(90deg, rgb(24.2833333333, 7.99, 44.65) 0, rgb(42.5880952381, 14.0128571429, 78.3071428571) 100%);
   --accent-gradient-soft-on: #FFFFFF;
   --utility-content: #12d1c5;
   --utility-content-action: rgb(11.7, 135.85, 128.05);
@@ -426,7 +426,7 @@
   --utility-outline-soft: rgba(18, 209, 197, 0.2);
   --utility-gradient: linear-gradient(90deg, rgb(19.0755555556, 5.92, 35.52) 0, rgb(32.0473015873, 9.9457142857, 59.6742857143) 100%);
   --utility-gradient-on: #FFFFFF;
-  --utility-gradient-soft: linear-gradient(90deg, rgb(24.5416666667, 8.075, 45.125) 0, rgb(38.3994047619, 12.6346428571, 70.6053571429) 100%);
+  --utility-gradient-soft: linear-gradient(90deg, rgb(24.2833333333, 7.99, 44.65) 0, rgb(42.5880952381, 14.0128571429, 78.3071428571) 100%);
   --utility-gradient-soft-on: #FFFFFF;
   --contrast-content: #FFFFFF;
   --contrast-content-action: rgba(255, 255, 255, 0.6);
@@ -483,7 +483,7 @@
   --info-outline-soft: rgba(11, 149, 214, 0.2);
   --info-gradient: linear-gradient(90deg, rgb(19.0755555556, 5.92, 35.52) 0, rgb(32.0473015873, 9.9457142857, 59.6742857143) 100%);
   --info-gradient-on: #FFFFFF;
-  --info-gradient-soft: linear-gradient(90deg, rgb(24.5416666667, 8.075, 45.125) 0, rgb(38.3994047619, 12.6346428571, 70.6053571429) 100%);
+  --info-gradient-soft: linear-gradient(90deg, rgb(24.2833333333, 7.99, 44.65) 0, rgb(42.5880952381, 14.0128571429, 78.3071428571) 100%);
   --info-gradient-soft-on: #FFFFFF;
   --success-content: #1CB474;
   --success-content-action: rgb(19.6, 126, 81.2);
@@ -503,7 +503,7 @@
   --success-outline-soft: rgba(28, 180, 116, 0.2);
   --success-gradient: linear-gradient(90deg, rgb(19.0755555556, 5.92, 35.52) 0, rgb(32.0473015873, 9.9457142857, 59.6742857143) 100%);
   --success-gradient-on: #FFFFFF;
-  --success-gradient-soft: linear-gradient(90deg, rgb(24.5416666667, 8.075, 45.125) 0, rgb(38.3994047619, 12.6346428571, 70.6053571429) 100%);
+  --success-gradient-soft: linear-gradient(90deg, rgb(24.2833333333, 7.99, 44.65) 0, rgb(42.5880952381, 14.0128571429, 78.3071428571) 100%);
   --success-gradient-soft-on: #FFFFFF;
   --warning-content: #F17400;
   --warning-content-action: rgb(168.7, 81.2, 0);
@@ -523,7 +523,7 @@
   --warning-outline-soft: rgba(241, 116, 0, 0.2);
   --warning-gradient: linear-gradient(90deg, rgb(19.0755555556, 5.92, 35.52) 0, rgb(32.0473015873, 9.9457142857, 59.6742857143) 100%);
   --warning-gradient-on: #FFFFFF;
-  --warning-gradient-soft: linear-gradient(90deg, rgb(24.5416666667, 8.075, 45.125) 0, rgb(38.3994047619, 12.6346428571, 70.6053571429) 100%);
+  --warning-gradient-soft: linear-gradient(90deg, rgb(24.2833333333, 7.99, 44.65) 0, rgb(42.5880952381, 14.0128571429, 78.3071428571) 100%);
   --warning-gradient-soft-on: #FFFFFF;
   --danger-content: #C21B1B;
   --danger-content-action: rgb(135.8, 18.9, 18.9);
@@ -543,7 +543,7 @@
   --danger-outline-soft: rgba(194, 27, 27, 0.2);
   --danger-gradient: linear-gradient(90deg, rgb(19.0755555556, 5.92, 35.52) 0, rgb(32.0473015873, 9.9457142857, 59.6742857143) 100%);
   --danger-gradient-on: #FFFFFF;
-  --danger-gradient-soft: linear-gradient(90deg, rgb(24.5416666667, 8.075, 45.125) 0, rgb(38.3994047619, 12.6346428571, 70.6053571429) 100%);
+  --danger-gradient-soft: linear-gradient(90deg, rgb(24.2833333333, 7.99, 44.65) 0, rgb(42.5880952381, 14.0128571429, 78.3071428571) 100%);
   --danger-gradient-soft-on: #FFFFFF;
   --rating-content: #FFB800;
   --rating-content-action: rgb(178.5, 128.8, 0);
@@ -563,7 +563,7 @@
   --rating-outline-soft: rgba(255, 184, 0, 0.2);
   --rating-gradient: linear-gradient(90deg, rgb(19.0755555556, 5.92, 35.52) 0, rgb(32.0473015873, 9.9457142857, 59.6742857143) 100%);
   --rating-gradient-on: #FFFFFF;
-  --rating-gradient-soft: linear-gradient(90deg, rgb(24.5416666667, 8.075, 45.125) 0, rgb(38.3994047619, 12.6346428571, 70.6053571429) 100%);
+  --rating-gradient-soft: linear-gradient(90deg, rgb(24.2833333333, 7.99, 44.65) 0, rgb(42.5880952381, 14.0128571429, 78.3071428571) 100%);
   --rating-gradient-soft-on: #FFFFFF;
   --shadow-m: 0 4px 24px rgba(255, 255, 255, 0.15);
   --shadow-xs: 0 0 4px rgba(255, 255, 255, 0.05);

@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Text } from "@/components/uikit/Text/Text";
 import type { TextProps } from "@/components/uikit/Text/Text.types";
 import { FONT_WEIGHT, LINE_HEIGHT, WHITE_SPACE } from "@/constants/styles";
-import { COLORS_WITH_INHERIT } from "@/constants/colors";
+import { COLOR_WITH_INHERIT } from "@/constants/color";
 import { uikit } from "@/data/uikit";
 import { buildComponentCode } from "@/helpers/buildComponentCode";
 import { DEFAULT_PROPS, NAME } from "./TextPlayground.constants";
@@ -21,7 +21,7 @@ export const TextPlayground = () => {
 
   const settings = {
     as: TEXT_ELEMENT,
-    color: COLORS_WITH_INHERIT,
+    color: COLOR_WITH_INHERIT,
     size: TEXT_SIZE,
     weight: FONT_WEIGHT,
     lineHeight: LINE_HEIGHT,
