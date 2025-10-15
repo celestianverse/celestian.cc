@@ -95,6 +95,10 @@ export const uikitNavigation = {
         name: routes.uikit.utilities.divider.name,
         path: routes.uikit.utilities.divider.path,
       },
+      loader: {
+        name: routes.uikit.utilities.loader.name,
+        path: routes.uikit.utilities.loader.path,
+      },
     },
   },
   meta: {

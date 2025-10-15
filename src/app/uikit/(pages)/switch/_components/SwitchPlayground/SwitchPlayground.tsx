@@ -5,7 +5,7 @@ import type { SwitchProps } from "@/components/uikit/Switch/Switch.types";
 import { SWITCH_SIZE } from "@/components/uikit/Switch/Switch.constants";
 import { buildComponentCode } from "@/helpers/buildComponentCode";
 import { Playground } from "@/components/custom/Playground/Playground";
-import { COLORS } from "@/constants/colors";
+import { COLOR } from "@/constants/color";
 import { uikit } from "@/data/uikit";
 import { DEFAULT_CHOSEN_PROPS, DEFAULT_PROPS, NAME } from "./SwitchPlayground.constants";
 
@@ -20,7 +20,7 @@ export const SwitchPlayground = () => {
   );
 
   const settings = {
-    color: COLORS,
+    color: COLOR,
     size: SWITCH_SIZE,
     checked: props.checked,
     disabled: props.disabled,

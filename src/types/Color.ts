@@ -1,6 +1,6 @@
-import { COLORS } from "@/constants/colors";
+import { COLOR } from "@/constants/color";
 
-export type Color = typeof COLORS[number];
+export type Color = typeof COLOR[number];
 
 export type ColorWithInherit = Color | "inherit";
 

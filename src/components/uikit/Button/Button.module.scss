@@ -126,6 +126,12 @@
         background: var(--#{$color}-fill);
         color: var(--#{$color}-fill-on);
 
+        svg {
+          circle {
+            stroke: var(--#{$color}-fill-on);
+          }
+        }
+
         &:hover {
           &:not(.active):not(:global(.disabled)) {
             background: var(--#{$color}-fill-action);
@@ -135,6 +141,12 @@
         &.tone-soft {
           background: var(--#{$color}-fill-soft);
           color: var(--#{$color}-fill-soft-on);
+
+          svg {
+            circle {
+              stroke: var(--#{$color}-fill-soft-on);
+            }
+          }
 
           &:hover {
             &:not(.active):not(:global(.disabled)) {
@@ -148,6 +160,12 @@
         border-color: var(--#{$color}-outline);
         border-width: 1px;
         color: var(--#{$color}-outline);
+
+        svg {
+          circle {
+            stroke: var(--#{$color}-outline);
+          }
+        }
 
         &:hover {
           &:not(.active):not(:global(.disabled)) {
@@ -175,6 +193,12 @@
       &.variant-ghost {
         color: var(--#{$color}-content);
 
+        svg {
+          circle {
+            stroke: var(--#{$color}-content);
+          }
+        }
+
         &:hover {
           &:not(.active):not(:global(.disabled)) {
             background: var(--#{$color}-fill-soft);
@@ -184,6 +208,12 @@
         &.active {
           background: var(--#{$color}-fill);
           color: var(--#{$color}-fill-on);
+
+          svg {
+            circle {
+              stroke: var(--#{$color}-fill-on);
+            }
+          }
 
           &.tone-soft {
             background: var(--#{$color}-fill-soft);

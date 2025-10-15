@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { TONE } from "@/constants/styles";
-import { COLORS } from "@/constants/colors";
+import { COLOR } from "@/constants/color";
 import { uikit } from "@/data/uikit";
 import { buildComponentCode } from "@/helpers/buildComponentCode";
 import { Playground } from "@/components/custom/Playground/Playground";
@@ -20,7 +20,7 @@ export const BadgePlayground = () => {
   );
 
   const settings = {
-    color: COLORS,
+    color: COLOR,
     tone: TONE,
     size: BADGE_SIZE,
     radius: BADGE_BORDER_RADIUS,

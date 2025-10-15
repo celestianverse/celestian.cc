@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { COLORS } from "@/constants/colors";
+import { COLOR } from "@/constants/color";
 import { uikit } from "@/data/uikit";
 import { buildComponentCode } from "@/helpers/buildComponentCode";
 import { Playground } from "@/components/custom/Playground/Playground";
@@ -17,7 +17,7 @@ export const DividerPlayground = () => {
   );
 
   const settings = {
-    color: COLORS,
+    color: COLOR,
     tone: TONE,
     borderStyle: BORDER_STYLE,
     borderWidth: [...Array(6).keys()],

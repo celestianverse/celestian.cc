@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { COLORS_WITH_INHERIT } from "@/constants/colors";
+import { COLOR_WITH_INHERIT } from "@/constants/color";
 import { ICON_SIZE, ICONS } from "@/components/uikit/Icon/Icon.constants";
 import { uikit } from "@/data/uikit";
 import { buildComponentCode } from "@/helpers/buildComponentCode";
@@ -18,7 +18,7 @@ export const IconPlayground = () => {
 
   const settings = {
     name: Object.keys(ICONS),
-    color: COLORS_WITH_INHERIT,
+    color: COLOR_WITH_INHERIT,
     size: ICON_SIZE,
   };
 

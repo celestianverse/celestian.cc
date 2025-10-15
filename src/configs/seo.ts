@@ -73,6 +73,9 @@ export const seo = {
       divider: {
         title: `Divider component for UI kit library — ${app.name}`,
       },
+      loader: {
+        title: `Loader component for UI kit library — ${app.name}`,
+      },
     },
     meta: {
       colors: {

@@ -11,7 +11,7 @@ import {
   PADDING,
   TONE
 } from "@/constants/styles";
-import { COLORS_WITH_TRANSPARENT } from "@/constants/colors";
+import { COLOR_WITH_TRANSPARENT } from "@/constants/color";
 import { uikit } from "@/data/uikit";
 import { buildComponentCode } from "@/helpers/buildComponentCode";
 import { Playground } from "@/components/custom/Playground/Playground";
@@ -35,7 +35,7 @@ export const BoxPlayground = () => {
   const settings = {
     as: FLEX_ELEMENT,
     variant: BOX_VARIANT,
-    color: COLORS_WITH_TRANSPARENT,
+    color: COLOR_WITH_TRANSPARENT,
     tone: TONE,
     overflow: OVERFLOW,
     direction: FLEX_DIRECTION,

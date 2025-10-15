@@ -4,7 +4,7 @@ import { Anchor } from "@/components/uikit/Anchor/Anchor";
 import type { AnchorProps } from "@/components/uikit/Anchor/Anchor.types";
 import { ANCHOR_ELEMENT, ANCHOR_SIZE, ANCHOR_VARIANT } from "@/components/uikit/Anchor/Anchor.constants";
 import { BORDER_STYLE, PADDING } from "@/constants/styles";
-import { COLORS } from "@/constants/colors";
+import { COLOR } from "@/constants/color";
 import { ICONS } from "@/components/uikit/Icon/Icon.constants";
 import { uikit } from "@/data/uikit";
 import { buildComponentCode } from "@/helpers/buildComponentCode";
@@ -23,7 +23,7 @@ export const AnchorPlayground = () => {
   const settings = {
     as: ANCHOR_ELEMENT,
     variant: ANCHOR_VARIANT,
-    color: COLORS,
+    color: COLOR,
     size: ANCHOR_SIZE,
     padding: PADDING,
     paddingY: PADDING,

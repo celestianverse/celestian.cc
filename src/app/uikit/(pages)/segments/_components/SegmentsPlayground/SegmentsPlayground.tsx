@@ -7,7 +7,7 @@ import { buildComponentCode } from "@/helpers/buildComponentCode";
 import { Playground } from "@/components/custom/Playground/Playground";
 import { DEFAULT_CHOSEN_PROPS, DEFAULT_PROPS, NAME } from "./SegmentsPlayground.constants";
 import { Segments } from "@/components/uikit/Segments/Segments";
-import { COLORS } from "@/constants/colors";
+import { COLOR } from "@/constants/color";
 import { uikit } from "@/data/uikit";
 import type { SegmentsDirection } from "@/components/uikit/Segments/Segments.types";
 
@@ -94,7 +94,7 @@ export const SegmentsPlayground = () => {
 
   const settings = {
     direction: FLEX_DIRECTION,
-    color: COLORS,
+    color: COLOR,
     tone: TONE,
     size: CONTROL_SIZE,
     radius: CONTROL_BORDER_RADIUS,
