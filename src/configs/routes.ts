@@ -24,6 +24,10 @@ export const routes = {
         name: "Tag",
         path: "/uikit/tag",
       },
+      badge: {
+        name: "Badge",
+        path: "/uikit/badge",
+      },
       icon: {
         name: "Icon",
         path: "/uikit/icon",
@@ -85,13 +89,13 @@ export const routes = {
     },
     utilities: {
       name: "Utilities",
-      divider: {
-        name: "Divider",
-        path: "/uikit/divider",
-      },
       hidden: {
         name: "Hidden",
         path: "/uikit/hidden",
+      },
+      divider: {
+        name: "Divider",
+        path: "/uikit/divider",
       },
     },
     meta: {

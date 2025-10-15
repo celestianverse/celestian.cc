@@ -16,9 +16,9 @@ export const Tag = <E extends ElementType<any, TagElement> = typeof TAG_DEFAULT_
     radius = 8,
     borderStyle,
     borderWidth,
-    iconStart,
-    iconEnd,
-    iconOnly,
+    iconStart = "none",
+    iconEnd = "none",
+    iconOnly = "none",
     className,
     children,
     ...rest
@@ -40,7 +40,7 @@ export const Tag = <E extends ElementType<any, TagElement> = typeof TAG_DEFAULT_
         {
           [`border-radius-${radius}`]: radius != null,
           [`border-style-${borderStyle}`]: borderStyle,
-          [styles["icon-only"]]: iconOnly,
+          [styles["icon-only"]]: iconOnly !== "none",
         },
         className,
       )}

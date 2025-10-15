@@ -1,0 +1,47 @@
+@use "@/styles/mixins" as *;
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 0 var(--spacing-4);
+  line-height: 1;
+  @include transition;
+
+  &.size-m {
+    min-width: var(--size-24);
+    height: var(--size-24);
+    font-size: var(--font-size-text-m);
+
+    &.dot {
+      min-width: 0;
+      width: var(--size-16);
+      height: var(--size-16);
+    }
+  }
+
+  &.size-s {
+    min-width: var(--size-20);
+    height: var(--size-20);
+    font-size: var(--font-size-text-s);
+
+    &.dot {
+      min-width: 0;
+      width: var(--size-12);
+      height: var(--size-12);
+    }
+  }
+
+  @each $color in $colors {
+    &.color-#{$color} {
+      background: var(--#{$color}-fill);
+      color: var(--#{$color}-fill-on);
+
+      &.tone-soft {
+        background: var(--#{$color}-fill-soft);
+        color: var(--#{$color}-fill-soft-on);
+      }
+    }
+  }
+}
