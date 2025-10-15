@@ -39,6 +39,9 @@ export const seo = {
       switch: {
         title: `Switch component for UI kit library — ${app.name}`,
       },
+      field: {
+        title: `Field component for UI kit library — ${app.name}`,
+      },
     },
     layout: {
       page: {

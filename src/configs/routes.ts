@@ -51,6 +51,10 @@ export const routes = {
         name: "Switch",
         path: "/uikit/switch",
       },
+      field: {
+        name: "Field",
+        path: "/uikit/field",
+      },
     },
     layout: {
       name: "Layout",

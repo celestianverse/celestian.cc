@@ -1,10 +1,14 @@
 import type { ReactElement } from "react";
-import type { FlexElement } from "@/components/uikit/Flex/Flex.types";
+import { FIELD_ELEMENT, FIELD_POSITION } from "@/components/uikit/Field/Field.constants";
 
-export type Props = {
-  as?: Extract<FlexElement, "div" | "label">;
+export type FieldElement = typeof FIELD_ELEMENT[number];
+
+export type FieldPosition = typeof FIELD_POSITION[number];
+
+export type FieldProps = {
+  as?: FieldElement;
   label?: string | number;
-  labelPosition?: "top" | "left" | "right";
+  labelPosition?: FieldPosition;
   labelWidth?: number;
   className?: string;
   children: ReactElement<{ id?: string }>;
