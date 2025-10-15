@@ -54,17 +54,21 @@ export const routes = {
     },
     layout: {
       name: "Layout",
+      page: {
+        name: "Page",
+        path: "/uikit/page",
+      },
       section: {
         name: "Section",
         path: "/uikit/section",
       },
-      box: {
-        name: "Box",
-        path: "/uikit/box",
-      },
       grid: {
         name: "Grid",
         path: "/uikit/grid",
+      },
+      box: {
+        name: "Box",
+        path: "/uikit/box",
       },
       row: {
         name: "Row",

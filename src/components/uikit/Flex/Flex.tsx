@@ -1,11 +1,11 @@
-import React from "react";
+import type { ElementType } from "react";
 import classNames from "classnames";
 import type { Polymorphic } from "@/types/Polymorphic";
 import type { FlexElement, FlexProps } from "./Flex.types";
 
 const DEFAULT_ELEMENT = "div";
 
-export const Flex = <E extends React.ElementType<any, FlexElement> = typeof DEFAULT_ELEMENT>
+export const Flex = <E extends ElementType<any, FlexElement> = typeof DEFAULT_ELEMENT>
 ({
    as,
    overflow,

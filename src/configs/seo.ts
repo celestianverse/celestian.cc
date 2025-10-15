@@ -41,14 +41,17 @@ export const seo = {
       },
     },
     layout: {
+      page: {
+        title: `Page component for UI kit library — ${app.name}`,
+      },
       section: {
         title: `Section component for UI kit library — ${app.name}`,
       },
-      box: {
-        title: `Box component for UI kit library — ${app.name}`,
-      },
       grid: {
         title: `Grid component for UI kit library — ${app.name}`,
+      },
+      box: {
+        title: `Box component for UI kit library — ${app.name}`,
       },
       row: {
         title: `Row component for UI kit library — ${app.name}`,

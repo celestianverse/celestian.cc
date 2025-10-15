@@ -12,10 +12,10 @@ html {
 
 body {
   min-width: 375px;
-  background: var(--primary-surface-soft);
+  background: var(--contrast-surface);
   line-height: var(--line-height-m);
   font-family: var(--font-family), sans-serif;
-  color: var(--primary-content);
+  color: var(--contrast-surface-on);
   @include transition($property: background);
 
   &.modal-mode {

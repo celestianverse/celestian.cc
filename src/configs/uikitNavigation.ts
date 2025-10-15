@@ -50,17 +50,21 @@ export const uikitNavigation = {
   layout: {
     name: routes.uikit.layout.name,
     pages: {
+      page: {
+        name: routes.uikit.layout.page.name,
+        path: routes.uikit.layout.page.path,
+      },
       section: {
         name: routes.uikit.layout.section.name,
         path: routes.uikit.layout.section.path,
       },
-      box: {
-        name: routes.uikit.layout.box.name,
-        path: routes.uikit.layout.box.path,
-      },
       grid: {
         name: routes.uikit.layout.grid.name,
         path: routes.uikit.layout.grid.path,
+      },
+      box: {
+        name: routes.uikit.layout.box.name,
+        path: routes.uikit.layout.box.path,
       },
       row: {
         name: routes.uikit.layout.row.name,

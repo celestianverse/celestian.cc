@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import type { Props } from "./Page.types";
+import type { PageProps } from "./Page.types";
 import styles from "./Page.module.scss";
 
 export const Page = (
@@ -19,7 +19,7 @@ export const Page = (
     children,
     className,
     ...rest
-  }: Props) => {
+  }: PageProps) => {
   return (
     <div
       className={classNames(

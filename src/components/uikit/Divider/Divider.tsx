@@ -1,12 +1,12 @@
+import type { ElementType } from "react";
 import classNames from "classnames";
 import type { DividerProps, DividerElement } from "./Divider.types";
 import styles from "./Divider.module.scss";
-import React from "react";
 import type { Polymorphic } from "@/types/Polymorphic";
 
 const DEFAULT_ELEMENT = "div";
 
-export const Divider = <E extends React.ElementType<any, DividerElement> = typeof DEFAULT_ELEMENT>
+export const Divider = <E extends ElementType<any, DividerElement> = typeof DEFAULT_ELEMENT>
 ({
    as,
    color = "primary",

@@ -8,6 +8,7 @@ export const IntroSection = ({title, className}: Props) => {
       color="brand"
       variant="gradient"
       align="center"
+      justify="center"
       height="m"
       paddingY={0}
       overlapBottom={96}
