@@ -1,4 +1,4 @@
-import type React from "react";
+import type { ComponentProps } from "react";
 import { Flex } from "@/components/uikit/Flex/Flex";
 import type { ColorWithTransparent } from "@/types/Color";
 import type { BorderStyle, BorderWidth, Padding, Tone } from "@/types/Styles";
@@ -93,4 +93,4 @@ type Props = {
   hoverable?: boolean;
 };
 
-export type BoxProps = Props & React.ComponentProps<typeof Flex>;
+export type BoxProps = Props & ComponentProps<typeof Flex>;

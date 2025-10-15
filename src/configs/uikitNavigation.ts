@@ -50,6 +50,10 @@ export const uikitNavigation = {
   layout: {
     name: routes.uikit.layout.name,
     pages: {
+      section: {
+        name: routes.uikit.layout.section.name,
+        path: routes.uikit.layout.section.path,
+      },
       box: {
         name: routes.uikit.layout.box.name,
         path: routes.uikit.layout.box.path,

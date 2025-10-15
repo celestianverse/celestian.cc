@@ -54,6 +54,10 @@ export const routes = {
     },
     layout: {
       name: "Layout",
+      section: {
+        name: "Section",
+        path: "/uikit/section",
+      },
       box: {
         name: "Box",
         path: "/uikit/box",
