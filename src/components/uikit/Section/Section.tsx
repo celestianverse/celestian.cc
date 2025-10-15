@@ -1,18 +1,22 @@
 import React from "react";
 import classNames from "classnames";
 import { Flex } from "@/components/uikit/Flex/Flex";
-import type { Props } from "./Section.types";
+import type { SectionProps } from "./Section.types";
 import styles from "./Section.module.scss";
 
 export const Section = (
   {
     variant = "flat",
-    color,
+    color = "transparent",
     tone = "base",
     direction = "column",
     laptopDirection,
     tabletDirection,
     mobileDirection,
+    align,
+    justify,
+    wrap,
+    grow,
     gap = 64,
     laptopGap,
     tabletGap,
@@ -48,10 +52,13 @@ export const Section = (
     classNameContainer,
     children,
     ...rest
-  }: Props) => {
+  }: SectionProps) => {
   return (
     <Flex
       as="section"
+      direction={direction}
+      align={align}
+      justify={justify}
       className={classNames(
         styles.section,
         styles[`variant-${variant}`],
@@ -98,9 +105,9 @@ export const Section = (
         laptopGap={laptopGap}
         tabletGap={tabletGap}
         mobileGap={mobileGap}
-        align={rest.align}
-        justify={rest.justify}
-        wrap={rest.wrap}
+        align={align}
+        justify={justify}
+        wrap={wrap}
         className={classNames(
           styles.container,
           "display-flex",
@@ -109,6 +116,7 @@ export const Section = (
           },
           classNameContainer,
         )}
+        style={{ flexGrow: grow }}
       >
         {children}
       </Flex>

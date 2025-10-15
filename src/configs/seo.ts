@@ -41,6 +41,9 @@ export const seo = {
       },
     },
     layout: {
+      section: {
+        title: `Section component for UI kit library — ${app.name}`,
+      },
       box: {
         title: `Box component for UI kit library — ${app.name}`,
       },

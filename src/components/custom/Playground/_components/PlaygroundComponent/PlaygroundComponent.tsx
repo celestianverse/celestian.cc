@@ -87,16 +87,29 @@ export const PlaygroundComponent = <T,>(
               const isPadding = key === "padding";
               const isPaddingY = key === "paddingY";
               const isPaddingX = key === "paddingX";
+              const isPaddingTop = key === "paddingTop";
+              const isPaddingBottom = key === "paddingBottom";
+              const isRadius = key === "radius";
+              const isRadiusTop = key === "radiusTop";
+              const isRadiusBottom = key === "radiusBottom";
 
               if (isVariant) {
                 const isOutline = value === "outline";
 
-                setProps(prev => ({
-                  ...prev,
-                  variant: value,
-                  borderStyle: isOutline ? "solid" : "none",
-                  borderWidth: isOutline ? 1 : 0,
-                }));
+                if (isOutline) {
+                  setProps(prev => ({
+                    ...prev,
+                    variant: value,
+                    borderStyle: "solid",
+                    borderWidth: 1,
+                  }));
+                }
+                if (!isOutline) {
+                  setProps(prev => ({
+                    ...prev,
+                    variant: value,
+                  }));
+                }
               } else if (isControlSize) {
                 const getRadius = () => {
                   if (value === "s") return 8;
@@ -115,18 +128,55 @@ export const PlaygroundComponent = <T,>(
                   padding: Number(value),
                   paddingY: null,
                   paddingX: null,
+                  paddingTop: null,
+                  paddingBottom: null,
                 }));
               } else if (isPaddingY) {
                 setProps(prev => ({
                   ...prev,
                   padding: null,
                   paddingY: Number(value),
+                  paddingTop: null,
+                  paddingBottom: null,
                 }));
               } else if (isPaddingX) {
                 setProps(prev => ({
                   ...prev,
                   padding: null,
                   paddingX: Number(value),
+                }));
+              } else if (isPaddingTop) {
+                setProps(prev => ({
+                  ...prev,
+                  padding: null,
+                  paddingY: null,
+                  paddingTop: Number(value),
+                }));
+              } else if (isPaddingBottom) {
+                setProps(prev => ({
+                  ...prev,
+                  padding: null,
+                  paddingY: null,
+                  paddingBottom: Number(value),
+                }));
+              } else if (isRadius) {
+                setProps(prev => ({
+                  ...prev,
+                  radius: Number(value),
+                  radiusTop: null,
+                  radiusBottom: null,
+                }));
+              } else if (isRadiusTop) {
+                setProps(prev => ({
+                  ...prev,
+                  radius: null,
+                  radiusTop: Number(value),
+                }));
+              } else if (isRadiusBottom) {
+                setProps(prev => ({
+                  ...prev,
+                  radius: null,
+                  radiusBottom: Number(value),
                 }));
               } else {
                 setProps(prev => ({

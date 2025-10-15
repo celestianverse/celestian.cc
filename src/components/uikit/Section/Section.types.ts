@@ -1,23 +1,31 @@
 import type { ComponentProps } from "react";
-import type { Color } from "@/types/Color";
+import type { ColorWithTransparent } from "@/types/Color";
 import { Flex } from "@/components/uikit/Flex/Flex";
-import type { AlignItems, BorderRadius, Padding, Tone } from "@/types/Styles";
+import type { AlignItems, Tone } from "@/types/Styles";
+import {
+  SECTION_BORDER_RADIUS,
+  SECTION_HEIGHT,
+  SECTION_PADDING,
+  SECTION_VARIANT
+} from "@/components/uikit/Section/Section.constants";
 
-export type Element = "div" | "section" | "article" | "header" | "footer" | "button" | "a";
+export type SectionVariant = typeof SECTION_VARIANT[number];
 
-type Variant = "flat" | "gradient";
+export type SectionHeight = typeof SECTION_HEIGHT[number];
 
-type Height = "fullscreen" | "l" | "m" | "auto";
+export type SectionPadding = typeof SECTION_PADDING[number];
 
-type SectionProps = {
-  variant?: Variant;
-  color?: Color | "transparent";
+export type SectionBorderRadius = typeof SECTION_BORDER_RADIUS[number];
+
+type Props = {
+  variant?: SectionVariant;
+  color?: ColorWithTransparent;
   tone?: Tone;
   alignSection?: AlignItems;
-  paddingY?: Extract<Padding, 0 | 32 | 48 | 64 | 96 | 128>;
-  paddingTop?: Extract<Padding, 0 | 32 | 48 | 64 | 96 | 128>;
-  paddingBottom?: Extract<Padding, 0 | 32 | 48 | 64 | 96 | 128>;
-  overlapBottom?: Extract<BorderRadius, 0 | 64 | 96 | 128>;
+  paddingY?: SectionPadding;
+  paddingTop?: SectionPadding;
+  paddingBottom?: SectionPadding;
+  overlapBottom?: SectionBorderRadius;
   /**
    * <pre>
    *    fullscreen - 100vh
@@ -26,21 +34,21 @@ type SectionProps = {
    *          auto - auto (default)
    * </pre>
    */
-  height?: Height;
-  radius?: Extract<BorderRadius, 0 | 64 | 96 | 128>;
-  laptopRadius?: Extract<BorderRadius, 0 | 64 | 96 | 128>;
-  tabletRadius?: Extract<BorderRadius, 0 | 64 | 96 | 128>;
-  mobileRadius?: Extract<BorderRadius, 0 | 64 | 96 | 128>;
-  radiusTop?: Extract<BorderRadius, 0 | 64 | 96 | 128>;
-  laptopRadiusTop?: Extract<BorderRadius, 0 | 64 | 96 | 128>;
-  tabletRadiusTop?: Extract<BorderRadius, 0 | 64 | 96 | 128>;
-  mobileRadiusTop?: Extract<BorderRadius, 0 | 64 | 96 | 128>;
-  radiusBottom?: Extract<BorderRadius, 0 | 64 | 96 | 128>;
-  laptopRadiusBottom?: Extract<BorderRadius, 0 | 64 | 96 | 128>;
-  tabletRadiusBottom?: Extract<BorderRadius, 0 | 64 | 96 | 128>;
-  mobileRadiusBottom?: Extract<BorderRadius, 0 | 64 | 96 | 128>;
+  height?: SectionHeight;
+  radius?: SectionBorderRadius;
+  laptopRadius?: SectionBorderRadius;
+  tabletRadius?: SectionBorderRadius;
+  mobileRadius?: SectionBorderRadius;
+  radiusTop?: SectionBorderRadius;
+  laptopRadiusTop?: SectionBorderRadius;
+  tabletRadiusTop?: SectionBorderRadius;
+  mobileRadiusTop?: SectionBorderRadius;
+  radiusBottom?: SectionBorderRadius;
+  laptopRadiusBottom?: SectionBorderRadius;
+  tabletRadiusBottom?: SectionBorderRadius;
+  mobileRadiusBottom?: SectionBorderRadius;
   offsetHeader?: boolean;
   classNameContainer?: string;
 };
 
-export type Props = SectionProps & ComponentProps<typeof Flex>;
+export type SectionProps = Props & ComponentProps<typeof Flex>;

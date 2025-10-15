@@ -23,7 +23,7 @@
       min-height: calc(min(100vh, 720px) + var(--spacing-128));
     }
 
-    .container {
+    & > .container {
       padding-bottom: var(--spacing-128);
     }
   }
@@ -35,7 +35,7 @@
       min-height: calc(min(100vh, 720px) + var(--spacing-96));
     }
 
-    .container {
+    & > .container {
       padding-bottom: var(--spacing-96);
     }
   }
@@ -47,7 +47,7 @@
       min-height: calc(min(100vh, 720px) + var(--spacing-64));
     }
 
-    .container {
+    & > .container {
       padding-bottom: var(--spacing-64);
     }
   }
