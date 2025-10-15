@@ -46,9 +46,9 @@ export const uikit = {
     },
   },
   layout: {
-    box: {
-      title: "Box",
-      longTitle: "Box component",
+    page: {
+      title: "Page",
+      longTitle: "Page component",
     },
     section: {
       title: "Section",
@@ -57,6 +57,10 @@ export const uikit = {
     grid: {
       title: "Grid",
       longTitle: "Grid component",
+    },
+    box: {
+      title: "Box",
+      longTitle: "Box component",
     },
     row: {
       title: "Row",

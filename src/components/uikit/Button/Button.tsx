@@ -1,4 +1,4 @@
-import React from "react";
+import type { ElementType } from "react";
 import classNames from "classnames";
 import { useIcon } from "@/hooks/useIcon";
 import type { Polymorphic } from "@/types/Polymorphic";
@@ -6,7 +6,7 @@ import type { ButtonProps, ButtonElement } from "./Button.types";
 import styles from "./Button.module.scss";
 import { BUTTON_DEFAULT_ELEMENT } from "./Button.constants";
 
-export const Button = <E extends React.ElementType<any, ButtonElement> = typeof BUTTON_DEFAULT_ELEMENT>(
+export const Button = <E extends ElementType<any, ButtonElement> = typeof BUTTON_DEFAULT_ELEMENT>(
   {
     as,
     variant = "flat",

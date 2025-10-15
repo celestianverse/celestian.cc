@@ -1,4 +1,4 @@
-import type React from "react";
+import type { ComponentPropsWithoutRef, ComponentPropsWithRef, ElementType, RefAttributes } from "react";
 
 /**
  * Type that combines custom properties and `ref` attributes
@@ -15,7 +15,7 @@ export type PropsWithRef<
   T extends Record<string, unknown> = Record<string, never>,
 > =
   T &
-  React.RefAttributes<R>;
+  RefAttributes<R>;
 
 /**
  * Type for handling `ref` property in polymorphic components
@@ -27,11 +27,11 @@ export type PropsWithRef<
  */
 export type PolymorphicRef<
   R extends boolean,
-  E extends React.ElementType,
+  E extends ElementType,
 > =
   R extends true
-    ? ("ref" extends keyof React.ComponentPropsWithRef<E>
-      ? { ref?: React.ComponentPropsWithRef<E>["ref"] }
+    ? ("ref" extends keyof ComponentPropsWithRef<E>
+      ? { ref?: ComponentPropsWithRef<E>["ref"] }
       : object)
     : object;
 
@@ -41,7 +41,7 @@ export type PolymorphicRef<
  * `as` - Optional prop to specify the type of HTML element or component
  * that will be used as the root
  */
-export type BaseProps<E extends React.ElementType> = {
+export type BaseProps<E extends ElementType> = {
   as?: E;
 };
 
@@ -58,11 +58,11 @@ export type BaseProps<E extends React.ElementType> = {
  * @template R Specifies whether the component uses `ref`
  */
 export type Polymorphic<
-  E extends React.ElementType,
+  E extends ElementType,
   T extends Record<string, unknown> = Record<string, never>,
   R extends boolean = false,
 > =
   T &
   BaseProps<E> &
   PolymorphicRef<R, E> &
-  Omit<React.ComponentPropsWithoutRef<E>, keyof T>;
+  Omit<ComponentPropsWithoutRef<E>, keyof T>;

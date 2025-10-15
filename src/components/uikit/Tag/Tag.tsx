@@ -1,4 +1,4 @@
-import React from "react";
+import type { ElementType } from "react";
 import classNames from "classnames";
 import { useIcon } from "@/hooks/useIcon";
 import type { Polymorphic } from "@/types/Polymorphic";
@@ -6,7 +6,7 @@ import type { TagProps, TagElement } from "./Tag.types";
 import { TAG_DEFAULT_ELEMENT } from "@/components/uikit/Tag/Tag.constants";
 import styles from "./Tag.module.scss";
 
-export const Tag = <E extends React.ElementType<any, TagElement> = typeof TAG_DEFAULT_ELEMENT>(
+export const Tag = <E extends ElementType<any, TagElement> = typeof TAG_DEFAULT_ELEMENT>(
   {
     as,
     variant = "flat",

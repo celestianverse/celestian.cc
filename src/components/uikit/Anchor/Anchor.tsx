@@ -1,4 +1,4 @@
-import React from "react";
+import type { ElementType } from "react";
 import classNames from "classnames";
 import type { Polymorphic } from "@/types/Polymorphic";
 import type { AnchorProps, AnchorElement } from "./Anchor.types";
@@ -6,7 +6,7 @@ import { useIcon } from "@/hooks/useIcon";
 import { ANCHOR_DEFAULT_ELEMENT } from "@/components/uikit/Anchor/Anchor.constants";
 import styles from "./Anchor.module.scss";
 
-export const Anchor = <E extends React.ElementType<any, AnchorElement> = typeof ANCHOR_DEFAULT_ELEMENT>(
+export const Anchor = <E extends ElementType<any, AnchorElement> = typeof ANCHOR_DEFAULT_ELEMENT>(
   {
     as,
     variant = "base",
