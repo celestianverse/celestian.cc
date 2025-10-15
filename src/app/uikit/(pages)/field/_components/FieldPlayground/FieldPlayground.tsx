@@ -15,10 +15,7 @@ export const FieldPlayground = () => {
 
   const FieldComponentLight = (
     <Field {...props}>
-      <Select
-        width={200}
-        size="s"
-      >
+      <Select width={200}>
         <SelectOption label="Option 1" />
         <SelectOption label="Option 2" />
         <SelectOption label="Option 3" />
@@ -33,7 +30,6 @@ export const FieldPlayground = () => {
       <Select
         color="contrast"
         width={200}
-        size="s"
       >
         <SelectOption label="Option 1" />
         <SelectOption label="Option 2" />

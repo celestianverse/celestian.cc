@@ -133,4 +133,5 @@ export const ICON_SIZE = [
   "m",
   "s",
   "xs",
+  "xxs",
 ] as const;

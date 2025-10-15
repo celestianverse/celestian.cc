@@ -34,6 +34,11 @@
     height: var(--size-16);
   }
 
+  &.size-xxs {
+    width: var(--size-12);
+    height: var(--size-12);
+  }
+
   svg {
     * {
       fill: currentColor;

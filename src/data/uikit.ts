@@ -18,6 +18,10 @@ export const uikit = {
       title: "Tag",
       longTitle: "Tag component",
     },
+    badge: {
+      title: "Badge",
+      longTitle: "Badge component",
+    },
     icon: {
       title: "Icon",
       longTitle: "Icon component",
@@ -76,13 +80,13 @@ export const uikit = {
     },
   },
   utilities: {
-    divider: {
-      title: "Divider",
-      longTitle: "Divider component",
-    },
     hidden: {
       title: "Hidden",
       longTitle: "Hidden component",
+    },
+    divider: {
+      title: "Divider",
+      longTitle: "Divider component",
     },
   },
   meta: {

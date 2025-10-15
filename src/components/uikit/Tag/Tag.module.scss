@@ -18,6 +18,11 @@
       width: var(--size-20);
       height: var(--size-20);
     }
+
+    &.icon-only {
+      width: var(--size-40);
+      padding: 0;
+    }
   }
 
   &.size-s {
@@ -28,6 +33,11 @@
     .icon {
       width: var(--size-16);
       height: var(--size-16);
+    }
+
+    &.icon-only {
+      width: var(--size-32);
+      padding: 0;
     }
   }
 

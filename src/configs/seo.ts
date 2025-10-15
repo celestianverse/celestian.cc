@@ -19,6 +19,9 @@ export const seo = {
       tag: {
         title: `Tag component for UI kit library — ${app.name}`,
       },
+      badge: {
+        title: `Badge component for UI kit library — ${app.name}`,
+      },
       icon: {
         title: `Icon component for UI kit library — ${app.name}`,
       },
@@ -64,11 +67,11 @@ export const seo = {
       },
     },
     utilities: {
-      divider: {
-        title: `Divider component for UI kit library — ${app.name}`,
-      },
       hidden: {
         title: `Hidden component for UI kit library — ${app.name}`,
+      },
+      divider: {
+        title: `Divider component for UI kit library — ${app.name}`,
       },
     },
     meta: {

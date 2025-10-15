@@ -16,6 +16,10 @@ export const uikitNavigation = {
         name: routes.uikit.dataDisplay.tag.name,
         path: routes.uikit.dataDisplay.tag.path,
       },
+      badge: {
+        name: routes.uikit.dataDisplay.badge.name,
+        path: routes.uikit.dataDisplay.badge.path,
+      },
       icon: {
         name: routes.uikit.dataDisplay.icon.name,
         path: routes.uikit.dataDisplay.icon.path,
@@ -83,13 +87,13 @@ export const uikitNavigation = {
   utilities: {
     name: routes.uikit.utilities.name,
     pages: {
-      divider: {
-        name: routes.uikit.utilities.divider.name,
-        path: routes.uikit.utilities.divider.path,
-      },
       hidden: {
         name: routes.uikit.utilities.hidden.name,
         path: routes.uikit.utilities.hidden.path,
+      },
+      divider: {
+        name: routes.uikit.utilities.divider.name,
+        path: routes.uikit.utilities.divider.path,
       },
     },
   },
