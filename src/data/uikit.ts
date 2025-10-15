@@ -44,6 +44,10 @@ export const uikit = {
       title: "Switch",
       longTitle: "Switch component",
     },
+    field: {
+      title: "Field",
+      longTitle: "Field component",
+    },
   },
   layout: {
     page: {

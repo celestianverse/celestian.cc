@@ -1,6 +1,6 @@
 import { cloneElement, useId } from "react";
 import classNames from "classnames";
-import type { Props } from "./Field.types";
+import type { FieldProps } from "./Field.types";
 import styles from "./Field.module.scss";
 import { Text } from "@/components/uikit/Text/Text";
 import { Flex } from "@/components/uikit/Flex/Flex";
@@ -12,7 +12,7 @@ export const Field = (
     labelWidth,
     className,
     children,
-  }: Props) => {
+  }: FieldProps) => {
   const id = useId();
 
   const getDirection = () => {
@@ -27,7 +27,7 @@ export const Field = (
     <Flex
       direction={getDirection()}
       align={labelPosition === "top" ? "flex-start" : "center"}
-      gap={4}
+      gap={labelPosition === "top" ? 4 : 8}
       className={classNames(
         styles.field,
         className,

@@ -45,6 +45,10 @@ export const uikitNavigation = {
         name: routes.uikit.controls.switch.name,
         path: routes.uikit.controls.switch.path,
       },
+      field: {
+        name: routes.uikit.controls.field.name,
+        path: routes.uikit.controls.field.path,
+      },
     },
   },
   layout: {
