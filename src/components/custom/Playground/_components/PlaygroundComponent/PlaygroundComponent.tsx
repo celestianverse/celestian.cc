@@ -99,8 +99,8 @@ export const PlaygroundComponent = <T,>(
                 setProps(prev => ({
                   ...prev,
                   variant: value,
-                  ...(isOutline ? {borderStyle: "solid"} : {}),
-                  ...(isOutline ? {borderWidth: 1} : {}),
+                  ...(settings["borderStyle"] ? isOutline ? {borderStyle: "solid"} : {borderStyle: "none"} : {}),
+                  ...(settings["borderWidth"] ? isOutline ? {borderWidth: 1} : {borderWidth: 0} : {}),
                 }));
               } else if (isControlSize) {
                 const getRadius = () => {
