@@ -41,7 +41,7 @@ export const MeSection = () => {
           mobileAlign="center"
         >
           <Column
-            gap={0}
+            gap={4}
             mobileAlign="center"
           >
             <Title
@@ -64,16 +64,6 @@ export const MeSection = () => {
             {contacts.me.name}
           </Title>
         </Column>
-        <Button
-          as="a"
-          href={contacts.me.resume.href}
-          target="_blank"
-          size="l"
-          color="info"
-          iconStart="download"
-        >
-          {contacts.me.resume.label}
-        </Button>
       </Column>
     </Section>
   );
