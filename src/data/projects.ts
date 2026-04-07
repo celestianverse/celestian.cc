@@ -5,8 +5,8 @@ export const projects = {
       title: "Tractikum",
       subtitle: "Flexible ad tracker \nfor performance teams",
       tag: "Design + Frontend",
-      url: "https://tractikum.com/en/",
-      domain: "tractikum.com",
+      url: "https://tractikum.launchers.ru",
+      domain: "tractikum.launchers.ru",
       screenshot: "/images/projects/screenshots/compressed/tractikum--x2.png",
       logo: {
         light: "/images/projects/logos/tractikum.svg",
