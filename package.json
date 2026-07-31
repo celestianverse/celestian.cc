@@ -3,36 +3,36 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "next dev --webpack",
+    "build": "next build --webpack",
     "start": "next start",
     "lint": "next lint",
     "tsc": "tsc",
-    "build:styles": "sass src/styles/tokens.scss src/styles/tokens.css --no-source-map"
+    "styles": "sass src/styles/tokens.scss src/styles/tokens.css --no-source-map"
   },
   "dependencies": {
     "@floating-ui/react": "^0.27.16",
     "classnames": "^2.5.1",
     "js-cookie": "^3.0.5",
-    "next": "15.5.9",
+    "next": "16.2.12",
     "next-plugin-svgr": "^1.1.12",
     "next-themes": "^0.4.4",
-    "react": "19.1.1",
-    "react-dom": "19.1.1",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
     "zustand": "^5.0.8"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@types/node": "^20",
-    "@types/react": "19.1.12",
-    "@types/react-dom": "19.1.9",
-    "eslint": "^9",
-    "eslint-config-next": "15.5.3",
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.4",
+    "eslint": "10.8.0",
+    "eslint-config-next": "16.2.12",
     "sass": "^1.84.0",
     "typescript": "^5"
   },
   "overrides": {
-    "@types/react": "19.1.12",
-    "@types/react-dom": "19.1.9"
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.4"
   }
 }
