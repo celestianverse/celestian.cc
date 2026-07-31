@@ -3,10 +3,10 @@ export const contacts = {
   me: {
     name: "Georgii Zubchenko",
     positions: {
-      primary: "UI/UX Designer",
-      secondary: "Frontend Developer",
+      primary: "Full-Stack Developer",
+      secondary: "Go, PostgreSQL, React, TypeScript",
     },
-    photo: "/images/contacts/compressed/me--x2.jpg",
+    photo: "/images/contacts/compressed/me-2--x2.jpg",
     resume: {
       href: "/documents/Resume-Georgii-Zubchenko.pdf",
       label: "Resume (CV)",

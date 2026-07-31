@@ -39,29 +39,31 @@ export const MeSection = () => {
           gap={24}
           mobileAlign="center"
         >
+          <Title
+            as="h4"
+            size="s"
+          >
+            {contacts.me.name}
+          </Title>
           <Column
             gap={4}
             mobileAlign="center"
           >
             <Title
               as="h3"
-              size="s"
+              size="xs"
+              weight="bold"
             >
               {contacts.me.positions.primary}
             </Title>
             <Title
               as="h3"
-              size="s"
+              size="xs"
+              weight="regular"
             >
               {contacts.me.positions.secondary}
             </Title>
           </Column>
-          <Title
-            as="h4"
-            size="xs"
-          >
-            {contacts.me.name}
-          </Title>
         </Column>
       </Column>
     </Section>

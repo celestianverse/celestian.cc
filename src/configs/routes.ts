@@ -1,15 +1,18 @@
 export const routes = {
   home: {
-    name: "Design & Frontend",
+    name: "Development",
     path: "/",
+    target: "",
   },
   projects: {
     name: "Latest projects",
     path: "/projects",
+    target: "",
   },
   uikit: {
     name: "UI kit library",
     path: "/uikit",
+    target: "",
     dataDisplay: {
       name: "Data display",
       title: {
@@ -110,8 +113,14 @@ export const routes = {
       },
     },
   },
+  game: {
+    name: "English Battle",
+    path: "https://english-battle.celestian.cc/",
+    target: "_blank",
+  },
   contacts: {
     name: "Contacts",
     path: "/contacts",
+    target: "",
   },
 };

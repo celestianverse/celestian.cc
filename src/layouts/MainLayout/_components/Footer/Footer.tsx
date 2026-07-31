@@ -28,10 +28,7 @@ export const Footer = () => {
         mobileDirection="column"
       >
         <Logo color="contrast" />
-        <Row
-          justify="flex-end"
-          gap={16}
-        >
+        <Row gap={16}>
           <ThemeSwitcher color="contrast" />
           <FontSwitcher color="contrast" />
         </Row>

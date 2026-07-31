@@ -2,8 +2,8 @@ export const methodology = {
   title: "Methodology",
   items: [
     {
-      title: "Agile, Kanban",
-      text: "Workflows are organized according to Agile principles using a Kanban board, ensuring task transparency and flexibility. This approach enables quick adaptation to changes while maintaining steady progress.",
+      title: "Agile, Scrum, Kanban",
+      text: "Workflows are organized according to Agile principles using Scrum or Kanban board, ensuring task transparency and flexibility. This approach enables quick adaptation to changes while maintaining steady progress.",
     },
     {
       title:
@@ -13,7 +13,7 @@ export const methodology = {
     },
     {
       title:
-        "Component-based architecture",
+        "Clean component-based architecture",
       text:
         "The application is structured as a collection of reusable, independent components, each responsible for its own logic, structure, and styling. Such an approach enhances scalability, simplifies maintenance, and ensures design and functionality consistency across the project.",
     },

@@ -1,4 +1,4 @@
 export const app = {
   name: "Celestian",
-  title: "Design & Frontend for your project — Celestian",
+  title: "Full-Stack Development for your project — Celestian",
 };
