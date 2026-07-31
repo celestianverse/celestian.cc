@@ -25,7 +25,7 @@ export const HeroSection = () => {
         <Column gap={16}>
           <Title
             as="h1"
-            size="xl"
+            size="l"
           >
             {hero.title}
           </Title>

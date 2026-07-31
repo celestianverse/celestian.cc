@@ -2,7 +2,7 @@ import { app } from "@/configs/app";
 
 export const seo = {
   home: {
-    title: `Design & Frontend for your project — ${app.name}`,
+    title: `Full-Stack Development for your project — ${app.name}`,
   },
   projects: {
     title: `Latest projects — ${app.name}`,

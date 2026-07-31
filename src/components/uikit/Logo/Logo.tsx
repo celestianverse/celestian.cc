@@ -18,7 +18,7 @@ export const Logo = ({ color = "primary", className }: Props) => {
         color={color}
         className={styles.title}
       >
-        CELESTIAN
+        Celestian.
       </Title>
     </Link>
   );

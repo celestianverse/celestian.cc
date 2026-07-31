@@ -64,8 +64,9 @@ export const Burger = () => {
                 {Object.values(routes).map((page) => (
                   <Anchor
                     key={page.path}
-                    as={Link}
+                    as={page.target === "_blank" ? "a" : Link}
                     href={page.path}
+                    target={page.target}
                     paddingY={16}
                     variant={isActivePath(page.path) ? "outline" : "base"}
                     borderWidth={isActivePath(page.path) ? 2 : 0}

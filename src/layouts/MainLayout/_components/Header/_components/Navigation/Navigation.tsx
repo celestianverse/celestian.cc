@@ -17,10 +17,11 @@ export const Navigation = () => {
         {Object.values(navigation).map((page) => (
           <li key={page.path}>
             <Anchor
-              as={Link}
+              as={page.target === "_blank" ? "a" : Link}
               href={page.path}
+              target={page.target}
               paddingY={16}
-              paddingX={24}
+              paddingX={16}
               variant={isActivePath(page.path) ? "outline" : "base"}
               borderWidth={isActivePath(page.path) ? 2 : 0}
               borderStyle={isActivePath(page.path) ? "dashed" : "none"}
