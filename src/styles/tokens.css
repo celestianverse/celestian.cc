@@ -4,7 +4,7 @@
   --font-weight-medium: 500;
   --font-weight-regular: 400;
   --font-size-title-xl: 4.8125rem;
-  --font-size-title-l: 3.75rem;
+  --font-size-title-l: 3.65rem;
   --font-size-title-m: 2.75rem;
   --font-size-title-s: 1.875rem;
   --font-size-title-xs: 1.25rem;
@@ -73,7 +73,7 @@
 
 @media (max-width: 1219px) {
   :root {
-    --font-size-title-xl: 3.75rem;
+    --font-size-title-xl: 3.65rem;
     --font-size-title-l: 2.75rem;
     --font-size-title-m: 2rem;
     --font-size-title-s: 1.5rem;

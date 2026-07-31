@@ -9,7 +9,7 @@
   --font-weight-regular: 400;
 
   --font-size-title-xl: 4.8125rem;
-  --font-size-title-l: 3.75rem;
+  --font-size-title-l: 3.65rem;
   --font-size-title-m: 2.75rem;
   --font-size-title-s: 1.875rem;
   --font-size-title-xs: 1.25rem;
@@ -84,7 +84,7 @@
 
 @include tablet-max {
   :root {
-    --font-size-title-xl: 3.75rem;
+    --font-size-title-xl: 3.65rem;
     --font-size-title-l: 2.75rem;
     --font-size-title-m: 2rem;
     --font-size-title-s: 1.5rem;
@@ -107,956 +107,718 @@ $dark-gradient-soft: linear-gradient(90deg, color.scale($primary, $lightness: -6
 $dark-surface-soft: color.scale($primary, $lightness: 6%, $saturation: 15%);
 
 $themes: (
-  primary-content: (
-    light: $primary,
+  primary-content: (light: $primary,
     dark: $contrast,
   ),
-  primary-content-action: (
-    light: $accent,
+  primary-content-action: (light: $accent,
     dark: $accent,
   ),
-  primary-surface: (
-    light: $primary,
+  primary-surface: (light: $primary,
     dark: $primary,
   ),
-  primary-surface-on: (
-    light: $contrast,
+  primary-surface-on: (light: $contrast,
     dark: $contrast,
   ),
-  primary-surface-soft: (
-    light: color.mix($primary, $contrast, 5%),
+  primary-surface-soft: (light: color.mix($primary, $contrast, 5%),
     dark: $dark-surface-soft,
   ),
-  primary-surface-soft-on: (
-    light: $primary,
+  primary-surface-soft-on: (light: $primary,
     dark: $contrast,
   ),
-  primary-fill: (
-    light: $primary,
+  primary-fill: (light: $primary,
     dark: $contrast,
   ),
-  primary-fill-action: (
-    light: $accent,
+  primary-fill-action: (light: $accent,
     dark: $accent,
   ),
-  primary-fill-on: (
-    light: $contrast,
+  primary-fill-on: (light: $contrast,
     dark: $primary,
   ),
-  primary-fill-soft: (
-    light: rgba($primary, 0.05),
+  primary-fill-soft: (light: rgba($primary, 0.05),
     dark: rgba($contrast, 0.06),
   ),
-  primary-fill-soft-action: (
-    light: rgba($primary, 0.12),
+  primary-fill-soft-action: (light: rgba($primary, 0.12),
     dark: rgba($contrast, 0.13),
   ),
-  primary-fill-soft-on: (
-    light: $primary,
+  primary-fill-soft-on: (light: $primary,
     dark: $contrast,
   ),
-  primary-outline: (
-    light: $primary,
+  primary-outline: (light: $primary,
     dark: $contrast,
   ),
-  primary-outline-action: (
-    light: $accent,
+  primary-outline-action: (light: $accent,
     dark: $accent,
   ),
-  primary-outline-soft: (
-    light: rgba($primary, 0.15),
+  primary-outline-soft: (light: rgba($primary, 0.15),
     dark: rgba($contrast, 0.15),
   ),
-  primary-gradient: (
-    light: linear-gradient(90deg, color.scale($primary, $lightness: -12%, $saturation: 20%) 0, color.scale($primary, $lightness: 4%, $saturation: 20%) 100%),
+  primary-gradient: (light: linear-gradient(90deg, color.scale($primary, $lightness: -12%, $saturation: 20%) 0, color.scale($primary, $lightness: 4%, $saturation: 20%) 100%),
     dark: $dark-gradient,
   ),
-  primary-gradient-on: (
-    light: $contrast,
+  primary-gradient-on: (light: $contrast,
     dark: $contrast,
   ),
-  primary-gradient-soft: (
-    light: linear-gradient(90deg, color.scale($neutral, $lightness: -5%) 0, color.scale($neutral, $lightness: 6%) 100%),
+  primary-gradient-soft: (light: linear-gradient(90deg, color.scale($neutral, $lightness: -5%) 0, color.scale($neutral, $lightness: 6%) 100%),
     dark: $dark-gradient-soft,
   ),
-  primary-gradient-soft-on: (
-    light: $primary,
+  primary-gradient-soft-on: (light: $primary,
     dark: $contrast,
   ),
-  secondary-content: (
-    light: $secondary,
+  secondary-content: (light: $secondary,
     dark: rgba($contrast, 0.6),
   ),
-  secondary-content-action: (
-    light: $primary,
+  secondary-content-action: (light: $primary,
     dark: rgba($contrast, 0.4),
   ),
-  secondary-surface: (
-    light: $secondary,
+  secondary-surface: (light: $secondary,
     dark: $primary,
   ),
-  secondary-surface-on: (
-    light: $contrast,
+  secondary-surface-on: (light: $contrast,
     dark: $contrast,
   ),
-  secondary-surface-soft: (
-    light: color.mix($secondary, $contrast, 5%),
+  secondary-surface-soft: (light: color.mix($secondary, $contrast, 5%),
     dark: $dark-surface-soft,
   ),
-  secondary-surface-soft-on: (
-    light: $primary,
+  secondary-surface-soft-on: (light: $primary,
     dark: $contrast,
   ),
-  secondary-fill: (
-    light: $secondary,
+  secondary-fill: (light: $secondary,
     dark: color.mix($contrast, $primary, 60%),
   ),
-  secondary-fill-action: (
-    light: color.mix($secondary, $primary, 70%),
+  secondary-fill-action: (light: color.mix($secondary, $primary, 70%),
     dark: color.mix($contrast, $primary, 40%),
   ),
-  secondary-fill-on: (
-    light: $contrast,
+  secondary-fill-on: (light: $contrast,
     dark: $primary,
   ),
-  secondary-fill-soft: (
-    light: rgba($secondary, 0.09),
+  secondary-fill-soft: (light: rgba($secondary, 0.09),
     dark: rgba($contrast, 0.06),
   ),
-  secondary-fill-soft-action: (
-    light: rgba($secondary, 0.20),
+  secondary-fill-soft-action: (light: rgba($secondary, 0.20),
     dark: rgba($contrast, 0.13),
   ),
-  secondary-fill-soft-on: (
-    light: $secondary,
+  secondary-fill-soft-on: (light: $secondary,
     dark: $contrast,
   ),
-  secondary-outline: (
-    light: $secondary,
+  secondary-outline: (light: $secondary,
     dark: rgba($contrast, 0.6),
   ),
-  secondary-outline-action: (
-    light: $accent,
+  secondary-outline-action: (light: $accent,
     dark: $accent,
   ),
-  secondary-outline-soft: (
-    light: rgba($secondary, 0.15),
+  secondary-outline-soft: (light: rgba($secondary, 0.15),
     dark: rgba($contrast, 0.15),
   ),
-  secondary-gradient: (
-    light: linear-gradient(90deg, color.scale($secondary, $lightness: -16%, $saturation: 3%) 0, color.scale($secondary, $lightness: 5%, $saturation: 3%) 100%),
+  secondary-gradient: (light: linear-gradient(90deg, color.scale($secondary, $lightness: -16%, $saturation: 3%) 0, color.scale($secondary, $lightness: 5%, $saturation: 3%) 100%),
     dark: $dark-gradient,
   ),
-  secondary-gradient-on: (
-    light: $contrast,
+  secondary-gradient-on: (light: $contrast,
     dark: $contrast,
   ),
-  secondary-gradient-soft: (
-    light: linear-gradient(90deg, color.scale($neutral, $lightness: -1%) 0, color.scale($neutral, $lightness: 30%) 100%),
+  secondary-gradient-soft: (light: linear-gradient(90deg, color.scale($neutral, $lightness: -1%) 0, color.scale($neutral, $lightness: 30%) 100%),
     dark: $dark-gradient-soft,
   ),
-  secondary-gradient-soft-on: (
-    light: $primary,
+  secondary-gradient-soft-on: (light: $primary,
     dark: $contrast,
   ),
-  brand-content: (
-    light: $brand,
+  brand-content: (light: $brand,
     dark: color.mix($brand, $primary, 90%),
   ),
-  brand-content-action: (
-    light: color.scale($brand, $lightness: -50%),
+  brand-content-action: (light: color.scale($brand, $lightness: -50%),
     dark: color.scale($brand, $lightness: -55%),
   ),
-  brand-surface: (
-    light: $brand,
+  brand-surface: (light: $brand,
     dark: $primary,
   ),
-  brand-surface-on: (
-    light: $primary,
+  brand-surface-on: (light: $primary,
     dark: $contrast,
   ),
-  brand-surface-soft: (
-    light: color.mix($brand, $contrast, 10%),
+  brand-surface-soft: (light: color.mix($brand, $contrast, 10%),
     dark: $dark-surface-soft,
   ),
-  brand-surface-soft-on: (
-    light: $primary,
+  brand-surface-soft-on: (light: $primary,
     dark: $contrast,
   ),
-  brand-fill: (
-    light: $brand,
+  brand-fill: (light: $brand,
     dark: color.scale($brand, $lightness: -30%),
   ),
-  brand-fill-action: (
-    light: color.scale($brand, $lightness: -30%),
+  brand-fill-action: (light: color.scale($brand, $lightness: -30%),
     dark: color.scale($brand, $lightness: -50%),
   ),
-  brand-fill-on: (
-    light: $primary,
+  brand-fill-on: (light: $primary,
     dark: $primary,
   ),
-  brand-fill-soft: (
-    light: rgba($brand, 0.1),
+  brand-fill-soft: (light: rgba($brand, 0.1),
     dark: rgba($brand, 0.08),
   ),
-  brand-fill-soft-action: (
-    light: rgba($brand, 0.2),
+  brand-fill-soft-action: (light: rgba($brand, 0.2),
     dark: rgba($brand, 0.14),
   ),
-  brand-fill-soft-on: (
-    light: $brand,
+  brand-fill-soft-on: (light: $brand,
     dark: $brand,
   ),
-  brand-outline: (
-    light: $brand,
+  brand-outline: (light: $brand,
     dark: color.mix($brand, $primary, 85%),
   ),
-  brand-outline-action: (
-    light: color.mix($brand, $primary, 65%),
+  brand-outline-action: (light: color.mix($brand, $primary, 65%),
     dark: color.mix($brand, $primary, 55%),
   ),
-  brand-outline-soft: (
-    light: rgba($brand, 0.15),
+  brand-outline-soft: (light: rgba($brand, 0.15),
     dark: rgba($brand, 0.15),
   ),
-  brand-gradient: (
-    light: linear-gradient(90deg, color.scale($brand, $lightness: -28%) 0, color.scale($brand, $lightness: 8%) 100%),
+  brand-gradient: (light: linear-gradient(90deg, color.scale($brand, $lightness: -28%) 0, color.scale($brand, $lightness: 8%) 100%),
     dark: $dark-gradient,
   ),
-  brand-gradient-on: (
-    light: $primary,
+  brand-gradient-on: (light: $primary,
     dark: $contrast,
   ),
-  brand-gradient-soft: (
-    light: linear-gradient(90deg, color.mix($brand, $contrast, 22%) 0, color.mix($brand, $contrast, 10%) 100%),
+  brand-gradient-soft: (light: linear-gradient(90deg, color.mix($brand, $contrast, 22%) 0, color.mix($brand, $contrast, 10%) 100%),
     dark: $dark-gradient-soft,
   ),
-  brand-gradient-soft-on: (
-    light: $primary,
+  brand-gradient-soft-on: (light: $primary,
     dark: $contrast,
   ),
-  accent-content: (
-    light: $accent,
+  accent-content: (light: $accent,
     dark: $accent,
   ),
-  accent-content-action: (
-    light: color.scale($accent, $lightness: -30%),
+  accent-content-action: (light: color.scale($accent, $lightness: -30%),
     dark: color.scale($accent, $lightness: -30%),
   ),
-  accent-surface: (
-    light: $accent,
+  accent-surface: (light: $accent,
     dark: $primary,
   ),
-  accent-surface-on: (
-    light: $contrast,
+  accent-surface-on: (light: $contrast,
     dark: $contrast,
   ),
-  accent-surface-soft: (
-    light: color.mix($accent, $contrast, 10%),
+  accent-surface-soft: (light: color.mix($accent, $contrast, 10%),
     dark: $dark-surface-soft,
   ),
-  accent-surface-soft-on: (
-    light: $primary,
+  accent-surface-soft-on: (light: $primary,
     dark: $contrast,
   ),
-  accent-fill: (
-    light: $accent,
+  accent-fill: (light: $accent,
     dark: $accent,
   ),
-  accent-fill-action: (
-    light: color.scale($accent, $lightness: 16%),
+  accent-fill-action: (light: color.scale($accent, $lightness: 16%),
     dark: color.scale($accent, $lightness: -31%),
   ),
-  accent-fill-on: (
-    light: $contrast,
+  accent-fill-on: (light: $contrast,
     dark: $contrast,
   ),
-  accent-fill-soft: (
-    light: rgba($accent, 0.09),
+  accent-fill-soft: (light: rgba($accent, 0.09),
     dark: rgba($accent, 0.09),
   ),
-  accent-fill-soft-action: (
-    light: rgba($accent, 0.2),
+  accent-fill-soft-action: (light: rgba($accent, 0.2),
     dark: rgba($accent, 0.18),
   ),
-  accent-fill-soft-on: (
-    light: $accent,
+  accent-fill-soft-on: (light: $accent,
     dark: $accent,
   ),
-  accent-outline: (
-    light: $accent,
+  accent-outline: (light: $accent,
     dark: $accent,
   ),
-  accent-outline-action: (
-    light: color.scale($accent, $lightness: 35%),
+  accent-outline-action: (light: color.scale($accent, $lightness: 35%),
     dark: color.scale($accent, $lightness: -25%),
   ),
-  accent-outline-soft: (
-    light: rgba($accent, 0.25),
+  accent-outline-soft: (light: rgba($accent, 0.25),
     dark: rgba($accent, 0.25),
   ),
-  accent-gradient: (
-    light: linear-gradient(90deg, color.scale($accent, $lightness: -11%) 0, color.scale($accent, $lightness: 10%) 100%),
+  accent-gradient: (light: linear-gradient(90deg, color.scale($accent, $lightness: -11%) 0, color.scale($accent, $lightness: 10%) 100%),
     dark: $dark-gradient,
   ),
-  accent-gradient-on: (
-    light: $contrast,
+  accent-gradient-on: (light: $contrast,
     dark: $contrast,
   ),
-  accent-gradient-soft: (
-    light: linear-gradient(90deg, color.mix($accent, $contrast, 19%) 0, color.mix($accent, $contrast, 10%) 100%),
+  accent-gradient-soft: (light: linear-gradient(90deg, color.mix($accent, $contrast, 19%) 0, color.mix($accent, $contrast, 10%) 100%),
     dark: $dark-gradient-soft,
   ),
-  accent-gradient-soft-on: (
-    light: $primary,
+  accent-gradient-soft-on: (light: $primary,
     dark: $contrast,
   ),
-  utility-content: (
-    light: $utility,
+  utility-content: (light: $utility,
     dark: $utility,
   ),
-  utility-content-action: (
-    light: color.scale($utility, $lightness: -30%),
+  utility-content-action: (light: color.scale($utility, $lightness: -30%),
     dark: color.scale($utility, $lightness: -35%),
   ),
-  utility-surface: (
-    light: $utility,
+  utility-surface: (light: $utility,
     dark: $primary,
   ),
-  utility-surface-on: (
-    light: $contrast,
+  utility-surface-on: (light: $contrast,
     dark: $contrast,
   ),
-  utility-surface-soft: (
-    light: color.mix($utility, $contrast, 10%),
+  utility-surface-soft: (light: color.mix($utility, $contrast, 10%),
     dark: $dark-surface-soft,
   ),
-  utility-surface-soft-on: (
-    light: $primary,
+  utility-surface-soft-on: (light: $primary,
     dark: $contrast,
   ),
-  utility-fill: (
-    light: $utility,
+  utility-fill: (light: $utility,
     dark: color.scale($utility, $lightness: -30%),
   ),
-  utility-fill-action: (
-    light: color.scale($utility, $lightness: -17%),
+  utility-fill-action: (light: color.scale($utility, $lightness: -17%),
     dark: color.scale($utility, $lightness: -50%),
   ),
-  utility-fill-on: (
-    light: $contrast,
+  utility-fill-on: (light: $contrast,
     dark: $contrast,
   ),
-  utility-fill-soft: (
-    light: rgba($utility, 0.09),
+  utility-fill-soft: (light: rgba($utility, 0.09),
     dark: rgba($utility, 0.08),
   ),
-  utility-fill-soft-action: (
-    light: rgba($utility, 0.18),
+  utility-fill-soft-action: (light: rgba($utility, 0.18),
     dark: rgba($utility, 0.16),
   ),
-  utility-fill-soft-on: (
-    light: $utility,
+  utility-fill-soft-on: (light: $utility,
     dark: $utility,
   ),
-  utility-outline: (
-    light: $utility,
+  utility-outline: (light: $utility,
     dark: color.mix($utility, $primary, 90%),
   ),
-  utility-outline-action: (
-    light: color.scale($utility, $lightness: -28%),
+  utility-outline-action: (light: color.scale($utility, $lightness: -28%),
     dark: color.scale($utility, $lightness: -40%),
   ),
-  utility-outline-soft: (
-    light: rgba($utility, 0.2),
+  utility-outline-soft: (light: rgba($utility, 0.2),
     dark: rgba($utility, 0.2),
   ),
-  utility-gradient: (
-    light: linear-gradient(90deg, color.scale($utility, $lightness: -10%) 0, color.scale($utility, $lightness: 10%) 100%),
+  utility-gradient: (light: linear-gradient(90deg, color.scale($utility, $lightness: -10%) 0, color.scale($utility, $lightness: 10%) 100%),
     dark: $dark-gradient,
   ),
-  utility-gradient-on: (
-    light: $contrast,
+  utility-gradient-on: (light: $contrast,
     dark: $contrast,
   ),
-  utility-gradient-soft: (
-    light: linear-gradient(90deg, color.mix($utility, $contrast, 19%) 0, color.mix($utility, $contrast, 10%) 100%),
+  utility-gradient-soft: (light: linear-gradient(90deg, color.mix($utility, $contrast, 19%) 0, color.mix($utility, $contrast, 10%) 100%),
     dark: $dark-gradient-soft,
   ),
-  utility-gradient-soft-on: (
-    light: $primary,
+  utility-gradient-soft-on: (light: $primary,
     dark: $contrast,
   ),
-  contrast-content: (
-    light: $contrast,
+  contrast-content: (light: $contrast,
     dark: $contrast,
   ),
-  contrast-content-action: (
-    light: rgba($contrast, 0.6),
+  contrast-content-action: (light: rgba($contrast, 0.6),
     dark: rgba($contrast, 0.6),
   ),
-  contrast-surface: (
-    light: $contrast,
+  contrast-surface: (light: $contrast,
     dark: color.scale($primary, $lightness: 11%, $saturation: 10%),
   ),
-  contrast-surface-on: (
-    light: $primary,
+  contrast-surface-on: (light: $primary,
     dark: $contrast,
   ),
-  contrast-surface-soft: (
-    light: rgba($contrast, 0.15),
+  contrast-surface-soft: (light: rgba($contrast, 0.15),
     dark: color.scale($primary, $lightness: 11%, $saturation: 10%),
   ),
-  contrast-surface-soft-on: (
-    light: $contrast,
+  contrast-surface-soft-on: (light: $contrast,
     dark: $contrast,
   ),
-  contrast-fill: (
-    light: $contrast,
+  contrast-fill: (light: $contrast,
     dark: $contrast,
   ),
-  contrast-fill-action: (
-    light: rgba($contrast, 0.6),
+  contrast-fill-action: (light: rgba($contrast, 0.6),
     dark: rgba($contrast, 0.6),
   ),
-  contrast-fill-on: (
-    light: $primary,
+  contrast-fill-on: (light: $primary,
     dark: $primary,
   ),
-  contrast-fill-soft: (
-    light: rgba($contrast, 0.1),
+  contrast-fill-soft: (light: rgba($contrast, 0.1),
     dark: rgba($contrast, 0.06),
   ),
-  contrast-fill-soft-action: (
-    light: rgba($contrast, 0.18),
+  contrast-fill-soft-action: (light: rgba($contrast, 0.18),
     dark: rgba($contrast, 0.13),
   ),
-  contrast-fill-soft-on: (
-    light: $contrast,
+  contrast-fill-soft-on: (light: $contrast,
     dark: $contrast,
   ),
-  contrast-outline: (
-    light: $contrast,
+  contrast-outline: (light: $contrast,
     dark: $contrast,
   ),
-  contrast-outline-action: (
-    light: rgba($contrast, 0.7),
+  contrast-outline-action: (light: rgba($contrast, 0.7),
     dark: rgba($contrast, 0.5),
   ),
-  contrast-outline-soft: (
-    light: rgba($contrast, 0.15),
+  contrast-outline-soft: (light: rgba($contrast, 0.15),
     dark: rgba($contrast, 0.2),
   ),
-  contrast-gradient: (
-    light: $contrast,
+  contrast-gradient: (light: $contrast,
     dark: linear-gradient(90deg, color.scale($primary, $lightness: 2%, $saturation: 10%) 0, color.scale($primary, $lightness: 14%, $saturation: 10%) 100%),
   ),
-  contrast-gradient-on: (
-    light: $primary,
+  contrast-gradient-on: (light: $primary,
     dark: $contrast,
   ),
-  contrast-gradient-soft: (
-    light: linear-gradient(90deg, rgba($contrast, 0.3) 0, rgba($contrast, 0.15) 100%),
+  contrast-gradient-soft: (light: linear-gradient(90deg, rgba($contrast, 0.3) 0, rgba($contrast, 0.15) 100%),
     dark: linear-gradient(90deg, color.scale($primary, $lightness: 2%, $saturation: 10%) 0, color.scale($primary, $lightness: 14%, $saturation: 10%) 100%),
   ),
-  contrast-gradient-soft-on: (
-    light: $contrast,
+  contrast-gradient-soft-on: (light: $contrast,
     dark: $contrast,
   ),
-  phantom-content: (
-    light: $phantom,
+  phantom-content: (light: $phantom,
     dark: $phantom,
   ),
-  phantom-content-action: (
-    light: rgba($phantom, 0.4),
+  phantom-content-action: (light: rgba($phantom, 0.4),
     dark: rgba($phantom, 0.4),
   ),
-  phantom-surface: (
-    light: $phantom,
+  phantom-surface: (light: $phantom,
     dark: rgba($phantom, 0.05),
   ),
-  phantom-surface-on: (
-    light: $primary,
+  phantom-surface-on: (light: $primary,
     dark: $phantom,
   ),
-  phantom-surface-soft: (
-    light: rgba($phantom, 0.1),
+  phantom-surface-soft: (light: rgba($phantom, 0.1),
     dark: rgba($phantom, 0.05),
   ),
-  phantom-surface-soft-on: (
-    light: $contrast,
+  phantom-surface-soft-on: (light: $contrast,
     dark: $phantom,
   ),
-  phantom-fill: (
-    light: $phantom,
+  phantom-fill: (light: $phantom,
     dark: $phantom,
   ),
-  phantom-fill-action: (
-    light: rgba($phantom, 0.4),
+  phantom-fill-action: (light: rgba($phantom, 0.4),
     dark: rgba($phantom, 0.4),
   ),
-  phantom-fill-on: (
-    light: $primary,
+  phantom-fill-on: (light: $primary,
     dark: $primary,
   ),
-  phantom-fill-soft: (
-    light: rgba($phantom, 0.1),
+  phantom-fill-soft: (light: rgba($phantom, 0.1),
     dark: rgba($phantom, 0.06),
   ),
-  phantom-fill-soft-action: (
-    light: rgba($phantom, 0.15),
+  phantom-fill-soft-action: (light: rgba($phantom, 0.15),
     dark: rgba($phantom, 0.13),
   ),
-  phantom-fill-soft-on: (
-    light: $phantom,
+  phantom-fill-soft-on: (light: $phantom,
     dark: $phantom,
   ),
-  phantom-outline: (
-    light: $phantom,
+  phantom-outline: (light: $phantom,
     dark: $phantom,
   ),
-  phantom-outline-action: (
-    light: rgba($phantom, 0.4),
+  phantom-outline-action: (light: rgba($phantom, 0.4),
     dark: rgba($phantom, 0.4),
   ),
-  phantom-outline-soft: (
-    light: rgba($phantom, 0.15),
+  phantom-outline-soft: (light: rgba($phantom, 0.15),
     dark: rgba($phantom, 0.2),
   ),
-  phantom-gradient: (
-    light: linear-gradient(90deg, $phantom 0, rgba($phantom, 0.4) 100%),
+  phantom-gradient: (light: linear-gradient(90deg, $phantom 0, rgba($phantom, 0.4) 100%),
     dark: linear-gradient(90deg, color.scale($primary, $lightness: 5%, $saturation: 10%) 0, color.scale($primary, $lightness: 11%, $saturation: 10%) 100%),
   ),
-  phantom-gradient-on: (
-    light: $primary,
+  phantom-gradient-on: (light: $primary,
     dark: $contrast,
   ),
-  phantom-gradient-soft: (
-    light: linear-gradient(90deg, rgba($contrast, 0.2) 0, rgba($contrast, 0.08) 100%),
+  phantom-gradient-soft: (light: linear-gradient(90deg, rgba($contrast, 0.2) 0, rgba($contrast, 0.08) 100%),
     dark: linear-gradient(90deg, color.scale($primary, $lightness: 5%, $saturation: 10%) 0, color.scale($primary, $lightness: 11%, $saturation: 10%) 100%),
   ),
-  phantom-gradient-soft-on: (
-    light: $contrast,
+  phantom-gradient-soft-on: (light: $contrast,
     dark: $contrast,
   ),
-  info-content: (
-    light: $info,
+  info-content: (light: $info,
     dark: $info,
   ),
-  info-content-action: (
-    light: color.scale($info, $lightness: -30%),
+  info-content-action: (light: color.scale($info, $lightness: -30%),
     dark: color.scale($info, $lightness: -30%),
   ),
-  info-surface: (
-    light: $info,
+  info-surface: (light: $info,
     dark: $primary,
   ),
-  info-surface-on: (
-    light: $contrast,
+  info-surface-on: (light: $contrast,
     dark: $contrast,
   ),
-  info-surface-soft: (
-    light: color.mix($info, $contrast, 10%),
+  info-surface-soft: (light: color.mix($info, $contrast, 10%),
     dark: $dark-surface-soft,
   ),
-  info-surface-soft-on: (
-    light: $primary,
+  info-surface-soft-on: (light: $primary,
     dark: $contrast,
   ),
-  info-fill: (
-    light: $info,
+  info-fill: (light: $info,
     dark: color.scale($info, $lightness: -20%),
   ),
-  info-fill-action: (
-    light: color.scale($info, $lightness: 20%),
+  info-fill-action: (light: color.scale($info, $lightness: 20%),
     dark: color.scale($info, $lightness: -40%),
   ),
-  info-fill-on: (
-    light: $contrast,
+  info-fill-on: (light: $contrast,
     dark: $contrast,
   ),
-  info-fill-soft: (
-    light: rgba($info, 0.07),
+  info-fill-soft: (light: rgba($info, 0.07),
     dark: rgba($info, 0.07),
   ),
-  info-fill-soft-action: (
-    light: rgba($info, 0.14),
+  info-fill-soft-action: (light: rgba($info, 0.14),
     dark: rgba($info, 0.15),
   ),
-  info-fill-soft-on: (
-    light: $info,
+  info-fill-soft-on: (light: $info,
     dark: $info,
   ),
-  info-outline: (
-    light: $info,
+  info-outline: (light: $info,
     dark: $info,
   ),
-  info-outline-action: (
-    light: color.scale($info, $lightness: 35%),
+  info-outline-action: (light: color.scale($info, $lightness: 35%),
     dark: color.scale($info, $lightness: -28%),
   ),
-  info-outline-soft: (
-    light: rgba($info, 0.22),
+  info-outline-soft: (light: rgba($info, 0.22),
     dark: rgba($info, 0.2),
   ),
-  info-gradient: (
-    light: linear-gradient(90deg, color.scale($info, $lightness: -17%) 0, color.scale($info, $lightness: 6%) 100%),
+  info-gradient: (light: linear-gradient(90deg, color.scale($info, $lightness: -17%) 0, color.scale($info, $lightness: 6%) 100%),
     dark: $dark-gradient,
   ),
-  info-gradient-on: (
-    light: $contrast,
+  info-gradient-on: (light: $contrast,
     dark: $contrast,
   ),
-  info-gradient-soft: (
-    light: linear-gradient(90deg, color.mix($info, $contrast, 19%) 0, color.mix($info, $contrast, 10%) 100%),
+  info-gradient-soft: (light: linear-gradient(90deg, color.mix($info, $contrast, 19%) 0, color.mix($info, $contrast, 10%) 100%),
     dark: $dark-gradient-soft,
   ),
-  info-gradient-soft-on: (
-    light: $primary,
+  info-gradient-soft-on: (light: $primary,
     dark: $contrast,
   ),
-  success-content: (
-    light: $success,
+  success-content: (light: $success,
     dark: $success,
   ),
-  success-content-action: (
-    light: color.scale($success, $lightness: -30%),
+  success-content-action: (light: color.scale($success, $lightness: -30%),
     dark: color.scale($success, $lightness: -30%),
   ),
-  success-surface: (
-    light: $success,
+  success-surface: (light: $success,
     dark: $primary,
   ),
-  success-surface-on: (
-    light: $contrast,
+  success-surface-on: (light: $contrast,
     dark: $contrast,
   ),
-  success-surface-on-action: (
-    light: $phantom,
+  success-surface-on-action: (light: $phantom,
     dark: $phantom,
   ),
-  success-surface-soft: (
-    light: color.mix($success, $contrast, 10%),
+  success-surface-soft: (light: color.mix($success, $contrast, 10%),
     dark: $dark-surface-soft,
   ),
-  success-surface-soft-on: (
-    light: $primary,
+  success-surface-soft-on: (light: $primary,
     dark: $contrast,
   ),
-  success-fill: (
-    light: $success,
+  success-fill: (light: $success,
     dark: color.scale($success, $lightness: -20%),
   ),
-  success-fill-action: (
-    light: color.scale($success, $lightness: 12%),
+  success-fill-action: (light: color.scale($success, $lightness: 12%),
     dark: color.scale($success, $lightness: -40%),
   ),
-  success-fill-on: (
-    light: $contrast,
+  success-fill-on: (light: $contrast,
     dark: $contrast,
   ),
-  success-fill-soft: (
-    light: rgba($success, 0.08),
+  success-fill-soft: (light: rgba($success, 0.08),
     dark: rgba($success, 0.1),
   ),
-  success-fill-soft-action: (
-    light: rgba($success, 0.15),
+  success-fill-soft-action: (light: rgba($success, 0.15),
     dark: rgba($success, 0.17),
   ),
-  success-fill-soft-on: (
-    light: $success,
+  success-fill-soft-on: (light: $success,
     dark: $success,
   ),
-  success-outline: (
-    light: $success,
+  success-outline: (light: $success,
     dark: $success,
   ),
-  success-outline-action: (
-    light: color.scale($success, $lightness: 35%),
+  success-outline-action: (light: color.scale($success, $lightness: 35%),
     dark: color.scale($success, $lightness: -32%),
   ),
-  success-outline-soft: (
-    light: rgba($success, 0.22),
+  success-outline-soft: (light: rgba($success, 0.22),
     dark: rgba($success, 0.2),
   ),
-  success-gradient: (
-    light: linear-gradient(90deg, color.scale($success, $lightness: -15%) 0, color.scale($success, $lightness: 5%) 100%),
+  success-gradient: (light: linear-gradient(90deg, color.scale($success, $lightness: -15%) 0, color.scale($success, $lightness: 5%) 100%),
     dark: $dark-gradient,
   ),
-  success-gradient-on: (
-    light: $contrast,
+  success-gradient-on: (light: $contrast,
     dark: $contrast,
   ),
-  success-gradient-soft: (
-    light: linear-gradient(90deg, color.mix($success, $contrast, 19%) 0, color.mix($success, $contrast, 10%) 100%),
+  success-gradient-soft: (light: linear-gradient(90deg, color.mix($success, $contrast, 19%) 0, color.mix($success, $contrast, 10%) 100%),
     dark: $dark-gradient-soft,
   ),
-  success-gradient-soft-on: (
-    light: $primary,
+  success-gradient-soft-on: (light: $primary,
     dark: $contrast,
   ),
-  warning-content: (
-    light: $warning,
+  warning-content: (light: $warning,
     dark: $warning,
   ),
-  warning-content-action: (
-    light: color.scale($warning, $lightness: -30%),
+  warning-content-action: (light: color.scale($warning, $lightness: -30%),
     dark: color.scale($warning, $lightness: -30%),
   ),
-  warning-surface: (
-    light: $warning,
+  warning-surface: (light: $warning,
     dark: $primary,
   ),
-  warning-surface-on: (
-    light: $contrast,
+  warning-surface-on: (light: $contrast,
     dark: $contrast,
   ),
-  warning-surface-on-action: (
-    light: $phantom,
+  warning-surface-on-action: (light: $phantom,
     dark: $phantom,
   ),
-  warning-surface-soft: (
-    light: color.mix($warning, $contrast, 10%),
+  warning-surface-soft: (light: color.mix($warning, $contrast, 10%),
     dark: $dark-surface-soft,
   ),
-  warning-surface-soft-on: (
-    light: $primary,
+  warning-surface-soft-on: (light: $primary,
     dark: $contrast,
   ),
-  warning-fill: (
-    light: $warning,
+  warning-fill: (light: $warning,
     dark: color.scale($warning, $lightness: -20%),
   ),
-  warning-fill-action: (
-    light: color.scale($warning, $lightness: 25%),
+  warning-fill-action: (light: color.scale($warning, $lightness: 25%),
     dark: color.scale($warning, $lightness: -38%),
   ),
-  warning-fill-on: (
-    light: $contrast,
+  warning-fill-on: (light: $contrast,
     dark: $contrast,
   ),
-  warning-fill-soft: (
-    light: rgba($warning, 0.07),
+  warning-fill-soft: (light: rgba($warning, 0.07),
     dark: rgba($warning, 0.06),
   ),
-  warning-fill-soft-action: (
-    light: rgba($warning, 0.14),
+  warning-fill-soft-action: (light: rgba($warning, 0.14),
     dark: rgba($warning, 0.13),
   ),
-  warning-fill-soft-on: (
-    light: $warning,
+  warning-fill-soft-on: (light: $warning,
     dark: $warning,
   ),
-  warning-outline: (
-    light: $warning,
+  warning-outline: (light: $warning,
     dark: $warning,
   ),
-  warning-outline-action: (
-    light: color.scale($warning, $lightness: 35%),
+  warning-outline-action: (light: color.scale($warning, $lightness: 35%),
     dark: color.scale($warning, $lightness: -32%),
   ),
-  warning-outline-soft: (
-    light: rgba($warning, 0.2),
+  warning-outline-soft: (light: rgba($warning, 0.2),
     dark: rgba($warning, 0.2),
   ),
-  warning-gradient: (
-    light: linear-gradient(90deg, color.scale($warning, $lightness: -15%) 0, color.scale($warning, $lightness: 5%) 100%),
+  warning-gradient: (light: linear-gradient(90deg, color.scale($warning, $lightness: -15%) 0, color.scale($warning, $lightness: 5%) 100%),
     dark: $dark-gradient,
   ),
-  warning-gradient-on: (
-    light: $contrast,
+  warning-gradient-on: (light: $contrast,
     dark: $contrast,
   ),
-  warning-gradient-soft: (
-    light: linear-gradient(90deg, color.mix($warning, $contrast, 19%) 0, color.mix($warning, $contrast, 10%) 100%),
+  warning-gradient-soft: (light: linear-gradient(90deg, color.mix($warning, $contrast, 19%) 0, color.mix($warning, $contrast, 10%) 100%),
     dark: $dark-gradient-soft,
   ),
-  warning-gradient-soft-on: (
-    light: $primary,
+  warning-gradient-soft-on: (light: $primary,
     dark: $contrast,
   ),
-  danger-content: (
-    light: $danger,
+  danger-content: (light: $danger,
     dark: $danger,
   ),
-  danger-content-action: (
-    light: color.scale($danger, $lightness: -30%),
+  danger-content-action: (light: color.scale($danger, $lightness: -30%),
     dark: color.scale($danger, $lightness: -30%),
   ),
-  danger-surface: (
-    light: $danger,
+  danger-surface: (light: $danger,
     dark: $primary,
   ),
-  danger-surface-on: (
-    light: $contrast,
+  danger-surface-on: (light: $contrast,
     dark: $contrast,
   ),
-  danger-surface-on-action: (
-    light: $phantom,
+  danger-surface-on-action: (light: $phantom,
     dark: $phantom,
   ),
-  danger-surface-soft: (
-    light: color.mix($danger, $contrast, 10%),
+  danger-surface-soft: (light: color.mix($danger, $contrast, 10%),
     dark: $dark-surface-soft,
   ),
-  danger-surface-soft-on: (
-    light: $primary,
+  danger-surface-soft-on: (light: $primary,
     dark: $contrast,
   ),
-  danger-fill: (
-    light: $danger,
+  danger-fill: (light: $danger,
     dark: color.scale($danger, $lightness: -20%),
   ),
-  danger-fill-action: (
-    light: color.scale($danger, $lightness: 24%),
+  danger-fill-action: (light: color.scale($danger, $lightness: 24%),
     dark: color.scale($danger, $lightness: -40%),
   ),
-  danger-fill-on: (
-    light: $contrast,
+  danger-fill-on: (light: $contrast,
     dark: $contrast,
   ),
-  danger-fill-soft: (
-    light: rgba($danger, 0.07),
+  danger-fill-soft: (light: rgba($danger, 0.07),
     dark: rgba($danger, 0.09),
   ),
-  danger-fill-soft-action: (
-    light: rgba($danger, 0.14),
+  danger-fill-soft-action: (light: rgba($danger, 0.14),
     dark: rgba($danger, 0.16),
   ),
-  danger-fill-soft-on: (
-    light: $danger,
+  danger-fill-soft-on: (light: $danger,
     dark: $danger,
   ),
-  danger-outline: (
-    light: $danger,
+  danger-outline: (light: $danger,
     dark: $danger,
   ),
-  danger-outline-action: (
-    light: color.scale($danger, $lightness: 35%),
+  danger-outline-action: (light: color.scale($danger, $lightness: 35%),
     dark: color.scale($danger, $lightness: -30%),
   ),
-  danger-outline-soft: (
-    light: rgba($danger, 0.22),
+  danger-outline-soft: (light: rgba($danger, 0.22),
     dark: rgba($danger, 0.2),
   ),
-  danger-gradient: (
-    light: linear-gradient(90deg, color.scale($danger, $lightness: -15%) 0, color.scale($danger, $lightness: 5%) 100%),
+  danger-gradient: (light: linear-gradient(90deg, color.scale($danger, $lightness: -15%) 0, color.scale($danger, $lightness: 5%) 100%),
     dark: $dark-gradient,
   ),
-  danger-gradient-on: (
-    light: $contrast,
+  danger-gradient-on: (light: $contrast,
     dark: $contrast,
   ),
-  danger-gradient-soft: (
-    light: linear-gradient(90deg, color.mix($danger, $contrast, 19%) 0, color.mix($danger, $contrast, 10%) 100%),
+  danger-gradient-soft: (light: linear-gradient(90deg, color.mix($danger, $contrast, 19%) 0, color.mix($danger, $contrast, 10%) 100%),
     dark: $dark-gradient-soft,
   ),
-  danger-gradient-soft-on: (
-    light: $primary,
+  danger-gradient-soft-on: (light: $primary,
     dark: $contrast,
   ),
-  rating-content: (
-    light: $rating,
+  rating-content: (light: $rating,
     dark: $rating,
   ),
-  rating-content-action: (
-    light: color.scale($rating, $lightness: -30%),
+  rating-content-action: (light: color.scale($rating, $lightness: -30%),
     dark: color.scale($rating, $lightness: -30%),
   ),
-  rating-surface: (
-    light: $rating,
+  rating-surface: (light: $rating,
     dark: $primary,
   ),
-  rating-surface-on: (
-    light: $primary,
+  rating-surface-on: (light: $primary,
     dark: $contrast,
   ),
-  rating-surface-on-action: (
-    light: $phantom,
+  rating-surface-on-action: (light: $phantom,
     dark: $phantom,
   ),
-  rating-surface-soft: (
-    light: color.mix($rating, $contrast, 10%),
+  rating-surface-soft: (light: color.mix($rating, $contrast, 10%),
     dark: $dark-surface-soft,
   ),
-  rating-surface-soft-on: (
-    light: $primary,
+  rating-surface-soft-on: (light: $primary,
     dark: $contrast,
   ),
-  rating-fill: (
-    light: $rating,
+  rating-fill: (light: $rating,
     dark: color.scale($rating, $lightness: -15%),
   ),
-  rating-fill-action: (
-    light: color.scale($rating, $lightness: 33%),
+  rating-fill-action: (light: color.scale($rating, $lightness: 33%),
     dark: color.scale($rating, $lightness: -35%),
   ),
-  rating-fill-on: (
-    light: $primary,
+  rating-fill-on: (light: $primary,
     dark: $primary,
   ),
-  rating-fill-soft: (
-    light: rgba($rating, 0.09),
+  rating-fill-soft: (light: rgba($rating, 0.09),
     dark: rgba($rating, 0.08),
   ),
-  rating-fill-soft-action: (
-    light: rgba($rating, 0.16),
+  rating-fill-soft-action: (light: rgba($rating, 0.16),
     dark: rgba($rating, 0.16),
   ),
-  rating-fill-soft-on: (
-    light: $rating,
+  rating-fill-soft-on: (light: $rating,
     dark: $rating,
   ),
-  rating-outline: (
-    light: $rating,
+  rating-outline: (light: $rating,
     dark: $rating,
   ),
-  rating-outline-action: (
-    light: color.scale($rating, $lightness: 40%),
+  rating-outline-action: (light: color.scale($rating, $lightness: 40%),
     dark: color.scale($rating, $lightness: -30%),
   ),
-  rating-outline-soft: (
-    light: rgba($rating, 0.2),
+  rating-outline-soft: (light: rgba($rating, 0.2),
     dark: rgba($rating, 0.2),
   ),
-  rating-gradient: (
-    light: linear-gradient(90deg, color.scale($rating, $lightness: -15%) 0, color.scale($rating, $lightness: 5%) 100%),
+  rating-gradient: (light: linear-gradient(90deg, color.scale($rating, $lightness: -15%) 0, color.scale($rating, $lightness: 5%) 100%),
     dark: $dark-gradient,
   ),
-  rating-gradient-on: (
-    light: $contrast,
+  rating-gradient-on: (light: $contrast,
     dark: $contrast,
   ),
-  rating-gradient-soft: (
-    light: linear-gradient(90deg, color.mix($rating, $contrast, 19%) 0, color.mix($rating, $contrast, 10%) 100%),
+  rating-gradient-soft: (light: linear-gradient(90deg, color.mix($rating, $contrast, 19%) 0, color.mix($rating, $contrast, 10%) 100%),
     dark: $dark-gradient-soft,
   ),
-  rating-gradient-soft-on: (
-    light: $primary,
+  rating-gradient-soft-on: (light: $primary,
     dark: $contrast,
   ),
-  shadow-m: (
-    light: 0 4px 24px rgba($primary, 0.15),
+  shadow-m: (light: 0 4px 24px rgba($primary, 0.15),
     dark: 0 4px 24px rgba($contrast, 0.15),
   ),
-  shadow-xs: (
-    light: 0 0 4px rgba($primary, 0.05),
+  shadow-xs: (light: 0 0 4px rgba($primary, 0.05),
     dark: 0 0 4px rgba($contrast, 0.05),
   ),
-  shadow-inset-xs: (
-    light: inset 0 0 4px rgba($primary, 0.05),
+  shadow-inset-xs: (light: inset 0 0 4px rgba($primary, 0.05),
     dark: inset 0 0 4px rgba($contrast, 0.05),
   ),
-  "transparent": (
-    light: rgba($contrast, 0),
+  "transparent": (light: rgba($contrast, 0),
     dark: rgba($primary, 0),
   ),
-  overlay: (
-    light: rgba($primary, 0.2),
+  overlay: (light: rgba($primary, 0.2),
     dark: rgba($contrast, 0.2),
   ),
-  overlay-switch: (
-    light: rgba($contrast, 0.35),
+  overlay-switch: (light: rgba($contrast, 0.35),
     dark: rgba($contrast, 0.05),
   ),
 );
@@ -1065,6 +827,7 @@ $themes: (
   color-scheme: light;
   @include theme-generator($themes, "light");
 }
+
 [data-theme="dark"] {
   color-scheme: dark;
   @include theme-generator($themes, "dark");

@@ -17,6 +17,7 @@ export const HeroSection = () => {
       direction="row"
       align="center"
       justify="space-between"
+      gap={48}
       height="l"
       overlapBottom={96}
       offsetHeader
