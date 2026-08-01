@@ -4,8 +4,8 @@
 $primary: #1A0A2E;
 $secondary: #7B7487;
 $neutral: #F1F3F7;
-$brand: #F0FF48;
-$accent: #AD1875;
+$brand: #AD1875;
+$accent: #FFD600;
 $utility: #12d1c5;
 $contrast: #FFFFFF;
 $phantom: rgba(255, 255, 255, 0.6);
@@ -106,7 +106,8 @@ $colors: (
 
 @mixin columns($columns) {
   column-count: $columns;
-  & > * {
+
+  &>* {
     break-inside: avoid-column;
   }
 }
@@ -134,7 +135,7 @@ $colors: (
 @mixin theme-generator($styles, $theme) {
   @each $key, $map in $styles {
     @each $prop, $value in $map {
-      @if $prop == $theme {
+      @if $prop ==$theme {
         --#{$key}: #{$value};
       }
     }
@@ -162,10 +163,8 @@ $colors: (
 @function mix($color1, $color2, $weight: 50%) {
   $mixed: color.mix($color1, $color2, $weight);
 
-  @return rgba(
-      math.round(color.channel($mixed, "red",   $space: rgb)),
-      math.round(color.channel($mixed, "green", $space: rgb)),
-      math.round(color.channel($mixed, "blue",  $space: rgb)),
-      color.channel($mixed, "alpha")
-  );
+  @return rgba(math.round(color.channel($mixed, "red", $space: rgb)),
+    math.round(color.channel($mixed, "green", $space: rgb)),
+    math.round(color.channel($mixed, "blue", $space: rgb)),
+    color.channel($mixed, "alpha"));
 }

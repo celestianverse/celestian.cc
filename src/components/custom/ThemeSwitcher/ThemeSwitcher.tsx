@@ -7,7 +7,7 @@ import { Segments } from "@/components/uikit/Segments/Segments";
 import { THEME } from "@/constants/theme";
 import type { Props } from "./ThemeSwitcher.types";
 
-export const ThemeSwitcher = ({ color = "primary" }: Props) => {
+export const ThemeSwitcher = ({ color = "contrast" }: Props) => {
   const { theme, setTheme } = useUserContext(useShallow((state) => ({
     theme: state.theme,
     setTheme: state.setTheme,
@@ -29,6 +29,7 @@ export const ThemeSwitcher = ({ color = "primary" }: Props) => {
         iconOnly="sun"
         active={theme === THEME.light}
         onClick={() => handleChooseTheme(THEME.light)}
+        aria-label="light theme"
       />
       <Button
         variant="ghost"
@@ -37,6 +38,7 @@ export const ThemeSwitcher = ({ color = "primary" }: Props) => {
         iconOnly="moon"
         active={theme === THEME.dark}
         onClick={() => handleChooseTheme(THEME.dark)}
+        aria-label="dark theme"
       />
     </Segments>
   );

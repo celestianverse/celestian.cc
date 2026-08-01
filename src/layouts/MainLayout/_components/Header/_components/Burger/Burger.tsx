@@ -32,6 +32,7 @@ export const Burger = () => {
     <div className={isOpen ? styles.open : ""}>
       <Button
         variant="ghost"
+        color="contrast"
         size="m"
         iconOnly="burger"
         aria-label="Open navigation"

@@ -50,17 +50,23 @@ $breakpoints: (
 );
 
 @mixin respond($breakpoint) {
-  @if $breakpoint == null {
+  @if $breakpoint ==null {
     @content;
-  } @else if $breakpoint == laptop-max {
+  }
+
+  @else if $breakpoint ==laptop-max {
     @include laptop-max {
       @content;
     }
-  } @else if $breakpoint == tablet-max {
+  }
+
+  @else if $breakpoint ==tablet-max {
     @include tablet-max {
       @content;
     }
-  } @else if $breakpoint == mobile-only {
+  }
+
+  @else if $breakpoint ==mobile-only {
     @include mobile-only {
       @content;
     }
@@ -84,7 +90,12 @@ $styles: (
   }
 }
 
-$flex-direction: ("row", "row-reverse", "column", "column-reverse");
+$flex-direction: (
+  "row",
+  "row-reverse",
+  "column",
+  "column-reverse"
+);
 
 @each $prefix, $breakpoint in $breakpoints {
   @each $style in $flex-direction {
@@ -96,7 +107,12 @@ $flex-direction: ("row", "row-reverse", "column", "column-reverse");
   }
 }
 
-$align-items: ("flex-start", "center", "flex-end", "stretch");
+$align-items: (
+  "flex-start",
+  "center",
+  "flex-end",
+  "stretch"
+);
 
 @each $prefix, $breakpoint in $breakpoints {
   @each $style in $align-items {
@@ -108,7 +124,12 @@ $align-items: ("flex-start", "center", "flex-end", "stretch");
   }
 }
 
-$justify-content: ("flex-start", "center", "flex-end", "space-between");
+$justify-content: (
+  "flex-start",
+  "center",
+  "flex-end",
+  "space-between"
+);
 
 @each $prefix, $breakpoint in $breakpoints {
   @each $style in $justify-content {
@@ -120,7 +141,18 @@ $justify-content: ("flex-start", "center", "flex-end", "space-between");
   }
 }
 
-$gap: (128, 96, 64, 48, 32, 24, 16, 8, 4, 0);
+$gap: (
+  128,
+  96,
+  64,
+  48,
+  32,
+  24,
+  16,
+  8,
+  4,
+  0
+);
 
 @each $prefix, $breakpoint in $breakpoints {
   @each $size in $gap {
@@ -132,7 +164,18 @@ $gap: (128, 96, 64, 48, 32, 24, 16, 8, 4, 0);
   }
 }
 
-$padding: (128, 96, 64, 48, 32, 24, 16, 8, 4, 0);
+$padding: (
+  128,
+  96,
+  64,
+  48,
+  32,
+  24,
+  16,
+  8,
+  4,
+  0
+);
 
 $padding-axes: (
   "": (padding),
@@ -152,15 +195,28 @@ $padding-axes: (
   @each $size in $padding {
     @each $axis, $props in $padding-axes {
       .#{$prefix}padding#{if($axis == "", "", "-#{$axis}")}-#{$size} {
-        @include respond($breakpoint) {
-          @include emit-padding($props, $size);
-        }
+@include respond($breakpoint) {
+        @include emit-padding($props, $size);
       }
     }
   }
 }
+}
 
-$border-radius: (999, 128, 96, 64, 48, 32, 24, 16, 12, 8, 4, 0);
+$border-radius: (
+  999,
+  128,
+  96,
+  64,
+  48,
+  32,
+  24,
+  16,
+  12,
+  8,
+  4,
+  0
+);
 
 $border-radius-axes: (
   "": (border-radius),
@@ -178,19 +234,20 @@ $border-radius-axes: (
   @each $size in $border-radius {
     @each $axis, $props in $border-radius-axes {
       .#{$prefix}border-radius#{if($axis == "", "", "-#{$axis}")}-#{$size} {
-        @include respond($breakpoint) {
-          @include emit-border-radius($props, $size);
-        }
+@include respond($breakpoint) {
+        @include emit-border-radius($props, $size);
       }
     }
   }
+}
 }
 
 .scroll {
   overflow: auto;
 }
 
-.scroll, .overflow-scroll {
+.scroll,
+.overflow-scroll {
   scrollbar-width: thin;
   scrollbar-color: var(--secondary-fill) transparent;
 
@@ -211,11 +268,14 @@ $border-radius-axes: (
 }
 
 @media (forced-colors: active) {
-  .scroll, .overflow-scroll {
+
+  .scroll,
+  .overflow-scroll {
     scrollbar-color: ButtonText Canvas;
   }
 
-  .scroll, .overflow-scroll {
+  .scroll,
+  .overflow-scroll {
     &::-webkit-scrollbar-thumb {
       background-color: CanvasText;
       border-color: Canvas;

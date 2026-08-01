@@ -17,7 +17,7 @@ export const Header = () => {
       justify="space-between"
       className={styles.header}
     >
-      <Logo />
+      <Logo color="contrast" />
       <Row
         align="center"
         justify="flex-end"

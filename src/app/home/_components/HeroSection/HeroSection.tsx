@@ -17,13 +17,20 @@ export const HeroSection = () => {
       direction="row"
       align="center"
       justify="space-between"
-      gap={48}
+      gap={0}
       height="l"
       overlapBottom={96}
       offsetHeader
     >
       <Column gap={64}>
-        <Column gap={16}>
+        <Column gap={24}>
+          <Title
+            as="h1"
+            size="s"
+            color="accent"
+          >
+            {hero.pretitle}
+          </Title>
           <Title
             as="h1"
             size="l"
@@ -32,7 +39,10 @@ export const HeroSection = () => {
           </Title>
           <Title
             as="h2"
-            size="l"
+            size="xs"
+            weight="regular"
+            lineHeight="l"
+            className={styles.subtitle}
           >
             {hero.subtitle}
           </Title>
@@ -45,7 +55,7 @@ export const HeroSection = () => {
             as={Link}
             href={hero.projects.path}
             size="l"
-            color="primary"
+            color="contrast"
             className={styles.button}
           >
             {hero.projects.label}
@@ -55,7 +65,7 @@ export const HeroSection = () => {
             href={hero.contacts.path}
             size="l"
             variant="outline"
-            color="primary"
+            color="contrast"
             borderStyle="dashed"
             borderWidth={2}
             className={styles.button}
@@ -66,8 +76,9 @@ export const HeroSection = () => {
       </Column>
       <Hidden on="tablet-max">
         <Image
-          width={340}
-          height={340}
+          loading="eager"
+          width={440}
+          height={440}
           src={hero.image}
           alt={hero.title}
           quality={100}

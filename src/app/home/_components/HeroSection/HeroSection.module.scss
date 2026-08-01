@@ -1,8 +1,22 @@
 @use "@/styles/mixins" as *;
 
+.subtitle {
+  @include mobile-only {
+    max-width: 280px;
+  }
+}
+
 .image {
   position: relative;
-  top: 24px;
+  top: 0;
+  right: -12px;
+  width: 440px;
+  height: 440px;
+
+  @media (max-width: 1330px) {
+    width: 380px;
+    height: 380px;
+  }
 
   @media (max-width: 1260px) {
     width: 320px;

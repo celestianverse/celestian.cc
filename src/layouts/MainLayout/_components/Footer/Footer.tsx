@@ -16,7 +16,7 @@ export const Footer = () => {
     <Section
       as="footer"
       variant="gradient"
-      color="accent"
+      color="brand"
       gap={48}
       paddingBottom={48}
       radiusTop={96}
