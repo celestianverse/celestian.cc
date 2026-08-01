@@ -1,9 +1,10 @@
 import { routes } from "@/configs/routes";
 
 export const hero = {
+  pretitle: "For your project",
   title: "Full-Stack Development",
-  subtitle: "For your project",
-  image: "/images/hero/compressed/home-3--x2.png",
+  subtitle: "Go, PostgreSQL, React, TypeScript, Docker, Nginx",
+  image: "/images/hero/home--x2.png",
   projects: {
     path: routes.projects.path,
     label: "Latest projects",

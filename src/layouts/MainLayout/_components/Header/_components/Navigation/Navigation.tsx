@@ -23,6 +23,7 @@ export const Navigation = () => {
               paddingY={16}
               paddingX={16}
               variant={isActivePath(page.path) ? "outline" : "base"}
+              color="contrast"
               borderWidth={isActivePath(page.path) ? 2 : 0}
               borderStyle={isActivePath(page.path) ? "dashed" : "none"}
             >

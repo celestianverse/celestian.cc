@@ -2,6 +2,9 @@ import withSvgr from "next-plugin-svgr";
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  images: {
+    qualities: [90, 100],
+  },
   async rewrites() {
     return [
       {

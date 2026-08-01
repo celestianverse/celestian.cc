@@ -7,7 +7,7 @@ export const projects = {
       tag: "Fintech",
       url: "https://psb-academy.ru/",
       domain: "psb-academy.ru",
-      screenshot: "/images/projects/screenshots/compressed/apsb--x2.png",
+      screenshot: "/images/projects/screenshots/apsb--x2.png",
       logo: {
         light: "/images/projects/logos/apsb.svg",
         dark: "/images/projects/logos/apsb--dark.svg",
@@ -19,7 +19,7 @@ export const projects = {
       tag: "Fintech",
       url: "https://sodrujestvo.org/en",
       domain: "sodrujestvo.org",
-      screenshot: "/images/projects/screenshots/compressed/sodrujestvo--x2.png",
+      screenshot: "/images/projects/screenshots/sodrujestvo--x2.png",
       logo: {
         light: "/images/projects/logos/sodrujestvo.svg",
         dark: "/images/projects/logos/sodrujestvo.svg",
@@ -31,7 +31,7 @@ export const projects = {
       tag: "Edtech",
       url: "https://xn--80aaagbeiix1cqypjeb2m.xn--p1ai/",
       domain: "навигаторыдетства.рф",
-      screenshot: "/images/projects/screenshots/compressed/rdc--x2.png",
+      screenshot: "/images/projects/screenshots/rdc--x2.png",
       logo: {
         light: "/images/projects/logos/rdc.svg",
         dark: "/images/projects/logos/rdc.svg",
@@ -43,7 +43,7 @@ export const projects = {
       tag: "Edtech",
       url: "https://lift-bf.ru/",
       domain: "lift-bf.ru",
-      screenshot: "/images/projects/screenshots/compressed/lift--x2.png",
+      screenshot: "/images/projects/screenshots/lift--x2.png",
       logo: {
         light: "/images/projects/logos/lift.svg",
         dark: "/images/projects/logos/lift--dark.svg",
@@ -55,7 +55,7 @@ export const projects = {
       tag: "Edtech",
       url: "https://sibured.ru/",
       domain: "sibured.ru",
-      screenshot: "/images/projects/screenshots/compressed/sibur--x2.png",
+      screenshot: "/images/projects/screenshots/sibur--x2.png",
       logo: {
         light: "/images/projects/logos/sibur.svg",
         dark: "/images/projects/logos/sibur.svg",
@@ -67,7 +67,7 @@ export const projects = {
       tag: "Adtech",
       url: "https://tractikum.launchers.ru",
       domain: "tractikum.launchers.ru",
-      screenshot: "/images/projects/screenshots/compressed/tractikum--x2.png",
+      screenshot: "/images/projects/screenshots/tractikum--x2.png",
       logo: {
         light: "/images/projects/logos/tractikum.svg",
         dark: "/images/projects/logos/tractikum.svg",

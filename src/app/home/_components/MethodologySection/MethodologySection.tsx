@@ -10,7 +10,7 @@ export const MethodologySection = () => {
   return (
     <Section
       variant="gradient"
-      color="info"
+      color="brand"
       justify="center"
       align="center"
       radiusTop={96}

@@ -8,12 +8,12 @@ export const MAIN_COLORS = {
     on: "#fff",
   },
   brand: {
-    surface: "#F0FF48",
-    on: "#1A0A2E",
-  },
-  accent: {
     surface: "#AD1875",
     on: "#fff",
+  },
+  accent: {
+    surface: "#FFD600",
+    on: "#1A0A2E",
   },
   utility: {
     surface: "#12d1c5",

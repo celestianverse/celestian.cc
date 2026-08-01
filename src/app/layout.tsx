@@ -13,6 +13,9 @@ import "@/styles/main.scss";
 
 export const metadata: Metadata = {
   title: seo.home.title,
+  icons: {
+    icon: "/images/favicon.svg",
+  },
 };
 
 export const viewport: Viewport = {
@@ -35,11 +38,11 @@ const getProvidersTree = (
     theme,
   }: ProvidersData) => {
   return buildProvidersTree([
-    [UserProvider, {font, theme}],
+    [UserProvider, { font, theme }],
   ] as const);
 };
 
-const RootLayout = async ({children}: Props) => {
+const RootLayout = async ({ children }: Props) => {
   const font = await getCookieFont();
   const theme = await getCookieTheme();
 
@@ -55,13 +58,13 @@ const RootLayout = async ({children}: Props) => {
       data-theme={theme}
       suppressHydrationWarning
     >
-    <body>
-    <ProvidersTree>
-      <MainLayout>
-        {children}
-      </MainLayout>
-    </ProvidersTree>
-    </body>
+      <body>
+        <ProvidersTree>
+          <MainLayout>
+            {children}
+          </MainLayout>
+        </ProvidersTree>
+      </body>
     </html>
   );
 };
