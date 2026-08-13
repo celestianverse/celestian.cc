@@ -27,13 +27,13 @@ export const HeroSection = () => {
           <Title
             as="h1"
             size="s"
-            color="accent"
           >
             {hero.pretitle}
           </Title>
           <Title
             as="h1"
             size="l"
+            color="accent"
           >
             {hero.title}
           </Title>
