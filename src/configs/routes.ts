@@ -115,7 +115,7 @@ export const routes = {
   },
   game: {
     name: "English Battle",
-    path: "https://english-battle.celestian.cc/",
+    path: "https://battle.celestian.cc/",
     target: "_blank",
   },
   contacts: {
