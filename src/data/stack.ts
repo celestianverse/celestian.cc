@@ -3,17 +3,17 @@ export const stack = {
   items: [
     {
       name: "go",
-      titles: ["Go", "Goroutines / Channels", "gRPC / REST API"],
+      titles: ["Go", "Concurrency", "gRPC / Protobuf"],
       image: "/images/stack/go--x2.png",
     },
     {
       name: "sql",
-      titles: ["PostgreSQL", "Indexes / Transactions", "Migrations"],
+      titles: ["PostgreSQL", "SQLC / PGX", "Redis"],
       image: "/images/stack/sql--x2.png",
     },
     {
       name: "devops",
-      titles: ["CI/CD", "Docker / Nginx", "GitHub Actions"],
+      titles: ["CI/CD", "Docker compose", "Nginx / Caddy"],
       image: "/images/stack/git--x2.png",
     },
     {
