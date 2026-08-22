@@ -1,6 +1,6 @@
 export const routes = {
   home: {
-    name: "Development",
+    name: "Full-Stack",
     path: "/",
     target: "",
   },
