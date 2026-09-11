@@ -3,27 +3,27 @@ export const stack = {
   items: [
     {
       name: "go",
-      titles: ["Go", "Concurrency", "gRPC / Protobuf"],
+      titles: ["Go", "Microservices", "REST API, gRPC"],
       image: "/images/stack/go--x2.png",
     },
     {
       name: "sql",
-      titles: ["PostgreSQL", "SQLC / PGX", "Redis"],
+      titles: ["PostgreSQL", "Goose, SQLC, PGX", "Redis, Kafka"],
       image: "/images/stack/sql--x2.png",
     },
     {
       name: "devops",
-      titles: ["CI/CD", "Docker compose", "Nginx / Caddy"],
+      titles: ["CI/CD", "Docker, Kubernetes", "Nginx, Caddy"],
       image: "/images/stack/git--x2.png",
     },
     {
       name: "html",
-      titles: ["HTML / CSS", "SCSS Modules", "Tailwind"],
+      titles: ["HTML, CSS", "SCSS Modules", "Tailwind"],
       image: "/images/stack/html--x2.png",
     },
     {
       name: "frontend",
-      titles: ["TypeScript", "React / Next.js", "Zustand / TanStack"],
+      titles: ["TypeScript", "React, Next.js", "Zustand, TanStack"],
       image: "/images/stack/typescript--x2.png",
     },
     {

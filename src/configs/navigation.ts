@@ -16,11 +16,6 @@ export const navigation = {
     path: routes.uikit.path,
     target: "",
   },
-  game: {
-    title: routes.game.name,
-    path: routes.game.path,
-    target: "_blank",
-  },
   contacts: {
     title: routes.contacts.name,
     path: routes.contacts.path,
