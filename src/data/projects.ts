@@ -38,6 +38,18 @@ export const projects = {
       },
     },
     {
+      title: "Rusal",
+      subtitle: "Career portal for school students, university students, and professionals",
+      tag: "EdTech",
+      url: "https://career.enplusrusal.ru/",
+      domain: "tractikum.launchers.ru",
+      screenshot: "/images/projects/screenshots/rusal--x2.png",
+      logo: {
+        light: "/images/projects/logos/rusal.svg",
+        dark: "/images/projects/logos/rusal.svg",
+      },
+    },
+    {
       title: "Lift to the future",
       subtitle: "Russian national project for free \neducation and career guidance",
       tag: "Edtech",
@@ -59,18 +71,6 @@ export const projects = {
       logo: {
         light: "/images/projects/logos/sibur.svg",
         dark: "/images/projects/logos/sibur.svg",
-      },
-    },
-    {
-      title: "Tractikum",
-      subtitle: "Flexible ad tracker \nfor performance teams",
-      tag: "Adtech",
-      url: "https://tractikum.launchers.ru",
-      domain: "tractikum.launchers.ru",
-      screenshot: "/images/projects/screenshots/tractikum--x2.png",
-      logo: {
-        light: "/images/projects/logos/tractikum.svg",
-        dark: "/images/projects/logos/tractikum.svg",
       },
     },
   ],

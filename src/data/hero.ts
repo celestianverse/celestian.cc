@@ -1,9 +1,9 @@
 import { routes } from "@/configs/routes";
 
 export const hero = {
-  pretitle: "For your project",
+  pretitle: "For your product",
   title: "Full-Stack Development",
-  subtitle: "Go, React, TypeScript, PostgreSQL, Redis, Kafka",
+  subtitle: "Python, Go, SQL, TypeScript",
   image: "/images/hero/home--x2.png",
   projects: {
     path: routes.projects.path,
