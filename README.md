@@ -1,6 +1,6 @@
 # Celestian
 
-Personal site with portfolio of a Full-Stack Developer building products with Go, React, TypeScript, PostgreSQL, Redis, and Kafka.
+Personal site with portfolio of a Full-Stack Developer building products with Python, Go, SQL and TypeScript.
 
 The site is both a portfolio and a living design system: every page is assembled from a custom UI kit with design tokens, light and dark themes, and interactive playgrounds.
 

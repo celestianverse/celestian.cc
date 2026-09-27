@@ -2,20 +2,16 @@ export const methodology = {
   title: "Methodology",
   items: [
     {
-      title: "Agile, Scrum, Kanban",
-      text: "Workflows are organized according to Agile principles using Scrum or Kanban board, ensuring task transparency and flexibility. This approach enables quick adaptation to changes while maintaining steady progress.",
+      title: "Agile and flexible processes",
+      text: "I organize workflows using Scrum or Kanban: with clear task breakdown, predictable timelines, and regular updates. This enables fast hypothesis validation and seamless iterations without introducing chaos into the codebase.",
     },
     {
-      title:
-        "Iterative and incremental development",
-      text:
-        "Products are developed step by step, starting with a simple foundation and gradually evolving into more complex solutions. Each iteration delivers value and strengthens the overall system.",
+      title: "Incremental development",
+      text: "I evolve products iteratively: from a minimal stable core to complex features. Every sprint concludes with a working deliverable — from database logic and API endpoints to a polished user interface.",
     },
     {
-      title:
-        "Clean component-based architecture",
-      text:
-        "The application is structured as a collection of reusable, independent components, each responsible for its own logic, structure, and styling. Such an approach enhances scalability, simplifies maintenance, and ensures design and functionality consistency across the project.",
+      title: "Scalable architecture",
+      text: "I build a robust integration between backend and frontend: unified typing, strict data contracts, and clear separation of concerns across layers. This eliminates data desynchronization and accelerates the delivery of new features.",
     },
   ],
 };
