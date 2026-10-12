@@ -2,19 +2,19 @@ export const stack = {
   title: "Technology stack",
   items: [
     {
-      name: "python",
-      titles: ["Python", "FastAPI, Pydantic", "REST API"],
-      image: "/images/stack/python--x2.png",
-    },
-    {
       name: "go",
       titles: ["Go", "Microservices", "gRPC, Protobuf"],
       image: "/images/stack/go--x2.png",
     },
     {
-      name: "data",
-      titles: ["PostgreSQL", "Celery, Kafka", "Redis"],
-      image: "/images/stack/data--x2.png",
+      name: "nodejs",
+      titles: ["Node.js", "NestJS, Express", "REST API"],
+      image: "/images/stack/nodejs--x2.png",
+    },
+    {
+      name: "python",
+      titles: ["Python", "FastAPI, Django", "OpenAPI"],
+      image: "/images/stack/python--x2.png",
     },
     {
       name: "frontend",
@@ -22,9 +22,9 @@ export const stack = {
       image: "/images/stack/typescript--x2.png",
     },
     {
-      name: "monitoring",
-      titles: ["Prometheus", "Grafana, Loki", "Sentry"],
-      image: "/images/stack/prometheus--x2.png",
+      name: "data",
+      titles: ["PostgreSQL", "Redis, Kafka", "WebSocket"],
+      image: "/images/stack/data--x2.png",
     },
     {
       name: "devops",

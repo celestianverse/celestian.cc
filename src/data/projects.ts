@@ -1,5 +1,5 @@
 export const projects = {
-  title: "Latest projects",
+  title: "Featured projects",
   items: [
     {
       title: "PSB academy",

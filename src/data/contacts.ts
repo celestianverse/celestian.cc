@@ -4,7 +4,7 @@ export const contacts = {
     name: "Georgii Zubchenko",
     positions: {
       primary: "Full-Stack Developer",
-      secondary: "Python, Go, SQL, TypeScript",
+      secondary: "Go, Node.js, Python, TypeScript",
     },
     photo: "/images/contacts/me--x2.jpg",
   },

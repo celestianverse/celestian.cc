@@ -5,7 +5,7 @@ export const routes = {
     target: "",
   },
   projects: {
-    name: "Latest projects",
+    name: "Featured projects",
     path: "/projects",
     target: "",
   },

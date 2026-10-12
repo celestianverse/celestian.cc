@@ -3,11 +3,11 @@ import { routes } from "@/configs/routes";
 export const hero = {
   pretitle: "For your product",
   title: "Full-Stack Development",
-  subtitle: "Python, Go, SQL, TypeScript",
+  subtitle: "Go, Node.js, Python, TypeScript",
   image: "/images/hero/home--x2.png",
   projects: {
     path: routes.projects.path,
-    label: "Latest projects",
+    label: "Featured projects",
   },
   contacts: {
     path: routes.contacts.path,

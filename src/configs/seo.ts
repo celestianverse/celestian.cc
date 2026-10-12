@@ -5,7 +5,7 @@ export const seo = {
     title: `Full-Stack Development for your product — ${app.name}`,
   },
   projects: {
-    title: `Latest projects — ${app.name}`,
+    title: `Featured projects — ${app.name}`,
   },
   uikit: {
     title: `UI kit library — ${app.name}`,
